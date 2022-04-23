@@ -47,11 +47,6 @@ h2 {
   margin: .5rem 0;
   position: sticky;
   top: 3.75rem;
-  bottom: 0;
-}
-
-h2:last-of-type {
-  bottom: initial;
 }
 
 h2::before {
