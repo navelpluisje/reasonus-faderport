@@ -34,4 +34,4 @@ Zone "Automation"
   Shift+Touch     NoAction
   Shift+Write     NoAction
   Shift+Read      NoAction
-ZoneEnd
+ZoneEnd  

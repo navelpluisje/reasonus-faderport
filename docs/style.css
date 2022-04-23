@@ -2,6 +2,7 @@
   --default-text: #333;
   --alternate-text: #fff;
   --primary-color: #00529C;
+  --alternate-color: #00ADA4;
   --secondary-color: rgb(192, 201, 227);
   --tertiary-color: hsl(225, 38%, 90%);
 }
@@ -17,6 +18,72 @@ body {
   font-family: 'Lato', sans-serif;
   line-height: 1.6;
   font-size: 1.125rem;
+}
+
+.home {
+  display: grid;
+  grid-template-rows: auto repeat(6, 1fr);
+  grid-template-columns: repeat(10, 1fr);
+  height: 100vh;
+}
+
+.header {
+  background-color: var(--primary-color);
+  grid-area: 1/1/2/11;
+}
+
+.logo {
+  align-self: start;
+  grid-area: 1/2/2/5;
+  padding: .25rem 0;
+}
+
+.faderport {
+  background-image: url('assets/Faderport8.png');
+  background-size: contain;
+  background-position: center left;
+  background-repeat: no-repeat;
+  grid-area: 3/7/7/10;
+  z-index: 1;
+}
+
+.logo>img {
+  height: 2.5rem;
+}
+
+.title {
+  color: var(--alternate-text);
+  font-size: 3.5rem;
+  font-weight: 100;
+  text-shadow: 0 .5rem .5rem rgba(0, 0, 0, .25);
+  text-transform: capitalize;
+}
+
+.title.first {
+  grid-area: 2/2/4/10;
+  align-self: center;
+}
+
+.title.second {
+  grid-area: 4/2/5/10;
+  align-self: top;
+}
+
+.banner {
+  background-image: linear-gradient(var(--primary-color),
+      var(--alternate-color));
+  grid-area: 2/1/5/11;
+}
+
+.content {
+  align-self: center;
+  grid-area: 5/2/8/7;
+  padding: 0 2rem 0 0;
+}
+
+.content .title {
+  color: var(--default-text);
+  text-shadow: none;
 }
 
 h1 {
@@ -39,7 +106,8 @@ h1::before {
 }
 
 h2 {
-  background-color: var(--secondary-color);
+  background-color: var(--alternate-color);
+  color: var(--alternate-text);
   counter-increment: h2counter;
   counter-reset: h3counter;
   font-size: 1.5rem;
@@ -58,7 +126,8 @@ h2::before {
 }
 
 h3 {
-  background-color: var(--tertiary-color);
+  background-color: var(--alternate-color);
+  color: var(--alternate-text);
   counter-increment: h3counter;
   counter-reset: h4counter;
   font-size: 1.5rem;
