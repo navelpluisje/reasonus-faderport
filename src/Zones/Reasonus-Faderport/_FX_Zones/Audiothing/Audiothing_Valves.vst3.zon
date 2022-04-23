@@ -1,0 +1,24 @@
+Zone "VST3: Valves (AudioThing)"
+
+	SelectedTrackNavigator
+
+	RotaryPush1		FXParam 0 "Valve Enable" [ 0 1 ]
+	RotaryPush2		FXParam 1 "Valve Mode" [ 0 1 ]
+	Fader1			FXParam 2 "Valve Drive"
+	Rotary1			FXParam 3 "Valve Bias"
+	Fader1			FXParam 4 "Valve Tone" [ 0.5 1 ]
+	RotaryPush6		FXParam 5 "Cabinet EQ Enable" [ 0 1 ]
+	Rotary6			FXParam 6 "Cabinet EQ Type"
+	Rotary7			FXParam 7 "Cabinet EQ Bass"
+	Rotary8			FXParam 8 "Cabinet EQ Treble"
+	RotaryPush3		FXParam 9 "Filter Enable" [ 0 1 ]
+	RotaryPush4		FXParam 10 "Filter Mode" [ 0 1 ]
+	Rotary3			FXParam 11 "Filter Type"
+	Fader3			FXParam 11 "Filter Type"
+	Fader4			FXParam 12 "Filter Cutoff"
+	Fader5			FXParam 13 "Filter Resonance"
+	Fader6			FXParam 14 "Input"
+	Fader8			FXParam 15 "Output"
+	Fader7			FXParam 16 "Mix"
+	RotaryPush8		FXParam 17 "Soft Clip" [ 0 1 ]
+ZoneEnd

@@ -1,0 +1,58 @@
+Zone "VST: Molot (Vladislav Goncharov)" "Molot"
+	SelectedTrackNavigator
+  Option Option
+  DisplayZone1     FixedTextDisplay "Effect"
+  DisplayEffect1   FixedTextDisplay "Molot"
+
+	Rotary1             FXParam 0  "Filter"
+  DisplayUpper1       FXParamNameDisplay 0 "Filter"
+  DisplayAddUpper1    FXParamValueDisplay 0
+
+	Fader1              FXParam 6  "Limiter"
+  DisplayLower1       FXParamNameDisplay 6 "Limiter"
+  DisplayAddLower1    FXParamValueDisplay 6
+
+	Rotary2             FXParam 3  "Attack"
+  DisplayUpper2       FXParamNameDisplay 3 "Attack"
+  DisplayAddUpper2    FXParamValueDisplay 3
+
+	Fader2              FXParam 8  "Mid Scoop"
+  DisplayLower2       FXParamNameDisplay 8 "Mid Scoop"
+  DisplayAddLower2    FXParamValueDisplay 8
+
+	RotaryPush2         FXParam 12 "Alpha/Sigma" [ 0.0 1.0 ]
+  Option+DisplayUpper2    FXParamNameDisplay 12 "Alp/Sig"
+  Option+DisplayAddUpper2 FXParamValueDisplay 12
+
+	Rotary3             FXParam 4  "Release"
+  DisplayUpper3       FXParamNameDisplay 4 "Release"
+  DisplayAddUpper3    FXParamValueDisplay 4
+
+	Fader3              FXParam 10 "Mode"        [ 0.08 0.4 0.73 0.56 0.88 0.24 1 ]
+  DisplayLower3       FXParamNameDisplay 10 "Mode"
+  DisplayAddLower3    FXParamValueDisplay 10
+
+	Rotary4             FXParam 5  "Ratio"
+  DisplayUpper4       FXParamNameDisplay 5 "Ratio"
+  DisplayAddUpper4    FXParamValueDisplay 5
+
+	Fader4              FXParam 11  "Upsampling" [ 0 0.33 0.66 1 ]
+  DisplayLower4       FXParamNameDisplay 11 "Upsampling"
+  DisplayAddLower4    FXParamValueDisplay 11
+
+	Rotary5             FXParam 1  "Treshold"
+  DisplayUpper5       FXParamNameDisplay 1 "Treshold"
+  DisplayAddUpper5    FXParamValueDisplay 1
+
+	Rotary6             FXParam 2  "Knee"
+  DisplayUpper6       FXParamNameDisplay 2 "Knee"
+  DisplayAddUpper6    FXParamValueDisplay 2
+
+	Rotary7             FXParam 7  "Makeup"
+  DisplayUpper7       FXParamNameDisplay 7 "Makeup"
+  DisplayAddUpper7    FXParamValueDisplay 7
+
+	Rotary8             FXParam 9  "Dry/Wet"
+  DisplayUpper8       FXParamNameDisplay 9 "Dry/Wet"
+  DisplayAddUpper8    FXParamValueDisplay 9
+ZoneEnd

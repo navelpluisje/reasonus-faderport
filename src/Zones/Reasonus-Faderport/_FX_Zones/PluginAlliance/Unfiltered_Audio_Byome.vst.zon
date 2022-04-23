@@ -1,0 +1,24 @@
+Zone "VST3: Unfiltered Audio Byome (Plugin Alliance)"
+
+	SelectedTrackNavigator
+
+	Fader1			FXParam 0 "Macro 1"
+	Fader2			FXParam 1 "Macro 2"
+	Fader3			FXParam 2 "Macro 3"
+	Fader4			FXParam 3 "Macro 4"
+	Fader5			FXParam 4 "Macro 5"
+	Fader6			FXParam 5 "Macro 6"
+	Fader7			FXParam 6 "Macro 7"
+	Fader8			FXParam 7 "Macro 8"
+	Rotary1			FXParam 8 "In Gain"
+	RotaryPush1		FXParam 8 "In Gain" [ 0.5 ]
+	Rotary2			FXParam 9 "Sample Rate"
+	RotaryPush2		FXParam 9 "Sample Rate" [ 1 ]
+	Rotary3			FXParam 10 "AGC"
+	RotaryPush3		FXParam 10 "AGC" [ 0 ]
+	Rotary4			FXParam 11 "Dry/Wet"
+	RotaryPush4		FXParam 11 "Dry/Wet" [ 1 ]
+	Rotary5			FXParam 12 "Out Gain"
+	RotaryPush5		FXParam 12 "Out Gain" [ 0.5 ]
+
+ZoneEnd

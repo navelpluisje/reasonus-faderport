@@ -1,0 +1,44 @@
+Zone "VST3: ValhallaFreqEcho (Valhalla DSP, LLC)" FreqEcho
+  SelectedTrackNavigator
+  Option Option
+  DisplayZone1     FixedTextDisplay "Effect"
+  DisplayEffect1   FixedTextDisplay "FreqEcho"
+
+Fader1             FXParam 0  "WetDry"
+  DisplayLower1       FXParamNameDisplay 0 "Wet/Dry"
+  DisplayAddLower1    FXParamValueDisplay 0
+
+  Rotary1         	FXParam 7  "stereo"  [ 0.0 1.0 ]
+  RotaryPush1       FXParam 7  "stereo"  [ 0.0 1.0 ]
+	DisplayUpper1       FXParamNameDisplay 7 "stereo"
+  DisplayAddUpper1		  FXParamValueDisplay 7
+  
+    Rotary2         	FXParam 3  "sync"
+    RotaryPush2       FXParam 3 "sync" [ 0 0.26 ] 
+	DisplayUpper2       FXParamNameDisplay 3 "sync"
+  DisplayAddUpper2		  FXParamValueDisplay 3
+  
+  Fader2              FXParam 2  "delay"
+  DisplayLower2       FXParamNameDisplay 2 "Delay"
+  DisplayAddLower2		  FXParamValueDisplay 2
+
+ Fader3             FXParam 1  "shift"
+  DisplayLower3       FXParamNameDisplay 1 "Shift"
+  DisplayAddLower3    FXParamValueDisplay 1
+
+  Fader4             FXParam 4  "feedback"
+  DisplayLower4       FXParamNameDisplay 4 "Feedback"
+  DisplayAddLower4    FXParamValueDisplay 4
+
+Fader5             FXParam 5  "lowcut"
+  DisplayLower5       FXParamNameDisplay 5 "lowcut"
+  DisplayAddLower5    FXParamValueDisplay 5
+  
+Fader6              FXParam 6  "highCut"
+  DisplayLower6       FXParamNameDisplay 6 "highCut"
+  DisplayAddLower6    FXParamValueDisplay 6
+
+  Fader7        NoAction
+  Fader8        NoAction
+  
+ZoneEnd

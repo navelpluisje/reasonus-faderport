@@ -1,0 +1,71 @@
+Zone "VST: ReaComp (Cockos)" ReaComp
+  SelectedTrackNavigator
+  Option Option
+  DisplayZone1     FixedTextDisplay "Effect"
+  DisplayEffect1   FixedTextDisplay "ReaComp"
+
+  Fader1           FXParam 0  "Treshhold"
+  DisplayLower1    FXParamNameDisplay 0 "Treshhold"
+  DisplayAddLower1 FXParamValueDisplay 0
+
+  Fader2           FXParam 4  "PreComp"
+  DisplayLower2    FXParamNameDisplay 4 "PreComp"
+  DisplayAddLower2 FXParamValueDisplay 4
+
+  Fader3           FXParam 2  "Attack"
+  DisplayLower3    FXParamNameDisplay 2 "Attack"
+  DisplayAddLower3 FXParamValueDisplay 2
+
+  Fader4           FXParam 3  "Release"
+  DisplayLower4    FXParamNameDisplay 3 "Release"
+  DisplayAddLower4 FXParamValueDisplay 3
+
+  Fader5           FXParam 1  "Ratio"
+  DisplayLower5    FXParamNameDisplay 1 "Ratio"
+  DisplayAddLower5 FXParamValueDisplay 1
+
+  Fader6           FXParam 14 "Knee"
+  DisplayLower6    FXParamNameDisplay 14 "Knee"
+  DisplayAddLower6 FXParamValueDisplay 14
+
+  Fader7           FXParam 11 "Wet"
+  DisplayLower7    FXParamNameDisplay 11 "Wet"
+  DisplayAddLower7 FXParamValueDisplay 11
+
+  Fader8           FXParam 10 "Dry"
+  DisplayLower8    FXParamNameDisplay 10 "Dry"
+  DisplayAddLower8 FXParamValueDisplay 10
+
+  Rotary1          FXParam 8  "Signal Input"
+  DisplayUpper1    FXParamNameDisplay 8 "Sig Inp"
+  DisplayAddUpper1 FXParamValueDisplay 8
+
+  Rotary2          FXParam 6  "Lowpass"
+  DisplayUpper2    FXParamNameDisplay 6 "Lowpass"
+  DisplayAddUpper2 FXParamValueDisplay 6
+
+  Rotary3          FXParam 7  "Hipass"
+  DisplayUpper3    FXParamNameDisplay 7 "Hipass"
+  DisplayAddUpper3 FXParamValueDisplay 7
+
+  Rotary4          FXParam 13 "RMS size"
+  DisplayUpper4    FXParamNameDisplay 13 "RMS size"
+  DisplayAddUpper4 FXParamValueDisplay 13
+
+  Rotary5          FXParam 18 "Limit output"
+  DisplayUpper5    FXParamNameDisplay 18 "Limit"
+  DisplayAddUpper5 FXParamValueDisplay 18
+
+/ This is not working. 17 needs some attention 2 options for the same setting
+  RotaryPush1   FXParam 16 "Auto Release"    [ 0.0 1.0 ]
+  RotaryPush2   FXParam 17 "Classic Attack"  [ 0.0 0.25 0.5 0.75 1.0 ]
+  RotaryPush3   FXParam 12 "Pre Filter"      [ 0.0 1.0 ]
+  RotaryPush4   FXParam 15 "Auto Makeup"     [ 0.0 1.0 ]
+
+/ Rest all the other stuff
+  Rotary5        NoAction
+  Rotary6        NoAction
+  Rotary7        NoAction
+  Rotary8        NoAction
+ZoneEnd
+

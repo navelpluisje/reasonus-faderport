@@ -1,0 +1,20 @@
+Zone "VST: AIR Dynamic Delay (AIR Music Technology)"
+
+	SelectedTrackNavigator
+
+	Rotary1			FXParam 0 "Feedback Mode"
+	RotaryPush1		FXParam 1 "Sync" [ 0 1 ]
+	Fader1			FXParam 2 "Delay"
+	Fader2			FXParam 3 "Feedback"
+	Rotary2			FXParam 4 "L/R Ratio"
+	Rotary3			FXParam 5 "Stereo Width"
+	Fader3			FXParam 6 "Low Cut"
+	Fader4			FXParam 7 "High Cut"
+	Rotary5			FXParam 8 "Env Mod: Feedback"
+	Rotary6			FXParam 9 "Env Mod: Mix"
+	Rotary4			FXParam 10 "Env Mod Rate"
+	Fader5			NoAction
+	Fader6			NoAction
+	Fader7			NoAction
+	Fader8			FXParam 11 "Mix"
+ZoneEnd

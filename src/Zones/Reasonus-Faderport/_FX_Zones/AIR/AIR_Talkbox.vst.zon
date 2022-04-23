@@ -1,0 +1,22 @@
+Zone "VST: AIR Talkbox (AIR Music Technology)"
+
+	SelectedTrackNavigator
+
+	Fader1			FXParam 0 "Vowel"
+	Fader2			FXParam 1 "Formant"
+	RotaryPush1		FXParam 2 "LFO Sync"  [ 0 1 ]
+	Rotary1			FXParam 3 "LFO Rate"
+	Rotary2			FXParam 4 "LFO Wave"
+	Fader3			FXParam 5 "LFO Depth"
+	Rotary3			FXParam 5 "LFO Depth"
+	Rotary4			FXParam 6 "Env Threshold"
+	Rotary5			FXParam 7 "Env Attack"
+	Rotary6			FXParam 8 "Env Release"
+	Fader4			FXParam 9 "Env Depth"
+	Fader8			FXParam 10 "Mix"
+	
+	Fader5			NoAction
+	Fader6			NoAction
+	Fader7			NoAction
+
+ZoneEnd

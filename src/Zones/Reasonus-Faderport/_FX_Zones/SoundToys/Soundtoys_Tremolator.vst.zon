@@ -1,0 +1,21 @@
+Zone "VST: Tremolator (Soundtoys)"
+
+	SelectedTrackNavigator
+
+	RotaryPush8			FXParam 0 "Bypass"  [ 0.0 1.0 ]
+	Rotary7				FXParam 1 "InputGain"
+	Rotary8				FXParam 2 "OutputGain"
+	Fader1				FXParam 4 "Depth"
+	Fader2				FXParam 5 "Groove"
+	Fader4				FXParam 6 "Accent"
+	Fader5				FXParam 7 "Width"
+	Fader3				FXParam 14 "Feel"
+	Fader7				NoAction
+	Rotary4				FXParam 8 "RateMod"
+	Rotary5				FXParam 9 "DepthMod"
+	Rotary1				FXParam 10 "Threshold"
+	Rotary2				FXParam 11 "Attack"
+	Rotary3				FXParam 12 "Release"
+	
+	
+ZoneEnd

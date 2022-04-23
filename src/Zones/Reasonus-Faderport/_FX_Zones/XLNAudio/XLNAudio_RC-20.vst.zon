@@ -1,0 +1,63 @@
+Zone "VST: RC-20 Retro Color (XLN Audio)"
+
+	SelectedTrackNavigator
+	Option Shift
+	Rotary8			FXParam 0 "Magnitude"
+	Fader1			FXParam 1 "NOIS Amount"
+	Fader2			FXParam 2 "WOBB Amount"
+	Fader3			FXParam 3 "DIST Amount"
+	Fader4			FXParam 4 "DIGI Amount"
+	Fader5			FXParam 5 "SPAC Amount"
+	Fader6			FXParam 6 "MAGN Amount"
+	RotaryPush1		FXParam 7 "NOIS Enable" [ 0 1 ]
+	Rotary1 		FXParam 8 "NOIS Type"
+	FXParam 9 "NOIS Tone"
+	FXParam 10 "NOIS Follow"
+	FXParam 11 "NOIS Routing"
+	FXParam 12 "NOIS Duck"
+	Shift+Rotary1 	FXParam 13 "NOIS Flux"
+	RotaryPush2		FXParam 14 "WOBB Enable" [ 0 1 ]
+	Rotary2 		FXParam 15 "WOBB W<>F Balance"
+	FXParam 16 "WOBB Wow Rate"
+	FXParam 17 "WOBB Wow Stereo Mode"
+	FXParam 18 "WOBB Flutter Rate"
+	FXParam 19 "WOBB Mix"
+	Shift+Rotary2 	FXParam 20 "WOBB Flux"
+	RotaryPush3		FXParam 21 "DIST Enable" [ 0 1 ]
+	Rotary3 		FXParam 22 "DIST Type"
+	FXParam 23 "DIST Filter Lo"
+	FXParam 24 "DIST Filter Hi"
+	FXParam 25 "DIST Mix"
+	Shift+Rotary3 	FXParam 26 "DIST Flux"
+	RotaryPush4		FXParam 27 "DIGI Enable" [ 0 1 ]
+	Rotary4 		FXParam 28 "DIGI R<>B Balance"
+	FXParam 29 "DIGI Filter Lo"
+	FXParam 30 "DIGI Filter Hi"
+	FXParam 31 "DIGI Filter Mode"
+	FXParam 32 "DIGI Smooth"
+	FXParam 33 "DIGI Mix"
+	Shift+Rotary4 	FXParam 34 "DIGI Flux"
+	RotaryPush5		FXParam 35 "SPAC Enable" [ 0 1 ]
+	Rotary5 		FXParam 36 "SPAC Decay"
+	FXParam 37 "SPAC Filter Lo"
+	FXParam 38 "SPAC Filter Hi"
+	FXParam 39 "SPAC PreDelay"
+	FXParam 40 "SPAC Stereo Mode"
+	Shift+Rotary5 	FXParam 41 "SPAC Flux"
+	RotaryPush6		FXParam 42 "MAGN Enable" [ 0 1 ]
+	Rotary6			FXParam 43 "MAGN W<>F Balance"
+	FXParam 44 "MAGN Wear Stereo Mode"
+	FXParam 45 "MAGN Flutter Rate"
+	FXParam 46 "MAGN Dropouts"
+	Shift+Rotary6 	FXParam 47 "MAGN Flux"
+	FXParam 48 "MAST In Gain"
+	RotaryPush7 	FXParam 49 "MAST EQ Enable" [ 0 1 ]
+	Fader7		FXParam 50 "MAST EQ Cut Lo"
+	Fader8		FXParam 51 "MAST EQ Cut Hi"
+	FXParam 52 "MAST EQ Cut Lo Mode"
+	FXParam 53 "MAST EQ Cut Hi Mode"
+	Rotary7 	FXParam 54 "MAST EQ Tone"
+	FXParam 55 "MAST EQ Tone Mode"
+	FXParam 56 "MAST Out Width"
+	FXParam 57 "MAST Out Gain"
+ZoneEnd

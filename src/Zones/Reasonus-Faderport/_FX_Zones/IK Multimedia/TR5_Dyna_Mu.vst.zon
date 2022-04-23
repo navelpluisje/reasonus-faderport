@@ -1,0 +1,26 @@
+Zone "VST: TR5 Dyna-Mu (IK Multimedia)"
+
+	SelectedTrackNavigator
+
+	Rotary1		FXParam 0 "Input L"
+	Rotary2		FXParam 1 "Input R"
+	Fader1		FXParam 2 "Threshold L"
+	Fader2		FXParam 3 "Threshold R"
+	Fader3		FXParam 4 "Attack L"
+	Fader4		FXParam 5 "Attack R"
+	Fader5		FXParam 6 "Release L"
+	Fader6		FXParam 7 "Release R"
+	Rotary7		FXParam 8 "Output L"
+	Rotary8		FXParam 9 "Output R"
+	RotaryPush3	FXParam 10 "Hard L" [ 0 1 ]
+	Rotary3	FXParam 10 "Hard L"
+	RotaryPush3	FXParam 11 "Hard R" [ 0 1 ]
+	Rotary3	FXParam 11 "Hard R"
+	RotaryPush4	FXParam 12 "HP Side Ch L" [ 0 1 ]
+	Rotary4	FXParam 12 "HP Side Ch L"
+	RotaryPush4	FXParam 13 "HP Side Ch R" [ 0 1 ]
+	Rotary4	FXParam 12 "HP Side Ch L"
+	Fader7		NoAction
+	Fader8		NoAction
+
+ZoneEnd

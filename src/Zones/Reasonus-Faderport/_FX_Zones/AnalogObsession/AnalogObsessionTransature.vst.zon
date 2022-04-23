@@ -1,0 +1,49 @@
+Zone "VST: TRANSATURE (AnalogObsession)" TRANSATURE
+  SelectedTrackNavigator
+  DisplayZone1     FixedTextDisplay "Effect"
+  DisplayEffect1   FixedTextDisplay "TRANSATURE"
+
+  Rotary1             FXParam 0  "Input"
+  DisplayUpper1       FXParamNameDisplay 0 "Input"
+  DisplayAddUpper1    FXParamValueDisplay 0
+
+  RotaryPush2         FXParam 2  "Mode"  [ 0.0 0.33 0.66 1.0 ]
+  DisplayLower2       FXParamNameDisplay 2 "#Mode"
+  DisplayAddLower2    FXParamValueDisplay 2
+
+  Rotary3             FXParam 1  "Output"
+  DisplayUpper3       FXParamNameDisplay 1 "Output"
+  DisplayAddUpper3    FXParamValueDisplay 1
+
+  RotaryPush4         FXParam 3  "Oversampling" [ 0.0 1.0 ]
+  DisplayLower4       FXParamNameDisplay 3 "#Oversampling"
+  DisplayAddLower4    FXParamValueDisplay 3
+
+  RotaryPush5         FXParam 4  "ByPass" [ 0.0 1.0 ]
+  DisplayLower5       FXParamNameDisplay 4 "#Bypass"
+  DisplayAddLower5    FXParamValueDisplay 4
+
+  DisplayLower1       NoAction
+  DisplayAddLower1    NoAction
+  DisplayLower3       NoAction
+  DisplayAddLower3    NoAction
+  DisplayLower6       NoAction
+  DisplayAddLower6    NoAction
+  DisplayLower7       NoAction
+  DisplayAddLower7    NoAction
+  DisplayLower8       NoAction
+  DisplayAddLower8    NoAction
+  DisplayUpper2       NoAction
+  DisplayAddUpper2    NoAction
+  DisplayUpper4       NoAction
+  DisplayAddUpper4    NoAction
+  DisplayUpper5       NoAction
+  DisplayAddUpper5    NoAction
+  DisplayUpper6       NoAction
+  DisplayAddUpper6    NoAction
+  DisplayUpper7       NoAction
+  DisplayAddUpper7    NoAction
+  DisplayUpper8       NoAction
+  DisplayAddUpper8    NoAction
+
+ZoneEnd
