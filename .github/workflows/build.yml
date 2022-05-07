@@ -14,7 +14,9 @@ permissions:
 jobs:
   build:
     if: startsWith(github.ref, 'refs/tags/')
-    name: Build (${{ matrix.os }} - ${{ matrix.arch }})
+    runs-on: ubuntu-latest
+    name: Build ReaSonus FaderPort
+    build
     steps:
       - name: Release
         uses: softprops/action-gh-release@v1
