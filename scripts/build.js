@@ -10,15 +10,15 @@ if (!process.env.REAPER_PATH) {
   throw new Error('REAPER_PATH has not been set');
 }
 
+if (args._.includes('help')) {
+  console.log('HELPPPPP');
+  process.exit(0);
+}
+
 console.clear()
 if (!process.env.ALWAYS_ON_ACTION) {
   console.log(chalk.red('ALWAYS_ON_ACTION is not set.'));
   console.log('The action id will not be replaced and may result in a not proper working FaderPort while developing \n\n\n');
-}
-
-if (args._.includes('help')) {
-  console.log('HELPPPPP');
-  return;
 }
 
 if (args._.includes('watch')) {
@@ -58,5 +58,4 @@ if (args._.includes('watch')) {
       }
     },
   );
-  return;
 }
