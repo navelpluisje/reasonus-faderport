@@ -20,6 +20,13 @@ body {
   font-size: 1.125rem;
 }
 
+blockquote {
+  background-color: var(--secondary-color);
+  border-left: .5rem solid var(--primary-color);
+  padding: 1rem 1rem 1rem 2rem;
+  margin: 1rem;
+}
+
 .home {
   display: grid;
   grid-template-rows: auto repeat(6, 1fr);
