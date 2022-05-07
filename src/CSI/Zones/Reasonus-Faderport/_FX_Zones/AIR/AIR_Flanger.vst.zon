@@ -6,7 +6,7 @@ Zone "VST: AIR Flanger (AIR Music Technology)"
 	Fader1				FXParam 2 "Rate"
 	Fader2				FXParam 4 "Pre Delay"
 
-	Fader3				FXParam 3 "Depth"
+	Fader3				FXParam 3 "Depth"  
 	Fader4				FXParam 8 "LFO Wave"
 	Select2			FXParam 0 "Retrigger" [ 0 1 ]
 
