@@ -1,3 +1,14 @@
+//------------------------------------------------------------------------------
+// File:    FP8_FX.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    MCU style Effects control. Every channel shows one of the 
+//    effects or instruments of the current selected track
+//------------------------------------------------------------------------------
+
+
 Zone "SelectedTrackFXMenu"
   SelectedTrackFXMenuNavigator
 
@@ -20,7 +31,7 @@ Zone "SelectedTrackFXMenu"
   Track               NoAction
   Track               GoZone "Home"
 
-  Plugin              Reaper _RS5369b089f30b0d75989909cddc75a4406f2a50a3    // Dummy Action
+  Plugin              Reaper %dummyAction%    // Dummy Action
   Plugin              GoZone "Home"
   Plugin              MapTrackFXMenusSlotToWidgets
 

@@ -1,9 +1,9 @@
 Zone "VST: Radiator (Soundtoys)"
 
 	SelectedTrackNavigator
-	RotaryPush1			FXParam 7 "Noise" [ 0.0 1.0 ]
-	RotaryPush2			FXParam 6 "MicLine" [ 0.0 1.0 ]
-	RotaryPush8			FXParam 0 "Bypass" [ 0.0 1.0 ]
+	Select1			FXParam 7 "Noise" [ 0.0 1.0 ]
+	Select2			FXParam 6 "MicLine" [ 0.0 1.0 ]
+	Select8			FXParam 0 "Bypass" [ 0.0 1.0 ]
 	Fader1				FXParam 1 "Bass"
 	Fader2				FXParam 2 "Treble"
 	Fader3 				NoAction

@@ -1,3 +1,13 @@
+//------------------------------------------------------------------------------
+// File:    FP8_Navigators.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    Navigators with Shift handle the functions
+//    Navigators with Option handle the screensets
+//------------------------------------------------------------------------------
+
 Zone Navigators
     Channel             NoAction
     Channel             GoZone "Navigators"
@@ -40,13 +50,13 @@ Zone Navigators
     Shift+Section       Reaper 40378    // View: Show big clock window
     Shift+Marker        Reaper 41074    // Toggle show all floating windows
 
-    Option+Channel       Reaper 40454    // Screenset: Load window set #01
-    Option+Zoom          Reaper 40455    // Screenset: Load window set #02
-    Option+Scroll        Reaper 40456    // Screenset: Load window set #03
-    Option+Bank          Reaper 40457    // Screenset: Load window set #04
-    Option+Master        Reaper 40458    // Screenset: Load window set #05
-    Option+Click         Reaper 40459    // Screenset: Load window set #06
-    Option+Section       Reaper 40460    // Screenset: Load window set #07
-    Option+Marker        Reaper 40461    // Screenset: Load window set #08
+    Option+Channel      Reaper 40454    // Screenset: Load window set #01
+    Option+Zoom         Reaper 40455    // Screenset: Load window set #02
+    Option+Scroll       Reaper 40456    // Screenset: Load window set #03
+    Option+Bank         Reaper 40457    // Screenset: Load window set #04
+    Option+Master       Reaper 40458    // Screenset: Load window set #05
+    Option+Click        Reaper 40459    // Screenset: Load window set #06
+    Option+Section      Reaper 40460    // Screenset: Load window set #07
+    Option+Marker       Reaper 40461    // Screenset: Load window set #08
 
 ZoneEnd

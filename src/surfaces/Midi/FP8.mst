@@ -153,7 +153,7 @@ Widget Prev
 WidgetEnd
 
 Widget RotaryBigPush
-  Press 90 53 7f
+  Press 90 53 7f 90 53 00
 WidgetEnd
 
 Widget RotaryBig

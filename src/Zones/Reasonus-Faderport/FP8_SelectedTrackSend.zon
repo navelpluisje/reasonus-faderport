@@ -1,3 +1,12 @@
+//------------------------------------------------------------------------------
+// File:    FP8_SelectedTrackSend.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    MCU styled send handling for the selectred track
+//------------------------------------------------------------------------------
+
 Zone "SelectedTrackSend"
   SelectedTrackSendNavigator
   
@@ -30,7 +39,7 @@ Zone "SelectedTrackSend"
   Plugin              MapSelectedTrackFXToMenu
   Shift+Plugin        MapTrackFXMenusSlotToWidgets
 
-  Send                Reaper _RS5369b089f30b0d75989909cddc75a4406f2a50a3    // Dummy Action
+  Send                Reaper %dummyAction%    // Dummy Action
   Send                GoZone "Home"
   Send                MapTrackSendsSlotToWidgets
 

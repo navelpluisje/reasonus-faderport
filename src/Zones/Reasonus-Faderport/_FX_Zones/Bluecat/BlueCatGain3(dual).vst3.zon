@@ -1,9 +1,9 @@
 Zone "VST3: Blue Cat's Gain 3 (Dual) (Blue Cat Audio)" "BlueCat Gain Dual"
   SelectedTrackNavigator
-  RotaryPush1 FXParam 0 "On/Off" [ 0.0 1.0 ]
-  Rotary1     FXParam 2 "Gain L"
-  Rotary2     FXParam 3 "Gain R"
-  RotaryPush2 FXParam 1 "Stereo Mode" [ 0.0 1.0 ]
+  Select1 FXParam 0 "On/Off" [ 0.0 1.0 ]
+  Fader1     FXParam 2 "Gain L"
+  Fader2     FXParam 3 "Gain R"
+  Select2 FXParam 1 "Stereo Mode" [ 0.0 1.0 ]
 
 / Reset all the others, so the faders will go down
 	Fader1 NoAction 
@@ -14,10 +14,10 @@ Zone "VST3: Blue Cat's Gain 3 (Dual) (Blue Cat Audio)" "BlueCat Gain Dual"
 	Fader6 NoAction 
 	Fader7 NoAction 
 	Fader8 NoAction 
-	Rotary3 NoAction
-	Rotary4 NoAction
-	Rotary5 NoAction
-	Rotary6 NoAction
-	Rotary7 NoAction
-	Rotary8 NoAction
+	Fader3 NoAction
+	Fader4 NoAction
+	Fader5 NoAction
+	Fader6 NoAction
+	Fader7 NoAction
+	Fader8 NoAction
 ZoneEnd

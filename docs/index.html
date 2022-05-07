@@ -49,8 +49,36 @@
     </section>
     <h1>Welcome to ReaSonus</h1>
     <h1>Installation</h1>
-    <h2>Here we go</h2>
-    <h2>Install Actions</h2>
+    <section class="doc-row">
+      <p>There is an installer to install ReaSonus on your computer. The installer installs the next:</p>
+      <pre>sudo spctl --master-disable</pre>
+      <ul>
+        <li><span class="strong">CSI:</span> ReaSonus has CSI bundeled to be sure everything will work together</li>
+        <li><span class="strong">Actions</span> To make ReaSonus work well with the FaderPort, an action get installed.
+        </li>
+        <li><span class="strong">Zones &amp; Surface files: </span>All the files needed to get started will be
+          installed. During installation the correct action ID will set (Remember, the one installed in teh previous
+          step)</li>
+      </ul>
+    </section>
+    <h2>Get the installer</h2>
+    <section class="doc-row">
+      <p>The installer can be downloaded here: </p>
+      <p>Install the installer just as any other application. Reasonus can also be used to change the actions of the
+        function keys.</p>
+    </section>
+    <h2>Install</h2>
+    <section class="doc-row">
+      <p>Open the ReaSonus installer to start the installation. When this is the first time you open the application,
+        the next screen appears:</p>
+      <p>
+        <img src="assets/shift-arm.png" class="large" alt="">
+      </p>
+      <p>You first need to select the place</p>
+
+    </section>
+    <h3>Install</h3>
+
     <section class="doc-row">
       <ol>
         <li>Move the actions from ReaSonus to the correct folder</li>
@@ -129,11 +157,15 @@
             channel. Push to set the pan position back to center.
           </li>
           <li>
-            <span class="strong">Select Button:</span> This button selects the corresponding channel in
-            Studio
-            One and changes color to match the channel color codes you have chosen in your session. Holding
-            the
-            Shift button allows you to select multiple channels.
+            <span class="strong">Select Button:</span>
+            <ul>
+              <li><span class="strong">Default:</span> Unique-select the channel. Other channels will be de-selected
+              </li>
+              <li><span class="strong">Left Shift:</span> Select the channel. All previous selected channels will also
+                stay selected</li>
+              <li><span class="strong">Right Shift:</span> Selects the range of channels between the previous selected
+                channel and the current selected channel</li>
+            </ul>
           </li>
           <li>
             <span class="strong">Solo:</span> Isolates the corresponding channel’s output signal in the mix.
@@ -231,16 +263,22 @@
 
     <!-- CHANNE NAVIGATOR -->
     <section class="doc-row">
-      <h4>Channel Navigator</h4>
-      <ul>
-        <li>
-          <span class="strong">Encoder</span> controls individual channel scrolling.
-        </li>
-        <li>
-          <span class="strong">Navigation buttons</span> adjust the currently visible fader bank on the
-          FaderPort by one bank of eight or sixteen channels (model dependent).
-        </li>
-      </ul>
+      <img src="assets/navigation.png" class="large" />
+      <div>
+        <h4>Channel Navigator</h4>
+        <ul>
+          <li>
+            <span class="strong">Encoder</span> controls individual channel scrolling.
+          </li>
+          <li>
+            <span class="strong">[Left Shift] + Encoder</span> Adds the tracks to the selection.
+          </li>
+          <li>
+            <span class="strong">Navigation buttons</span> adjust the currently visible fader bank on the
+            FaderPort by one bank of eight or sixteen channels (model dependent).
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- MASTER NAVIGATOR -->
@@ -270,16 +308,16 @@
           <span class="strong">Next:</span> Zoom in horizontal
         </li>
         <li>
-          <span class="strong">[Left shift] + Prev:</span> Zoom out vertical
+          <span class="strong">[Left Shift] + Prev:</span> Zoom out vertical
         </li>
         <li>
-          <span class="strong">[Left shift] + Next:</span> Zoom in vertical
+          <span class="strong">[Left Shift] + Next:</span> Zoom in vertical
         </li>
         <li>
           <span class="strong">Encoder:</span> Zoom in/out horizontal
         </li>
         <li>
-          <span class="strong">[Left shift] + Encoder:</span> Zoom in/out vertical
+          <span class="strong">[Left Shift] + Encoder:</span> Zoom in/out vertical
         </li>
         <li>
           <span class="strong">Encoder push:</span> Toggle zoom to minimum track height
@@ -305,28 +343,36 @@
           <span class="strong">Encoder push:</span> Set the metronome speed to the original speed
         </li>
         <li>
+          <span class="strong">[Left Shift] + Encoder push:</span> Show the metronome settings pane
+        </li>
+        <li>
           <span class="strong">Encoder:</span> Set the volume of the metronome
         </li>
       </ul>
 
     </section>
 
-    <!-- Needs attention -->
     <!-- SCROLL NAVIGATOR -->
     <section class="doc-row">
       <h4>Scroll Navigator</h4>
       <ul>
         <li>
-          <span class="strong">Prev:</span> Go to previou Track
+          <span class="strong">Prev:</span> Select the previous Track
         </li>
         <li>
-          <span class="strong">Next:</span> Go to next Track
+          <span class="strong">Next:</span> Select the next Track
         </li>
         <li>
-          <span class="strong">Encoder:</span> Scroll the view up/down
+          <span class="strong">Encoder:</span> Scroll the view vertically
         </li>
         <li>
-          <span class="strong">[Left shift] + Encoder:</span> Scroll the view left/right
+          <span class="strong">[Left Shift] + Encoder:</span> Scroll the view horizontally
+        </li>
+        <li>
+          <span class="strong">Encoder push:</span> Scroll the view vertically to the selected track
+        </li>
+        <li>
+          <span class="strong">[Left Shift] + Encoder push:</span> Scroll the view horizontally to the play cursor
         </li>
       </ul>
     </section>
@@ -342,34 +388,40 @@
           <span class="strong">Next:</span> Go to/Select the next region or marker
         </li>
         <li>
-          <span class="strong">[Left shift] + Prev:</span> Set start position for a selection
+          <span class="strong">[Left Shift] + Prev:</span> Set start position for a selection
         </li>
         <li>
-          <span class="strong">[Left shift] + Next:</span> Set end positionb for a selection
+          <span class="strong">[Left Shift] + Next:</span> Set end positionb for a selection
         </li>
         <li>
-          <span class="strong">Encoder push:</span> Create and edit a region from the time selection
+          <span class="strong">Encoder push:</span> Edit the region near the cursor
         </li>
         <li>
-          <span class="strong">[Left shift] + Encoder push:</span> Move the cursor to the start of the current
+          <span class="strong">[Left Shift] + Encoder push:</span> Move the cursor to the start of the current
           measurement
         </li>
         <li>
-          <span class="strong">[Right shift] + Encoder push:</span> Delete the region near the cursor
+          <span class="strong">[Hold] + [Left Shift] + Encoder push:</span> Create and edit a region from the time
+          selection
+        </li>
+        <li>
+          <span class="strong">[Right Shift] + Encoder push:</span> Delete the region near the cursor
         </li>
         <li>
           <span class="strong">Encoder:</span> Move the edit cursor 1 beat forward or backward
         </li>
         <li>
-          <span class="strong">[Left shift] + Encoder:</span> Move the edit cursor 1 pixel forward or
+          <span class="strong">[Left Shift] + Encoder:</span> Move the edit cursor 1 pixel forward or
           backward
         </li>
         <li>
-          <span class="strong">[Right shift] + Encoder:</span> Move the edit cursor forward or backward,
+          <span class="strong">[Right Shift] + Encoder:</span> Move the edit cursor forward or backward,
           creating a time selection
         </li>
       </ul>
     </section>
+
+    <!-- BANK NAVIGATOR -->
     <section class="doc-row">
       <h4>Bank Navigator</h4>
       <ul>
@@ -383,10 +435,12 @@
           <span class="strong">Encoder:</span> Go to previous/next bank of one track
         </li>
         <li>
-          <span class="strong">[Left shift] + Encoder:</span> Go to previous/next bank of eight track
+          <span class="strong">[Left Shift] + Encoder:</span> Go to previous/next bank of eight track
         </li>
       </ul>
     </section>
+
+    <!-- MARKER NAVIGATOR -->
     <section class="doc-row">
       <h4>Marker Navigator</h4>
       <ul>
@@ -400,7 +454,7 @@
           <span class="strong">Encoder:</span> Move the edit cursor 1 beat forward or backward
         </li>
         <li>
-          <span class="strong">[Left shift] + Encoder:</span> Move the edit cursor 1 pixel forward or
+          <span class="strong">[Left Shift] + Encoder:</span> Move the edit cursor 1 pixel forward or
           backward
         </li>
         <li>
@@ -411,7 +465,7 @@
           position or edit marker at position
         </li>
         <li>
-          <span class="strong">[Right shift] + Encoder push:</span> Delete the marker near the cursor
+          <span class="strong">[Right Shift] + Encoder push:</span> Delete the marker near the cursor
         </li>
       </ul>
     </section>
@@ -421,6 +475,9 @@
       <div>
         <p>Using [Left Shift] plus any Session Navigator button will access alternate
           functions for your FaderPort. By default, these are assigned as follows:</p>
+        <p>
+          <img src="assets/functions.png" />
+        </p>
         <ul>
           <li><span class="strong">F1:</span> Open or close the Mixer</li>
           <li><span class="strong">F2:</span> Open or close the Media Explorer</li>
@@ -428,7 +485,7 @@
           <li><span class="strong">F4:</span> Open or close the Effects Browser</li>
           <li><span class="strong">F5:</span> Open or close the Regions and Markers window</li>
           <li><span class="strong">F6:</span> Open or close the Project Media browser</li>
-          <li><span class="strong">F7:</span> Open or close the Bog Clock</li>
+          <li><span class="strong">F7:</span> Open or close the Big Clock</li>
           <li><span class="strong">F8:</span> Toggle all floating windows</li>
         </ul>
 
@@ -492,6 +549,8 @@
     <h3>User Functions</h3>
     <section class="doc-row">
       <p>User functions are not yet implemented</p>
+      <p>Current idea is to make another page. This will be the Mixer page. The next page will be an Item Page. If there
+        are any ideas for more, let me know</p>
     </section>
 
     <h2>Fader modes</h2>
@@ -514,21 +573,46 @@
     </section>
     <h3>Edit Plug-ins</h3>
     <section class="doc-row">
-      <p>To control plug-ins in Studio One:</p>
-    </section>
-    <section class="doc-row">
       <img src="assets/edit-plugins.png" alt="" class="large">
-      <p>Press the Edit Plug-ins button to view the inserts for the selected channel.</p>
+      <p>Your FaderPort provides two modes to view and control your channel effects: individually and
+        globally. Pressing the button multiple times will toggle between the two modes. Both ways have a
+        different color for the Select button to make it more clear which way is selected.</p>
     </section>
     <section class="doc-row">
       <img src="assets/select-plugin.png" alt="" class="large">
-      <p>Press the Select button under the scribble strip displaying the name of the plug- in you’d like to edit.
-      </p>
+      <div>
+        <h4>Individual mode</h4>
+        <p>Press the Edit Plugins button once to show the effects menu for the currently selected channel. In this mode
+          the
+          color of the Select buttons is white.</p>
+        <p>Press the Select button under the scribble strip displaying the name of the plug-in you’d like to edit.
+        </p>
+      </div>
     </section>
     <section class="doc-row">
       <div>
-        <p>The faders and Select buttons will control the parameters displayed in the scribble strips.</p>
+        <h4>Globally mode</h4>
+        <p>Press the Edit Plugins button again to control the first effects for all focused channels. In this mode the
+          color of the Select buttons is green.
+        </p>
+        <p>
+          While turning the pan knob now, you can cycle through all available effects until the
+          last active slot has been reached. Press the Edit Effects button again to open the effects menu for the
+          currently selected channel.
+        </p>
+      </div>
+    </section>
+    <section class="doc-row">
+      <div>
+        <h4>Edit Parameters</h4>
+        <p>After pressing the Select button of the effect you want to edit, the faders and Select buttons become the
+          controlls of the selected effect.
+        </p>
         <p><img src="assets/edit-params.png" alt=""></p>
+        <p>
+          Within the display the control name and the value are displayed. When adding your own effects, try to keep it
+          as consistent as possivle. This will only help you makeing working with the FaderPort and effects easier.
+        </p>
       </div>
     </section>
     <h3>Sends Mode</h3>

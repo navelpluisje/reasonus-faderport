@@ -1,3 +1,14 @@
+//------------------------------------------------------------------------------
+// File:    FP8_Automation.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    File contains handling the track and Global Automation functionality
+//    Also Save, Undo and Redo are working
+//    User Actions are not yet implemented
+//------------------------------------------------------------------------------
+
 Zone "Automation"
   SelectedTrackNavigator
 

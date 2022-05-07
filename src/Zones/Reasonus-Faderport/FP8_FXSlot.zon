@@ -1,3 +1,13 @@
+//------------------------------------------------------------------------------
+// File:    FP8_FXSlot.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    EUCon style Effects control. Every channel shows the effect of the track it is displayed on
+//    Use the pan knob to walk through all the effects of the tracks
+//------------------------------------------------------------------------------
+
 Zone "TrackFXMenuSlot"
   TrackFXMenuSlotNavigator
 
@@ -26,7 +36,7 @@ Zone "TrackFXMenuSlot"
   Track               NoAction
   Track               GoZone "Home"
 
-  Plugin              Reaper _RS5369b089f30b0d75989909cddc75a4406f2a50a3    // Dummy Action
+  Plugin              Reaper %dummyAction%    // Dummy Action
   Plugin              GoZone "Home"
   Plugin              MapSelectedTrackFXToMenu
 

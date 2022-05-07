@@ -1,3 +1,12 @@
+//------------------------------------------------------------------------------
+// File:    FP8_NavigatorZoom.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    Zoom Navigation, handle zooming
+//------------------------------------------------------------------------------
+
 Zone NavigatorZoom
 // ===========================================
 // BUTTONS AND SCROLL
@@ -12,7 +21,8 @@ Zone NavigatorZoom
     Shift+ScrollRight   Reaper 40111  // View: Zoom in vertical
 
     RotaryBigPush       Reaper 40110  // View: Toggle track zoom to minimum height
+    RotaryBig           NoAction
 
-    Zoom                Reaper _RS5369b089f30b0d75989909cddc75a4406f2a50a3    // Dummy Action
+    Zoom                Reaper %dummyAction%    // Dummy Action
     Shift+Zoom          Reaper 50124    // Media explorer: Show/hide media explorer
 ZoneEnd

@@ -8,11 +8,11 @@ Zone "VST3: TDR Nova (Tokyo Dawn Labs)"
 	Option Shift
 
 /band 1	
-	RotaryPush1			FXParam 1 "Band 1 Active"	[ 0 1 ]
+	Select1			FXParam 1 "Band 1 Active"	[ 0 1 ]
 	Fader1				FXParam 2 "Band 1 Gain"
-	Shift+Rotary1		FXParam 3 "Band 1 Q"
-	Rotary1				FXParam 4 "Band 1 Frequency"
-	Shift+RotaryPush1	FXParam 5 "Band 1 Type" [ 0 0.5 1 ]
+	Shift+Fader1		FXParam 3 "Band 1 Q"
+	Fader1				FXParam 4 "Band 1 Frequency"
+	Shift+Select1	FXParam 5 "Band 1 Type" [ 0 0.5 1 ]
 	FXParam 6 "Band 1 Dyn"
 	FXParam 7 "Band 1 Threshold"
 	FXParam 8 "Band 1 Ratio"
@@ -21,11 +21,11 @@ Zone "VST3: TDR Nova (Tokyo Dawn Labs)"
 	FXParam 11 "Band 1 Release"
 	
 /band 2	
-	RotaryPush2			FXParam 13 "Band 2 Active" [ 0 1 ]
+	Select2			FXParam 13 "Band 2 Active" [ 0 1 ]
 	Fader2				FXParam 14 "Band 2 Gain"
-	Shift+Rotary2		FXParam 15 "Band 2 Q"
-	Rotary2				FXParam 16 "Band 2 Frequency"
-	Shift+RotaryPush2	FXParam 17 "Band 2 Type"  [ 0 0.5 1 ]
+	Shift+Fader2		FXParam 15 "Band 2 Q"
+	Fader2				FXParam 16 "Band 2 Frequency"
+	Shift+Select2	FXParam 17 "Band 2 Type"  [ 0 0.5 1 ]
 	FXParam 18 "Band 2 Dyn"
 	FXParam 19 "Band 2 Threshold"
 	FXParam 20 "Band 2 Ratio"
@@ -35,11 +35,11 @@ Zone "VST3: TDR Nova (Tokyo Dawn Labs)"
 	
 /band 3	
 	
-	RotaryPush3			FXParam 25 "Band 3 Active" [ 0 1 ]
+	Select3			FXParam 25 "Band 3 Active" [ 0 1 ]
 	Fader3				FXParam 26 "Band 3 Gain"
-	Shift+Rotary3		FXParam 27 "Band 3 Q"
-	Rotary3				FXParam 28 "Band 3 Frequency"
-	Shift+RotaryPush3	FXParam 29 "Band 3 Type"  [ 0 0.5 1 ]
+	Shift+Fader3		FXParam 27 "Band 3 Q"
+	Fader3				FXParam 28 "Band 3 Frequency"
+	Shift+Select3	FXParam 29 "Band 3 Type"  [ 0 0.5 1 ]
 	FXParam 30 "Band 3 Dyn"
 	FXParam 31 "Band 3 Threshold"
 	FXParam 32 "Band 3 Ratio"
@@ -49,11 +49,11 @@ Zone "VST3: TDR Nova (Tokyo Dawn Labs)"
 	
 /band 4	
 	
-	RotaryPush4			FXParam 37 "Band 4 Active" [ 0 1 ]
+	Select4			FXParam 37 "Band 4 Active" [ 0 1 ]
 	Fader4				FXParam 38 "Band 4 Gain"
-	Shift+Rotary4		FXParam 39 "Band 4 Q"
-	Rotary4				FXParam 40 "Band 4 Frequency"
-	Shift+RotaryPush4	FXParam 41 "Band 4 Type"  [ 0 0.5 1 ]
+	Shift+Fader4		FXParam 39 "Band 4 Q"
+	Fader4				FXParam 40 "Band 4 Frequency"
+	Shift+Select4	FXParam 41 "Band 4 Type"  [ 0 0.5 1 ]
 	FXParam 42 "Band 4 Dyn" 
 	FXParam 43 "Band 4 Threshold"
 	FXParam 44 "Band 4 Ratio"
@@ -63,13 +63,13 @@ Zone "VST3: TDR Nova (Tokyo Dawn Labs)"
 	
 /Filters	
 	FXParam 48 "HP Selected"
-	RotaryPush5			FXParam 49 "HP Active" [ 0 1 ]
+	Select5			FXParam 49 "HP Active" [ 0 1 ]
 	Fader5				FXParam 50 "HP Frequency"
-	Rotary5				FXParam 51 "HP Type"
+	Fader5				FXParam 51 "HP Type"
 	FXParam 52 "LP Selected"
-	RotaryPush6			FXParam 53 "LP Active" [ 0 1 ]
+	Select6			FXParam 53 "LP Active" [ 0 1 ]
 	Fader6				FXParam 54 "LP Frequency"
-	Rotary6				FXParam 55 "LP Type"
+	Fader6				FXParam 55 "LP Type"
 	
 /Master	
 	FXParam 56 "Wide Band Gain"
@@ -91,20 +91,20 @@ Zone "VST3: TDR Nova (Tokyo Dawn Labs)"
 	FXParam 72 "Sidechain Mode"
 
 /Selection -- when Freq knob is moved the band is selected and other are unselected
-	Rotary1 			FXParam 0 "Band 1 selected"  [ 1 ]
-	Rotary1 			FXParam 12 "Band 2 selected" [ 0 ]
-	Rotary1 			FXParam 24 "Band 3 selected" [ 0 ]
-	Rotary1 			FXParam 36 "Band 4 selected" [ 0 ]
-	Rotary2 			FXParam 12 "Band 2 selected" [ 1 ]
-	Rotary2 			FXParam 0 "Band 1 selected"  [ 0 ]
-	Rotary2 			FXParam 24 "Band 3 selected" [ 0 ]
-	Rotary2 			FXParam 36 "Band 4 selected" [ 0 ]
-	Rotary3  			FXParam 24 "Band 3 selected" [ 1 ]
-	Rotary3  			FXParam 0 "Band 1 selected"  [ 0 ]
-	Rotary3  			FXParam 12 "Band 2 selected" [ 0 ]
-	Rotary3  			FXParam 36 "Band 4 selected" [ 0 ]
-	Rotary4 			FXParam 36 "Band 4 selected" [ 1 ]
-	Rotary4 			FXParam 0 "Band 1 selected"  [ 0 ]
-	Rotary4 			FXParam 12 "Band 2 selected" [ 0 ]
-	Rotary4 			FXParam 24 "Band 3 selected" [ 0 ]
+	Fader1 			FXParam 0 "Band 1 selected"  [ 1 ]
+	Fader1 			FXParam 12 "Band 2 selected" [ 0 ]
+	Fader1 			FXParam 24 "Band 3 selected" [ 0 ]
+	Fader1 			FXParam 36 "Band 4 selected" [ 0 ]
+	Fader2 			FXParam 12 "Band 2 selected" [ 1 ]
+	Fader2 			FXParam 0 "Band 1 selected"  [ 0 ]
+	Fader2 			FXParam 24 "Band 3 selected" [ 0 ]
+	Fader2 			FXParam 36 "Band 4 selected" [ 0 ]
+	Fader3  			FXParam 24 "Band 3 selected" [ 1 ]
+	Fader3  			FXParam 0 "Band 1 selected"  [ 0 ]
+	Fader3  			FXParam 12 "Band 2 selected" [ 0 ]
+	Fader3  			FXParam 36 "Band 4 selected" [ 0 ]
+	Fader4 			FXParam 36 "Band 4 selected" [ 1 ]
+	Fader4 			FXParam 0 "Band 1 selected"  [ 0 ]
+	Fader4 			FXParam 12 "Band 2 selected" [ 0 ]
+	Fader4 			FXParam 24 "Band 3 selected" [ 0 ]
 ZoneEnd

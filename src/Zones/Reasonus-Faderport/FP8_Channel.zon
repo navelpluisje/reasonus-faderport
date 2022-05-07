@@ -1,3 +1,13 @@
+//------------------------------------------------------------------------------
+// File:    FP8_Channel.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    File contains handling the Channel
+//------------------------------------------------------------------------------
+
+
 Zone "Channel"
   TrackNavigator
 
@@ -14,6 +24,8 @@ Zone "Channel"
   Mute|               TrackMute
   Solo|               TrackSolo
   Select|             TrackUniqueSelect  { 20 20 20 255 255 255 }
+  Shift+Select|       TrackSelect        { 20 20 20 255 255 255 }
+  Option+Select|      TrackSelect        { 20 20 20 255 255 255 }
   Control+Select|     TrackRecordArm     { 20 0 0 255 0 0 }
   Shift+Arm           Reaper 40490       // Track: Arm all tracks for recording
   Option+Arm          Reaper 40491       // Track: Unarm all tracks for recording
@@ -30,7 +42,7 @@ Zone "Channel"
 // ===========================================
 // TRACK NAVIGATION
 // ===========================================
-  Track               Reaper _RS5369b089f30b0d75989909cddc75a4406f2a50a3    // Dummy Action
+  Track               Reaper %dummyAction%    // Dummy Action
   
   Plugin              NoAction
   Plugin              MapSelectedTrackFXToMenu

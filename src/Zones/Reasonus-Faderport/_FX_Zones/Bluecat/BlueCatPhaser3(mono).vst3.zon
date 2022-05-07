@@ -2,15 +2,15 @@ Zone "VST3: Blue Cat's Phaser 3 (Mono) (Blue Cat Audio)" "Blue Cat Phaser"
   SelectedTrackNavigator
   Option Option
 
-  RotaryPush1    FXParam 0 "ByPass" [ 0.0 1.0 ]
-  Rotary1        FXParam 1 "Gain"
-  Rotary2        FXParam 5 "Stages"
-  Rotary3        FXParam 6 "Depth"
-  Rotary4        FXParam 7 "Rate"
-  Rotary6        FXParam 2 "Dry"
-  Rotary7        FXParam 3 "Feed Fwd"
-  Rotary8        FXParam 4 "FeedBack"
-  RotaryPush8    FXParam 8 "Shape"  [ 0.0 1.0 ]
+  Select1    FXParam 0 "ByPass" [ 0.0 1.0 ]
+  Fader1        FXParam 1 "Gain"
+  Fader2        FXParam 5 "Stages"
+  Fader3        FXParam 6 "Depth"
+  Fader4        FXParam 7 "Rate"
+  Fader6        FXParam 2 "Dry"
+  Fader7        FXParam 3 "Feed Fwd"
+  Fader8        FXParam 4 "FeedBack"
+  Select8    FXParam 8 "Shape"  [ 0.0 1.0 ]
 
 / Rest all the other stuff    
   Fader1 NoAction 

@@ -1,5 +1,4 @@
 Zone "VST3: bx_townhouse Buss Compressor (Plugin Alliance)"
-
 	SelectedTrackNavigator
 
 	Fader1			FXParam 4 "Thresh"
@@ -7,8 +6,7 @@ Zone "VST3: bx_townhouse Buss Compressor (Plugin Alliance)"
 	Fader3			FXParam 6 "Attack"
 	Fader4			FXParam 7 "Release"
 	Fader5			FXParam 8 "MakeUp"
-	Rotary1			FXParam 11 "SC Filter"
-	Fader6			NoAction
+	Fader6			FXParam 11 "SC Filter"
 	Fader7			NoAction
 	Fader8			NoAction
 ZoneEnd

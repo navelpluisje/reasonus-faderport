@@ -1,3 +1,14 @@
+//------------------------------------------------------------------------------
+// File:    FP8_TtracksByName.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    Select the channels you want to see by parent name
+//------------------------------------------------------------------------------
+
+
+// TODO: This needs to be configurable
 Zone "TracksByName"
   ScribbleLine1_1     NoAction
   ScribbleLine2_1     FixedTextDisplay "Show only"

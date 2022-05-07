@@ -1,3 +1,12 @@
+//------------------------------------------------------------------------------
+// File:    FP8_Transport.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    Handle your transport buttons
+//------------------------------------------------------------------------------
+
 Zone "Transport"
   Loop              CycleTimeline
   Rewind            Reaper     "40084"  // Transport: Rewind a little bit

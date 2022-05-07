@@ -1,3 +1,12 @@
+//------------------------------------------------------------------------------
+// File:    FP8_SelectedTrackReceive.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    MCU style receive handling of the selected track
+//------------------------------------------------------------------------------
+
 Zone "SelectedTrackReceive"
   SelectedTrackReceiveNavigator
   
@@ -34,7 +43,7 @@ Zone "SelectedTrackReceive"
   Send                    MapSelectedTrackSendsToWidgets
   Shift+Send              MapTrackSendsSlotToWidgets
 
-  Pan                     Reaper _RS5369b089f30b0d75989909cddc75a4406f2a50a3    // Dummy Action
+  Pan                     Reaper %dummyAction%    // Dummy Action
   Pan                     GoZone "Home"
   Pan                     MapTrackReceivesSlotToWidgets
 

@@ -2,15 +2,15 @@ Zone "VST3: Blue Cat's Free Amp (Blue Cat Audio)" "Blue Cat Free Amp"
   SelectedTrackNavigator
   Option Option
 
-  RotaryPush1    FXParam 0 "ByPass" [ 0.0 1.0 ]
-  Rotary1        FXParam 1 "Gain"
-  Rotary2        FXParam 3 "Drive"
-  Rotary3        FXParam 4 "Bass"
-  Rotary4        FXParam 5 "Mid"
-  Rotary5        FXParam 6 "Treble"
-  Rotary6        FXParam 7 "Tone"
-  Rotary7        FXParam 8 "Volume"
-  RotaryPush8    FXParam 2 "Model"  [ 0.0 0.5 1.0 ]
+  Select1    FXParam 0 "ByPass" [ 0.0 1.0 ]
+  Fader1        FXParam 1 "Gain"
+  Fader2        FXParam 3 "Drive"
+  Fader3        FXParam 4 "Bass"
+  Fader4        FXParam 5 "Mid"
+  Fader5        FXParam 6 "Treble"
+  Fader6        FXParam 7 "Tone"
+  Fader7        FXParam 8 "Volume"
+  Select8    FXParam 2 "Model"  [ 0.0 0.5 1.0 ]
 
 / Rest all the other stuff    
   Fader1 NoAction 

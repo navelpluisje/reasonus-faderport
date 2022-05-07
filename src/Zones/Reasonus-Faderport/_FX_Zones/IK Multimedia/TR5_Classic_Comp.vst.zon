@@ -2,10 +2,10 @@ Zone "VST: TR5 Classic Comp (IK Multimedia)"
 
 	SelectedTrackNavigator
 
-	Rotary1			FXParam 0 "Side Chain HPF"
-	Rotary2			FXParam 1 "Attack Time"
-	Rotary3			FXParam 2 "Release Time"
-	Rotary4			FXParam 3 "Stereo Enhancement"
+	Fader1			FXParam 0 "Side Chain HPF"
+	Fader2			FXParam 1 "Attack Time"
+	Fader3			FXParam 2 "Release Time"
+	Fader4			FXParam 3 "Stereo Enhancement"
 	Fader1			FXParam 4 "Ratio"
 	Fader2			FXParam 5 "Input Drive"
 	Fader3			NoAction

@@ -1,5 +1,4 @@
 Zone "VST3: Filterjam (AudioThing)"
-
 	SelectedTrackNavigator
 
 	Fader1			FXParam 0 "Frequency"

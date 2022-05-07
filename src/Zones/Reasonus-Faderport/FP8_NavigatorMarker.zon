@@ -1,3 +1,12 @@
+//------------------------------------------------------------------------------
+// File:    FP8_NavigatorMarker.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    Marker Navigation and management
+//------------------------------------------------------------------------------
+
 Zone NavigatorMarker
 // ===========================================
 // BUTTONS AND SCROLL
@@ -18,6 +27,6 @@ Zone NavigatorMarker
     Option+RotaryBigPush    Reaper 40613              // Markers: Delete marker near cursor
     RotaryBig               NoAction
 
-    Marker                  Reaper _RS5369b089f30b0d75989909cddc75a4406f2a50a3    // Dummy Action
+    Marker                  Reaper %dummyAction%    // Dummy Action
     Shift+Marker            Reaper 41074    // Toggle show all floating windows
 ZoneEnd

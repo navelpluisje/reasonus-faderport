@@ -2,19 +2,19 @@ Zone "VST3: TR5 British Channel (IK Multimedia)"
 
 	SelectedTrackNavigator
 	Option Shift
-	Rotary7			FXParam 6 "HP Freq"
-	RotaryPush7		FXParam 2 "FLT In" [ 0.0 1.0 ]
-	Rotary8			FXParam 7 "LP Freq"
-	Rotary1			FXParam 16 "LF Gain"
-	Shift+Rotary1	FXParam 17 "LF Freq"
-	Rotary2			FXParam 13 "LMF Gain"
-	Rotary3			FXParam 14 "LMF Freq"
-	Shift+Rotary3	FXParam 15 "LMF Q
-	Rotary4			FXParam 10 "HMF Gain"
-	Rotary5			FXParam 11 "HMF Freq"
-	Shift+Rotary5	FXParam 12 "HMF Q"
-	Rotary6			FXParam 8 "HF Gain"
-	Shift+Rotary6	FXParam 9 "HF Freq"
+	Fader7			FXParam 6 "HP Freq"
+	Select7		FXParam 2 "FLT In" [ 0.0 1.0 ]
+	Fader8			FXParam 7 "LP Freq"
+	Fader1			FXParam 16 "LF Gain"
+	Shift+Fader1	FXParam 17 "LF Freq"
+	Fader2			FXParam 13 "LMF Gain"
+	Fader3			FXParam 14 "LMF Freq"
+	Shift+Fader3	FXParam 15 "LMF Q
+	Fader4			FXParam 10 "HMF Gain"
+	Fader5			FXParam 11 "HMF Freq"
+	Shift+Fader5	FXParam 12 "HMF Q"
+	Fader6			FXParam 8 "HF Gain"
+	Shift+Fader6	FXParam 9 "HF Freq"
 	
 	Fader7			FXParam 21 "In Gain"
 	Fader8			FXParam 22 "Out Gain"

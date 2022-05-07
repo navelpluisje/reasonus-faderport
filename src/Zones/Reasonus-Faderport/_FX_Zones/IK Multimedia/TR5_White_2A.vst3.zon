@@ -4,7 +4,7 @@ Zone "VST3: TR5 White 2A (IK Multimedia)"
 
 	Fader1			FXParam 0 "Gain"
 	Fader2			FXParam 1 "Peak Reduction"
-	RotaryPush1		FXParam 2 "Limit / Compress" [ 0 1 ]
+	Select1		FXParam 2 "Limit / Compress" [ 0 1 ]
 	Fader3			NoAction
 	Fader4			NoAction
 	Fader5			NoAction

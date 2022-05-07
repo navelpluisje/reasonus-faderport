@@ -7,8 +7,8 @@ Zone "VST: AIR Ensemble (AIR Music Technology)"
 	Fader3			FXParam 2 "Modulation Delay"
 	Fader4			FXParam 3 "Modulation Shimmer"
 	Fader5			FXParam 4 "Stereo Width"
-	Fader8			FXParam 5 "Mix"
 	Fader6			NoAction
 	Fader7			NoAction
+	Fader8			FXParam 5 "Mix"
 	
 ZoneEnd
