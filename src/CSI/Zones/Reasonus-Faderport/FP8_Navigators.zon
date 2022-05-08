@@ -41,15 +41,29 @@ Zone Navigators
     Marker              GoZone "Navigators"
     Marker              GoZone "NavigatorMarker"
 
+// ===========================================
+// FUNCTION KEYS
+// ===========================================
+// Function-Action-1 
     Shift+Channel       Reaper 40078    // View: Toggle mixer visible
+// Function-Action-2 
     Shift+Zoom          Reaper 50124    // Media explorer: Show/hide media explorer
+// Function-Action-3 
     Shift+Scroll        Reaper 40251    // View: Show routing matrix window
+// Function-Action-4 
     Shift+Bank          Reaper 40271    // View: Show FX browser window
+// Function-Action-5 
     Shift+Master        Reaper 40326    // View: Show region/marker manager window
+// Function-Action-6 
     Shift+Click         Reaper 41157    // View: Show project bay window
+// Function-Action-7 
     Shift+Section       Reaper 40378    // View: Show big clock window
+// Function-Action-8 
     Shift+Marker        Reaper 41074    // Toggle show all floating windows
 
+// ===========================================
+// SCREENSETS
+// ===========================================
     Option+Channel      Reaper 40454    // Screenset: Load window set #01
     Option+Zoom         Reaper 40455    // Screenset: Load window set #02
     Option+Scroll       Reaper 40456    // Screenset: Load window set #03
