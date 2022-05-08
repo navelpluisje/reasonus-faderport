@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "./scripts/build.mjs dev",
-    "build": "./scripts/build.mjs",
+    "build": "./scripts/build.mjs build",
     "watch": "./scripts/build.mjs watch"
   },
   "repository": {
@@ -25,6 +25,8 @@
   "homepage": "https://navelpluisje.github.io/reapinger-bcf2000/",
   "devDependencies": {
     "chalk": "^4.1.0",
-    "dotenv": "^8.2.0"
+    "dotenv": "^8.2.0",
+    "fs-extra": "^10.1.0",
+    "zip-a-folder": "^1.1.3"
   }
 }
