@@ -5,6 +5,8 @@
   --alternate-color: #00ADA4;
   --secondary-color: rgb(192, 201, 227);
   --tertiary-color: hsl(225, 38%, 90%);
+  --reaperblog-primary: #F82C98;
+  --reaperblog-secondary: #510F4F;
 }
 
 body {
@@ -20,11 +22,41 @@ body {
   font-size: 1.125rem;
 }
 
+a[target="_blank"]::after {
+  background-image: url('assets/external-link.svg');
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: '';
+  display: inline-block;
+  height: 1rem;
+  margin-left: .25rem;
+  width: 1rem;
+}
+
+img {
+  border-radius: .5rem;
+}
+
 blockquote {
   background-color: var(--secondary-color);
   border-left: .5rem solid var(--primary-color);
   padding: 1rem 1rem 1rem 2rem;
   margin: 1rem;
+}
+
+blockquote.reaperblog {
+  background-color: var(--reaperblog-secondary);
+  border-color: var(--reaperblog-primary);
+  color: var(--alternate-text);
+}
+
+blockquote.reaperblog a[target="_blank"]::after {
+  background-image: url('assets/external-link-white.svg');
+}
+
+
+blockquote.reaperblog>* {
+  color: var(--alternate-text);
 }
 
 .home {
@@ -102,11 +134,11 @@ h1 {
   counter-reset: h2counter;
   position: sticky;
   top: 0;
+  z-index: 1;
 }
 
 h1::before {
   content: counter(h1counter) "\0000a0\0000a0";
-  display: inline-block;
   font-weight: 400;
   transform: translateX(-5rem);
   position: absolute;
@@ -115,13 +147,14 @@ h1::before {
 h2 {
   background-color: var(--alternate-color);
   color: var(--alternate-text);
-  counter-increment: h2counter;
   counter-reset: h3counter;
+  counter-increment: h2counter;
   font-size: 1.5rem;
   padding: .125rem 1rem .125rem 6rem;
   margin: .5rem 0;
   position: sticky;
   top: 3.75rem;
+  z-index: 1;
 }
 
 h2::before {
@@ -142,6 +175,7 @@ h3 {
   margin: .5rem 0;
   position: sticky;
   top: 3.75rem;
+  z-index: 1;
 }
 
 h3::before {
