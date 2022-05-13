@@ -1,0 +1,80 @@
+[
+  {
+    "actionId": "REASONUS_ALWAYS_ON",
+    "displayName": "Always On",
+    "fileName": "always-on.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_ALL_TRACKS",
+    "displayName": "Show All Tracks",
+    "fileName": "showAllTracks.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_BASS_TRACKS",
+    "displayName": "Show All Bass Tracks",
+    "fileName": "showTracksByBass.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_BRASS_TRACKS",
+    "displayName": "Show All Brass Tracks",
+    "fileName": "showTracksByBrass.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_DRUMS_TRACKS",
+    "displayName": "Show All Drum Tracks",
+    "fileName": "showTracksByDrums.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_GUITAR_TRACKS",
+    "displayName": "Show All Guitar Tracks",
+    "fileName": "showTracksByGuitar.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_KEYS_TRACKS",
+    "displayName": "Show All Keys Tracks",
+    "fileName": "showTracksByKeys.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_PIANO_TRACKS",
+    "displayName": "Show All Piano Tracks",
+    "fileName": "showTracksByPiano.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_STRINGS_TRACKS",
+    "displayName": "Show All String Tracks",
+    "fileName": "showTracksByStrings.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_VOCAL_TRACKS",
+    "displayName": "Show All Vocal Tracks",
+    "fileName": "showTracksByVocals.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_TOP_LEVEL_TRACKS",
+    "displayName": "Show All Top Level Tracks",
+    "fileName": "showAllParentsTracks.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_REAPER_RESOURCE_PATH",
+    "displayName": "Get Reaper Resource Path",
+    "fileName": "getReaperResourcePath.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_TRACKS_BY_NAME",
+    "displayName": "Show Tracks By Name",
+    "fileName": "showTracksByName.lua",
+    "register": false
+  }
+]
