@@ -1,5 +1,3 @@
--- This script is mostly borrowed from Lokasenna_Show only specified tracks.lua
-
 local showTracks = {}
 
 -- Returns true if the individual words of str_b all appear in str_a
@@ -205,7 +203,7 @@ function get_tracks_to_show(settings)
         local idx = math.floor( reaper.GetMediaTrackInfo_Value(tr, "IP_TRACKNUMBER") )
         local ischild = reaper.GetTrackDepth(tr) > 0
 
-        if is_match(settings.search, name, idx) and not (ischild and settings.matchonlytop) then
+        if (settings.search == "" or is_match(settings.search, name, idx)) and not (ischild and settings.matchonlytop) then
             matches[idx] = true
             if not settings.matchmultiple then break end
         end
