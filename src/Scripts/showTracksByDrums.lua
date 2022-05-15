@@ -7,7 +7,7 @@ local settings = {
   showsiblings = false,
   showparents = false,
   matchonlytop = true,
-  search = "Drums|Drms|Perc|Percussion",
+  search = "Drum|Drms|Perc|Percussion",
   showchildren = true,
   matchmultiple = true,
 }

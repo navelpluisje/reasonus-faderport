@@ -12,6 +12,7 @@
 Zone "SelectedTrackFXMenu"
   SelectedTrackFXMenuNavigator
 
+  DisplayType|        DisplayType 2
   ScribbleLine1_|     NoAction
   ScribbleLine1_1     FixedTextDisplay "Effects"
   ScribbleLine1_2     TrackNameDisplay

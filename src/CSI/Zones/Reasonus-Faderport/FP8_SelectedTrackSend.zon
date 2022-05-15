@@ -10,6 +10,7 @@
 Zone "SelectedTrackSend"
   SelectedTrackSendNavigator
   
+  DisplayType|        DisplayType 2
   ScribbleLine1_|     NoAction
   ScribbleLine1_1     FixedTextDisplay "Sends"
   ScribbleLine1_2     TrackNameDisplay

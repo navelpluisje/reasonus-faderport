@@ -13,13 +13,21 @@ Zone "Channel"
 
   Arm Control
   // Some display stuff
+  DisplayType|        DisplayType 5
   ScribbleLine1_|     TrackNameDisplay
   ScribbleLine2_|     TrackVolumeDisplay
-  ScribbleLine3_|     NoAction
-  ScribbleLine4_|     TrackPanDisplay
+  ScribbleLine3_|     TrackPanDisplay
+  ScribbleLine4_|     NoAction
   ValueBar|           TrackPan
-  / VUMeter|          TrackOutputMeter
+  VUMeter|            TrackOutputMeter
 
+  Shift+DisplayType|        DisplayType 2
+  Shift+ScribbleLine1_|     TrackNameDisplay
+  Shift+ScribbleLine2_|     TrackIdxDisplay
+  Shift+ScribbleLine3_|     TrackAutoModeDisplay
+  Shift+ScribbleLine4_|     TrackPanDisplay
+  Shift+ValueBar|           TrackPan
+  Shift+VUMeter|            NoAction
 
   Mute|               TrackMute
   Solo|               TrackSolo
@@ -43,7 +51,7 @@ Zone "Channel"
 // TRACK NAVIGATION
 // ===========================================
   Track               Reaper %dummyAction%    // Dummy Action
-  
+
   Plugin              NoAction
   Plugin              MapSelectedTrackFXToMenu
   Shift+Plugin        MapTrackFXMenusSlotToWidgets

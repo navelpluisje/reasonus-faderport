@@ -10,6 +10,7 @@
 Zone "SelectedTrackReceive"
   SelectedTrackReceiveNavigator
   
+  DisplayType|            DisplayType 2
   ScribbleLine1_|         NoAction
   ScribbleLine1_1         FixedTextDisplay "Receives"
   ScribbleLine1_2         TrackNameDisplay

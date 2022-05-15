@@ -11,6 +11,7 @@
 Zone "TrackFXMenuSlot"
   TrackFXMenuSlotNavigator
 
+  DisplayType|        DisplayType 2
   ScribbleLine1_|     NoAction
   ScribbleLine1_1     FixedTextDisplay "Effects"
   ScribbleLine2_|     TrackNameDisplay

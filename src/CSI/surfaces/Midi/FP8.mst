@@ -463,7 +463,7 @@ WidgetEnd
 
 
 // ===========================================
-// TOUCH
+// SCRIBBLE LINES CHANNEL 1
 // ===========================================
 Widget ScribbleLine1_1
 	FB_FP8DisplayUpper 0
@@ -481,6 +481,9 @@ Widget ScribbleLine4_1
 	FB_FP8DisplayLower 0
 WidgetEnd
 
+// ===========================================
+// SCRIBBLE LINES CHANNEL 2
+// ===========================================
 Widget ScribbleLine1_2
 	FB_FP8DisplayUpper 1
 WidgetEnd
@@ -497,6 +500,9 @@ Widget ScribbleLine4_2
 	FB_FP8DisplayLower 1
 WidgetEnd
 
+// ===========================================
+// SCRIBBLE LINES CHANNEL 3
+// ===========================================
 Widget ScribbleLine1_3
 	FB_FP8DisplayUpper 2
 WidgetEnd
@@ -513,6 +519,9 @@ Widget ScribbleLine4_3
 	FB_FP8DisplayLower 2
 WidgetEnd
 
+// ===========================================
+// SCRIBBLE LINES CHANNEL 4
+// ===========================================
 Widget ScribbleLine1_4
 	FB_FP8DisplayUpper 3
 WidgetEnd
@@ -529,6 +538,9 @@ Widget ScribbleLine4_4
 	FB_FP8DisplayLower 3
 WidgetEnd
 
+// ===========================================
+// SCRIBBLE LINES CHANNEL 5
+// ===========================================
 Widget ScribbleLine1_5
 	FB_FP8DisplayUpper 4
 WidgetEnd
@@ -545,6 +557,9 @@ Widget ScribbleLine4_5
 	FB_FP8DisplayLower 4
 WidgetEnd
 
+// ===========================================
+// SCRIBBLE LINES CHANNEL 6
+// ===========================================
 Widget ScribbleLine1_6
 	FB_FP8DisplayUpper 5
 WidgetEnd
@@ -561,6 +576,9 @@ Widget ScribbleLine4_6
 	FB_FP8DisplayLower 5
 WidgetEnd
 
+// ===========================================
+// SCRIBBLE LINES CHANNEL 7
+// ===========================================
 Widget ScribbleLine1_7
 	FB_FP8DisplayUpper 6
 WidgetEnd
@@ -577,6 +595,9 @@ Widget ScribbleLine4_7
 	FB_FP8DisplayLower 6
 WidgetEnd
 
+// ===========================================
+// SCRIBBLE LINES CHANNEL 8
+// ===========================================
 Widget ScribbleLine1_8
 	FB_FP8DisplayUpper 7
 WidgetEnd
@@ -593,6 +614,10 @@ Widget ScribbleLine4_8
 	FB_FP8DisplayLower 7
 WidgetEnd
 
+
+// ===========================================
+// VALUE BAR
+// ===========================================
 Widget ValueBar1
 	FB_FaderportValueBar 0
 WidgetEnd
@@ -623,4 +648,76 @@ WidgetEnd
 
 Widget ValueBar8
 	FB_FaderportValueBar 7
+WidgetEnd
+
+
+// ===========================================
+// DISPLAY TYPE
+// ===========================================
+Widget DisplayType1
+	FB_FP8DisplayType 0
+WidgetEnd
+
+Widget DisplayType2
+	FB_FP8DisplayType 1
+WidgetEnd
+
+Widget DisplayType3
+	FB_FP8DisplayType 2
+WidgetEnd
+
+Widget DisplayType4
+	FB_FP8DisplayType 3
+WidgetEnd
+
+Widget DisplayType5
+	FB_FP8DisplayType 4
+WidgetEnd
+
+Widget DisplayType6
+	FB_FP8DisplayType 5
+WidgetEnd
+
+Widget DisplayType7
+	FB_FP8DisplayType 6
+WidgetEnd
+
+Widget DisplayType8
+	FB_FP8DisplayType 7
+WidgetEnd
+
+
+// ===========================================
+// VU METER
+// ===========================================
+Widget VUMeter1
+	FB_FPVUMeter 0
+WidgetEnd
+
+Widget VUMeter2
+	FB_FPVUMeter 1
+WidgetEnd
+
+Widget VUMeter3
+	FB_FPVUMeter 2
+WidgetEnd
+
+Widget VUMeter4
+	FB_FPVUMeter 3
+WidgetEnd
+
+Widget VUMeter5
+	FB_FPVUMeter 4
+WidgetEnd
+
+Widget VUMeter6
+	FB_FPVUMeter 5
+WidgetEnd
+
+Widget VUMeter7
+	FB_FPVUMeter 6
+WidgetEnd
+
+Widget VUMeter8
+	FB_FPVUMeter 7
 WidgetEnd

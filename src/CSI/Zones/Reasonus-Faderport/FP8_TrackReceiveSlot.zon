@@ -10,6 +10,7 @@
 Zone "TrackReceiveSlot"
   TrackReceiveSlotNavigator
 
+  DisplayType|            DisplayType 2
   ScribbleLine1_|         NoAction
   ScribbleLine1_1         FixedTextDisplay "Receives"
   ScribbleLine2_|         TrackNameDisplay
