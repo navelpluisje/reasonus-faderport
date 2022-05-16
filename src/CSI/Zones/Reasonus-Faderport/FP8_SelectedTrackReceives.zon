@@ -12,8 +12,8 @@ Zone "SelectedTrackReceive"
   
   DisplayType|            DisplayType 2
   ScribbleLine1_|         NoAction
-  ScribbleLine1_1         FixedTextDisplay "Receives"
-  ScribbleLine1_2         TrackNameDisplay
+  ScribbleLine1_1         FixedTextDisplay "Receives" {% Invert %}
+  ScribbleLine1_2         TrackNameDisplay {% Left Invert %}
   ScribbleLine2_|         TrackReceiveNameDisplay
   ScribbleLine3_|         TrackReceiveVolumeDisplay
   ScribbleLine4_|         TrackReceivePrePostDisplay

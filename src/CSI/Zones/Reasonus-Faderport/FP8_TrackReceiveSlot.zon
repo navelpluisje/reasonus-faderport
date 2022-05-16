@@ -12,7 +12,7 @@ Zone "TrackReceiveSlot"
 
   DisplayType|            DisplayType 2
   ScribbleLine1_|         NoAction
-  ScribbleLine1_1         FixedTextDisplay "Receives"
+  ScribbleLine1_1         FixedTextDisplay "Receives" {% Invert %}
   ScribbleLine2_|         TrackNameDisplay
   ScribbleLine3_|         TrackReceiveNameDisplay
   ScribbleLine4_|         TrackReceiveVolumeDisplay

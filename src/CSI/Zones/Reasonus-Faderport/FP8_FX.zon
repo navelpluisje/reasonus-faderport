@@ -14,8 +14,8 @@ Zone "SelectedTrackFXMenu"
 
   DisplayType|        DisplayType 2
   ScribbleLine1_|     NoAction
-  ScribbleLine1_1     FixedTextDisplay "Effects"
-  ScribbleLine1_2     TrackNameDisplay
+  ScribbleLine1_1     FixedTextDisplay "Effects" {% Invert %}
+  ScribbleLine1_2     TrackNameDisplay  {% Left Invert %}
   ScribbleLine2_|     NoAction
   ScribbleLine3_|     FXMenuNameDisplay
   ScribbleLine4_|     NoAction

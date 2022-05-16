@@ -12,8 +12,8 @@ Zone "SelectedTrackSend"
   
   DisplayType|        DisplayType 2
   ScribbleLine1_|     NoAction
-  ScribbleLine1_1     FixedTextDisplay "Sends"
-  ScribbleLine1_2     TrackNameDisplay
+  ScribbleLine1_1     FixedTextDisplay "Sends" {% Left Invert %}
+  ScribbleLine1_2     TrackNameDisplay {% Left Invert %}
   ScribbleLine2_|     TrackSendNameDisplay
   ScribbleLine3_|     TrackSendVolumeDisplay
   ScribbleLine4_|     TrackSendPrePostDisplay

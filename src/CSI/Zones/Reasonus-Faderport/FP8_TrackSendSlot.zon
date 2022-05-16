@@ -12,7 +12,7 @@ Zone "TrackSendSlot"
 
   DisplayType|            DisplayType 2
   ScribbleLine1_|         NoAction
-  ScribbleLine1_1         FixedTextDisplay "Sends"
+  ScribbleLine1_1         FixedTextDisplay "Sends" {% Invert %}
   ScribbleLine2_|         TrackNameDisplay
   ScribbleLine3_|         TrackSendNameDisplay
   ScribbleLine4_|         TrackSendVolumeDisplay

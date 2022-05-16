@@ -13,38 +13,38 @@ Zone "Channel"
 
   Arm Control
   // Some display stuff
-  DisplayType|        DisplayType 5
-  ScribbleLine1_|     TrackNameDisplay
-  ScribbleLine2_|     TrackVolumeDisplay
-  ScribbleLine3_|     TrackPanDisplay
-  ScribbleLine4_|     NoAction
-  ValueBar|           TrackPan
-  VUMeter|            TrackOutputMeter
+  DisplayType|              DisplayType 5
+  ScribbleLine1_|           TrackNameDisplay {% Left %}
+  ScribbleLine2_|           TrackIdxDisplay
+  ScribbleLine3_|           TrackPanDisplay
+  ScribbleLine4_|           NoAction
+  ValueBar|                 TrackPan
+  VUMeter|                  TrackOutputMeter
 
   Shift+DisplayType|        DisplayType 2
   Shift+ScribbleLine1_|     TrackNameDisplay
-  Shift+ScribbleLine2_|     TrackIdxDisplay
+  Shift+ScribbleLine2_|     TrackVolumeDisplay
   Shift+ScribbleLine3_|     TrackAutoModeDisplay
   Shift+ScribbleLine4_|     TrackPanDisplay
   Shift+ValueBar|           TrackPan
   Shift+VUMeter|            NoAction
 
-  Mute|               TrackMute
-  Solo|               TrackSolo
-  Select|             TrackUniqueSelect  { 20 20 20 255 255 255 }
-  Shift+Select|       TrackSelect        { 20 20 20 255 255 255 }
-  Option+Select|      TrackSelect        { 20 20 20 255 255 255 }
-  Control+Select|     TrackRecordArm     { 20 0 0 255 0 0 }
-  Shift+Arm           Reaper 40490       // Track: Arm all tracks for recording
-  Option+Arm          Reaper 40491       // Track: Unarm all tracks for recording
-
-  SoloClear           Reaper 40340       // Track: Unsolo all tracks
-  MuteClear           Reaper 40339       // Track: Unmute all tracks
-  
-  Shift+Fader|        TrackPan
-  Fader|              TrackVolume
-  FaderTouch+Fader|   TrackVolume
-  FaderTouch|         TrackTouch
+  Mute|                     TrackMute
+  Solo|                     TrackSolo
+  Select|                   TrackUniqueSelect  { 20 20 20 255 255 255 }
+  Shift+Select|             TrackSelect        { 20 20 20 255 255 255 }
+  Option+Select|            TrackSelect        { 20 20 20 255 255 255 }
+  Control+Select|           TrackRecordArm     { 20 0 0 255 0 0 }
+  Shift+Arm                 Reaper 40490       // Track: Arm all tracks for recording
+  Option+Arm                Reaper 40491       // Track: Unarm all tracks for recording
+      
+  SoloClear                 Reaper 40340       // Track: Unsolo all tracks
+  MuteClear                 Reaper 40339       // Track: Unmute all tracks
+        
+  Shift+Fader|              TrackPan
+  Fader|                    TrackVolume
+  FaderTouch+Fader|         TrackVolume
+  FaderTouch|               TrackTouch
 
 
 // ===========================================
