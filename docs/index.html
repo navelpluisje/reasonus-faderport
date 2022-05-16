@@ -47,7 +47,11 @@
 
       </section>
     </section>
+
+
     <h1><span>Welcome to ReaSonus</span></h1>
+
+
     <!-- GETTING STARTED -->
     <h2><span>Getting Started</span></h2>
     <section class="doc-row">
@@ -78,16 +82,20 @@
 
     <h1><span>Installation</span></h1>
     <section class="doc-row">
-      <p>There is an installer to install ReaSonus on your computer. The installer installs the next:</p>
+      <p>There is an installer to install ReaSonus on your computer. The installer performs the next steps:</p>
       <ul>
-        <li><span class="strong">CSI:</span> ReaSonus has CSI bundeled to be sure everything will work together</li>
-        <li><span class="strong">Actions</span> To make ReaSonus work well with the FaderPort, an action get installed.
+        <li><span class="strong">CSI:</span> ReaSonus has CSI bundeled to be sure everything will work together. Also
+          this is a custom build with additions mainly for the displays.</li>
+        <li><span class="strong">Actions</span> To make ReaSonus work well with the FaderPort, a couple of actions get
+          installed.
         </li>
         <li><span class="strong">Zones &amp; Surface files: </span>All the files needed to get started will be
           installed. During installation the correct action ID will set (Remember, the one installed in teh previous
-          step)</li>
+          step).</li>
       </ul>
     </section>
+
+
     <h2><span>What you need to get started</span></h2>
     <section class="doc-row">
       <p>ReaSonues FaderPort has the next dependencies:</p>
@@ -103,69 +111,45 @@
         better idea about the power of SWS/S&M EXTENSION
       </blockquote>
     </section>
+
+
     <h2><span>Install</span></h2>
     <section class="doc-row">
       <p><img src="assets/installer-home.png" alt="" class="large"></p>
     </section>
+
+
     <h3><span>Step 1: Base setup</span></h3>
     <section class="doc-row">
+      <p><img src="assets/install-path.png" alt="" class="large"></p>
       <p>Open the ReaSonus installer to start the installation. To make the installation to a success the resource
         folder where REAPER installs all it's data is needed. We assume you did a regular install. If so, you cen just
-        click next, otherwise select the path where you did install the resource folder.</p>
-      <p>
+        click <span class="key">Next</span>, otherwise select the path where you did install the resource folder.
+      </p>
+      <blockquote>
+        <span class="strong">Power User Tip: </span>See <a href="#resource-path-action">Create Action to get REAPER
+          resource path</a> to creat an action for getting
+        the resource path
+      </blockquote>
     </section>
-    <h3><span>Step 2: Prepare the FaderPort</span></h3>
-    <section class="doc-row">
-      <p>The next things happen in this step (is all in the background)</p>
-      <ul>
-        <li>The latest version of all the Reasonus FaderPort will be downloaded</li>
-        <li>Some basic actions get added to REAPER (We will need to add the to REAPER manually in the next step)</li>
-        <li>Prepare the folder structure</li>
-        <li>Installs CSI. CSI is bundeled with ReaSonus FaderPort to be sure the versions are working well together</li>
-      </ul>
-    </section>
-    <h3><span>Step 3: Prepare the FaderPort 2</span></h3>
-    <section class="doc-row">
-      <p>For the coming step we need the actionId of one og the added actions. The action is needed to make the lads
-        work as intended. To get the actionId you need to follow the next steps:</p>
-    </section>
-    <section class="doc-row">
-      <img src="assets/add-action.png" alt="" class="large">
-      <ul>
-        <li>If REAPER is already opened, restart it</li>
-        <li>In the menu click <span class="key">Actions</span> and the <span class="key">Show Action
-            List&hellip;</span>
-        </li>
-        <li>Click the <span class="key">Add Action&hellip;</span> and <span class="key">Load ReaScrip&hellip;</span>
-        </li>
-        <li>By default this opens the Scripts folder of REAPER. Open the Reasonus folder. Select the
-          <code>always-on.lus</code> script<br>
-          In thge action list, you should now also see the added script
-        </li>
-      </ul>
-    </section>
-    <section class="doc-row">
-      <img src="assets/copy-action-id.png" alt="" class="large">
-      <ul>
-        <li>Right click the action and select <code>Copy selected action command ID</code></li>
-        <li>And we go back to the installer</li>
-      </ul>
-    </section>
-    <h3><span>Step 4: Install the files</span></h3>
-    <section class="doc-row">
-      <img src="assets/paste-action-id.png" alt="" class="large">
-      <div>
-        <p>The last step. Now we will add the action ID and install the files</p>
-        <ul>
-          <li>Paste the action ID in the input field</li>
-          <li>Click the Install ReaSonus button. The action ID will be added to the files and the files will be copied
-          </li>
-          <li>And we're done</li>
-        </ul>
 
+
+    <h3><span>Step 2: Install the files</span></h3>
+    <section class="doc-row">
+      <div>
+        <p>
+          <img src="assets/install-midi-select.png" alt="" class="large">
+        </p>
+        <p>
+          Select your Faderport from the lists and click <span class="key">Install ReaSonus</span>.
+        </p>
+        <p>You're done. This is all. You can now (re)-start REAPER and your Faderpor is working with REAPER.</p>
       </div>
     </section>
+
+
     <h1><span>REAPER</span></h1>
+
     <!-- CHANNEL STRIP -->
     <h2><span>Channel Strip</span></h2>
     <section class="doc-row">
@@ -220,6 +204,7 @@
       </div>
     </section>
 
+
     <!-- SELECT BUTTON MODIFIER -->
     <h3><span>Select Button modifiers</span></h3>
     <section class="doc-row">
@@ -242,6 +227,7 @@
       </div>
     </section>
 
+
     <!-- SOLO AND MUTE CLEAR -->
     <h3><span>Solo and Mute Clear</span></h3>
     <section class="doc-row">
@@ -250,6 +236,7 @@
         <span class="strong">Solo and Mute Clear:</span> These buttons will clear all solos or mutes.
       </p>
     </section>
+
 
     <!-- TRANSPORT CONTROLS -->
     <h2><span>Transport Controls</span></h2>
@@ -283,6 +270,7 @@
       </ol>
     </section>
 
+
     <!-- SESSION NAVIGATOR -->
     <h2><span>The Session Navigator</span></h2>
     <section class="doc-row">
@@ -297,6 +285,7 @@
         <img src="assets/navigator.png" />
       </p>
     </section>
+
 
     <!-- CHANNE NAVIGATOR -->
     <section class="doc-row">
@@ -318,6 +307,7 @@
       </div>
     </section>
 
+
     <!-- MASTER NAVIGATOR -->
     <section class="doc-row">
       <h4>Master</h4>
@@ -333,6 +323,7 @@
         </li>
       </ul>
     </section>
+
 
     <!-- ZOOM NAVIGATOR -->
     <section class="doc-row">
@@ -362,6 +353,7 @@
       </ul>
     </section>
 
+
     <!-- METRONOME -->
     <section class="doc-row">
       <h4>Metronome (Click)</h4>
@@ -386,8 +378,8 @@
           <span class="strong">Encoder:</span> Set the volume of the metronome
         </li>
       </ul>
-
     </section>
+
 
     <!-- SCROLL NAVIGATOR -->
     <section class="doc-row">
@@ -413,6 +405,7 @@
         </li>
       </ul>
     </section>
+
 
     <!-- REGION NAVIGATOR -->
     <section class="doc-row">
@@ -458,6 +451,7 @@
       </ul>
     </section>
 
+
     <!-- BANK NAVIGATOR -->
     <section class="doc-row">
       <h4>Bank Navigator</h4>
@@ -476,6 +470,7 @@
         </li>
       </ul>
     </section>
+
 
     <!-- MARKER NAVIGATOR -->
     <section class="doc-row">
@@ -507,6 +502,7 @@
       </ul>
     </section>
 
+
     <h3><span>F1-F8 Functions</span></h3>
     <section class="doc-row">
       <div>
@@ -533,6 +529,7 @@
       </div>
     </section>
 
+
     <h3><span>Screensets</span></h3>
     <section class="doc-row">
       <div>
@@ -547,6 +544,7 @@
         </blockquote>
       </div>
     </section>
+
 
     <h2><span>Automation Controls</span></h2>
     <section class="doc-row">
@@ -598,12 +596,15 @@
         </ul>
       </div>
     </section>
+
+
     <h3><span>User Functions</span></h3>
     <section class="doc-row">
       <p>User functions are not yet implemented</p>
       <p>Current idea is to make another page. This will be the Mixer page. The next page will be an Item Page. If there
         are any ideas for more, let me know</p>
     </section>
+
 
     <h2><span>Fader modes</span></h2>
     <section class="doc-row">
@@ -623,6 +624,8 @@
           the receive levels and settings for the selected channel. </li>
       </ol>
     </section>
+
+
     <h3><span>Edit Plug-ins</span></h3>
     <section class="doc-row">
       <img src="assets/edit-plugins.png" alt="" class="large">
@@ -667,6 +670,8 @@
         </p>
       </div>
     </section>
+
+
     <h3><span>Sends Mode</span></h3>
     <section class="doc-row">
       <img src="assets/sends-button.png" alt="" class="large">
@@ -714,6 +719,8 @@
         </p>
       </div>
     </section>
+
+
     <h3><span>Receives Mode (Pan)</span></h3>
     <section class="doc-row">
       <img src="assets/receives-button.png" alt="" class="large">
@@ -763,6 +770,7 @@
       </div>
     </section>
 
+
     <h2><span>Mix Management</span></h2>
     <section class="doc-row">
       <p>
@@ -781,7 +789,36 @@
       </ol>
     </section>
 
-    <h2><span>Advanced REAPER controls</span></h2>
+
+    <h1><span>Additional help</span></h1>
+
+
+    <h2 id="resource-path-action"><span>Create Action to get REAPER resource path</span></h2>
+    <section class="doc-row">
+      <div>
+        <p>Here are the steps to create an action in REAPER to get the path of the resorces</p>
+        <ol>
+          <li>In the menu click <span class="key">Actions</span> and the <span class="key">Show Action
+              List&hellip;</span>
+          </li>
+          <li>Click the <span class="key">Add Action&hellip;</span> and <span class="key">New ReaScrip&hellip;</span>
+          </li>
+          <li>Give the action a proper name like: get-reaper-resource-path.lua and click <span class="key">Save</span>
+          </li>
+          <li>The editor opens. Paste the next text into the editor:
+            <code>
+            <pre>
+local path = reaper.GetResourcePath()
+reaper.ShowConsoleMsg("Path: " .. path)
+</pre>
+</code>
+          </li>
+          <li>Click <span class="key">Save</span>. A small screen pops up with the path to the resource folder</li>
+        </ol>
+
+      </div>
+    </section>
+
   </body>
 
 </html>

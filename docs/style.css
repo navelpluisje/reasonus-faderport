@@ -10,12 +10,11 @@
 }
 
 body {
-  counter-reset: h2counter;
   margin: 0;
   padding: 0;
 }
 
-* {
+*:not(pre) {
   color: var(--default-text);
   font-family: 'Lato', sans-serif;
   line-height: 1.6;
@@ -46,7 +45,12 @@ blockquote {
 
 blockquote.reaperblog {
   background-color: var(--reaperblog-secondary);
+  background-image: url('assets/reaper-blog.png');
+  background-position: .5rem center;
+  background-size: 3rem;
+  background-repeat: no-repeat;
   border-color: var(--reaperblog-primary);
+  padding-left: 4rem;
   color: var(--alternate-text);
 }
 
@@ -130,8 +134,8 @@ h1 {
   color: var(--alternate-text);
   font-size: 1.75rem;
   padding: .5rem 1rem;
-  counter-increment: h1counter;
   counter-reset: h2counter;
+  counter-increment: h1counter;
   position: sticky;
   top: 0;
   z-index: 1;
@@ -219,6 +223,16 @@ li {
 
 .strong {
   font-weight: 700;
+}
+
+.key {
+  border: 1px solid currentColor;
+  border-radius: .25rem;
+  display: inline-block;
+  font-size: .9em;
+  font-weight: 400;
+  margin: 0 .25rem;
+  padding: .125rem .5rem;
 }
 
 h1,
