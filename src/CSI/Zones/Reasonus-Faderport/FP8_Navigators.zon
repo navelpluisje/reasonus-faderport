@@ -60,6 +60,7 @@ Zone Navigators
     Shift+Section       Reaper 40378    // View: Show big clock window
 // Function-Action-8 
     Shift+Marker        Reaper 41074    // Toggle show all floating windows
+    Property+Shift+Marker      NoFeedback    
 
 // ===========================================
 // SCREENSETS
