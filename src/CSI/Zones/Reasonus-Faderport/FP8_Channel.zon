@@ -22,7 +22,7 @@ Zone "Channel"
   VUMeter|                  TrackOutputMeter
 
   Shift+DisplayType|        DisplayType 2
-  Shift+ScribbleLine1_|     TrackNameDisplay
+  Shift+ScribbleLine1_|     TrackNameDisplay {% Left Invert %}
   Shift+ScribbleLine2_|     TrackVolumeDisplay
   Shift+ScribbleLine3_|     TrackAutoModeDisplay
   Shift+ScribbleLine4_|     TrackPanDisplay
