@@ -63,7 +63,7 @@ function showTracks()
       set_visibility( tracks )
   else
       reaper.MB(
-          "Error reading the script's settings. Make sure you haven't edited the script or changed its filename.", "Whoops!", 0)
+          "No tracks with instruments available", "Whoops!", 0)
   end
 end
 

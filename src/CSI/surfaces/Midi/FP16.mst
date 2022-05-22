@@ -463,42 +463,42 @@ WidgetEnd
 
 Widget Select9
   Press 90 07 7f 90 07 00
-  FB_FaderportRGB7Bit 90 18 7f
+  FB_FaderportRGB7Bit 90 07 7f
 WidgetEnd
 
 Widget Select10
   Press 90 21 7f 90 21 00
-  FB_FaderportRGB7Bit 90 19 7f
+  FB_FaderportRGB7Bit 90 21 7f
 WidgetEnd
 
 Widget Select11
   Press 90 22 7f 90 22 00
-  FB_FaderportRGB7Bit 90 1a 7f
+  FB_FaderportRGB7Bit 90 22 7f
 WidgetEnd
 
 Widget Select12
   Press 90 23 7f 90 23 00
-  FB_FaderportRGB7Bit 90 1b 7f
+  FB_FaderportRGB7Bit 90 23 7f
 WidgetEnd
 
 Widget Select13
   Press 90 24 7f 90 24 00
-  FB_FaderportRGB7Bit 90 1c 7f
+  FB_FaderportRGB7Bit 90 24 7f
 WidgetEnd
 
 Widget Select14
   Press 90 25 7f 90 25 00
-  FB_FaderportRGB7Bit 90 1d 7f
+  FB_FaderportRGB7Bit 90 25 7f
 WidgetEnd
 
 Widget Select15
   Press 90 26 7f 90 26 00
-  FB_FaderportRGB7Bit 90 1e 7f
+  FB_FaderportRGB7Bit 90 26 7f
 WidgetEnd
 
 Widget Select16
   Press 90 27 7f 90 27 00
-  FB_FaderportRGB7Bit 90 1f 7f
+  FB_FaderportRGB7Bit 90 27 7f
 WidgetEnd
 
 

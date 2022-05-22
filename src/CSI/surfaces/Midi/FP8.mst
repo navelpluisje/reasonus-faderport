@@ -77,7 +77,6 @@ Widget ScrollRightSmall
 	Press b0 10 01
 WidgetEnd
 
-
 Widget Arm
 	Press 90 00 7f 90 00 00
 WidgetEnd
