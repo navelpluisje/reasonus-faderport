@@ -12,17 +12,16 @@ Zone "TrackReceiveSlot"
 
   DisplayType|            DisplayType 2
   ScribbleLine1_|         NoAction
-  ScribbleLine1_1         FixedTextDisplay "Receives" {% Invert %}
-  ScribbleLine2_|         TrackNameDisplay
+  ScribbleLine1_1         FixedTextDisplay "Receives" 
+  ScribbleLine2_|         TrackNameDisplay {% Left Invert %}
   ScribbleLine3_|         TrackReceiveNameDisplay
   ScribbleLine4_|         TrackReceiveVolumeDisplay
+  ValueBar|               TrackReceivePan {% BiPolar %}
 
   Shift+ScribbleLine1_|   TrackNameDisplay
   Shift+ScribbleLine2_|   TrackReceiveNameDisplay
   Shift+ScribbleLine3_|   TrackReceiveVolumeDisplay
   Shift+ScribbleLine4_|   TrackReceivePrePostDisplay
-
-  ValueBar|               TrackReceivePan
 
   Select|                 TrackUniqueSelect   { 0 5 20 0 55 255 }
   Hold+Select|            Reaper 40293 // Track: View routing and I/O for current/last touched track

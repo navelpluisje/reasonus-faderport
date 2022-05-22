@@ -14,11 +14,12 @@ Zone "SelectedTrackFXMenu"
 
   DisplayType|        DisplayType 2
   ScribbleLine1_|     NoAction
-  ScribbleLine1_1     FixedTextDisplay "Effects" {% Invert %}
-  ScribbleLine1_2     TrackNameDisplay  {% Left Invert %}
+  ScribbleLine1_1     FixedTextDisplay "Effects"
+  ScribbleLine1_2     TrackNameDisplay  {% Left %}
   ScribbleLine2_|     NoAction
-  ScribbleLine3_|     FXMenuNameDisplay
+  ScribbleLine3_|     FXMenuNameDisplay {% Left Invert %}
   ScribbleLine4_|     NoAction
+  ValueBar|           NoAction
 
   Mute|               Reaper _S&M_FXBYP|
   Solo|               GoFXSlot

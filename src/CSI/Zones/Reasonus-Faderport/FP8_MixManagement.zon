@@ -10,6 +10,7 @@
 Zone "MixManagement"
   AudioBtn     Reaper %dummyAction% { 20 20 20 20 20 20 } 
   AudioBtn     GoZone "TracksByName"
+  Instrument   Reaper _REASONUS_SHOW_TRACKS_WITH_INSTRUMENT { 20 20 20 20 20 20 } // Script: Show All Tracks With Instruments
   BusBtn       Reaper _REASONUS_SHOW_TOP_LEVEL_TRACKS { 20 20 20 20 20 20 } // Script: Show All Top Level Tracks
   AllBtn       Reaper _REASONUS_SHOW_ALL_TRACKS { 20 20 20 20 20 20 } // Script: Show All Tracks
 ZoneEnd 

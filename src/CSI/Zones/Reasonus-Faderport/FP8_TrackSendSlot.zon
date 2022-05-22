@@ -12,17 +12,16 @@ Zone "TrackSendSlot"
 
   DisplayType|            DisplayType 2
   ScribbleLine1_|         NoAction
-  ScribbleLine1_1         FixedTextDisplay "Sends" {% Invert %}
-  ScribbleLine2_|         TrackNameDisplay
+  ScribbleLine1_1         FixedTextDisplay "Sends"
+  ScribbleLine2_|         TrackNameDisplay {% Left Invert %}
   ScribbleLine3_|         TrackSendNameDisplay
   ScribbleLine4_|         TrackSendVolumeDisplay
+  ValueBar|               TrackSendPan {% BiPolar %}
 
   Shift+ScribbleLine1_|   TrackNameDisplay
   Shift+ScribbleLine2_|   TrackSendNameDisplay
   Shift+ScribbleLine3_|   TrackSendVolumeDisplay
   Shift+ScribbleLine4_|   TrackSendPrePostDisplay
-
-  ValueBar|               TrackSendPan
 
   Select|                 TrackUniqueSelect  { 20 20 0 255 255 0 }
   Hold+Select|            Reaper 40293 // Track: View routing and I/O for current/last touched track
@@ -33,7 +32,6 @@ Zone "TrackSendSlot"
   Mute|                   TrackSendMute
   Fader|                  TrackSendVolume
   Shift+Fader|            TrackSendPan
-
 
   RotarySmall             NoAction  
   RotarySmallPush         NoAction

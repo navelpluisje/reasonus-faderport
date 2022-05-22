@@ -76,5 +76,11 @@
     "displayName": "Show Tracks By Name",
     "fileName": "showTracksByName.lua",
     "register": false
+  },
+  {
+    "actionId": "REASONUS_SHOW_TRACKS_WITH_INSTRUMENT",
+    "displayName": "Show Tracks With Instruments",
+    "fileName": "showTracksWithInstruments.lua",
+    "register": true
   }
 ]

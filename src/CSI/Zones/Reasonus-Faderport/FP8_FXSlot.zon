@@ -13,10 +13,11 @@ Zone "TrackFXMenuSlot"
 
   DisplayType|        DisplayType 2
   ScribbleLine1_|     NoAction
-  ScribbleLine1_1     FixedTextDisplay "Effects" {% Invert %}
-  ScribbleLine2_|     TrackNameDisplay
+  ScribbleLine1_1     FixedTextDisplay "Effects" 
+  ScribbleLine2_|     TrackNameDisplay {% Left Invert %}
   ScribbleLine3_|     NoAction
   ScribbleLine4_|     FXMenuNameDisplay
+  ValueBar|           NoAction
 
   Select|             TrackUniqueSelect  { 0 20 0 0 255 0 }
 
