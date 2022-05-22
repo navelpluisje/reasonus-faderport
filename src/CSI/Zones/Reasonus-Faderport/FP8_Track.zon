@@ -8,33 +8,38 @@
 //------------------------------------------------------------------------------
 
 
-Zone "Channel"
-  TrackNavigator
+Zone "Track"
+  IncludedSubZones
+    "TrackRecArm"
+  IncludedSubZonesEnd
 
-  Arm Control
+  / Arm Control
   // Some display stuff
-  DisplayType|              DisplayType 5
+  / DisplayType|              DisplayType 5
   ScribbleLine1_|           TrackNameDisplay {% Left %}
-  ScribbleLine2_|           TrackIdxDisplay
+  / ScribbleLine2_|           TrackIdxDisplay
+  ScribbleLine2_|           TrackVolumeDisplay
   ScribbleLine3_|           TrackPanDisplay
   ScribbleLine4_|           NoAction
-  ValueBar|                 TrackPan {% BiPolar %}
-  VUMeter|                  TrackOutputMeter
+  / ValueBar|                 TrackPan {% BiPolar %}
+  / VUMeter|                  TrackOutputMeter
 
-  Shift+DisplayType|        DisplayType 2
-  Shift+ScribbleLine1_|     TrackNameDisplay {% Left Invert %}
-  Shift+ScribbleLine2_|     TrackVolumeDisplay
-  Shift+ScribbleLine3_|     TrackAutoModeDisplay
-  Shift+ScribbleLine4_|     TrackPanDisplay
-  Shift+ValueBar|           TrackVolume {% Fill %}
-  Shift+VUMeter|            NoAction
+  / Shift+DisplayType|        DisplayType 2
+  / Shift+ScribbleLine1_|     TrackNameDisplay {% Left Invert %}
+  / Shift+ScribbleLine2_|     TrackVolumeDisplay
+  / Shift+ScribbleLine3_|     TrackAutoModeDisplay
+  / Shift+ScribbleLine4_|     TrackPanDisplay
+  / Shift+ValueBar|           TrackVolume {% Fill %}
+  / Shift+VUMeter|            NoAction
 
   Mute|                     TrackMute
   Solo|                     TrackSolo
   Select|                   TrackUniqueSelect  { "Track" }
   Shift+Select|             TrackSelect        { "Track" }
   Option+Select|            TrackSelect        { "Track" }
-  Control+Select|           TrackRecordArm     { 20 0 0 255 0 0 }
+
+  Arm                       GoSubZone "TrackRecArm"
+  / Control+Select|           TrackRecordArm     { 20 0 0 255 0 0 }
   Shift+Arm                 Reaper 40490       // Track: Arm all tracks for recording
   Option+Arm                Reaper 40491       // Track: Unarm all tracks for recording
       
@@ -55,15 +60,15 @@ Zone "Channel"
 // ===========================================
   Track               Reaper %dummyAction%    // Dummy Action
 
-  Plugin              NoAction
-  Plugin              MapSelectedTrackFXToMenu
-  Shift+Plugin        MapTrackFXMenusSlotToWidgets
+  / Plugin              NoAction
+  / Plugin              MapSelectedTrackFXToMenu
+  / Shift+Plugin        MapTrackFXMenusSlotToWidgets
 
-  Send                NoAction
-  Send                MapSelectedTrackSendsToWidgets
-  Shift+Send          MapTrackSendsSlotToWidgets
+  / Send                NoAction
+  / Send                MapSelectedTrackSendsToWidgets
+  / Shift+Send          MapTrackSendsSlotToWidgets
 
-  Pan                 NoAction
-  Pan                 MapSelectedTrackReceivesToWidgets
-  Shift+Pan           MapTrackReceivesSlotToWidgets
+  / Pan                 NoAction
+  / Pan                 MapSelectedTrackReceivesToWidgets
+  / Shift+Pan           MapTrackReceivesSlotToWidgets
 ZoneEnd 

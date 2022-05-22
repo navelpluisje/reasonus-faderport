@@ -8,16 +8,13 @@
 //------------------------------------------------------------------------------
 
 Zone Home
+  OnInitialization Receive Home SelectedTrackSend SelectedTrackReceive SelectedTrackFXMenu
+  OnInitialization Broadcast Home SelectedTrackSend SelectedTrackReceive SelectedTrackFXMenu
+
   LeftShft   Shift
   RightShft  Option
 
   IncludedZones
-    "MixManagement"
-    "Panning"
-    "NavigatorBank"
-    "Navigators"
-    "Automation"
-    "Transport"
-    "Channel"
+    "Track"
   IncludedZonesEnd
 ZoneEnd
