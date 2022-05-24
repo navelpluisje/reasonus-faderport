@@ -39,7 +39,7 @@ Zone "Automation"
 // ===========================================
 // ACTIONS
 // ===========================================
-  Shift+Latch     Reaper 40897        { 0 20 0 0 20 0 }  // File: Save all projects
+  Shift+Latch     Reaper 40026        { 0 20 0 0 20 0 }  // File: Save project
   Shift+Trim      Reaper 40030        { 0 5 20 0 5 20 }  // Edit: Redo
   Shift+Off       Reaper 40029        { 0 5 20 0 5 20 }  // Edit: Undo
   Shift+Touch     NoAction
