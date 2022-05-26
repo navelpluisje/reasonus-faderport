@@ -255,42 +255,42 @@ WidgetEnd
 // SOLO BUTTONS
 // ===========================================
 Widget Solo1
-  Press 90 08 7f
+  Press 90 08 7f 90 08 00
   FB_TwoState 90 08 7f 90 08 00
 WidgetEnd
 
 Widget Solo2
-  Press 90 09 7f
+  Press 90 09 7f 90 09 00
   FB_TwoState 90 09 7f 90 09 00
 WidgetEnd
 
 Widget Solo3
-  Press 90 0a 7f
+  Press 90 0a 7f 90 0a 00
   FB_TwoState 90 0a 7f 90 0a 00
 WidgetEnd
 
 Widget Solo4
-  Press 90 0b 7f
+  Press 90 0b 7f 90 0b 00
   FB_TwoState 90 0b 7f 90 0b 00
 WidgetEnd
 
 Widget Solo5
-  Press 90 0c 7f
+  Press 90 0c 7f 90 0c 00
   FB_TwoState 90 0c 7f 90 0c 00
 WidgetEnd
 
 Widget Solo6
-  Press 90 0d 7f
+  Press 90 0d 7f 90 0d 00
   FB_TwoState 90 0d 7f 90 0d 00
 WidgetEnd
 
 Widget Solo7
-  Press 90 0e 7f
+  Press 90 0e 7f 90 0e 00
   FB_TwoState 90 0e 7f 90 0e 00
 WidgetEnd
 
 Widget Solo8
-  Press 90 0f 7f
+  Press 90 0f 7f 90 0f 00
   FB_TwoState 90 0f 7f 90 0f 00
 WidgetEnd
 
@@ -298,42 +298,42 @@ WidgetEnd
 // MUTE BUTTONS
 // ===========================================
 Widget Mute1
-  Press 90 10 7f
+  Press 90 10 7f 90 10 00
   FB_TwoState 90 10 7f 90 10 00
 WidgetEnd
 
 Widget Mute2
-  Press 90 11 7f
+  Press 90 11 7f 90 11 00
   FB_TwoState 90 11 7f 90 11 00
 WidgetEnd
 
 Widget Mute3
-  Press 90 12 7f
+  Press 90 12 7f 90 12 00
   FB_TwoState 90 12 7f 90 12 00
 WidgetEnd
 
 Widget Mute4
-  Press 90 13 7f
+  Press 90 13 7f 90 13 00
   FB_TwoState 90 13 7f 90 13 00
 WidgetEnd
 
 Widget Mute5
-  Press 90 14 7f
+  Press 90 14 7f 90 14 00
   FB_TwoState 90 14 7f 90 14 00
 WidgetEnd
 
 Widget Mute6
-  Press 90 15 7f
+  Press 90 15 7f 90 15 00
   FB_TwoState 90 15 7f 90 15 00
 WidgetEnd
 
 Widget Mute7
-  Press 90 16 7f
+  Press 90 16 7f 90 16 00
   FB_TwoState 90 16 7f 90 16 00
 WidgetEnd
 
 Widget Mute8
-  Press 90 17 7f
+  Press 90 17 7f 90 17 00
   FB_TwoState 90 17 7f 90 17 00
 WidgetEnd
 

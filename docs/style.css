@@ -14,7 +14,7 @@ body {
   padding: 0;
 }
 
-*:not(pre) {
+*:not(pre):not(code) {
   color: var(--default-text);
   font-family: 'Lato', sans-serif;
   line-height: 1.6;
@@ -34,6 +34,16 @@ a[target="_blank"]::after {
 
 img {
   border-radius: .5rem;
+}
+
+code {
+  color: var(--primary-color);
+}
+
+hr {
+  border-top: 1px solid var(--secondary-color);
+  border-width: 2px 0 0;
+  margin: 3rem 0;
 }
 
 blockquote {

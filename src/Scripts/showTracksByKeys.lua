@@ -7,7 +7,7 @@ local settings = {
   showsiblings = false,
   showparents = false,
   matchonlytop = true,
-  search = "Keys|Synth",
+  search = "Keys|Synth|Organ",
   showchildren = true,
   matchmultiple = true,
 }

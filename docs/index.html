@@ -38,8 +38,8 @@
           and mouse for things they do well, and the FaderPort 8 handles the
           features you want to get your fingers on, allowing you to customize your
           workflow. <br>
-          Reasonus is build with the reknown forces of CSI. A comprehensive and actively maintained tool with a large
-          active community. This is also the reason you’re able to knead ReaSonus to your needs.
+          Reasonus is build with the renown forces of Control Surface Integrator (CSI). A comprehensive, and actively
+          maintained tool with a large active community.
         </p>
         <p>
           This is DAW control the way you always hoped it could be!
@@ -103,8 +103,13 @@
         <li><a href="https://www.sws-extension.org/index.php" target="_blank">SWS/S&M EXTENSION</a> This is an extensive
           set with actions and features to extend REAPER. ReaSonus FaderPort uses some of these actions.</li>
         <li>The latest version of <a href="https://github.com/navelpluisje/reasonus-install/releases/latest"
-            target="_blank">ReaSonus Installer</a></li>
+            target="_blank">ReaSonus Installer</a>.</li>
       </ul>
+      <blockquote>
+        <span class="strong">WARNING:</span> The current release is still a work in progress. Please report isses by <a
+          href="https://github.com/navelpluisje/reasonus-install/issues">the Github Issues</a> or the <a
+          href="https://forum.cockos.com/showthread.php?p=2562780#post2562780">Reaper Forum</a>
+      </blockquote>
       <blockquote class="reaperblog">
         Checkout the video about SWS/S&M EXTENSION on <a target="_blank"
           href="https://reaperblog.net/2021/02/whats-new-in-sws-extension-2-12-update/">The REAPER Blog</a> to get a
@@ -123,13 +128,12 @@
     <section class="doc-row">
       <p><img src="assets/install-path.png" alt="" class="large"></p>
       <p>Open the ReaSonus installer to start the installation. To make the installation to a success the resource
-        folder where REAPER installs all it's data is needed. We assume you did a regular install. If so, you cen just
+        folder where REAPER installs all it's data is needed. We assume you did a regular install. If so, you can just
         click <span class="key">Next</span>, otherwise select the path where you did install the resource folder.
       </p>
       <blockquote>
         <span class="strong">Power User Tip: </span>See <a href="#resource-path-action">Create Action to get REAPER
-          resource path</a> to creat an action for getting
-        the resource path
+          resource path</a> to create an action in REAPER for getting the resource path
       </blockquote>
     </section>
 
@@ -143,64 +147,81 @@
         <p>
           Select your Faderport from the lists and click <span class="key">Install ReaSonus</span>.
         </p>
-        <p>You're done. This is all. You can now (re)-start REAPER and your Faderpor is working with REAPER.</p>
+        <p>You're done. This is all. You can now (re-)start REAPER and your FaderPort is working with REAPER.</p>
       </div>
     </section>
 
 
-    <h1><span>REAPER</span></h1>
+    <h1><span>FaderPort in REAPER</span></h1>
 
-    <!-- CHANNEL STRIP -->
-    <h2><span>Channel Strip</span></h2>
+    <!-- Track STRIP -->
+    <h2><span>Track</span></h2>
     <section class="doc-row">
-      <img src="assets/channel-strip.png" alt="" class="large">
+      <img src="assets/Track-strip.png" alt="" class="large">
       <div>
-        <p>The image is not displaying the correct layout for the display. There are plans for better
-          integration of display modes for the Faderport in CSI</p>
         <ol>
           <li>
-            <span class="strong">Channel name:</span> Displays the Channel name.
+            <span class="strong">Track name:</span> Displays the Track name.
           </li>
           <li>
-            <span class="strong">Channel Volume:</span> Displays the Channel volume in dB.
+            <span class="strong">Track number:</span> Displays the Track number.
           </li>
           <li>
-            <span class="strong">Channel Pan:</span> Displays the Channel’s current pan position value.
+            <span class="strong">Track Pan:</span> Displays the Track current pan position value.
           </li>
           <li>
-            <span class="strong">Pan Display:</span> Displays the Channel’s current pan position.
+            <span class="strong">Value Bar:</span> Displays the Tracks current pan position.
           </li>
           <li>
             <span class="strong">Pan/Param:</span> Controls panning for the currently selected
-            channel. Push to set the pan position back to center.
+            track. Push to set the pan position back to center.
           </li>
           <li>
             <span class="strong">Select Button:</span>
             <ul>
-              <li><span class="strong">Default:</span> Unique-select the channel. Other channels will be de-selected
+              <li><span class="strong">Default:</span> Unique-select the Track. Other Tracks will be de-selected
               </li>
-              <li><span class="strong">Left Shift:</span> Select the channel. All previous selected channels will also
+              <li><span class="strong">Left Shift:</span> Select the Track. All previous selected Tracks will also
                 stay selected</li>
-              <li><span class="strong">Right Shift:</span> Selects the range of channels between the previous selected
-                channel and the current selected channel</li>
+              <li><span class="strong">Right Shift:</span> Selects the range of Tracks between the previous selected
+                Track and the current selected Track</li>
             </ul>
           </li>
           <li>
-            <span class="strong">Solo:</span> Isolates the corresponding channel’s output signal in the mix.
-            Press and hold to solo momentarily.
+            <span class="strong">Solo:</span> Isolates the corresponding Tracks output signal in the mix.
+            Press and hold to solo for a couple of seconds.
           </li>
           <li>
-            <span class="strong">Mute:</span> Mutes the corresponding channel’s output signal. Press and
-            hold to
-            mute momentarily.
+            <span class="strong">Mute:</span> Mutes the corresponding Tracks output signal. Press and
+            hold to mute for a couple of seconds.
           </li>
           <li>
             <span class="strong">Touch-Sensitive Fader:</span> This 100 mm motorized fader can be used to
             control volume levels, aux send levels, panning, or plug-in parameters, depending on mode.
-            Holding
-            [Left Shift] with the fader will control the panning of this channel.
+            Holding <span class="strong">[Left Shift]</span> with the fader will control the panning of this Track.
           </li>
         </ol>
+
+        <hr />
+        <p>While holding the <span class="strong">[Left Shift]</span> key, the display changes it's layout. The next
+          info is displayed:</p>
+        <ul>
+          <li>
+            <span class="strong">Track name:</span> Displays the Track name.
+          </li>
+          <li>
+            <span class="strong">Track Volume:</span> Displays the Track volume in dB.
+          </li>
+          <li>
+            <span class="strong">Automation Mode:</span> Displays the Tracks Automation Mode.
+          </li>
+          <li>
+            <span class="strong">Track Pan:</span> Displays the Track current pan position value.
+          </li>
+          <li>
+            <span class="strong">Value Bar:</span> Displays the Tracks current volume.
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -210,8 +231,8 @@
     <section class="doc-row">
       <img src="assets/arm.png" class="tiny" alt="">
       <p>
-        <span class="strong">Arm:</span> Pressing the Arm button will allow you to arm tracks for recording by
-        pressing the corresponding track’s Select button.
+        <span class="strong">Arm:</span> Pressing the Arm button will allow you to arm Tracks for recording by
+        pressing the corresponding Tracks Select button.
       </p>
 
     </section>
@@ -219,10 +240,10 @@
       <img src="assets/shift-arm.png" class="large" alt="">
       <div>
         <p>
-          <span class="strong">Arm all</span> Press Left Shift + Arm to arm all tracks for recording.
+          <span class="strong">[Left Shift] + Arm:</span> Arm all Tracks for recording.
         </p>
         <p>
-          <span class="strong">Un-Arm all</span> Press Right Shift + Arm to arm all tracks for recording.
+          <span class="strong">[Right Shift] + Arm</span> Unarm all Tracks from recording.
         </p>
       </div>
     </section>
@@ -233,7 +254,10 @@
     <section class="doc-row">
       <img src="assets/solo-mute-clear.png" class="tiny" alt="">
       <p>
-        <span class="strong">Solo and Mute Clear:</span> These buttons will clear all solos or mutes.
+        <span class="strong">Solo Clear:</span> Un-solo all the solo'd Tracks.
+      </p>
+      <p>
+        <span class="strong">Mute Clear:</span> Un-mute all the muted Tracks.
       </p>
     </section>
 
@@ -256,15 +280,15 @@
           Press again to pause playback.
         </li>
         <li>
-          <span class="strong">Rewind</span> What to do with this? Hold down Rewind to go to the start of the
+          <span class="strong">Rewind</span> Rewinds a bit every press. Hold down Rewind to go to the start of the
           project.
         </li>
         <li>
-          <span class="strong">Fast Forward</span> What to do with this? Hold down Fast Forward to go to the
+          <span class="strong">Fast Forward</span> Fast Forwards a bit every press. Hold down Fast Forward to go to the
           end of the project.
         </li>
         <li>
-          <span class="strong">Record</span> Press to start recording at the current playback- cursor position
+          <span class="strong">Record</span> Press to start recording at the current playback-cursor position
           for record-enabled tracks.
         </li>
       </ol>
@@ -277,9 +301,9 @@
       <p>The Session Navigator provides quick navigation and session controls. Each button alters the functions of
         the push-button encoder and the Next and Prev buttons on either side.</p>
       <blockquote>
-        <span class="strong">Power User Tip:</span> Press [Left Shift] with any of these buttons to access the F1-F8
-        Functions.
-        These functions are user definable. See Section (What Section?) for more information.
+        <span class="strong">Power User Tip:</span> Press <span class="strong">[Left Shift]</span> with any of these
+        buttons to access the F1-F8 Functions.
+        These functions are user definable. See <a href="#function-keys">Function Keys Section</a> for more information.
       </blockquote>
       <p>
         <img src="assets/navigator.png" />
@@ -291,17 +315,17 @@
     <section class="doc-row">
       <img src="assets/navigation.png" class="large" />
       <div>
-        <h4>Channel Navigator</h4>
+        <h4>Track Navigator</h4>
         <ul>
           <li>
-            <span class="strong">Encoder</span> controls individual channel scrolling.
+            <span class="strong">Encoder:</span> Controls individual Track scrolling
           </li>
           <li>
-            <span class="strong">[Left Shift] + Encoder</span> Adds the tracks to the selection.
+            <span class="strong">[Left Shift] + Encoder:</span> Adds the tracks to the selection
           </li>
           <li>
-            <span class="strong">Navigation buttons</span> adjust the currently visible fader bank on the
-            FaderPort by one bank of eight or sixteen channels (model dependent).
+            <span class="strong">Navigation buttons:</span> Adjust the currently visible fader bank on the
+            FaderPort by one bank of 8 or 16 Tracks (model dependent)
           </li>
         </ul>
       </div>
@@ -333,10 +357,10 @@
           <span class="strong">Prev:</span> Zoom out horizontal
         </li>
         <li>
-          <span class="strong">Next:</span> Zoom in horizontal
+          <span class="strong">[Left Shift] + Prev:</span> Zoom out vertical
         </li>
         <li>
-          <span class="strong">[Left Shift] + Prev:</span> Zoom out vertical
+          <span class="strong">Next:</span> Zoom in horizontal
         </li>
         <li>
           <span class="strong">[Left Shift] + Next:</span> Zoom in vertical
@@ -421,7 +445,7 @@
           <span class="strong">[Left Shift] + Prev:</span> Set start position for a selection
         </li>
         <li>
-          <span class="strong">[Left Shift] + Next:</span> Set end positionb for a selection
+          <span class="strong">[Left Shift] + Next:</span> Set end position for a selection
         </li>
         <li>
           <span class="strong">Encoder push:</span> Edit the region near the cursor
@@ -503,14 +527,14 @@
     </section>
 
 
-    <h3><span>F1-F8 Functions</span></h3>
+    <h3 id="function-keys"><span>F1-F8 Functions</span></h3>
     <section class="doc-row">
       <div>
-        <p>Using [Left Shift] plus any Session Navigator button will access alternate
+        <p>Using <span class="strong">[Left Shift]</span> plus any Session Navigator button will access alternate
           functions for your FaderPort. By default, these are assigned as follows:</p>
         <blockquote>
           <span class="strong">Power User Tip:</span> The actions for the Functions keys can be managed with the
-          Reasonus application
+          ReaSonus application
         </blockquote>
 
         <p>
@@ -537,7 +561,8 @@
           Different tasks require different windows and tools in view and by saving screensets you can instantly jump to
           the ideal layout instantly as you change tasks.
         </p>
-        <p>Using [Right Shift] plus any Session Navigator button will set the corresponding Screenset windows.</p>
+        <p>Using <span class="strong">[Right Shift]</span> plus any Session Navigator button will set the corresponding
+          Screenset windows.</p>
         <blockquote class="reaperblog">
           The REAPER Blog created a nice video about <a target="_blank"
             href="https://reaperblog.net/2020/05/how-to-use-screensets-in-reaper-2/">Screensets</a>
@@ -555,50 +580,52 @@
         <h4>Latch / Save:</h4>
         <ul>
           <li>Engages Latch Automation on currently selected track.</li>
-          <li>Press the [Left Shift] and Latch buttons simultaneously to save your session.</li>
-          <li>Press the [Right Shift] and Latch buttons simultaneously to engages Latch Automation
-            globally.</li>
+          <li>Press the <span class="strong">[Left Shift]</span> and Latch buttons simultaneously to save your session.
+          </li>
+          <li>Press the <span class="strong">[Right Shift]</span> and Latch buttons simultaneously to engages Latch
+            Automation globally.</li>
         </ul>
         <h4>Trim / Redo:</h4>
         <ul>
           <li>Engages Trim Automation on currently selected track. </li>
-          <li>Press the [Left Shift] and Trim buttons simultaneously to redo the last action. </li>
-          <li>Press the [Right Shift] and Trim buttons simultaneously to engages Trim Automation
-            globally.
+          <li>Press the <span class="strong">[Left Shift]</span> and Trim buttons simultaneously to redo the last
+            action. </li>
+          <li>Press the <span class="strong">[Right Shift]</span> and Trim buttons simultaneously to engages Trim
+            Automation globally.
           </li>
         </ul>
         <h4>Off / Undo:</h4>
         <ul>
           <li>The Off button has no default action. </li>
-          <li>Press the [Left Shift] and Off buttons simultaneously to undo the last action. </li>
-          <li>Press the [Right Shift] and Off buttons simultaneously to engages Latch Preview
-            Automation
-            globally. </li>
+          <li>Press the <span class="strong">[Left Shift]</span> and Off buttons simultaneously to undo the last action.
+          </li>
+          <li>Press the <span class="strong">[Right Shift]</span> and Off buttons simultaneously to engages Latch
+            Preview Automation globally. </li>
           <li>Holding down the button for a couple of seconds will turn of global automation</li>
         </ul>
         <h4>Touch / User 1</h4>
         <ul>
           <li>Engages Touch Automation on currently selected track.</li>
-          <li>Press the [Left Shift] and Read has no functionality assigned yet.</li>
-          <li>Press the [Right Shift] adn Touch engages Read Automation globally.</li>
+          <li>Press the <span class="strong">[Left Shift]</span> and Read has no functionality assigned yet.</li>
+          <li>Press the <span class="strong">[Right Shift]</span> and Touch engages Touch Automation globally.</li>
         </ul>
         <h4>Write / User 2</h4>
         <ul>
           <li>Engages Write Automation on currently selected track.</li>
-          <li>Press the [Left Shift] and Read has no functionality assigned yet.</li>
-          <li>Press the [Right Shift] adn Write engages Read Automation globally.</li>
+          <li>Press the <span class="strong">[Left Shift]</span> and Read has no functionality assigned yet.</li>
+          <li>Press the <span class="strong">[Right Shift]</span> and Write engages Write Automation globally.</li>
         </ul>
         <h4>Read / User 3</h4>
         <ul>
           <li>Engages Read Automation on currently selected track.</li>
-          <li>Press the [Left Shift] and Read has no functionality assigned yet.</li>
-          <li>Press the [Right Shift] adn Read engages Read Automation globally.</li>
+          <li>Press the <span class="strong">[Left Shift]</span> and Read has no functionality assigned yet.</li>
+          <li>Press the <span class="strong">[Right Shift]</span> and Read engages Read Automation globally.</li>
         </ul>
       </div>
       <blockquote class="reaperblog">
         Checkout the video about automation modes on <a target="_blank"
           href="https://reaperblog.net/2017/07/reaper-automation-modes-explained/">The REAPER Blog</a> to get a
-        better idea about the differences.
+        undestanding of the differences.
       </blockquote>
     </section>
 
@@ -611,22 +638,22 @@
     </section>
 
 
-    <h2><span>Fader modes</span></h2>
+    <h2><span>Track modes</span></h2>
     <section class="doc-row">
-      <p>The channels area on the FaderPort can be used to set levels, control plug- in parameters, set send
+      <p>The Tracks area on the FaderPort can be used to set levels, control plug- in parameters, set send
         levels, and panning for every track.</p>
     </section>
     <section class="doc-row">
       <img src="assets/fader-modes.png" alt="" class="small">
       <ol>
         <li><span class="strong">Track:</span> When Track mode is active, the motorized faders will display and
-          control 1 channel levels</li>
+          control 1 track levels</li>
         <li><span class="strong">Edit Plug-ins:</span></li>
         <li><span class="strong">Sends:</span> Clicking Sends will enable the Sends mode for the selected
-          channel. Every channel will represent a send. Clicking a second time will open Sends mode </tr>
+          Track. Every Track will represent a send. Clicking a second time will open Sends mode </tr>
         </li>
-        <li><span class="strong">Receives (Pan):</span> When Receives mode is active, the channels will control
-          the receive levels and settings for the selected channel. </li>
+        <li><span class="strong">Receives (Pan):</span> When Receives mode is active, the Tracks will control
+          the receive levels and settings for the selected Track. </li>
       </ol>
     </section>
 
@@ -634,7 +661,7 @@
     <h3><span>Edit Plug-ins</span></h3>
     <section class="doc-row">
       <img src="assets/edit-plugins.png" alt="" class="large">
-      <p>Your FaderPort provides two modes to view and control your channel effects: individually and
+      <p>Your FaderPort provides two modes to view and control your Track effects: individually and
         globally. Pressing the button multiple times will toggle between the two modes. Both ways have a
         different color for the Select button to make it more clear which way is selected.</p>
     </section>
@@ -642,7 +669,7 @@
       <img src="assets/select-plugin.png" alt="" class="large">
       <div>
         <h4>Individual mode</h4>
-        <p>Press the Edit Plugins button once to show the effects menu for the currently selected channel. In this mode
+        <p>Press the Edit Plugins button once to show the effects menu for the currently selected Track. In this mode
           the
           color of the Select buttons is white.</p>
         <p>Press the Select button under the scribble strip displaying the name of the plug-in you’d like to edit.
@@ -652,13 +679,13 @@
     <section class="doc-row">
       <div>
         <h4>Globally mode</h4>
-        <p>Press the Edit Plugins button again to control the first effects for all focused channels. In this mode the
+        <p>Press the Edit Plugins button again to control the first effects for all focused Tracks. In this mode the
           color of the Select buttons is green.
         </p>
         <p>
           While turning the pan knob now, you can cycle through all available effects until the
           last active slot has been reached. Press the Edit Effects button again to open the effects menu for the
-          currently selected channel.
+          currently selected Track.
         </p>
       </div>
     </section>
@@ -687,14 +714,14 @@
         </p>
         <p>In both modes the next controls will have the next functions:</p>
         <ul>
-          <li><span class="strong">Select:</span> Select the channel</li>
+          <li><span class="strong">Select:</span> Select the Track</li>
           <li><span class="strong">Mute: </span> Mute the corresponding send</li>
           <li><span class="strong">Solo:</span> Toggle the Pre/Post effect</li>
           <li><span class="strong">[Left Shift] Solo:</span> Toggle the Polarity</li>
           <li><span class="strong">Fader:</span> Sets the Level for the send</li>
-          <li><span class="strong">[Left Shift] Fader</span>The fader now functions as the panning for the
+          <li><span class="strong">[Left Shift] Fader:</span> The fader now functions as the panning for the
             send</li>
-          <li><span class="strong">[Hold] Select:</span> Open the I/O window for the selected channel in
+          <li><span class="strong">[Hold] Select:</span> Open the I/O window for the selected Track in
             Globally mode</li>
           <li><span class="strong">Solo Clear:</span> Will open the I/O window in Individual mode </li>
         </ul>
@@ -705,13 +732,13 @@
       <div>
         <h4>Individual mode</h4>
         <p>Press the Sends button once to control the send levels for all the sends on the currently selected
-          channel. In this mode the color of the Select buttons is white.</p>
+          Track. In this mode the color of the Select buttons is white.</p>
       </div>
     </section>
     <section class="doc-row">
       <div>
         <h4>Globally mode</h4>
-        <p>Press the Sends button again to control the first insert bus send levels for all focused channels. In
+        <p>Press the Sends button again to control the first insert bus send levels for all focused Tracks. In
           this mode the color of the Select buttons is yellow.
         </p>
         <p>
@@ -736,14 +763,14 @@
         </p>
         <p>In both modes the next controls will have the next functions:</p>
         <ul>
-          <li><span class="strong">Select:</span> Select the channel</li>
+          <li><span class="strong">Select:</span> Select the Track</li>
           <li><span class="strong">Mute: </span> Mute the corresponding receive</li>
           <li><span class="strong">Solo:</span> Toggle the Pre/Post effect</li>
           <li><span class="strong">[Left Shift] Solo:</span> Toggle the Polarity</li>
           <li><span class="strong">Fader:</span> Sets the Level for the receive</li>
-          <li><span class="strong">[Left Shift] Fader</span>The fader now functions as the panning for the
+          <li><span class="strong">[Left Shift] Fader:</span> The fader now functions as the panning for the
             receive</li>
-          <li><span class="strong">[Hold] Select:</span> Open the I/O window for the selected channel in
+          <li><span class="strong">[Hold] Select:</span> Open the I/O window for the selected Track in
             Globally mode</li>
           <li><span class="strong">Solo Clear:</span> Will open the I/O window in Individual mode </li>
         </ul>
@@ -755,14 +782,14 @@
         <h4>Individual mode</h4>
         <p>Press the Receives (Pan) button once to control the send levels for all the sends on the currently
           selected
-          channel. In this mode the color of the Select buttons is white.</p>
+          Track. In this mode the color of the Select buttons is white.</p>
       </div>
     </section>
     <section class="doc-row">
       <div>
         <h4>Globally mode</h4>
         <p>Press the Receives (Pan) button again to control the first insert bus send levels for all focused
-          channels. In this mode the color of the Select buttons is blue.
+          Tracks. In this mode the color of the Select buttons is blue.
         </p>
         <p>
           <img src="assets/sends-hiu-style.png" alt="">
@@ -779,19 +806,60 @@
     <h2><span>Mix Management</span></h2>
     <section class="doc-row">
       <p>
-        The Mix Management buttons allow you to filter what channel types you can view and control from your
-        FaderPort. Fot this functionality you need to have the actions installed and configured.
+        The Mix Management buttons allow you to filter what Track types you can view and control from your
+        FaderPort.
       </p>
     </section>
     <section class="doc-row">
       <img src="assets/mix-management.png" alt="" class="small">
-      <ol>
-        <li>Select the goup of tracks you want to use from the Select buttons</li>
-        <li>Show only files with a Virtual Iinstrument</li>
-        <li>Show only the parent tracks on root level</li>
-        <li>Not yet implemented</li>
-        <li>Show All tracks</li>
-      </ol>
+      <div>
+        <ol>
+          <li>
+            <span class="strong">Audio:</span> Select the group of tracks you want to use from the Select buttons<br />
+            <span class="strong">[Left Shift] + Audio:</span> Show all tracks with receives
+          </li>
+          <li>
+            <span class="strong">VI:</span> Show only tracks with a Virtual Instrument
+          </li>
+          <li>
+            <span class="strong">Bus:</span> Show only the parent tracks on root level<br />
+            <span class="strong">[Left Shift] + Bus:</span> Show all tracks with sends
+          </li>
+          <li>
+            <span class="strong">VCA:</span> Show all tracks with hardware outputs
+          </li>
+          <li>
+            <span class="strong">All:</span> Show All tracks
+          </li>
+        </ol>
+        <p>
+          The Audio button opens a menu for filtering Tracks by it's name. Here is the list of filters currently
+          implemented and with the words it get's trigered by. This will be editable in the futute within the ReaSonus
+          application.<br /> These are the filters:
+        </p>
+        <ul>
+          <li><span class="strong">Drums:</span> Filters on
+            <code>Drum</code>, <code>Drms</code>, <code>Perc</code> and <code>Percussion</code>
+          </li>
+          <li><span class="strong">Bass:</span> Filters on <code>Bass</code></li>
+          <li><span class="strong">Guitar:</span> Filters on <code>Guitar</code> and <code>Gtr</code></li>
+          <li><span class="strong">Key:</span> Filters on <code>Keys</code>, <code>Synth</code> and <code>Organ</code>
+          </li>
+          <li><span class="strong">Vocal:</span> Filters on <code>Vocal</code> and <code>Vox</code></li>
+          <li><span class="strong">Piano:</span> Filters on <code>Piano</code>, <code>Upright</code> and
+            <code>Grand</code>
+          </li>
+          <li><span class="strong">Strings:</span> Filters on <code>Violin</code>, <code>Viola</code> and
+            <code>Cello</code>
+          </li>
+          <li><span class="strong">Brass:</span> Filters on <code>Trumpet</code> and <code>Saxophone</code></li>
+        </ul>
+        <blockquote>
+          <span class="strong">Contribution Tip:</span> If you have tips or ideas to improve these filters you can drop
+          those at <a href="https://github.com/navelpluisje/reasonus-install/issues">the Github repository</a> or the <a
+            href="https://forum.cockos.com/showthread.php?p=2562780#post2562780">Reaper Forum</a>
+        </blockquote>
+      </div>
     </section>
 
 

@@ -82,5 +82,29 @@
     "displayName": "Show Tracks With Instruments",
     "fileName": "showTracksWithInstruments.lua",
     "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_TRACKS_WITH_SENDS",
+    "displayName": "Show Tracks With Sends",
+    "fileName": "showTracksWithSends.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_TRACKS_WITH_RECEIVES",
+    "displayName": "Show Tracks With Receives",
+    "fileName": "showTracksWithReceives.lua",
+    "register": false
+  },
+  {
+    "actionId": "REASONUS_SHOW_TRACKS_WITH_HW_OUT",
+    "displayName": "Show Tracks With Hardware Output",
+    "fileName": "showTracksWithWwOutputs.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR",
+    "displayName": "Toggle follow the play cursor",
+    "fileName": "toggleFollowPlayCursor.lua",
+    "register": true
   }
 ]
