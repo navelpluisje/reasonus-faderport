@@ -98,13 +98,49 @@
   {
     "actionId": "REASONUS_SHOW_TRACKS_WITH_HW_OUT",
     "displayName": "Show Tracks With Hardware Output",
-    "fileName": "showTracksWithWwOutputs.lua",
+    "fileName": "showTracksWithHwOutputs.lua",
     "register": true
   },
   {
     "actionId": "REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR",
     "displayName": "Toggle follow the play cursor",
     "fileName": "toggleFollowPlayCursor.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_LED_STATE_MIX_ALL_BTN",
+    "displayName": "Handle the led state for the All button",
+    "fileName": "ledStateMixAllBtn.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_LED_STATE_MIX_AUDIO_BTN",
+    "displayName": "Handle the led state for the Audio button",
+    "fileName": "ledStateMixAudioBtn.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_LED_STATE_MIX_BUS_BTN",
+    "displayName": "Handle the led state for the Bus button",
+    "fileName": "ledStateMixBusBtn.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_LED_STATE_MIX_VCA_BTN",
+    "displayName": "Handle the led state for the VCA button",
+    "fileName": "ledStateMixVcaBtn.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_LED_STATE_MIX_VI_BTN",
+    "displayName": "Handle the led state for the VI button",
+    "fileName": "ledStateMixViBtn.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_SHOW_TRACK_CLICK_ACTION",
+    "displayName": "Handle the click of the show track by name actions",
+    "fileName": "showTrackClickAction.lua",
     "register": true
   }
 ]
