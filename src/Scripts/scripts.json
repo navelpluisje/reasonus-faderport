@@ -120,9 +120,21 @@
     "register": true
   },
   {
+    "actionId": "REASONUS_LED_STATE_MIX_SHIFT_AUDIO_BTN",
+    "displayName": "Handle the led state for the Shift+Audio button",
+    "fileName": "ledStateMixShiftAudioBtn.lua",
+    "register": true
+  },
+  {
     "actionId": "REASONUS_LED_STATE_MIX_BUS_BTN",
     "displayName": "Handle the led state for the Bus button",
     "fileName": "ledStateMixBusBtn.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_LED_STATE_MIX_SHIFT_BUS_BTN",
+    "displayName": "Handle the led state for the Shift + Bus button",
+    "fileName": "ledStateMixShiftBusBtn.lua",
     "register": true
   },
   {

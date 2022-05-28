@@ -11,9 +11,14 @@ Zone "MixManagement"
   / AudioBtn        Reaper %dummyAction% { 20 20 20 20 20 20 } 
   AudioBtn        Reaper _REASONUS_LED_STATE_MIX_AUDIO_BTN { 20 20 20 255 255 255 }
   AudioBtn        GoZone "TracksByName"
+  Shift+AudioBtn  Reaper _REASONUS_LED_STATE_MIX_SHIFT_AUDIO_BTN { 20 20 20 255 255 255 }
+
   Instrument      Reaper _REASONUS_LED_STATE_MIX_VI_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks With Instruments
+  
   BusBtn          Reaper _REASONUS_LED_STATE_MIX_BUS_BTN { 20 20 20 255 255 255 } // Script: Show All Top Level Tracks
-  Shift+BusBtn    Reaper _REASONUS_SHOW_TRACKS_WITH_SENDS { 20 20 20 20 20 20 }      // Script: Show All Tracks With Sends
+  Shift+BusBtn    Reaper _REASONUS_LED_STATE_MIX_SHIFT_BUS_BTN { 20 20 20 255 255 255 }      // Script: Show All Tracks With Sends
+  
   VCABtn          Reaper _REASONUS_LED_STATE_MIX_VCA_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks with hardware outputs
+  
   AllBtn          Reaper _REASONUS_LED_STATE_MIX_ALL_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks
 ZoneEnd 

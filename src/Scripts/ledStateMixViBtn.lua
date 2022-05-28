@@ -1,7 +1,9 @@
 function main()
   audioCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_AUDIO_BTN")
+  shiftAudioCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_SHIFT_AUDIO_BTN")
   vcaCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_VCA_BTN")
   busCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_BUS_BTN")
+  shiftBusCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_SHIFT_BUS_BTN")
   allCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_ALL_BTN")
 
   viAction = reaper.NamedCommandLookup("_REASONUS_SHOW_TRACKS_WITH_INSTRUMENT")
@@ -19,8 +21,10 @@ function main()
   end  
   
   reaper.SetToggleCommandState(sec, audioCmdId, 0)
+  reaper.SetToggleCommandState(sec, audioCmdId, 0)
   reaper.SetToggleCommandState(sec, vcaCmdId, 0)
   reaper.SetToggleCommandState(sec, busCmdId, 0)
+  reaper.SetToggleCommandState(sec, shiftBusCmdId, 0)
   reaper.SetToggleCommandState(sec, allCmdId, 0)
   
   reaper.SetToggleCommandState(sec, cmd, newState)

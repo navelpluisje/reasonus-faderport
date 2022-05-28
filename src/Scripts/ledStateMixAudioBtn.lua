@@ -1,6 +1,8 @@
 function main()
+  shiftAudioCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_SHIFT_AUDIO_BTN")
   viCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_VI_BTN")
   busCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_BUS_BTN")
+  shiftBusCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_SHIFT_BUS_BTN")
   vcaCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_VCA_BTN")
   allCmdId = reaper.NamedCommandLookup("_REASONUS_LED_STATE_MIX_ALL_BTN")
 
@@ -26,8 +28,10 @@ function main()
   
   -- 0 and 1 are only togglling. 2 and 3 are in a filter mode
   if (newState > 1) then  
+    reaper.SetToggleCommandState(sec, shiftAudioCmdId, 0)
     reaper.SetToggleCommandState(sec, viCmdId, 0)
     reaper.SetToggleCommandState(sec, busCmdId, 0)
+    reaper.SetToggleCommandState(sec, shiftBusCmdId, 0)
     reaper.SetToggleCommandState(sec, vcaCmdId, 0)
     reaper.SetToggleCommandState(sec, allCmdId, 0)
   end
