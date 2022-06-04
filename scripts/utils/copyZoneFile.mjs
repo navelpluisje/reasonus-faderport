@@ -6,7 +6,7 @@ export const copyZoneFile = (srcFilePath, destFileName, file) => {
   const fileContent = fs.readFileSync(srcFilePath).toString();
 
   try {
-    fs.writeFileSync(destFileName, fileContent.replace(/%dummyAction%/g, process.env.ALWAYS_ON_ACTION));
+    fs.writeFileSync(destFileName, fileContent);
     console.log(`* ${chalk.yellow(file)} ${chalk.green('Copied successfully')}`);
   } catch (err) {
     console.log(chalk.red('error'), err);

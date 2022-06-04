@@ -26,6 +26,6 @@ Zone NavigatorMaster
     Option+RotaryBigPush  NoAction
     RotaryBig             TrackVolume
   
-    Master                Reaper %dummyAction%    // Dummy Action
+    Master                Reaper _REASONUS_ALWAYS_ON    // Dummy Action
     Shift+Master          Reaper 40326    // View: Show region/marker manager window
 ZoneEnd

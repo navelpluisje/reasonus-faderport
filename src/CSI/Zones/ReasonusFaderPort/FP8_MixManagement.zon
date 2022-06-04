@@ -8,7 +8,7 @@
 //------------------------------------------------------------------------------
 
 Zone "MixManagement"
-  / AudioBtn        Reaper %dummyAction% { 20 20 20 20 20 20 } 
+  / AudioBtn        Reaper _REASONUS_ALWAYS_ON { 20 20 20 20 20 20 } 
   AudioBtn        Reaper _REASONUS_LED_STATE_MIX_AUDIO_BTN { 20 20 20 255 255 255 }
   AudioBtn        GoZone "TracksByName"
   Shift+AudioBtn  Reaper _REASONUS_LED_STATE_MIX_SHIFT_AUDIO_BTN { 20 20 20 255 255 255 }
