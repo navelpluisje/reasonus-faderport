@@ -1,0 +1,60 @@
+//------------------------------------------------------------------------------
+// File:    FP8_Navigators.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    Navigators with Shift handle the functions
+//    Navigators with Option handle the screensets
+//------------------------------------------------------------------------------
+
+Zone Navigators
+    Link                NoAction
+    Link                NoAction
+    Link                NoAction
+
+    Pan                 NoAction
+    Pan                 GoZone "Navigators"
+    Pan                 GoZone "NavigatorBank"
+
+    Channel             NoAction
+    Channel             GoZone "Navigators"
+    Channel             GoZone "NavigatorChannel"
+
+    Scroll              NoAction
+    Scroll              GoZone "Navigators"
+    Scroll              GoZone "NavigatorScroll"
+
+    Shift+Scroll        NoAction
+    Shift+Scroll        GoZone "Navigators"
+    Shift+Scroll        GoZone "NavigatorZoom"
+
+    Master              NoAction
+    Master              GoZone "Navigators"
+    Master              GoZone "NavigatorMaster"
+
+    Click               Reaper 40364    // Options: Toggle metronome
+    Hold+Click          GoZone "Navigators"
+    Hold+Click          GoZone "NavigatorMetronome"
+
+    Section             NoAction
+    Section             GoZone "Navigators"
+    Section             GoZone "NavigatorSection"
+
+    Marker              NoAction
+    Marker              GoZone "Navigators"
+    Marker              GoZone "NavigatorMarker"
+
+// ===========================================
+// FUNCTION KEYS
+// ===========================================
+// Function-Action-1
+    Shift+Master        Reaper 40078    // View: Toggle mixer visible
+// Function-Action-2 
+    Shift+Click         Reaper 50124    // Media explorer: Show/hide media explorer
+// Function-Action-3 
+    Shift+Section       Reaper 40271    // View: SShow FX browser window
+// Function-Action-4 
+    Shift+Marker        Reaper 41074    // Toggle show all floating windows
+    Property+Shift+Marker      NoFeedback    
+ZoneEnd

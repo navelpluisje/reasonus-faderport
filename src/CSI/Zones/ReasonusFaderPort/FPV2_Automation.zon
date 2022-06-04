@@ -1,0 +1,26 @@
+//------------------------------------------------------------------------------
+// File:    FPV2_Automation.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    File contains handling the track and Global Automation functionality
+//    Also Save, Undo and Redo are working
+//    User Actions are not yet implemented
+//------------------------------------------------------------------------------
+
+Zone "Automation"
+  SelectedTrackNavigator
+
+// ===========================================
+// TRACK AUTOMATION
+// ===========================================
+  Touch           TrackAutoMode 2     { 20 20 0 255 255 0 }    // Touch
+  Write           TrackAutoMode 3     { 20 0 0 255 0 0 }       // Write
+  Read            TrackAutoMode 1     { 0 20 0 0 255 0 }       // Read
+
+  Shift+Touch     TrackAutoMode 4     { 5 0 20 53 0 255 }      // Latch
+  Shift+Write     TrackAutoMode 0     { 20 20 20 255 255 255 } // Trim
+  Shift+Read      TrackAutoMode 5     { 0 5 20 0 55 255 }      // Latch Preview
+  
+ZoneEnd  

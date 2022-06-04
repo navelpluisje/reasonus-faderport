@@ -1,0 +1,21 @@
+//------------------------------------------------------------------------------
+// File:    FPV2_Home.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    Home is where all the fun starts
+//------------------------------------------------------------------------------
+
+Zone Home
+  LeftShft   Shift
+  RightShft  Option
+
+  IncludedZones
+    "Channel"
+    "Automation"
+    "Navigators"
+    "NavigatorBank"
+    "Transport"
+  IncludedZonesEnd
+ZoneEnd

@@ -28,7 +28,7 @@ Zone NavigatorSection
     Option+RotaryBigPush      Reaper 40615              // Markers: Delete region near cursor
     RotaryBig                 NoAction
 
-    Section                   Reaper %dummyAction%    // Dummy Action
+    Section                   Reaper %dummyAction%       // Dummy Action
     Hold+Section              Reaper 40020               // Time selection: Remove (unselect) time selection and loop points 
     Shift+Section             Reaper 40378               // View: Show big clock window
 ZoneEnd
