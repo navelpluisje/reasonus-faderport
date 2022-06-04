@@ -154,5 +154,17 @@
     "displayName": "Handle the click of the show track by name actions",
     "fileName": "showTrackClickAction.lua",
     "register": true
+  },
+  {
+    "actionId": "RTK_LIBRARY",
+    "displayName": "Library file for the Reaper ToolKit",
+    "fileName": "rtk.lua",
+    "register": false
+  },
+  {
+    "actionId": "REASONUS_EDIT_FADERPORT",
+    "displayName": "Edit your FaderPort from within REAPER",
+    "fileName": "reasonusEditFaderport.lua",
+    "register": true
   }
 ]
