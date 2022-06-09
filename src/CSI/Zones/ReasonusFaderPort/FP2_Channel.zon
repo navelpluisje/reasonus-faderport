@@ -9,7 +9,7 @@
 
 
 Zone "Channel"
-  TrackNavigator
+  SelectedTrackNavigator
 
   Mute                      TrackMute
   Solo                      TrackSolo
@@ -18,10 +18,10 @@ Zone "Channel"
   Shift+Solo                Reaper 40340       // Track: Unsolo all tracks
   Shift+Arm                 Reaper 40490       // Track: Arm all tracks for recording
               
-  Shift+Fader|              TrackPan
-  Fader|                    TrackVolume
-  FaderTouch+Fader|         TrackVolume
-  FaderTouch|               TrackTouch
+  Shift+Fader               TrackPan
+  Fader                     TrackVolume
+  FaderTouch+Fader          TrackVolume
+  FaderTouch                TrackTouch
 
   Bypass                    Reaper 8           // Track: Toggle FX bypass for selected tracks
   Shift+Bypass              Reaper 40344       // Track: Toggle FX bypass on all tracks

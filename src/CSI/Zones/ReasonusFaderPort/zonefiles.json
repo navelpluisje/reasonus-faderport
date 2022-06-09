@@ -47,13 +47,13 @@
     "FP16_NavigatorBank.zon",
     "FP16_NavigatorMaster.zon"
   ],
-  "FPV2": [
-    "FPV2_Automation.zon",
-    "FPV2_Channel.zon",
-    "FPV2_Home.zon",
-    "FPV2_Navigators.zon",
-    "FPV2_NavigatorMaster.zon",
-    "FP8_NavigatorBank.zon",
+  "FP2": [
+    "FP2_Automation.zon",
+    "FP2_Channel.zon",
+    "FP2_Home.zon",
+    "FP2_Navigators.zon",
+    "FP2_NavigatorMaster.zon",
+    "FP2_NavigatorBank.zon",
     "FP8_NavigatorChannel.zon",
     "FP8_NavigatorMarker.zon",
     "FP8_NavigatorMetronome.zon",

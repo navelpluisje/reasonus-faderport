@@ -8,8 +8,7 @@
 //------------------------------------------------------------------------------
 
 Zone Home
-  LeftShft   Shift
-  RightShft  Option
+  Shift   Shift
 
   IncludedZones
     "Channel"

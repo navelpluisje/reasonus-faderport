@@ -1,0 +1,27 @@
+//------------------------------------------------------------------------------
+// File:    FP8_NavigatorBank.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    Bank Navigation
+//------------------------------------------------------------------------------
+
+Zone NavigatorBank
+// ===========================================
+// BUTTONS AND SCROLL
+// ===========================================
+    Prev                  TrackBank -1
+    Next                  TrackBank  1
+    Shift+Prev            NoAction
+    Shift+Next            NoAction
+    ScrollLeft            TrackBank -1
+    ScrollRight           TrackBank  1
+
+    RotaryBigPush         NoAction
+    Shift+RotaryBigPush   NoAction
+    Option+RotaryBigPush  NoAction
+    RotaryBig             NoAction
+
+    Pan                   Reaper _REASONUS_ALWAYS_ON    // Dummy Action
+ZoneEnd
