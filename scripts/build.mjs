@@ -21,10 +21,6 @@ if (args._.includes('help')) {
 }
 
 console.clear()
-if (!process.env.ALWAYS_ON_ACTION) {
-  console.log(chalk.red('ALWAYS_ON_ACTION is not set.'));
-  console.log('The action id will not be replaced and may result in a not proper working FaderPort while developing \n\n\n');
-}
 
 if (args._.includes('watch')) {
   console.log(chalk.blue('================================================================================'));
@@ -36,11 +32,16 @@ if (args._.includes('watch')) {
       recursive: true,
     },
     (x, file) => {
-      if (!process.env.ALWAYS_ON_ACTION) {
-        copyFile(path.join(process.cwd(), 'src', 'CSI'), path.join(process.env.REAPER_PATH, 'CSI'), file);
-      } else {
-        copyZoneFile(path.join(process.cwd(), 'src', 'CSI', file), path.join(process.env.REAPER_PATH, 'CSI', file), file);
-      }
+      copyFile(path.join(process.cwd(), 'src', 'CSI'), path.join(process.env.REAPER_PATH, 'CSI'), file);
+    },
+  );
+  fs.watch(
+    path.join(process.cwd(), 'src', 'Scripts'),
+    {
+      recursive: true,
+    },
+    (x, file) => {
+      copyFile(path.join(process.cwd(), 'src', 'Scripts'), path.join(process.env.REAPER_PATH, 'Scripts', 'Reasonus'), file);
     },
   );
 }

@@ -1,7 +1,8 @@
 -- Set package path to find rtk installed via ReaPack
-package.path = reaper.GetResourcePath() .. '/Scripts/ReaSonus/?.lua'
+package.path = reaper.GetResourcePath() .. '/Scripts/ReaSonus/ref/?.lua'
 -- Load the package
 local rtk = require('rtk')
+local ref = require('ref')
 -- Set the module-local log variable for more convenient logging.  Throughout
 -- this tutorial we will assume both rtk and log variables have been set.
 local log = rtk.log
@@ -15,7 +16,7 @@ local Colors = {
     BackGround = '#ffffff0f',
   },
   Label = {
-    Border = '1px #ffffff55',
+    Border = '1px #ffffff55', 
     BackGround = '#ffffff0f',
   },
 }
@@ -34,7 +35,108 @@ local contentWidth = 0
 local functionActions = {}
 local functionActionIds = {}
 -- pre-define the popups
-local popup
+
+
+--******************************************************************************
+--
+-- Reset all the midi surfaces
+--
+--******************************************************************************
+local function resetSurfaces()
+    -- Control surface: Refresh all surfaces
+    reaper.Main_OnCommandEx(41743, 0, 0)
+end
+
+
+
+--******************************************************************************
+--
+-- Show a rtk popup
+-- title: String; title of the popup
+-- content: rtk.Widget; Widget with the content for the popup
+-- onClose: function; callback function for onclose
+--
+--******************************************************************************
+local function showPopup(title, content, onClose) 
+  local popupBody = rtk.VBox{spacing=20}
+  local popup = rtk.Popup{
+    child   = popupBody, 
+    overlay = '#000000aa', 
+    bg      = Colors.Primary,
+    padding = 0,
+    w       = 460
+  }
+  
+  popupBody:add(rtk.Heading{
+    text    = title,
+    t       = 0,
+    w       = 1,
+    bmargin = 5,
+    padding = 10,
+    bg      = Colors.Label.BackGround,
+    bborder = Colors.Label.Border,
+    halign  = 'center',
+  })
+  
+  local container = popupBody:add(rtk.Container{
+    lpadding = 30, 
+    rpadding = 30,
+  })
+  container:add(content)
+  
+  local footer = popupBody:add(rtk.HBox{    
+    padding = 10,
+    tborder = Colors.Label.Border,
+  })
+  footer:add(rtk.Spacer(), {expand = 1, fillh=false, fillv=false})
+  local popupClosebutton = footer:add(rtk.Button{label='Close', {halign='center'}})
+  footer:add(rtk.Spacer(), {expand=1, fillh=false, fillv=false})
+  popupClosebutton.onclick = function() 
+    if onClose then
+      onClose()
+    end
+    popup:close() 
+  end
+  popup:open()
+
+end
+
+
+local function showSaveFunctionPopup()
+  local content = rtk.Text{
+    text = 'The changes have been saved successfully'
+  }
+  showPopup('Message', content, resetSurfaces)
+end
+
+local function showActionInfoPopup(functionIndex)
+  local actionId = functionIds[functionIndex]
+  local fullName = reaper.CF_GetCommandText(0, actionId)
+  local actionType, actionName = string.match(fullName, "(.*):%s(.*)");
+  local content = rtk.VBox{
+    w       = 400, 
+    spacing = 10
+  }
+  local idLine = content:add(rtk.HBox{})
+  idLine:add(rtk.Text{text = 'Action Id', w=.3})
+  idLine:add(rtk.Text{text = actionId})
+  if (actionType) then 
+    local typeLine = content:add(rtk.HBox{})
+    typeLine:add(rtk.Text{text = 'Action Type', w=.3})
+    typeLine:add(rtk.Text{text = actionType, w=1})
+  end
+  if (not actionName) then 
+    actionName = fullName
+  end
+  local nameLine = content:add(rtk.HBox{})
+  nameLine:add(rtk.Text{text = 'Action Name', w=.3})
+  nameLine:add(rtk.Text{
+    text = actionName, 
+    w    = 1,     
+    wrap = rtk.Text.WRAP_NORMAL,
+})
+  showPopup('Action info', content)
+end
 
 
 --******************************************************************************
@@ -92,12 +194,12 @@ function WriteFunctionsFile()
     end
     if string.match(line, '// Function.Action.(%d)') then
       readNext = true
-      functionId = math.floor(string.match(line, '// Function.Action.(%d)') - 1)
+      functionId = math.floor(string.match(line, '// Function.Action.(%d)'))
     end  
     zonFile:write(functionLines[i] .. '\n')
   end
   zonFile:close()
-  popup:open()
+  showSaveFunctionPopup()
 end
 
 
@@ -111,6 +213,8 @@ end
 --******************************************************************************
 function SetAction(actionId, index) 
   if(functionActionIds[index]) then
+    local actionName = reaper.CF_GetCommandText(0,actionId)
+    functionActionIds[index]:attr('tooltip', actionName)
     functionActionIds[index]:attr('text', actionId)
   end
   functionIds[index] = actionId
@@ -166,7 +270,6 @@ local homeIcon      = rtk.Image():load('./images/icons/home.png')
 local aboutIcon     = rtk.Image():load('./images/icons/info.png')
 local searchIcon    = rtk.Image():load('./images/icons/search.png')
 local saveIcon      = rtk.Image():load('./images/icons/save.png')
-local faderPort     = rtk.Image():load('./images/icons/Faderport8.png')
 if not logo then
    log.error('image failed to load')
 end
@@ -182,95 +285,6 @@ local window = rtk.Window{
   bg        = Colors.Primary, 
   title     = 'ReaSonus FaderPort'
 }
-
-local popupContent = rtk.VBox{spacing=20}
-popup = rtk.Popup{
-  child   = popupContent, 
-  padding = 30, 
-  overlay = '#000000aa', 
-  bg      = Colors.Primary
-}
-popupContent:add(rtk.Heading{
-  text    = 'Message',
-  bmargin = 5
-}, {halign='center'})
-popupContent:add(rtk.Text{
-  text = 'The changes have been saved successfully'
-})
-local popupClosebutton = popupContent:add(rtk.Button{label='Close'}, {halign='center'})
-popupClosebutton.onclick = function() 
-  -- Control surface: Refresh all surfaces
-  reaper.Main_OnCommandEx(41743, 0, 0)
-  popup:close() 
-end
-
-
---******************************************************************************
---
--- Create the home page
---
---******************************************************************************
-local function createHomePage()
-  local homePage = rtk.VBox{spacing = 25, w = 1, padding = 10}
-  homePage:add(rtk.Heading{
-    text   = 'Welcome to ReaSonus FaderPort', 
-    halign ='center', 
-    w      = 1
-  })
-  local imageArea = homePage:add(rtk.Container{w=1, halign='center'})
-  imageArea:add(rtk.ImageBox{faderPort, maxh=400, halign = 'center' })
-  homePage:add(rtk.Text{
-    text   = 'Manage your FaderPort the best way possible in REAPER', 
-    w      = 1, 
-    halign = rtk.Widget.CENTER
-  })
-  return homePage
-end
-
-
---******************************************************************************
---
--- Create the about page
---
---******************************************************************************
-local function createAboutPage()
-  local aboutPage = rtk.VBox{spacing = 15, w = 1, padding = 10}
-  aboutPage:add(rtk.Heading{
-    text   = 'About', 
-  })
-  aboutPage:add(rtk.Text{
-    w = 1,
-    wrap = rtk.Text.WRAP_NORMAL,
-    text   = 'ReaSonus FaderPort is created to make the use of your FaderPort with Reaper as easy as possible. It is build on top of CSI, a tool for connecting controllers to REAPER with a huge flexibility.' 
-  })
-  aboutPage:add(rtk.Text{
-    w = 1,
-    wrap = rtk.Text.WRAP_NORMAL,
-    text   = 'Therefor a big thank you goes out to Geoff Waddington and the CSI community.' 
-  })
-  aboutPage:add(rtk.Text{
-    w = 1,
-    wrap = rtk.Text.WRAP_NORMAL,
-    text   = 'I work on ReaSonus in my spare time and is Open Source, so if you want to, feel free to add code.' 
-  })
-  aboutPage:add(rtk.Text{
-    w = 1,
-    wrap = rtk.Text.WRAP_NORMAL,
-    text   = 'You may also donate if you appreciate this project.' 
-  })
-  local donateButton = aboutPage:add(rtk.Button{
-    label  = 'Buy me a coffe or beer', 
-    halign = rtk.Widget.RIGHT,
-    flat   = rtk.Button.FLAT,
-    bg     = Colors.Button.BackGround,
-    border = Colors.Button.Border, 
-  }, {halign = rtk.Widget.RIGHT,})
-  donateButton.onclick = function()
-    rtk.open_url('https://www.buymeacoffee.com/navelpluisje')
-  end
-  
-  return aboutPage
-end
 
 --******************************************************************************
 --
@@ -315,7 +329,7 @@ app.statusbar:hide()
 app:add_screen{
     name = 'home',
     init = function(app, screen)
-        screen.widget = createHomePage()
+        screen.widget = ref.createHomePage()
     end,
 }
 
@@ -332,7 +346,7 @@ app:add_screen{
 app:add_screen{
     name = 'about',
     init = function(app, screen)
-        screen.widget = createAboutPage()
+        screen.widget = ref.createAboutPage()
     end,
 }
 
@@ -422,7 +436,7 @@ for i = 1, 8 do
   actionCallbacks[i] = GetSelectedAction(SetAction, i)
   
   local functionLabel = 'Function ' .. i
-  functionActions[i] = functionsPage:add(rtk.Container{
+  functionActions[i] = functionsPage:add(rtk.VBox{
     w       = .25, 
     h       = 80,
     padding = 5, 
@@ -436,7 +450,7 @@ for i = 1, 8 do
     border   = Colors.Label.Border,
   })
   label:add(rtk.Text{
-    functionLabel, 
+    text     = functionLabel, 
     w        = 1, 
     halign   = rtk.Widget.CENTER, 
     valign   = rtk.Widget.CENTER, 
@@ -444,33 +458,43 @@ for i = 1, 8 do
     tmargin  = 7
   })
   
-  local acionId = functionActions[i]:add(rtk.HBox{
+  local actionId = functionActions[i]:add(rtk.HBox{
     w        = 1, 
     h        = 40, 
-    tmargin  = 29, 
+    t        = 1, 
     vpadding = 15,
     border   = Colors.Label.Border
   })
-  functionActionIds[i] = rtk.Text{
-    'actionId', 
-    w = 1, 
-    halign    = rtk.Widget.CENTER, 
-    valign    = rtk.Widget.CENTER, 
-    fontflags = rtk.font.BOLD, 
-    tmargin   = 12, 
-    lpadding  = 38
-  } 
-  acionId:add(functionActionIds[i])
-  
-  local actionButton = functionActions[i]:add(rtk.Button{
+  local actionButton = actionId:add(rtk.Button{
     icon    = searchIcon, 
     iconpos = rtk.Widget.CENTER, 
     w       = 38, 
     h       = 38,
-    tmargin = 30,
     flat    = rtk.Button.FLAT,
   })
+  actionId:add(rtk.Spacer(), {expand=1, fillh=true})
+  local actionIdText = actionId:add(rtk.Text{
+    'actionId', 
+    h = 1,
+    valign = rtk.Widget.CENTER, 
+    expand = 4,
+    fillh = true,
+    fontflags = rtk.font.BOLD, 
+    halign    = rtk.Widget.CENTER,
+  })
+  actionId:add(rtk.Spacer(), {expand=1, fillh=true})
+  local infoButton = actionId:add(rtk.Button{
+    icon    = aboutIcon, 
+    iconpos = rtk.Widget.CENTER, 
+    w       = 38, 
+    h       = 38,
+    flat    = rtk.Button.FLAT,
+    halign  = rtk.Widget.RIGHT,
+  })
+  
+  functionActionIds[i] = actionIdText
   actionButton.onclick=actionCallbacks[i]
+  infoButton.onclick = function() showActionInfoPopup(i) end
 end
 
 local saveButton = functionsPage:add(rtk.Button{
@@ -564,5 +588,4 @@ function main()
 end
 
 main()
-
 
