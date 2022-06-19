@@ -27,4 +27,5 @@ Zone NavigatorMetronome
   Option+RotaryBigPush  NoAction
   RotaryBig             NoAction
   
+  Shift+Click         Reaper 50124    // Media explorer: Show/hide media explorer
 ZoneEnd 

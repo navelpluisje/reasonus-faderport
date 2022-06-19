@@ -89,12 +89,12 @@
           <a href="#fpv2-function-keys" class="h3 toc">F1-F4 Functions</a>
           <a href="#fpv2-automation-controls" class="h2 toc">Automation Controls</a>
 
-          <a href="#reasonus-action" class="h1 toc">ReaSonus FaderPort Control</a>
+          <!-- <a href="#reasonus-action" class="h1 toc">ReaSonus FaderPort Control</a>
           <a href="#plugin-start" class="h2 toc">Open ReaSonus FaderPort Control</a>
           <a href="#plugin-edit-function" class="h2 toc">Edit Function keys</a>
           <a href="#plugin-action-info" class="h3 toc">Action Info</a>
           <a href="#plugin-action-edit" class="h3 toc">Edit Action</a>
-
+ -->
           <a href="#additional-help" class="h1 toc">Additional Help</a>
           <a href="#resource-path-action" class="h2 toc">Create REAPER resource path Action</a>
 
@@ -1060,15 +1060,16 @@
     <!-- MASTER NAVIGATOR -->
     <section class="doc-row">
       <h4>Master</h4>
+      <p>In this section all channel buttons handle the master Track</p>
       <ul>
         <li>
-          <span class="strong">Prev:</span> Go to previous bank of eight track
+          <span class="strong">Prev:</span> No action
         </li>
         <li>
-          <span class="strong">Next:</span> Go to next bank of eight tracks
+          <span class="strong">Next:</span> No action
         </li>
         <li>
-          <span class="strong">Encoder:</span> Set the master volume
+          <span class="strong">Encoder:</span> Handle the panning for the master Track
         </li>
       </ul>
     </section>
@@ -1082,13 +1083,13 @@
           <span class="strong">Prev:</span> Zoom out horizontal
         </li>
         <li>
-          <span class="strong">[Left Shift] + Prev:</span> Zoom out vertical
+          <span class="strong">[Shift] + Prev:</span> Zoom out vertical
         </li>
         <li>
           <span class="strong">Next:</span> Zoom in horizontal
         </li>
         <li>
-          <span class="strong">[Left Shift] + Next:</span> Zoom in vertical
+          <span class="strong">[Shift] + Next:</span> Zoom in vertical
         </li>
         <li>
           <span class="strong">Encoder:</span> Zoom in/out horizontal
@@ -1121,7 +1122,7 @@
           <span class="strong">Encoder push:</span> Set the metronome speed to the original speed
         </li>
         <li>
-          <span class="strong">[Left Shift] + Encoder push:</span> Show the metronome settings pane
+          <span class="strong">[Shift] + Encoder push:</span> Show the metronome settings pane
         </li>
         <li>
           <span class="strong">Encoder:</span> Set the volume of the metronome
@@ -1144,13 +1145,13 @@
           <span class="strong">Encoder:</span> Scroll the view vertically
         </li>
         <li>
-          <span class="strong">[Left Shift] + Encoder:</span> Scroll the view horizontally
+          <span class="strong">[Shift] + Encoder:</span> Scroll the view horizontally
         </li>
         <li>
           <span class="strong">Encoder push:</span> Scroll the view vertically to the selected track
         </li>
         <li>
-          <span class="strong">[Left Shift] + Encoder push:</span> Scroll the view horizontally to the play cursor
+          <span class="strong">[Shift] + Encoder push:</span> Scroll the view horizontally to the play cursor
         </li>
       </ul>
     </section>
@@ -1167,55 +1168,24 @@
           <span class="strong">Next:</span> Go to/Select the next region or marker
         </li>
         <li>
-          <span class="strong">[Left Shift] + Prev:</span> Set start position for a selection
+          <span class="strong">[Shift] + Prev:</span> Set start position for a time selection
         </li>
         <li>
-          <span class="strong">[Left Shift] + Next:</span> Set end position for a selection
+          <span class="strong">[Shift] + Next:</span> Set end position for a time selection
         </li>
         <li>
           <span class="strong">Encoder push:</span> Edit the region near the cursor
         </li>
         <li>
-          <span class="strong">[Left Shift] + Encoder push:</span> Move the cursor to the start of the current
-          measurement
-        </li>
-        <li>
-          <span class="strong">[Hold] + [Left Shift] + Encoder push:</span> Create and edit a region from the time
+          <span class="strong">[Shift] + Encoder push:</span> Create and edit a region from the time
           selection
-        </li>
-        <li>
-          <span class="strong">[Right Shift] + Encoder push:</span> Delete the region near the cursor
         </li>
         <li>
           <span class="strong">Encoder:</span> Move the edit cursor 1 beat forward or backward
         </li>
         <li>
-          <span class="strong">[Left Shift] + Encoder:</span> Move the edit cursor 1 pixel forward or
+          <span class="strong">[Shift] + Encoder:</span> Move the edit cursor 1 pixel forward or
           backward
-        </li>
-        <li>
-          <span class="strong">[Right Shift] + Encoder:</span> Move the edit cursor forward or backward,
-          creating a time selection
-        </li>
-      </ul>
-    </section>
-
-
-    <!-- BANK NAVIGATOR -->
-    <section class="doc-row">
-      <h4>Bank Navigator</h4>
-      <ul>
-        <li>
-          <span class="strong">Prev:</span> Go to previous bank of eight track
-        </li>
-        <li>
-          <span class="strong">Next:</span> Go to next bank of eight track
-        </li>
-        <li>
-          <span class="strong">Encoder:</span> Go to previous/next bank of one track
-        </li>
-        <li>
-          <span class="strong">[Left Shift] + Encoder:</span> Go to previous/next bank of eight track
         </li>
       </ul>
     </section>
@@ -1235,18 +1205,18 @@
           <span class="strong">Encoder:</span> Move the edit cursor 1 beat forward or backward
         </li>
         <li>
-          <span class="strong">[Left Shift] + Encoder:</span> Move the edit cursor 1 pixel forward or
+          <span class="strong">[Shift] + Encoder:</span> Move the edit cursor 1 pixel forward or
           backward
         </li>
         <li>
           <span class="strong">Encoder push:</span> Insert a marker at the current position
         </li>
         <li>
-          <span class="strong">[Left Shift] + Encoder push:</span> Insert and edit a marker at the current
-          position or edit marker at position
+          <span class="strong">[Hold] + Encoder push:</span> Insert and edit a marker at the current
+          position
         </li>
         <li>
-          <span class="strong">[Right Shift] + Encoder push:</span> Delete the marker near the cursor
+          <span class="strong">[Shift] + Encoder push:</span> Delete the marker near the cursor
         </li>
       </ul>
     </section>
@@ -1308,7 +1278,7 @@
     </section>
 
 
-    <h1 id="reasonus-action"><span>ReaSonus FaderPort Control</span></h1>
+    <!-- <h1 id="reasonus-action"><span>ReaSonus FaderPort Control</span></h1>
 
     <h2 id="plugin-start"><span>Open ReaSonus FaderPort Control</span></h2>
     <section class="doc-row">
@@ -1360,7 +1330,7 @@
         <li>Click <span class="key">Save</span> to save your changes</li>
         </div>
     </section>
-
+ -->
 
     <h1 id="additional-help"><span>Additional help</span></h1>
 

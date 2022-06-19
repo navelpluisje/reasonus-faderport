@@ -54,11 +54,12 @@
     "FP2_Navigators.zon",
     "FP2_NavigatorMaster.zon",
     "FP2_NavigatorBank.zon",
+    "FP2_NavigatorPan.zon",
     "FP8_NavigatorChannel.zon",
-    "FP8_NavigatorMarker.zon",
-    "FP8_NavigatorMetronome.zon",
+    "FP2_NavigatorMarker.zon",
+    "FP2_NavigatorMetronome.zon",
     "FP8_NavigatorScroll.zon",
-    "FP8_NavigatorSection.zon",
+    "FP2_NavigatorSection.zon",
     "FP8_NavigatorZoom.zon",
     "FP8_Transport.zon"
   ]

@@ -5,25 +5,34 @@
 //------------------------------------------------------------------------------
 // Description:
 //    Master volume and bank selection
+//    The channel  actions now apply to master
 //------------------------------------------------------------------------------
 
 Zone NavigatorMaster
-    MasterTrackNavigator
+  MasterTrackNavigator
 
-    Prev                  TrackBank -1
-    Next                  TrackBank  1
-    Shift+Prev            NoAction
-    Shift+Next            NoAction
-    ScrollLeft            NoAction
-    ScrollRight           NoAction
-    Shift+ScrollLeft      NoAction
-    Shift+ScrollRight     NoAction
+  Mute                  TrackMute
+  Solo                  TrackSolo
+  Arm                   TrackRecordArm
 
-    RotaryBigPush         NoAction
-    Shift+RotaryBigPush   NoAction
-    Option+RotaryBigPush  NoAction
-    RotaryBig             TrackVolume
-  
-    Master                Reaper _REASONUS_ALWAYS_ON    // Dummy Action
-    Shift+Master          Reaper 40326                  // View: Show region/marker manager window
+  Shift+Fader           TrackPan
+  Fader                 TrackVolume
+  FaderTouch+Fader      TrackVolume
+  FaderTouch            TrackTouch
+
+  Prev                  NoAction
+  Next                  NoAction
+  Shift+Prev            NoAction
+  Shift+Next            NoAction
+  ScrollLeft            NoAction
+  ScrollRight           NoAction
+  Shift+ScrollLeft      NoAction
+  Shift+ScrollRight     NoAction
+
+  RotaryBigPush         NoAction
+  Shift+RotaryBigPush   NoAction
+  RotaryBig             TrackPan
+
+  Master                Reaper _REASONUS_ALWAYS_ON    // Dummy Action
+  Shift+Master          Reaper 40078                  // View: Toggle mixer visible
 ZoneEnd

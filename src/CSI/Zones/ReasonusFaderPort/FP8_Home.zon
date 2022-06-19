@@ -14,8 +14,8 @@ Zone Home
   IncludedZones
     "MixManagement"
     "Panning"
-    "NavigatorBank"
     "Navigators"
+    "NavigatorBank"
     "Automation"
     "Transport"
     "Channel"
