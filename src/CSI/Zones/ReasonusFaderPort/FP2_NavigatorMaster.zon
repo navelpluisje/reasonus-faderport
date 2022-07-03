@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// File:    FPV2_NavigatorMaster.zon 
+// File:    FP2_NavigatorMaster.zon 
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
 // Version: 1.0.0
 //------------------------------------------------------------------------------
@@ -29,7 +29,7 @@ Zone NavigatorMaster
   Shift+ScrollLeft      NoAction
   Shift+ScrollRight     NoAction
 
-  RotaryBigPush         NoAction
+  RotaryBigPush         Reaper _REASONUS_MASTER_PAN_CENTER // Set master pan to center position
   Shift+RotaryBigPush   NoAction
   RotaryBig             TrackPan
 

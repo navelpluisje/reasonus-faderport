@@ -58,9 +58,9 @@
     "FP8_NavigatorChannel.zon",
     "FP2_NavigatorMarker.zon",
     "FP2_NavigatorMetronome.zon",
-    "FP8_NavigatorScroll.zon",
+    "FP2_NavigatorScroll.zon",
     "FP2_NavigatorSection.zon",
-    "FP8_NavigatorZoom.zon",
+    "FP2_NavigatorZoom.zon",
     "FP8_Transport.zon"
   ]
 }

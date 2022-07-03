@@ -13,18 +13,18 @@ Zone NavigatorPan
 // ===========================================
 // BUTTONS AND SCROLL
 // ===========================================
-    Prev                  Reaper 40286   // Track: Go to previous track
-    Next                  Reaper 40285   // Track: Go to next track
-    Shift+Prev            NoAction
-    Shift+Next            NoAction
-    ScrollLeft            Reaper 40286   // Track: Go to previous track
-    ScrollRight           Reaper 40285   // Track: Go to next track
-    Shift+ScrollLeft      NoAction
-    Shift+ScrollRight     NoAction
+  Prev                  Reaper 40286   // Track: Go to previous track
+  Next                  Reaper 40285   // Track: Go to next track
+  Shift+Prev            NoAction
+  Shift+Next            NoAction
+  ScrollLeft            NoAction
+  ScrollRight           NoAction
+  Shift+ScrollLeft      NoAction
+  Shift+ScrollRight     NoAction
 
-    RotaryBigPush         Reaper _XENAKIOS_PANTRACKSCENTER // Xenakios/SWS: Pan selected tracks to center
-    Shift+RotaryBigPush   NoAction
-    RotaryBig             TrackPan
+  RotaryBigPush         Reaper _XENAKIOS_PANTRACKSCENTER // Xenakios/SWS: Pan selected tracks to center
+  Shift+RotaryBigPush   NoAction
+  RotaryBig             TrackPan
 
-    Pan                   Reaper _REASONUS_ALWAYS_ON    // Dummy Action
+  Pan                   Reaper _REASONUS_ALWAYS_ON    // Dummy Action
 ZoneEnd

@@ -66,15 +66,15 @@ Widget RotaryBigPush
 WidgetEnd
 
 Widget RotaryBig
-	Encoder b0 3c 7f
+	Encoder b0 10 7f [ < 41-7a > 01-3a ]
 WidgetEnd
 
 Widget ScrollLeft
-	Press b0 3c 41
+	Press b0 10 41
 WidgetEnd
 
 Widget ScrollRight
-	Press b0 3c 01
+	Press b0 10 01
 WidgetEnd
 
 Widget Next
