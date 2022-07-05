@@ -87,8 +87,8 @@ Widget Link
 WidgetEnd
 
 Widget Pan
-	Press 90 2a 7f
-	FB_FaderportRGB7Bit 90 2a 7f 90 2a 00
+	Press 90 20 7f
+	FB_FaderportRGB7Bit 90 20 7f 90 20 00
 WidgetEnd
 
 Widget Channel
