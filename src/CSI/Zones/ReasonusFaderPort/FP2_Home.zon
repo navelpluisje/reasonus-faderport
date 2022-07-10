@@ -11,10 +11,9 @@ Zone Home
   Shift   Shift
 
   IncludedZones
+    "Transport"
     "Channel"
     "Automation"
-    "Navigators"
-    "NavigatorBank"
-    "Transport"
+    "NavigatorChannel"
   IncludedZonesEnd
 ZoneEnd

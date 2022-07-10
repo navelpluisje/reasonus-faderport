@@ -66,7 +66,7 @@ Widget RotaryBigPush
 WidgetEnd
 
 Widget RotaryBig
-	Encoder b0 10 7f [ < 41-7a > 01-3a ]
+	Encoder b0 10 7f
 WidgetEnd
 
 Widget ScrollLeft
@@ -82,23 +82,23 @@ Widget Next
 WidgetEnd
 
 Widget Link
-	Press 90 05 7f
-	FB_FaderportRGB7Bit 90 05 7f 90 05 00
+	Press 90 05 7f 90 05 00
+	FB_FaderportRGB7Bit 90 05 7f
 WidgetEnd
 
 Widget Pan
-	Press 90 20 7f
-	FB_FaderportRGB7Bit 90 20 7f 90 20 00
+	Press 90 2a 7f 90 2a 00
+	FB_FaderportRGB7Bit 90 2a 7f
 WidgetEnd
 
 Widget Channel
-	Press 90 36 7f
-	FB_FaderportRGB7Bit 90 36 7f 90 36 00
+	Press 90 36 7f 90 36 00
+	FB_FaderportRGB7Bit 90 36 7f
 WidgetEnd
 
 Widget Scroll
-	Press 90 38 7f
-	FB_FaderportRGB7Bit 90 38 7f 90 38 00
+	Press 90 38 7f 90 38 00
+	FB_FaderportRGB7Bit 90 38 7f
 WidgetEnd
 
 Widget Master

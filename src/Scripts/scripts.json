@@ -6,6 +6,12 @@
     "register": true
   },
   {
+    "actionId": "REASONUS_ALWAYS_OFF",
+    "displayName": "Always Off",
+    "fileName": "always-off.lua",
+    "register": true
+  },
+  {
     "actionId": "REASONUS_SHOW_ALL_TRACKS",
     "displayName": "Show All Tracks",
     "fileName": "showAllTracks.lua",

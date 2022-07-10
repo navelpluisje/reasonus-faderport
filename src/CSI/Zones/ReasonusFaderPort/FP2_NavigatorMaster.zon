@@ -33,6 +33,51 @@ Zone NavigatorMaster
   Shift+RotaryBigPush   NoAction
   RotaryBig             TrackPan
 
+
+// ===========================================
+// All the button States and action
+// ===========================================
+  Pan                   FixedRGBColourDisplay { 0 5 20 }
+  Pan                   GoZone "Home"
+  Pan                   GoZone "NavigatorPan"
+
+  Channel               FixedRGBColourDisplay { 0 5 20 }
+  Channel               GoZone "Home"
+  Channel               GoZone "NavigatorChannel"
+
+  Scroll                FixedRGBColourDisplay { 0 5 20 }
+  Scroll                GoZone "Home"
+  Scroll                GoZone "NavigatorScroll"
+
+  Shift+Scroll          FixedRGBColourDisplay { 0 5 20 }
+  Shift+Scroll          GoZone "Home"
+  Shift+Scroll          GoZone "NavigatorZoom"
+
   Master                Reaper _REASONUS_ALWAYS_ON    // Dummy Action
-  Shift+Master          Reaper 40078                  // View: Toggle mixer visible
+
+  Click                 Reaper 40364    // Options: Toggle metronome
+  Hold+Click            GoZone "Home"
+  Hold+Click            GoZone "NavigatorMetronome" 
+
+  Section               NoAction
+  Section               GoZone "Home"
+  Section               GoZone "NavigatorSection"
+
+  Marker                NoAction
+  Marker                GoZone "Home"
+  Marker                GoZone "NavigatorMarker"
+
+// ===========================================
+// FUNCTION KEYS
+// ===========================================
+// Function-Action-1
+  Shift+Master          Reaper 40078    // View: Toggle mixer visible
+// Function-Action-2 
+  Shift+Click           Reaper 50124    // Media explorer: Show/hide media explorer
+// Function-Action-3 
+  Shift+Section         Reaper 40271    // View: SShow FX browser window
+// Function-Action-4 
+  Shift+Marker          Reaper 41074    // Toggle show all floating windows
+  Property+Shift+Marker      NoFeedback    
+
 ZoneEnd
