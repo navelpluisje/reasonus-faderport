@@ -80,6 +80,7 @@ WidgetEnd
 
 Widget Arm
 	Press 90 00 7f 90 00 00
+	FB_TwoState 90 00 7f 90 00 00
 WidgetEnd
 
 Widget SoloClear

@@ -1,0 +1,4 @@
+Zone "TrackRecArm"
+    Select|  TrackRecordArm     { 20 0 0 255 0 0 }
+    Arm      LeaveSubZone
+ZoneEnd

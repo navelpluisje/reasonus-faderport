@@ -9,11 +9,11 @@
 
 
 Zone "Track"
-  IncludedSubZones
+  SubZones
     "TrackRecArm"
-  IncludedSubZonesEnd
+  SubZonesEnd
 
-  / Arm Control
+  Arm Control
   // Some display stuff
   / DisplayType|              DisplayType 5
   ScribbleLine1_|           TrackNameDisplay {% Left %}
@@ -38,8 +38,8 @@ Zone "Track"
   Shift+Select|             TrackSelect        { "Track" }
   Option+Select|            TrackSelect        { "Track" }
 
-  Arm                       GoSubZone "TrackRecArm"
-  / Control+Select|           TrackRecordArm     { 20 0 0 255 0 0 }
+  / Arm                       GoSubZone "TrackRecArm"
+  Control+Select|           TrackRecordArm     { 20 0 0 255 0 0 }
   Shift+Arm                 Reaper 40490       // Track: Arm all tracks for recording
   Option+Arm                Reaper 40491       // Track: Unarm all tracks for recording
       
@@ -58,7 +58,7 @@ Zone "Track"
 // ===========================================
 // TRACK NAVIGATION
 // ===========================================
-  Track               Reaper %dummyAction%    // Dummy Action
+  Track                 Reaper _REASONUS_ALWAYS_ON
 
   / Plugin              NoAction
   / Plugin              MapSelectedTrackFXToMenu

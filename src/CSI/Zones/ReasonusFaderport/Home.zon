@@ -8,12 +8,7 @@
 //------------------------------------------------------------------------------
 
 Zone Home
-  OnInitialization Receive Home SelectedTrackSend SelectedTrackReceive SelectedTrackFXMenu
-  OnInitialization Broadcast Home SelectedTrackSend SelectedTrackReceive SelectedTrackFXMenu
-
-  LeftShft   Shift
-  RightShft  Option
-
+  OnInitialization PreventFocusedFXMapping
   IncludedZones
     "Track"
   IncludedZonesEnd
