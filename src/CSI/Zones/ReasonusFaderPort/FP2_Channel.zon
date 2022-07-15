@@ -17,6 +17,7 @@ Zone "Channel"
   Shift+Mute                Reaper 40339       // Track: Unmute all tracks
   Shift+Solo                Reaper 40340       // Track: Unsolo all tracks
   Shift+Arm                 Reaper 40490       // Track: Arm all tracks for recording
+  Hold+Shift+Arm            Reaper 40491       // Track: Unarm all tracks for recording
               
   Shift+Fader               TrackPan
   Fader                     TrackVolume
