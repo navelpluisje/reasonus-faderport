@@ -1,5 +1,5 @@
 //------------------------------------------------------------------------------
-// File:    FP8_Home.zon 
+// File:    FP2_Home.zon 
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
 // Version: 1.0.0
 //------------------------------------------------------------------------------
@@ -8,16 +8,12 @@
 //------------------------------------------------------------------------------
 
 Zone Home
-  LeftShft   Shift
-  RightShft  Option
+  Shift   Shift
 
   IncludedZones
-    "MixManagement"
-    "Panning"
-    "Navigators"
-    "NavigatorBank"
-    "Automation"
     "Transport"
     "Channel"
+    "Automation"
+    "NavigatorChannel"
   IncludedZonesEnd
 ZoneEnd

@@ -6,6 +6,12 @@
     "register": true
   },
   {
+    "actionId": "REASONUS_ALWAYS_OFF",
+    "displayName": "Always Off",
+    "fileName": "always-off.lua",
+    "register": true
+  },
+  {
     "actionId": "REASONUS_SHOW_ALL_TRACKS",
     "displayName": "Show All Tracks",
     "fileName": "showAllTracks.lua",
@@ -93,7 +99,7 @@
     "actionId": "REASONUS_SHOW_TRACKS_WITH_RECEIVES",
     "displayName": "Show Tracks With Receives",
     "fileName": "showTracksWithReceives.lua",
-    "register": false
+    "register": true
   },
   {
     "actionId": "REASONUS_SHOW_TRACKS_WITH_HW_OUT",
@@ -153,6 +159,12 @@
     "actionId": "REASONUS_SHOW_TRACK_CLICK_ACTION",
     "displayName": "Handle the click of the show track by name actions",
     "fileName": "showTrackClickAction.lua",
+    "register": true
+  },
+  {
+    "actionId": "REASONUS_MASTER_PAN_CENTER",
+    "displayName": "Set master pan to center position",
+    "fileName": "masterPanToCenter.lua",
     "register": true
   }
 ]

@@ -57,7 +57,7 @@ Zone "Channel"
 // ===========================================
 // TRACK NAVIGATION
 // ===========================================
-  Track               Reaper %dummyAction%    // Dummy Action
+  Track               Reaper _REASONUS_ALWAYS_ON    // Dummy Action
 
   Plugin              NoAction
   Plugin              MapSelectedTrackFXToMenu
