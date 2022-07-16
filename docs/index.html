@@ -97,6 +97,7 @@
  -->
           <a href="#additional-help" class="h1 toc">Additional Help</a>
           <a href="#resource-path-action" class="h2 toc">Create REAPER resource path Action</a>
+          <a href="#known-issues" class="h2 toc">Known Issues</a>
 
         </section>
       </section>
@@ -1360,6 +1361,15 @@ reaper.ShowConsoleMsg("Path: " .. path)
       </div>
     </section>
 
+    <h2 id="known-issues"><span>Known Issues</span></h2>
+    <section class="doc-row">
+      <ul>
+        <li>The encoders are not always responding as expected. When the encoders are used for panning and volume
+          control, turning the encoder slowly will result in no response. In all other cases like banking etc. It is the
+          other way around. These only work while turning slowly. The cause of the issue is known and will be resolved.
+        </li>
+      </ul>
+    </section>
   </body>
 
 </html>

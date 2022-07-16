@@ -99,7 +99,7 @@
     "actionId": "REASONUS_SHOW_TRACKS_WITH_RECEIVES",
     "displayName": "Show Tracks With Receives",
     "fileName": "showTracksWithReceives.lua",
-    "register": false
+    "register": true
   },
   {
     "actionId": "REASONUS_SHOW_TRACKS_WITH_HW_OUT",
