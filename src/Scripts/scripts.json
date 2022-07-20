@@ -1,170 +1,250 @@
-[
-  {
-    "actionId": "REASONUS_ALWAYS_ON",
-    "displayName": "Always On",
-    "fileName": "always-on.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_ALL_TRACKS",
-    "displayName": "Show All Tracks",
-    "fileName": "showAllTracks.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_BASS_TRACKS",
-    "displayName": "Show All Bass Tracks",
-    "fileName": "showTracksByBass.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_BRASS_TRACKS",
-    "displayName": "Show All Brass Tracks",
-    "fileName": "showTracksByBrass.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_DRUMS_TRACKS",
-    "displayName": "Show All Drum Tracks",
-    "fileName": "showTracksByDrums.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_GUITAR_TRACKS",
-    "displayName": "Show All Guitar Tracks",
-    "fileName": "showTracksByGuitar.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_KEYS_TRACKS",
-    "displayName": "Show All Keys Tracks",
-    "fileName": "showTracksByKeys.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_PIANO_TRACKS",
-    "displayName": "Show All Piano Tracks",
-    "fileName": "showTracksByPiano.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_STRINGS_TRACKS",
-    "displayName": "Show All String Tracks",
-    "fileName": "showTracksByStrings.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_VOCAL_TRACKS",
-    "displayName": "Show All Vocal Tracks",
-    "fileName": "showTracksByVocals.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_TOP_LEVEL_TRACKS",
-    "displayName": "Show All Top Level Tracks",
-    "fileName": "showAllParentsTracks.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_REAPER_RESOURCE_PATH",
-    "displayName": "Get Reaper Resource Path",
-    "fileName": "getReaperResourcePath.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_TRACKS_BY_NAME",
-    "displayName": "Show Tracks By Name",
-    "fileName": "showTracksByName.lua",
-    "register": false
-  },
-  {
-    "actionId": "REASONUS_SHOW_TRACKS_WITH_INSTRUMENT",
-    "displayName": "Show Tracks With Instruments",
-    "fileName": "showTracksWithInstruments.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_TRACKS_WITH_SENDS",
-    "displayName": "Show Tracks With Sends",
-    "fileName": "showTracksWithSends.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_TRACKS_WITH_RECEIVES",
-    "displayName": "Show Tracks With Receives",
-    "fileName": "showTracksWithReceives.lua",
-    "register": false
-  },
-  {
-    "actionId": "REASONUS_SHOW_TRACKS_WITH_HW_OUT",
-    "displayName": "Show Tracks With Hardware Output",
-    "fileName": "showTracksWithHwOutputs.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR",
-    "displayName": "Toggle follow the play cursor",
-    "fileName": "toggleFollowPlayCursor.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_LED_STATE_MIX_ALL_BTN",
-    "displayName": "Handle the led state for the All button",
-    "fileName": "ledStateMixAllBtn.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_LED_STATE_MIX_AUDIO_BTN",
-    "displayName": "Handle the led state for the Audio button",
-    "fileName": "ledStateMixAudioBtn.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_LED_STATE_MIX_SHIFT_AUDIO_BTN",
-    "displayName": "Handle the led state for the Shift+Audio button",
-    "fileName": "ledStateMixShiftAudioBtn.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_LED_STATE_MIX_BUS_BTN",
-    "displayName": "Handle the led state for the Bus button",
-    "fileName": "ledStateMixBusBtn.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_LED_STATE_MIX_SHIFT_BUS_BTN",
-    "displayName": "Handle the led state for the Shift + Bus button",
-    "fileName": "ledStateMixShiftBusBtn.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_LED_STATE_MIX_VCA_BTN",
-    "displayName": "Handle the led state for the VCA button",
-    "fileName": "ledStateMixVcaBtn.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_LED_STATE_MIX_VI_BTN",
-    "displayName": "Handle the led state for the VI button",
-    "fileName": "ledStateMixViBtn.lua",
-    "register": true
-  },
-  {
-    "actionId": "REASONUS_SHOW_TRACK_CLICK_ACTION",
-    "displayName": "Handle the click of the show track by name actions",
-    "fileName": "showTrackClickAction.lua",
-    "register": true
-  },
-  {
-    "actionId": "RTK_LIBRARY",
-    "displayName": "Library file for the Reaper ToolKit",
-    "fileName": "rtk.lua",
-    "register": false
-  },
-  {
-    "actionId": "REASONUS_EDIT_FADERPORT",
-    "displayName": "Edit your FaderPort from within REAPER",
-    "fileName": "reasonusEditFaderport.lua",
-    "register": true
-  }
-]
+{
+  "scripts": [
+    {
+      "actionId": "REASONUS_ALWAYS_ON",
+      "displayName": "Always On",
+      "fileName": "always-on.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_ALL_TRACKS",
+      "displayName": "Show All Tracks",
+      "fileName": "showAllTracks.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_BASS_TRACKS",
+      "displayName": "Show All Bass Tracks",
+      "fileName": "showTracksByBass.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_BRASS_TRACKS",
+      "displayName": "Show All Brass Tracks",
+      "fileName": "showTracksByBrass.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_DRUMS_TRACKS",
+      "displayName": "Show All Drum Tracks",
+      "fileName": "showTracksByDrums.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_GUITAR_TRACKS",
+      "displayName": "Show All Guitar Tracks",
+      "fileName": "showTracksByGuitar.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_KEYS_TRACKS",
+      "displayName": "Show All Keys Tracks",
+      "fileName": "showTracksByKeys.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_PIANO_TRACKS",
+      "displayName": "Show All Piano Tracks",
+      "fileName": "showTracksByPiano.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_STRINGS_TRACKS",
+      "displayName": "Show All String Tracks",
+      "fileName": "showTracksByStrings.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_VOCAL_TRACKS",
+      "displayName": "Show All Vocal Tracks",
+      "fileName": "showTracksByVocals.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_TOP_LEVEL_TRACKS",
+      "displayName": "Show All Top Level Tracks",
+      "fileName": "showAllParentsTracks.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_REAPER_RESOURCE_PATH",
+      "displayName": "Get Reaper Resource Path",
+      "fileName": "getReaperResourcePath.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_TRACKS_BY_NAME",
+      "displayName": "Show Tracks By Name",
+      "fileName": "showTracksByName.lua",
+      "register": false
+    },
+    {
+      "actionId": "REASONUS_SHOW_TRACKS_WITH_INSTRUMENT",
+      "displayName": "Show Tracks With Instruments",
+      "fileName": "showTracksWithInstruments.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_TRACKS_WITH_SENDS",
+      "displayName": "Show Tracks With Sends",
+      "fileName": "showTracksWithSends.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_TRACKS_WITH_RECEIVES",
+      "displayName": "Show Tracks With Receives",
+      "fileName": "showTracksWithReceives.lua",
+      "register": false
+    },
+    {
+      "actionId": "REASONUS_SHOW_TRACKS_WITH_HW_OUT",
+      "displayName": "Show Tracks With Hardware Output",
+      "fileName": "showTracksWithHwOutputs.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR",
+      "displayName": "Toggle follow the play cursor",
+      "fileName": "toggleFollowPlayCursor.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_MIX_ALL_BTN",
+      "displayName": "Handle the led state for the All button",
+      "fileName": "ledStateMixAllBtn.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_MIX_AUDIO_BTN",
+      "displayName": "Handle the led state for the Audio button",
+      "fileName": "ledStateMixAudioBtn.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_MIX_SHIFT_AUDIO_BTN",
+      "displayName": "Handle the led state for the Shift+Audio button",
+      "fileName": "ledStateMixShiftAudioBtn.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_MIX_BUS_BTN",
+      "displayName": "Handle the led state for the Bus button",
+      "fileName": "ledStateMixBusBtn.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_MIX_SHIFT_BUS_BTN",
+      "displayName": "Handle the led state for the Shift + Bus button",
+      "fileName": "ledStateMixShiftBusBtn.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_MIX_VCA_BTN",
+      "displayName": "Handle the led state for the VCA button",
+      "fileName": "ledStateMixVcaBtn.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_MIX_VI_BTN",
+      "displayName": "Handle the led state for the VI button",
+      "fileName": "ledStateMixViBtn.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_SHOW_TRACK_CLICK_ACTION",
+      "displayName": "Handle the click of the show track by name actions",
+      "fileName": "showTrackClickAction.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_HANDLE_FUNCTION_KEY_1",
+      "displayName": "Trigger the action for the function key 1.",
+      "fileName": "handleFunctionKey1.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_HANDLE_FUNCTION_KEY_2",
+      "displayName": "Trigger the action for the function key 2.",
+      "fileName": "handleFunctionKey2.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_HANDLE_FUNCTION_KEY_3",
+      "displayName": "Trigger the action for the function key 3.",
+      "fileName": "handleFunctionKey3.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_HANDLE_FUNCTION_KEY_4",
+      "displayName": "Trigger the action for the function key 4.",
+      "fileName": "handleFunctionKey4.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_HANDLE_FUNCTION_KEY_5",
+      "displayName": "Trigger the action for the function key 5.",
+      "fileName": "handleFunctionKey5.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_HANDLE_FUNCTION_KEY_6",
+      "displayName": "Trigger the action for the function key 6.",
+      "fileName": "handleFunctionKey6.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_HANDLE_FUNCTION_KEY_7",
+      "displayName": "Trigger the action for the function key 7.",
+      "fileName": "handleFunctionKey7.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_HANDLE_FUNCTION_KEY_8",
+      "displayName": "Trigger the action for the function key 8.",
+      "fileName": "handleFunctionKey8.lua",
+      "register": true
+    },
+    {
+      "actionId": "RTK_LIBRARY",
+      "displayName": "Library file for the Reaper ToolKit",
+      "fileName": "rtk.lua",
+      "register": false
+    },
+    {
+      "actionId": "REASONUS_EDIT_FADERPORT",
+      "displayName": "Edit your FaderPort from within REAPER",
+      "fileName": "reasonusEditFaderport.lua",
+      "register": true
+    },
+    {
+      "actionId": "",
+      "displayName": "Ref function actions",
+      "fileName": "refFunctionAction.lua",
+      "register": false
+    },
+    {
+      "actionId": "",
+      "displayName": "ref pages",
+      "fileName": "refPages.lua",
+      "register": false
+    },
+    {
+      "actionId": "",
+      "displayName": "UI elements for ref",
+      "fileName": "refUiElements.lua",
+      "register": false
+    }
+  ],
+  "assets": [
+    "close.png",
+    "coffee.png",
+    "faderport.png",
+    "grid.png",
+    "home.png",
+    "info.png",
+    "log-in.png",
+    "reasonus-logo.png",
+    "save.png",
+    "search.png"
+  ]
+}
