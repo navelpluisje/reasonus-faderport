@@ -4,7 +4,11 @@ local rtk = require('rtk');
 local uiElements = require('refUiElements');
 local FunctionAction = require('refFunctionAction')
 
-local faderPort = rtk.Image():load('./assets/faderport.png')
+local faderPortImages = {
+  fp2 = rtk.Image():load('./assets/faderport2.png'),
+  fp8 = rtk.Image():load('./assets/faderport8.png'),
+  fp16 = rtk.Image():load('./assets/faderport16.png'),
+}
 
 local pages = {};
 
@@ -13,7 +17,7 @@ local pages = {};
 -- Create the home page
 --
 --******************************************************************************
-function pages.createHomePage()
+function pages.createHomePage(faderPortVersion)
   local homePage = rtk.VBox { spacing = 25, w = 1, padding = 10 }
   homePage:add(rtk.Heading {
     text   = 'Welcome to ReaSonus FaderPort',
@@ -25,7 +29,7 @@ function pages.createHomePage()
     halign = rtk.Widget.CENTER
   })
   imageArea:add(rtk.ImageBox {
-    faderPort,
+    faderPortImages['fp' .. faderPortVersion],
     maxh   = 400,
     halign = rtk.Widget.CENTER
   })

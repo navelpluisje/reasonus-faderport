@@ -1,12 +1,21 @@
--- Set package path to find rtk installed via ReaPack
+-- Set package path to find the packages to import
 package.path = reaper.GetResourcePath() .. '/Scripts/ReaSonus/?.lua';
--- Load the package
+-- Load the packages
 local rtk = require('rtk');
 local uiElements = require('refUiElements');
 local pages = require('refPages')
 
--- Set the module-local log variable for more convenient logging.  Throughout
--- this tutorial we will assume both rtk and log variables have been set.
+--******************************************************************************
+--
+-- Read the CSI.ini file to get the type of FaderPort
+-- This is using the first faderport it catches in the ini file
+--
+--******************************************************************************
+local csiIni = assert(io.open(reaper.GetResourcePath() .. '/CSI/CSI.ini', 'r'))
+local faderPortVersion = string.match(csiIni:read('*all'), 'FP(%d+).mst');
+csiIni:close()
+
+-- Set the module-local log variable for more convenient logging.
 local log = rtk.log
 log.clear()
 
@@ -15,7 +24,13 @@ local Colors = uiElements.Colors;
 -- UI variables
 local contentHeight = 0
 local contentWidth = 0
+
+-- Both the FaderPort 8 and 16 have 8 function keys. Only the FaderPort 2 has 4
 local nbFunctionKeys = 8
+
+if (faderPortVersion == '2') then
+  nbFunctionKeys = 4
+end
 
 --******************************************************************************
 --
@@ -74,7 +89,7 @@ app.statusbar:hide()
 app:add_screen {
   name = 'home',
   init = function(_, screen)
-    screen.widget = pages.createHomePage()
+    screen.widget = pages.createHomePage(faderPortVersion)
   end,
 }
 

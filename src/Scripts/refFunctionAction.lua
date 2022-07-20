@@ -176,7 +176,7 @@ function FunctionAction:writeActionFile()
     if string.match(line, '%s*local functionAction = (%d+);') then
       line = '  local functionAction = ' .. self.actionId .. ';';
     end
-    actionFile:write(line .. '\n')
+    actionFile:write(line .. '\n');
   end
   actionFile:close();
   showSaveFunctionPopup();
