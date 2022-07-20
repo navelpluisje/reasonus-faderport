@@ -55,7 +55,7 @@ Zone "TrackReceiveSlot"
   Send                    MapSelectedTrackSendsToWidgets
   Shift+Send              MapTrackSendsSlotToWidgets
   
-  Pan                     Reaper %dummyAction%    // Dummy Action
+  Pan                     Reaper _REASONUS_ALWAYS_ON    // Dummy Action
   Pan                     GoZone "Home"
   Pan                     MapSelectedTrackReceivesToWidgets
 

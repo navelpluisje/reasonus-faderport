@@ -7,9 +7,21 @@
       "register": true
     },
     {
+      "actionId": "REASONUS_ALWAYS_OFF",
+      "displayName": "Always Off",
+      "fileName": "always-off.lua",
+      "register": true
+    },
+    {
       "actionId": "REASONUS_SHOW_ALL_TRACKS",
       "displayName": "Show All Tracks",
       "fileName": "showAllTracks.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MASTER_PAN_CENTER",
+      "displayName": "Set master pan to center position",
+      "fileName": "masterPanToCenter.lua",
       "register": true
     },
     {

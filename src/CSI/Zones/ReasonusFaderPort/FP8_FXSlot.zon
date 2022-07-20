@@ -38,7 +38,7 @@ Zone "TrackFXMenuSlot"
   Track               NoAction
   Track               GoZone "Home"
 
-  Plugin              Reaper %dummyAction%    // Dummy Action
+  Plugin              Reaper _REASONUS_ALWAYS_ON    // Dummy Action
   Plugin              GoZone "Home"
   Plugin              MapSelectedTrackFXToMenu
 

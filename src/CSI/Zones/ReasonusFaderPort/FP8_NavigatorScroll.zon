@@ -25,6 +25,6 @@ Zone NavigatorScroll
     Option+RotaryBigPush  NoAction
     RotaryBig             NoAction
   
-    Scroll                Reaper %dummyAction%    // Dummy Action
+    Scroll                Reaper _REASONUS_ALWAYS_ON    // Dummy Action
     Shift+Scroll          Reaper 40251    // View: Show routing matrix window
 ZoneEnd

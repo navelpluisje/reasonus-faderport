@@ -49,7 +49,7 @@ Zone "TrackSendSlot"
   Plugin                  MapSelectedTrackFXToMenu
   Shift+Plugin            MapTrackFXMenusSlotToWidgets
   
-  Send                    Reaper %dummyAction%    // Dummy Action
+  Send                    Reaper _REASONUS_ALWAYS_ON    // Dummy Action
   Send                    GoZone "Home"
   Send                    MapSelectedTrackSendsToWidgets
   

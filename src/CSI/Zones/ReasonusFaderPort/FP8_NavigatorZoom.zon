@@ -23,6 +23,6 @@ Zone NavigatorZoom
     RotaryBigPush       Reaper 40110  // View: Toggle track zoom to minimum height
     RotaryBig           NoAction
 
-    Zoom                Reaper %dummyAction%    // Dummy Action
+    Zoom                Reaper _REASONUS_ALWAYS_ON    // Dummy Action
     Shift+Zoom          Reaper 50124    // Media explorer: Show/hide media explorer
 ZoneEnd

@@ -27,6 +27,6 @@ Zone NavigatorMarker
     Option+RotaryBigPush    Reaper 40613              // Markers: Delete marker near cursor
     RotaryBig               NoAction
 
-    Marker                  Reaper %dummyAction%    // Dummy Action
+    Marker                  Reaper _REASONUS_ALWAYS_ON    // Dummy Action
     Shift+Marker            Reaper 41074    // Toggle show all floating windows
 ZoneEnd
