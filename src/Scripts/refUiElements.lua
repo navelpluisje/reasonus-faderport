@@ -29,6 +29,7 @@ uiElements.Icons = {
   logo      = rtk.Image():load('./assets/reasonus-logo.png'),
   functions = rtk.Image():load('./assets/grid.png'),
   home      = rtk.Image():load('./assets/home.png'),
+  mix       = rtk.Image():load('./assets/mix.png'),
   about     = rtk.Image():load('./assets/info.png'),
   search    = rtk.Image():load('./assets/search.png'),
   save      = rtk.Image():load('./assets/save.png'),
@@ -140,12 +141,14 @@ function uiElements.createNavigationSideBar(sidebar, app)
   local navLogo = rtk.ImageBox { uiElements.Icons.logo }
   local navHome = uiElements.createNavigationButton('Home', uiElements.Icons.home, true);
   local navFunction = uiElements.createNavigationButton('Edit Function keys', uiElements.Icons.functions, false);
+  local navMixManagement = uiElements.createNavigationButton('Mix Management', uiElements.Icons.mix, false);
   local navAbout = uiElements.createNavigationButton('About', uiElements.Icons.about, false);
 
   navHome.onclick = function()
     app:push_screen('home')
     navHome:attr('hover', true)
     navFunction:attr('hover', false)
+    navMixManagement:attr('hover', false)
     navAbout:attr('hover', false)
   end
 
@@ -153,6 +156,15 @@ function uiElements.createNavigationSideBar(sidebar, app)
     app:push_screen('functions')
     navHome:attr('hover', false)
     navFunction:attr('hover', true)
+    navMixManagement:attr('hover', false)
+    navAbout:attr('hover', false)
+  end
+
+  navMixManagement.onclick = function()
+    app:push_screen('mix-management')
+    navHome:attr('hover', false)
+    navFunction:attr('hover', false)
+    navMixManagement:attr('hover', true)
     navAbout:attr('hover', false)
   end
 
@@ -160,6 +172,7 @@ function uiElements.createNavigationSideBar(sidebar, app)
     app:push_screen('about')
     navHome:attr('hover', false)
     navFunction:attr('hover', false)
+    navMixManagement:attr('hover', false)
     navAbout:attr('hover', true)
   end
 
@@ -167,12 +180,14 @@ function uiElements.createNavigationSideBar(sidebar, app)
     app:push_screen('home')
     navHome:attr('hover', true)
     navFunction:attr('hover', false)
+    navMixManagement:attr('hover', false)
     navAbout:attr('hover', false)
   end
 
   sidebar:add(navLogo)
   sidebar:add(navHome)
   sidebar:add(navFunction)
+  sidebar:add(navMixManagement)
   sidebar:add(navAbout)
 end
 

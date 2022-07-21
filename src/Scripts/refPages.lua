@@ -98,4 +98,23 @@ pages.createFunctionsPage = {
   end,
 }
 
+pages.createMixManagementPage = {
+  nbFilters = 8,
+  filterActions = {},
+  create = function(nbFunctions)
+    pages.createFunctionsPage.nbFunctions = nbFunctions;
+    local functionsPage = rtk.Container {
+      h = 1,
+      w = 1,
+    }
+    functionsPage:add(rtk.Text {
+      w    = 1,
+      wrap = rtk.Text.WRAP_NORMAL,
+      text = 'Mix Management'
+    })
+
+    return functionsPage;
+  end,
+}
+
 return pages;

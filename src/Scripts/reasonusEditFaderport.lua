@@ -104,6 +104,13 @@ app:add_screen {
 }
 
 app:add_screen {
+  name = 'mix-management',
+  init = function(_, screen)
+    screen.widget = pages.createMixManagementPage.create(8)
+  end,
+}
+
+app:add_screen {
   name = 'about',
   init = function(_, screen)
     screen.widget = pages.createAboutPage()
