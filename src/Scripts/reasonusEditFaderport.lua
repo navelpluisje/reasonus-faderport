@@ -45,7 +45,7 @@ rtk.set_theme_overrides { button = '#ffffff1f' }
 
 local window = rtk.Window {
   w         = 800,
-  h         = 400,
+  h         = 500,
   maxw      = 1200,
   maxh      = 800,
   minw      = 800,

@@ -3,6 +3,7 @@ package.path = reaper.GetResourcePath() .. '/Scripts/ReaSonus/?.lua';
 local rtk = require('rtk');
 local uiElements = require('refUiElements');
 local FunctionAction = require('refFunctionAction')
+local MixManagement = require('refMixManagement')
 
 local faderPortImages = {
   fp2 = rtk.Image():load('./assets/faderport2.png'),
@@ -104,19 +105,38 @@ pages.mixManagementPage = {
   activeIndex = 1,
   page = {},
   tabBar = {},
+  content = {},
+  buttonBar = {},
   create = function(nbFilters)
     pages.mixManagementPage.nbFilters = nbFilters;
-    pages.mixManagementPage.page = rtk.Container {
+    pages.mixManagementPage.page = rtk.VBox {
       h = 1,
       w = 1,
+      margin = 4;
     }
     pages.mixManagementPage.tabBar = pages.mixManagementPage.page:add(rtk.HBox {
       w = 1,
     })
+    pages.mixManagementPage.content = pages.mixManagementPage.page:add(rtk.HBox {
+      w = 1,
+    })
+    pages.mixManagementPage.buttonBar = pages.mixManagementPage.page:add(rtk.HBox {
+      w = 1,
+      tmargin = 20,
+      tpadding = 8,
+      tborder = uiElements.Colors.Button.Border;
+    })
+    pages.mixManagementPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
+    local saveButton = pages.mixManagementPage.buttonBar:add(uiElements.createButton('Save all filters',
+      uiElements.Icons.save));
+    saveButton:attr('halign', 'right')
+    pages.mixManagementPage.createFilterTabs(nbFilters);
     pages.mixManagementPage.populateTabBar();
+
     return pages.mixManagementPage.page;
   end,
   populateTabBar = function()
+    pages.mixManagementPage.content:remove_all();
     pages.mixManagementPage.tabBar:remove_all();
     for i = 1, pages.mixManagementPage.nbFilters do
       local button = pages.mixManagementPage.tabBar:add(uiElements.createButton('' .. i), {
@@ -132,7 +152,13 @@ pages.mixManagementPage = {
         end
       end
     end
-
+    pages.mixManagementPage.content:add(pages.mixManagementPage.filterActions[pages.mixManagementPage.activeIndex]:
+      getMixManagement())
+  end,
+  createFilterTabs = function(nbFilters)
+    for i = 1, pages.mixManagementPage.nbFilters do
+      pages.mixManagementPage.filterActions[i] = MixManagement:new(i, nbFilters);
+    end
   end
 }
 

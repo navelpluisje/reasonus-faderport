@@ -3,7 +3,6 @@ package.path = reaper.GetResourcePath() .. '/Scripts/ReaSonus/?.lua'
 -- Load the package
 local rtk = require('rtk')
 local uiElements = require('refUiElements')
-local Colors = uiElements.Colors;
 
 --******************************************************************************
 --
@@ -19,150 +18,195 @@ end
 -- Class for the function action elements
 --
 --******************************************************************************
-local FunctionAction = {};
+local MixManagement = {};
 
-function FunctionAction:new(index)
+function MixManagement:new(index, faderPortVersion)
   local obj = {
-    functionId = index,
-    functionFilePath = reaper.GetResourcePath() .. '/Scripts/Reasonus/handleFunctionKey' .. index .. '.lua',
+    filterId = index,
+    filterFilePath = reaper.GetResourcePath() .. '/Scripts/Reasonus/mixManagementFilter' .. index .. '.lua',
+    zoneFilePath = reaper.GetResourcePath() ..
+        '/CSI/Zones/ReasonusFaderPort/FP' .. faderPortVersion .. '_TracksByName.zon',
     fileLines = {},
     actionPaneOpened = false,
+    isBuild = false,
     element = rtk.VBox {
-      w = .25,
-      h = 80,
-      padding = 5,
+      w = 1,
     },
-    label = rtk.HBox {
-      w        = 1,
-      h        = 30,
-      vpadding = 10,
-      bg       = Colors.Label.BackGround,
-      border   = Colors.Label.Border,
+    splitBox = rtk.HBox {
+      w = 1,
+      spacing = 16,
     },
-    labelText = rtk.Text {
+    left = rtk.VBox {
+      w = .5,
+      spacing = 8,
+    },
+    right = rtk.VBox {
+      w = 1,
+      spacing = 8,
+    },
+    displayTextLabel = rtk.Text {
       text     = '',
       w        = 1,
-      halign   = rtk.Widget.CENTER,
+      halign   = rtk.Widget.LEFT,
       valign   = rtk.Widget.CENTER,
       fontsize = 20,
       tmargin  = 7
     },
-    actionId = rtk.HBox {
+    labelText = rtk.Text {
+      text     = '',
       w        = 1,
-      h        = 40,
-      t        = 1,
-      vpadding = 15,
-      border   = Colors.Label.Border
+      halign   = rtk.Widget.LEFT,
+      valign   = rtk.Widget.CENTER,
+      fontsize = 20,
+      tmargin  = 7
     },
-    actionButton = rtk.Button {
-      icon    = uiElements.Icons.search,
-      iconpos = rtk.Widget.CENTER,
-      w       = 38,
-      h       = 38,
-      flat    = rtk.Button.FLAT,
+    inputList = rtk.VBox {
+      w = 1,
+      spacing = 8,
     },
-    actionIdText = rtk.Text {
-      text      = 'actionId',
-      h         = 1,
-      halign    = rtk.Widget.CENTER,
-      valign    = rtk.Widget.CENTER,
-      expand    = 4,
-      fillh     = true,
-      fontflags = rtk.font.BOLD,
+    buttonBar = rtk.HBox {
+      w = 1,
+      spacing = 16,
     },
-    infoButton = rtk.Button {
-      icon    = uiElements.Icons.about,
-      iconpos = rtk.Widget.CENTER,
-      w       = 38,
-      h       = 38,
-      flat    = rtk.Button.FLAT,
-      halign  = rtk.Widget.RIGHT,
-    },
+    colorPicker = uiElements.colorPicker('Color');
+    showSiblings = uiElements.createCheckBox('Show track siblings'),
+    showParents = uiElements.createCheckBox('Show track parents', true),
+    showChildren = uiElements.createCheckBox('Show track children', true),
+    onlyTopLevel = uiElements.createCheckBox('Show only top level tracks', true),
+    matchMultiple = uiElements.createCheckBox('Match multiple', true),
+    displayText = uiElements.createEntry(),
   }
-  setmetatable(obj, FunctionAction);
+  setmetatable(obj, MixManagement);
   self.__index = self;
   return obj;
 end
 
 --******************************************************************************
 --
--- Generate the UI for this FunctionAction and return it
+-- Generate the UI for this MixManagement and return it
 --
 --******************************************************************************
-function FunctionAction:getFunctionAction()
-  self.labelText:attr('text', 'Function ' .. self.functionId);
-  self.element:add(self.label);
-  self.label:add(self.labelText)
-  self.element:add(self.actionId);
-  self.actionId:add(self.actionButton);
-  self.actionId:add(rtk.Spacer(), { expand = 1, fillh = true })
-  self.actionId:add(self.actionIdText)
-  self.actionId:add(rtk.Spacer(), { expand = 1, fillh = true })
-  self.actionId:add(self.infoButton);
+function MixManagement:buildMixManagement()
+  self.labelText:attr('text', 'Filter Text (Each word in a new field)');
+  self.displayTextLabel:attr('text', 'Display Text');
+  self.element:add(self.splitBox);
+  self.splitBox:add(self.left);
+  self.splitBox:add(self.right);
+  self.left:add(self.displayTextLabel);
+  self.left:add(self.displayText);
+  self.left:add(self.labelText);
+  self.left:add(self.inputList);
+  self.left:add(self.buttonBar);
+  self.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
+  local button = self.buttonBar:add(uiElements.createButton('Add word', uiElements.Icons.add))
+  self.right:add(self.showSiblings);
+  self.right:add(self.showParents);
+  self.right:add(self.showChildren);
+  self.right:add(self.onlyTopLevel);
+  self.right:add(self.matchMultiple);
+  self.right:add(self.colorPicker.colorPicker);
 
-  self.actionButton.onclick = self:getSelectedAction();
-  self.infoButton.onclick = function() self:showActionInfoPopup() end;
+  button:attr('halign', rtk.Widget.RIGHT)
+  button.onclick = function()
+    self.inputList:add(uiElements.createEntry())
+  end
+
   self:readActionFile();
+  self:readZoneFile();
+end
 
+function MixManagement:getMixManagement()
+  if (not self.isBuild) then
+    self.isBuild = true;
+    self:buildMixManagement();
+  end
   return self.element;
 end
 
 --******************************************************************************
 --
--- Set position and size of the FunctionAction
--- x: Number; X-position og the FunctionAction
--- y: Number; Y-position of the FunctionAction
--- width: Number; Width of the FunctionAction
+-- Read the data from the ActionFile corresponding to this MixManagement
 --
 --******************************************************************************
-function FunctionAction:setPositionAndSize(x, y, width)
-  self.element:attr('x', x);
-  self.element:attr('y', y);
-  self.element:attr('w', width);
-end
-
---******************************************************************************
---
--- Set the actionId for this FunctionAction. Also updates the values in the UI
--- actionId: the actionId for this FunctionAction
---
---******************************************************************************
-function FunctionAction:setActionId(actionId)
-  self.actionId = actionId;
-  self.actionIdText:attr('text', actionId);
-  local actionName = reaper.CF_GetCommandText(0, actionId);
-  self.actionIdText:attr('tooltip', actionName);
-end
-
---******************************************************************************
---
--- Read the data from the ActionFile corresponding to this FunctionAction
---
---******************************************************************************
-function FunctionAction:readActionFile()
-  for line in io.lines(self.functionFilePath) do
+function MixManagement:readActionFile()
+  for line in io.lines(self.filterFilePath) do
     self.fileLines[#self.fileLines + 1] = line;
-    if string.match(line, '%s*local functionAction = (%d+);') then
-      local actionId = string.match(line, '%s*local functionAction = (%d+);')
-      if (actionId) then
-        self:setActionId(actionId);
-      end
+    local showSibling = string.match(line, '%s*showsiblings = (%w*),') == 'true';
+    if (showSibling) then
+      self.showSiblings:attr('value', showSibling);
     end
+    local showParents = string.match(line, '%s*showparents = (%w*),') == 'true';
+    if (showParents) then
+      self.showParents:attr('value', showParents);
+    end
+    local showChildren = string.match(line, '%s*showchildren = (%w*),') == 'true';
+    if (showChildren) then
+      self.showChildren:attr('value', showChildren);
+    end
+    local onlyTopLevel = string.match(line, '%s*matchonlytop = (%w*),') == 'true';
+    if (onlyTopLevel) then
+      self.onlyTopLevel:attr('value', onlyTopLevel);
+    end
+    local matchMultiple = string.match(line, '%s*matchmultiple = "(%w*)",') == 'true';
+    if (matchMultiple) then
+      self.matchMultiple:attr('value', matchMultiple);
+    end
+    local search = string.match(line, '%s*search = "(.*)",');
+    if (search) then
+      reaper.ShowConsoleMsg(search);
+      self:addSearchInputs(search);
+    end
+  end
+end
+
+function MixManagement:setFilterColor(clr)
+  local color = {};
+  local index = 1;
+
+  for rgbValue in string.gmatch(clr, '%S+') do
+    if (index < 4) then
+      color[index] = rgbValue;
+      index = index + 1;
+    end
+  end
+
+  self.colorPicker.setValue(color[1], color[2], color[3]);
+end
+
+function MixManagement:readZoneFile()
+  for line in io.lines(self.zoneFilePath) do
+    local displayText = string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "(%w*)"');
+    if (displayText) then
+      self.displayText:attr('value', displayText)
+    end
+    local color = string.match(line, '%s*Select' .. self.filterId .. '%s*Reaper%s*%S*%s*%{%s(.*)%s%}');
+
+    if (color) then
+      self:setFilterColor(color);
+    end
+  end
+end
+
+function MixManagement:addSearchInputs(searchQuery)
+  for word in string.gmatch(searchQuery, "%w+") do
+    local entry = uiElements.createEntry()
+    entry:attr('value', word);
+    self.inputList:add(entry);
   end
 end
 
 --******************************************************************************
 --
--- Write the data to the ActionFile corresponding to this FunctionAction
+-- Write the data to the ActionFile corresponding to this MixManagement
 -- with the new actionId
 --
 --******************************************************************************
-function FunctionAction:writeActionFile()
+function MixManagement:writeActionFile()
   local actionFile = assert(io.open(self.functionFilePath, "w"))
   for i = 1, #self.fileLines do
     local line = self.fileLines[i];
-    if string.match(line, '%s*local functionAction = (%d+);') then
-      line = '  local functionAction = ' .. self.actionId .. ';';
+    if string.match(line, '%s*local MixManagement = (%d+);') then
+      line = '  local MixManagement = ' .. self.actionId .. ';';
     end
     actionFile:write(line .. '\n');
   end
@@ -172,10 +216,10 @@ end
 
 --******************************************************************************
 --
--- Show a Popup with the information of the action of this FunctionAction
+-- Show a Popup with the information of the action of this MixManagement
 --
 --******************************************************************************
-function FunctionAction:showActionInfoPopup()
+function MixManagement:showActionInfoPopup()
   local fullName = reaper.CF_GetCommandText(0, self.actionId)
   local actionType, actionName = string.match(fullName, "(.*):%s(.*)");
   local content = rtk.VBox {
@@ -208,7 +252,7 @@ end
 -- Trigger the actionslist and store the selected action id
 --
 --******************************************************************************
-function FunctionAction:getSelectedAction()
+function MixManagement:getSelectedAction()
   local action;
   return function()
     if (not self.actionPaneOpened) then
@@ -237,4 +281,4 @@ function FunctionAction:getSelectedAction()
   end
 end
 
-return FunctionAction;
+return MixManagement;

@@ -11,14 +11,16 @@ local methods = {
 local uiElements = {}
 
 local Colors = {
-  Primary = '#00529C',
+  Primary    = '#00529C',
   BackGround = '#ffffff0f',
-  Button = {
-    Border = '1px #ffffff55',
-    BackGround = '#ffffff0f',
+  Border     = '#ffffff55',
+  Button     = {
+    Border      = '1px #ffffff55',
+    BorderHover = '1px #ffffffee',
+    BackGround  = '#ffffff0f',
   },
-  Label = {
-    Border = '1px #ffffff55',
+  Label      = {
+    Border     = '1px #ffffff55',
     BackGround = '#ffffff0f',
   },
 }
@@ -35,6 +37,7 @@ uiElements.Icons = {
   save      = rtk.Image():load('./assets/save.png'),
   coffee    = rtk.Image():load('./assets/coffee.png'),
   close     = rtk.Image():load('./assets/close.png'),
+  add       = rtk.Image():load('./assets/add.png'),
 }
 
 
@@ -61,13 +64,56 @@ end
 
 --******************************************************************************
 --
+-- Show an rtk Entry
+-- width: Number; widh of the button
+-- height: Number; height of the button
+--
+--******************************************************************************
+function uiElements.createEntry(width, height)
+  return rtk.Entry {
+    w              = width or 1,
+    h              = height or 32,
+    halign         = rtk.Widget.LEFT,
+    padding        = 7,
+    valign         = rtk.Widget.CENTER,
+    bg             = Colors.Button.BackGround,
+    border         = Colors.Button.Border,
+    border_hover   = Colors.Button.BorderHover,
+    border_focused = Colors.Button.BorderHover,
+    fontsize       = 20,
+  }
+end
+
+--******************************************************************************
+--
+-- Show an checkbox
+-- width: Number; widh of the button
+-- height: Number; height of the button
+--
+--******************************************************************************
+function uiElements.createCheckBox(label, tborder)
+  return rtk.CheckBox {
+    w        = 1,
+    h        = 32,
+    halign   = rtk.Widget.LEFT,
+    valign   = rtk.Widget.CENTER,
+    label    = label,
+    fontsize = 20,
+    tborder  = tborder and Colors.Button.Border or nil,
+    tpadding = 10,
+  }
+end
+
+--******************************************************************************
+--
 -- Create a navigation button
 -- label: String; label for the button
 -- icon: rtk.Image; icon Image
 -- bover: Boolean; Display in hover state
 --
 --******************************************************************************
-function uiElements.createNavigationButton(label, icon, hover) ;return rtk.Button {
+function uiElements.createNavigationButton(label, icon, hover)
+  return rtk.Button {
     icon    = icon,
     label   = label,
     flat    = rtk.Button.FLAT,
@@ -150,11 +196,11 @@ end
 --
 --******************************************************************************
 function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
-  local navLogo = rtk.ImageBox { uiElements.Icons.logo }
-  local navHome = uiElements.createNavigationButton('Home', uiElements.Icons.home, true);
-  local navFunction = uiElements.createNavigationButton('Edit Function keys', uiElements.Icons.functions, false);
+  local navLogo          = rtk.ImageBox { uiElements.Icons.logo }
+  local navHome          = uiElements.createNavigationButton('Home', uiElements.Icons.home, true);
+  local navFunction      = uiElements.createNavigationButton('Edit Function keys', uiElements.Icons.functions, false);
   local navMixManagement = uiElements.createNavigationButton('Mix Management', uiElements.Icons.mix, false);
-  local navAbout = uiElements.createNavigationButton('About', uiElements.Icons.about, false);
+  local navAbout         = uiElements.createNavigationButton('About', uiElements.Icons.about, false);
 
   navHome.onclick = function()
     app:push_screen('home')
@@ -213,6 +259,98 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     sidebar:add(navMixManagement)
   end
   sidebar:add(navAbout)
+end
+
+function uiElements.colorPicker(label, r, g, b)
+  local redValue   = r or 0;
+  local greenValue = g or 0;
+  local blueValue  = b or 0;
+
+  local redSlider   = rtk.Slider {
+    max        = 255,
+    value      = redValue,
+    trackcolor = Colors.Border,
+    color      = "white",
+  };
+  local greenSlider = rtk.Slider {
+    max        = 255,
+    value      = greenValue,
+    trackcolor = Colors.Border,
+    color      = "white",
+  };
+  local blueSlider  =
+  rtk.Slider {
+    max        = 255,
+    value      = blueValue,
+    trackcolor = Colors.Border,
+    color      = "white",
+  };
+
+  local sliderContainer      = rtk.VBox { w = 1, spacing = 8 };
+  local controlContainer     = rtk.HBox { w = 1, spacing = 8 };
+  local colorPickerContainer = rtk.VBox { w = 1, spacing = 8, tborder = Colors.Button.Border, tpadding = 8 };
+
+  local swatch = rtk.Container {
+    w      = 32,
+    h      = 32,
+    border = '2px white',
+    bg     = { 0, 0, 0 }
+  };
+
+  local function updateColorSwatch()
+    local color = { redValue / 255, greenValue / 255, blueValue / 255 }
+    swatch:attr('bg', color);
+  end
+
+  local function setRedValue(value)
+    redValue = math.round(value.value);
+    updateColorSwatch();
+  end
+
+  local function setGreenValue(value)
+    greenValue = math.round(value.value)
+    updateColorSwatch();
+  end
+
+  local function setBlueValue(value)
+    blueValue = math.round(value.value)
+    updateColorSwatch();
+  end
+
+  local function setValue(red, green, blue)
+    redValue = red;
+    redSlider:attr('value', red);
+    greenValue = green;
+    greenSlider:attr('value', green);
+    blueValue = blue;
+    blueSlider:attr('value', blue);
+    updateColorSwatch();
+  end
+
+  redSlider.onchange = setRedValue;
+  greenSlider.onchange = setGreenValue;
+  blueSlider.onchange = setBlueValue;
+
+  sliderContainer:add(redSlider)
+  sliderContainer:add(greenSlider)
+  sliderContainer:add(blueSlider)
+  controlContainer:add(swatch);
+  controlContainer:add(sliderContainer);
+  colorPickerContainer:add(rtk.Text { text = label, fontsize = 20 });
+  colorPickerContainer:add(controlContainer);
+
+  return {
+    colorPicker = colorPickerContainer,
+    getValue = function()
+      return {
+        redValue,
+        greenValue,
+        blueValue,
+      }
+    end,
+    setValue = setValue,
+  }
+
 end
 
 return uiElements
