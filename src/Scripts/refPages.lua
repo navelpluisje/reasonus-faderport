@@ -81,40 +81,59 @@ function pages.createAboutPage()
   return aboutPage;
 end
 
-pages.createFunctionsPage = {
+pages.functionsPage = {
   nbFunctions = 8,
   functionActions = {},
   create = function(nbFunctions)
-    pages.createFunctionsPage.nbFunctions = nbFunctions;
+    pages.functionsPage.nbFunctions = nbFunctions;
     local functionsPage = rtk.Container {
       h = 1,
       w = 1,
     }
     for i = 1, nbFunctions do
-      pages.createFunctionsPage.functionActions[i] = FunctionAction:new(i);
-      functionsPage:add(pages.createFunctionsPage.functionActions[i]:getFunctionAction());
+      pages.functionsPage.functionActions[i] = FunctionAction:new(i);
+      functionsPage:add(pages.functionsPage.functionActions[i]:getFunctionAction());
     end
     return functionsPage;
   end,
 }
 
-pages.createMixManagementPage = {
-  nbFilters = 8,
+pages.mixManagementPage = {
+  nbFilters = 16,
   filterActions = {},
-  create = function(nbFunctions)
-    pages.createFunctionsPage.nbFunctions = nbFunctions;
-    local functionsPage = rtk.Container {
+  activeIndex = 1,
+  page = {},
+  tabBar = {},
+  create = function(nbFilters)
+    pages.mixManagementPage.nbFilters = nbFilters;
+    pages.mixManagementPage.page = rtk.Container {
       h = 1,
       w = 1,
     }
-    functionsPage:add(rtk.Text {
-      w    = 1,
-      wrap = rtk.Text.WRAP_NORMAL,
-      text = 'Mix Management'
+    pages.mixManagementPage.tabBar = pages.mixManagementPage.page:add(rtk.HBox {
+      w = 1,
     })
-
-    return functionsPage;
+    pages.mixManagementPage.populateTabBar();
+    return pages.mixManagementPage.page;
   end,
+  populateTabBar = function()
+    pages.mixManagementPage.tabBar:remove_all();
+    for i = 1, pages.mixManagementPage.nbFilters do
+      local button = pages.mixManagementPage.tabBar:add(uiElements.createButton('' .. i), {
+        expand = 1,
+        fillh = true,
+      });
+      button:attr('w', 1)
+      button:attr('hover', i == pages.mixManagementPage.activeIndex)
+      button.onclick = function()
+        if (not button:calc('hover')) then
+          pages.mixManagementPage.activeIndex = i;
+          pages.mixManagementPage.populateTabBar();
+        end
+      end
+    end
+
+  end
 }
 
 return pages;

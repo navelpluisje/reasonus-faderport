@@ -27,9 +27,13 @@ local contentWidth = 0
 
 -- Both the FaderPort 8 and 16 have 8 function keys. Only the FaderPort 2 has 4
 local nbFunctionKeys = 8
+local nbMixManagementFilters = 8
 
 if (faderPortVersion == '2') then
   nbFunctionKeys = 4
+end
+if (faderPortVersion == '16') then
+  nbMixManagementFilters = 16
 end
 
 --******************************************************************************
@@ -96,19 +100,21 @@ app:add_screen {
 app:add_screen {
   name = 'functions',
   init = function(_, screen)
-    screen.widget = pages.createFunctionsPage.create(nbFunctionKeys)
+    screen.widget = pages.functionsPage.create(nbFunctionKeys)
   end,
   -- update = function()
   --   ReadFunctionsFile()
   -- end
 }
 
-app:add_screen {
-  name = 'mix-management',
-  init = function(_, screen)
-    screen.widget = pages.createMixManagementPage.create(8)
-  end,
-}
+if (faderPortVersion ~= '2') then
+  app:add_screen {
+    name = 'mix-management',
+    init = function(_, screen)
+      screen.widget = pages.mixManagementPage.create(nbMixManagementFilters)
+    end,
+  }
+end
 
 app:add_screen {
   name = 'about',
@@ -133,7 +139,7 @@ local function reflowFunctions(width, height)
   for i = 1, nbFunctionKeys do
     local x = ((i - 1) % columns) * width / columns
     local y = (math.floor((i - 1) / columns)) * 80
-    pages.createFunctionsPage.functionActions[i]:setPositionAndSize(x, y, width / columns);
+    pages.functionsPage.functionActions[i]:setPositionAndSize(x, y, width / columns);
   end
 end
 
@@ -182,7 +188,7 @@ end
 
 local function main()
   window:open()
-  uiElements.createNavigationSideBar(sidebar, app);
+  uiElements.createNavigationSideBar(sidebar, app, faderPortVersion);
   checkContentSize()
 end
 

@@ -134,10 +134,22 @@ end
 
 --******************************************************************************
 --
+-- Show opup with success message for saving the action
+--
+--******************************************************************************
+function uiElements.showSavePopup(callback)
+  local content = rtk.Text {
+    text = 'The changes have been saved successfully'
+  }
+  uiElements.showPopup('Message', content, callback)
+end
+
+--******************************************************************************
+--
 -- Create the navigation buttons and attach the onclick event handling
 --
 --******************************************************************************
-function uiElements.createNavigationSideBar(sidebar, app)
+function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   local navLogo = rtk.ImageBox { uiElements.Icons.logo }
   local navHome = uiElements.createNavigationButton('Home', uiElements.Icons.home, true);
   local navFunction = uiElements.createNavigationButton('Edit Function keys', uiElements.Icons.functions, false);
@@ -148,7 +160,9 @@ function uiElements.createNavigationSideBar(sidebar, app)
     app:push_screen('home')
     navHome:attr('hover', true)
     navFunction:attr('hover', false)
-    navMixManagement:attr('hover', false)
+    if (faderPortVersion ~= '2') then
+      navMixManagement:attr('hover', false)
+    end
     navAbout:attr('hover', false)
   end
 
@@ -156,7 +170,9 @@ function uiElements.createNavigationSideBar(sidebar, app)
     app:push_screen('functions')
     navHome:attr('hover', false)
     navFunction:attr('hover', true)
-    navMixManagement:attr('hover', false)
+    if (faderPortVersion ~= '2') then
+      navMixManagement:attr('hover', false)
+    end
     navAbout:attr('hover', false)
   end
 
@@ -164,7 +180,9 @@ function uiElements.createNavigationSideBar(sidebar, app)
     app:push_screen('mix-management')
     navHome:attr('hover', false)
     navFunction:attr('hover', false)
-    navMixManagement:attr('hover', true)
+    if (faderPortVersion ~= '2') then
+      navMixManagement:attr('hover', true)
+    end
     navAbout:attr('hover', false)
   end
 
@@ -172,7 +190,9 @@ function uiElements.createNavigationSideBar(sidebar, app)
     app:push_screen('about')
     navHome:attr('hover', false)
     navFunction:attr('hover', false)
-    navMixManagement:attr('hover', false)
+    if (faderPortVersion ~= '2') then
+      navMixManagement:attr('hover', false)
+    end
     navAbout:attr('hover', true)
   end
 
@@ -180,14 +200,18 @@ function uiElements.createNavigationSideBar(sidebar, app)
     app:push_screen('home')
     navHome:attr('hover', true)
     navFunction:attr('hover', false)
-    navMixManagement:attr('hover', false)
+    if (faderPortVersion ~= '2') then
+      navMixManagement:attr('hover', false)
+    end
     navAbout:attr('hover', false)
   end
 
   sidebar:add(navLogo)
   sidebar:add(navHome)
   sidebar:add(navFunction)
-  sidebar:add(navMixManagement)
+  if (faderPortVersion ~= '2') then
+    sidebar:add(navMixManagement)
+  end
   sidebar:add(navAbout)
 end
 
