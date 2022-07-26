@@ -26,5 +26,5 @@ Zone NavigatorChannel
     RotaryBig           NoAction
 
     Channel             Reaper _REASONUS_ALWAYS_ON    // Dummy Action
-    Shift+Channel       Reaper 40078    //View: Toggle mixer visible
+    Shift+Channel       Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
 ZoneEnd

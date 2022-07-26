@@ -1,5 +1,6 @@
 local function main()
-  local functionAction = 40341;
+  -- Default value: 50124
+  local functionAction = 50124;
   reaper.Main_OnCommandEx(functionAction, 0, 0);
 end
 

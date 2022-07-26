@@ -26,5 +26,5 @@ Zone NavigatorBank
     RotaryBig             NoAction
 
     Bank                  Reaper _REASONUS_ALWAYS_ON    // Dummy Action
-    Shift+Bank            Reaper 40271    // View: Show FX browser window
+    Shift+Bank            Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
 ZoneEnd
