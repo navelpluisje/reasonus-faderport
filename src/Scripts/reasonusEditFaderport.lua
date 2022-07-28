@@ -78,8 +78,8 @@ local content = mainBox:add(rtk.Container {
   padding  = 5,
   bg       = Colors.BackGround,
   minw     = 400,
-  vspacing = 5,
-  hspacing = 10,
+  vspacing = 8,
+  hspacing = 8,
 })
 
 --******************************************************************************
@@ -129,18 +129,16 @@ app:add_screen {
 --   nned to be recalculated
 --
 --******************************************************************************
-local function reflowFunctions(width, height)
+local function reflowFunctions(width)
   if not width then return end
   local columns = 4;
-  if (width < 900) then columns = 3 end
-  if (width < 600) then columns = 2 end
-  if (width < 300) then columns = 1 end
+  if (width < 910) then columns = 3 end
+  if (width < 610) then columns = 2 end
+  if (width < 310) then columns = 1 end
+  reaper.ShowConsoleMsg('reflow width: ' .. width .. '\n')
+  -- width - 10
 
-  for i = 1, nbFunctionKeys do
-    local x = ((i - 1) % columns) * width / columns
-    local y = (math.floor((i - 1) / columns)) * 80
-    pages.functionsPage.functionActions[i]:setPositionAndSize(x, y, width / columns);
-  end
+  pages.functionsPage.setWidth((width - 30 - (columns - 1) * 8) / columns);
 end
 
 --******************************************************************************
@@ -158,7 +156,7 @@ local function checkContentSize()
   else
     contentWidth = width
     contentHeight = height
-    reflowFunctions(width - 10, height)
+    reflowFunctions(width)
   end
 end
 

@@ -28,13 +28,13 @@ function FunctionAction:new(index)
     fileLines = {},
     actionPaneOpened = false,
     element = rtk.VBox {
-      w = .25,
+      w = 300,
       h = 80,
-      padding = 5,
     },
     label = rtk.HBox {
       w        = 1,
       h        = 30,
+      expand   = 1,
       vpadding = 10,
       bg       = Colors.Label.BackGround,
       border   = Colors.Label.Border,
@@ -115,9 +115,7 @@ end
 -- width: Number; Width of the FunctionAction
 --
 --******************************************************************************
-function FunctionAction:setPositionAndSize(x, y, width)
-  self.element:attr('x', x);
-  self.element:attr('y', y);
+function FunctionAction:setWidth(width)
   self.element:attr('w', width);
 end
 

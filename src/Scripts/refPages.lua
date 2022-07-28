@@ -83,35 +83,68 @@ function pages.createAboutPage()
 end
 
 pages.functionsPage = {
-  nbFunctions = 8,
+  nbFunctions     = 8,
   functionActions = {},
-  create = function(nbFunctions)
+  page            = {},
+  tabBar          = {},
+  content         = {},
+  buttonBar       = {},
+  create          = function(nbFunctions)
     pages.functionsPage.nbFunctions = nbFunctions;
-    local functionsPage = rtk.Container {
+    pages.functionsPage.page = rtk.VBox {
       h = 1,
       w = 1,
+      padding = 8,
     }
-    for i = 1, nbFunctions do
+    pages.functionsPage.content = pages.functionsPage.page:add(rtk.FlowBox {
+      vspacing = 8;
+      hspacing = 8;
+      w = 1,
+    });
+    pages.functionsPage.buttonBar = pages.functionsPage.page:add(rtk.HBox {
+      w        = 1,
+      tmargin  = 20,
+      tpadding = 8,
+      tborder  = uiElements.Colors.Button.Border;
+    })
+    pages.functionsPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
+    local resetButton = pages.functionsPage.buttonBar:add(uiElements.createButton('Reset to defaults',
+      uiElements.Icons.save));
+    resetButton:attr('halign', 'right')
+    pages.functionsPage.populateContent();
+    return pages.functionsPage.page;
+  end,
+  populateContent = function()
+    pages.functionsPage.content:remove_all();
+    for i = 1, pages.functionsPage.nbFunctions do
       pages.functionsPage.functionActions[i] = FunctionAction:new(i);
-      functionsPage:add(pages.functionsPage.functionActions[i]:getFunctionAction());
+      pages.functionsPage.content:add(pages.functionsPage.functionActions[i]:getFunctionAction(), {
+        minw = 100,
+        maxw = 200,
+      });
     end
-    return functionsPage;
+  end,
+  setWidth        = function(width)
+    reaper.ShowConsoleMsg('setWidth: ' .. pages.functionsPage.content:calc('w') / gfx.ext_retina .. '\n')
+    for i = 1, #pages.functionsPage.functionActions do
+      pages.functionsPage.functionActions[i]:setWidth(width)
+    end
   end,
 }
 
 pages.mixManagementPage = {
-  nbFilters = 16,
-  filterActions = {},
-  activeIndex = 1,
-  page = {},
-  tabBar = {},
-  content = {},
-  buttonBar = {},
-  create = function(nbFilters)
+  nbFilters        = 16,
+  filterActions    = {},
+  activeIndex      = 1,
+  page             = {},
+  tabBar           = {},
+  content          = {},
+  buttonBar        = {},
+  create           = function(nbFilters)
     pages.mixManagementPage.nbFilters = nbFilters;
     pages.mixManagementPage.page = rtk.VBox {
-      h = 1,
-      w = 1,
+      h      = 1,
+      w      = 1,
       margin = 4;
     }
     pages.mixManagementPage.tabBar = pages.mixManagementPage.page:add(rtk.HBox {
@@ -121,10 +154,10 @@ pages.mixManagementPage = {
       w = 1,
     })
     pages.mixManagementPage.buttonBar = pages.mixManagementPage.page:add(rtk.HBox {
-      w = 1,
-      tmargin = 20,
+      w        = 1,
+      tmargin  = 20,
       tpadding = 8,
-      tborder = uiElements.Colors.Button.Border;
+      tborder  = uiElements.Colors.Button.Border;
     })
     pages.mixManagementPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
     local saveButton = pages.mixManagementPage.buttonBar:add(uiElements.createButton('Save all filters',
@@ -135,15 +168,17 @@ pages.mixManagementPage = {
 
     return pages.mixManagementPage.page;
   end,
-  populateTabBar = function()
+  populateTabBar   = function()
     pages.mixManagementPage.content:remove_all();
     pages.mixManagementPage.tabBar:remove_all();
     for i = 1, pages.mixManagementPage.nbFilters do
       local button = pages.mixManagementPage.tabBar:add(uiElements.createButton('' .. i), {
         expand = 1,
-        fillh = true,
+        fillh  = true,
       });
       button:attr('w', 1)
+      button:attr('fontsize', 24)
+      button:attr('fontweight', rtk.font.Bold)
       button:attr('hover', i == pages.mixManagementPage.activeIndex)
       button.onclick = function()
         if (not button:calc('hover')) then

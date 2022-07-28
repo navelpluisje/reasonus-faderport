@@ -153,7 +153,6 @@ function MixManagement:readActionFile()
     end
     local search = string.match(line, '%s*search = "(.*)",');
     if (search) then
-      reaper.ShowConsoleMsg(search);
       self:addSearchInputs(search);
     end
   end

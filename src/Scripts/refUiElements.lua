@@ -200,6 +200,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   local navHome          = uiElements.createNavigationButton('Home', uiElements.Icons.home, true);
   local navFunction      = uiElements.createNavigationButton('Edit Function keys', uiElements.Icons.functions, false);
   local navMixManagement = uiElements.createNavigationButton('Mix Management', uiElements.Icons.mix, false);
+  local navDocumentation = uiElements.createNavigationButton('Documentation', uiElements.Icons.mix, false);
   local navAbout         = uiElements.createNavigationButton('About', uiElements.Icons.about, false);
 
   navHome.onclick = function()
@@ -232,6 +233,10 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navAbout:attr('hover', false)
   end
 
+  navDocumentation.onclick = function()
+    rtk.open_url('https://www.buymeacoffee.com/navelpluisje')
+  end
+
   navAbout.onclick = function()
     app:push_screen('about')
     navHome:attr('hover', false)
@@ -258,6 +263,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   if (faderPortVersion ~= '2') then
     sidebar:add(navMixManagement)
   end
+  sidebar:add(navDocumentation)
   sidebar:add(navAbout)
 end
 
@@ -266,25 +272,35 @@ function uiElements.colorPicker(label, r, g, b)
   local greenValue = g or 0;
   local blueValue  = b or 0;
 
-  local redSlider   = rtk.Slider {
+  local red = rtk.HBox { w = 1 };
+  red:add(rtk.Text { text = 'R', w = 15, fontsize = 16 })
+  local redSlider = red:add(rtk.Slider {
     max        = 255,
     value      = redValue,
     trackcolor = Colors.Border,
     color      = "white",
-  };
-  local greenSlider = rtk.Slider {
+  });
+  local redValueLabel = red:add(rtk.Text { text = redValue, w = 30, lpadding = 5, fontsize = 16 })
+
+  local green = rtk.HBox { w = 1 };
+  green:add(rtk.Text { text = 'G', w = 15, fontsize = 16 })
+  local greenSlider = green:add(rtk.Slider {
     max        = 255,
     value      = greenValue,
     trackcolor = Colors.Border,
     color      = "white",
-  };
-  local blueSlider  =
-  rtk.Slider {
+  });
+  local greenValueLabel = green:add(rtk.Text { text = greenValue, w = 30, lpadding = 5, fontsize = 16 })
+
+  local blue = rtk.HBox { w = 1 };
+  blue:add(rtk.Text { text = 'B', w = 15, fontsize = 16 })
+  local blueSlider = blue:add(rtk.Slider {
     max        = 255,
     value      = blueValue,
     trackcolor = Colors.Border,
     color      = "white",
-  };
+  });
+  local blueValueLabel = blue:add(rtk.Text { text = blueValue, w = 30, lpadding = 5, fontsize = 16 })
 
   local sliderContainer      = rtk.VBox { w = 1, spacing = 8 };
   local controlContainer     = rtk.HBox { w = 1, spacing = 8 };
@@ -304,16 +320,19 @@ function uiElements.colorPicker(label, r, g, b)
 
   local function setRedValue(value)
     redValue = math.round(value.value);
+    redValueLabel:attr('text', redValue)
     updateColorSwatch();
   end
 
   local function setGreenValue(value)
     greenValue = math.round(value.value)
+    greenValueLabel:attr('text', greenValue)
     updateColorSwatch();
   end
 
   local function setBlueValue(value)
     blueValue = math.round(value.value)
+    blueValueLabel:attr('text', blueValue)
     updateColorSwatch();
   end
 
@@ -331,9 +350,9 @@ function uiElements.colorPicker(label, r, g, b)
   greenSlider.onchange = setGreenValue;
   blueSlider.onchange = setBlueValue;
 
-  sliderContainer:add(redSlider)
-  sliderContainer:add(greenSlider)
-  sliderContainer:add(blueSlider)
+  sliderContainer:add(red)
+  sliderContainer:add(green)
+  sliderContainer:add(blue)
   controlContainer:add(swatch);
   controlContainer:add(sliderContainer);
   colorPickerContainer:add(rtk.Text { text = label, fontsize = 20 });
