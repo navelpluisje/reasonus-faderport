@@ -26,5 +26,8 @@ Zone NavigatorMetronome
   Shift+RotaryBigPush   Reaper 40363    // Options: Show metronome/pre-roll settings
   Option+RotaryBigPush  NoAction
   RotaryBig             NoAction
-  
+
+  Click                 Reaper 40364    // Options: Toggle metronome
+  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_6
+
 ZoneEnd 

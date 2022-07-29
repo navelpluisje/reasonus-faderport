@@ -110,7 +110,21 @@ pages.functionsPage = {
     pages.functionsPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
     local resetButton = pages.functionsPage.buttonBar:add(uiElements.createButton('Reset to defaults',
       uiElements.Icons.save));
-    resetButton:attr('halign', 'right')
+    resetButton:attr('halign', 'right');
+    resetButton.onclick = function()
+      uiElements.showConfirm(
+        'Reset the Function Id s',
+        rtk.Text { text = 'Do you really want to reset to the default values?\n This can not be undone',
+          wrap      = rtk.Text.WRAP_NORMAL,
+          textalign = rtk.Widget.CENTER,
+          w         = 1,
+          halign    = 'center',
+        },
+        'Yes, I do',
+        pages.functionsPage.resetActionId,
+        'Cancel'
+      )
+    end
     pages.functionsPage.populateContent();
     return pages.functionsPage.page;
   end,
@@ -125,9 +139,13 @@ pages.functionsPage = {
     end
   end,
   setWidth        = function(width)
-    reaper.ShowConsoleMsg('setWidth: ' .. pages.functionsPage.content:calc('w') / gfx.ext_retina .. '\n')
     for i = 1, #pages.functionsPage.functionActions do
       pages.functionsPage.functionActions[i]:setWidth(width)
+    end
+  end,
+  resetActionId   = function()
+    for i = 1, #pages.functionsPage.functionActions do
+      pages.functionsPage.functionActions[i]:setDefaultActionId();
     end
   end,
 }
@@ -145,7 +163,7 @@ pages.mixManagementPage = {
     pages.mixManagementPage.page = rtk.VBox {
       h      = 1,
       w      = 1,
-      margin = 4;
+      margin = 8;
     }
     pages.mixManagementPage.tabBar = pages.mixManagementPage.page:add(rtk.HBox {
       w = 1,
@@ -160,9 +178,10 @@ pages.mixManagementPage = {
       tborder  = uiElements.Colors.Button.Border;
     })
     pages.mixManagementPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
-    local saveButton = pages.mixManagementPage.buttonBar:add(uiElements.createButton('Save all filters',
+    local saveButton = pages.mixManagementPage.buttonBar:add(uiElements.createButton('Save filter',
       uiElements.Icons.save));
     saveButton:attr('halign', 'right')
+    saveButton.onclick = pages.mixManagementPage.save;
     pages.mixManagementPage.createFilterTabs(nbFilters);
     pages.mixManagementPage.populateTabBar();
 
@@ -194,6 +213,9 @@ pages.mixManagementPage = {
     for i = 1, pages.mixManagementPage.nbFilters do
       pages.mixManagementPage.filterActions[i] = MixManagement:new(i, nbFilters);
     end
+  end,
+  save             = function()
+    pages.mixManagementPage.filterActions[pages.mixManagementPage.activeIndex]:writeChangesToFile()
   end
 }
 

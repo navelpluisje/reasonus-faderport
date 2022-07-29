@@ -28,5 +28,5 @@ Zone NavigatorMarker
     RotaryBig               NoAction
 
     Marker                  Reaper _REASONUS_ALWAYS_ON    // Dummy Action
-    Shift+Marker            Reaper 41074    // Toggle show all floating windows
+    Shift+Marker            Reaper _REASONUS_HANDLE_FUNCTION_KEY_8
 ZoneEnd

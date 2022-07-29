@@ -135,8 +135,6 @@ local function reflowFunctions(width)
   if (width < 910) then columns = 3 end
   if (width < 610) then columns = 2 end
   if (width < 310) then columns = 1 end
-  reaper.ShowConsoleMsg('reflow width: ' .. width .. '\n')
-  -- width - 10
 
   pages.functionsPage.setWidth((width - 30 - (columns - 1) * 8) / columns);
 end

@@ -24,5 +24,5 @@ Zone NavigatorZoom
     RotaryBig           NoAction
 
     Zoom                Reaper _REASONUS_ALWAYS_ON    // Dummy Action
-    Shift+Zoom          Reaper 50124    // Media explorer: Show/hide media explorer
+    Shift+Zoom          Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
 ZoneEnd

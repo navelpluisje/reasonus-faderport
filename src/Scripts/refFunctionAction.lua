@@ -47,7 +47,7 @@ function FunctionAction:new(index)
       fontsize = 20,
       tmargin  = 7
     },
-    actionId = rtk.HBox {
+    actionIdContainer = rtk.HBox {
       w        = 1,
       h        = 40,
       t        = 1,
@@ -93,12 +93,12 @@ function FunctionAction:getFunctionAction()
   self.labelText:attr('text', 'Function ' .. self.functionId);
   self.element:add(self.label);
   self.label:add(self.labelText)
-  self.element:add(self.actionId);
-  self.actionId:add(self.actionButton);
-  self.actionId:add(rtk.Spacer(), { expand = 1, fillh = true })
-  self.actionId:add(self.actionIdText)
-  self.actionId:add(rtk.Spacer(), { expand = 1, fillh = true })
-  self.actionId:add(self.infoButton);
+  self.element:add(self.actionIdContainer);
+  self.actionIdContainer:add(self.actionButton);
+  self.actionIdContainer:add(rtk.Spacer(), { expand = 1, fillh = true })
+  self.actionIdContainer:add(self.actionIdText)
+  self.actionIdContainer:add(rtk.Spacer(), { expand = 1, fillh = true })
+  self.actionIdContainer:add(self.infoButton);
 
   self.actionButton.onclick = self:getSelectedAction();
   self.infoButton.onclick = function() self:showActionInfoPopup() end;
@@ -134,12 +134,25 @@ end
 
 --******************************************************************************
 --
+-- Set the default actionId as the new actionId
+--
+--******************************************************************************
+function FunctionAction:setDefaultActionId()
+  self:setActionId(self.defaultAction);
+  self:writeActionFile(false);
+end
+
+--******************************************************************************
+--
 -- Read the data from the ActionFile corresponding to this FunctionAction
 --
 --******************************************************************************
 function FunctionAction:readActionFile()
   for line in io.lines(self.functionFilePath) do
     self.fileLines[#self.fileLines + 1] = line;
+    if string.match(line, '%s*-- Default value: (%d+)') then
+      self.defaultAction = string.match(line, '%s*-- Default value: (%d+)')
+    end
     if string.match(line, '%s*local functionAction = (%d+);') then
       local actionId = string.match(line, '%s*local functionAction = (%d+);')
       if (actionId) then
@@ -155,7 +168,12 @@ end
 -- with the new actionId
 --
 --******************************************************************************
-function FunctionAction:writeActionFile()
+function FunctionAction:writeActionFile(showPopup)
+  if (showPopup == false) then
+    showPopup = false
+  else
+    showPopup = true
+  end
   local actionFile = assert(io.open(self.functionFilePath, "w"))
   for i = 1, #self.fileLines do
     local line = self.fileLines[i];
@@ -165,7 +183,9 @@ function FunctionAction:writeActionFile()
     actionFile:write(line .. '\n');
   end
   actionFile:close();
-  uiElements.showSavePopup(resetSurfaces);
+  -- if showPopup then
+  --   uiElements.showSavePopup(resetSurfaces);
+  -- end
 end
 
 --******************************************************************************

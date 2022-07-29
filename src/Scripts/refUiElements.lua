@@ -180,6 +180,72 @@ end
 
 --******************************************************************************
 --
+-- Show a rtk popup
+-- title: String; title of the popup
+-- content: rtk.Widget; Widget with the content for the popup
+-- onClose: function; callback function for onclose
+--
+--******************************************************************************
+function uiElements.showConfirm(title, content, trueText, onTrue, falseText, onFalse)
+  local popupBody = rtk.VBox { spacing = 20 }
+  local popupFalsebutton
+  local popup = rtk.Popup {
+    child   = popupBody,
+    overlay = '#000000aa',
+    bg      = Colors.Primary,
+    padding = 0,
+    w       = 460
+  }
+
+  popupBody:add(rtk.Heading {
+    text    = title,
+    t       = 0,
+    w       = 1,
+    bmargin = 5,
+    padding = 10,
+    bg      = Colors.Label.BackGround,
+    bborder = Colors.Label.Border,
+    halign  = 'center',
+  })
+
+  local container = popupBody:add(rtk.Container {
+    lpadding = 30,
+    rpadding = 30,
+    w        = 1,
+  })
+  container:add(content)
+
+  local footer = popupBody:add(rtk.HBox {
+    padding = 10,
+    tborder = Colors.Label.Border,
+  })
+  footer:add(rtk.Spacer(), { expand = 1, fillh = false, fillv = false })
+  if (falseText) then
+    popupFalsebutton = footer:add(uiElements.createButton(falseText))
+    popupFalsebutton:attr('rmargin', 16)
+  end
+  local popupTruebutton = footer:add(uiElements.createButton(trueText))
+  footer:add(rtk.Spacer(), { expand = 1, fillh = false, fillv = false })
+
+  popupFalsebutton.onclick = function()
+    if onFalse then
+      onFalse()
+    end
+    popup:close()
+  end
+
+  popupTruebutton.onclick = function()
+    if onTrue then
+      onTrue()
+    end
+    popup:close()
+  end
+
+  popup:open()
+end
+
+--******************************************************************************
+--
 -- Show opup with success message for saving the action
 --
 --******************************************************************************
@@ -346,6 +412,10 @@ function uiElements.colorPicker(label, r, g, b)
     updateColorSwatch();
   end
 
+  local function getCSIValue()
+    return redValue .. ' ' .. greenValue .. ' ' .. blueValue;
+  end
+
   redSlider.onchange = setRedValue;
   greenSlider.onchange = setGreenValue;
   blueSlider.onchange = setBlueValue;
@@ -368,6 +438,7 @@ function uiElements.colorPicker(label, r, g, b)
       }
     end,
     setValue = setValue,
+    getCSIValue = getCSIValue,
   }
 
 end

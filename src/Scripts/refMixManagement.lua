@@ -131,31 +131,142 @@ end
 function MixManagement:readActionFile()
   for line in io.lines(self.filterFilePath) do
     self.fileLines[#self.fileLines + 1] = line;
+
     local showSibling = string.match(line, '%s*showsiblings = (%w*),') == 'true';
     if (showSibling) then
       self.showSiblings:attr('value', showSibling);
     end
+
     local showParents = string.match(line, '%s*showparents = (%w*),') == 'true';
     if (showParents) then
       self.showParents:attr('value', showParents);
     end
+
     local showChildren = string.match(line, '%s*showchildren = (%w*),') == 'true';
     if (showChildren) then
       self.showChildren:attr('value', showChildren);
     end
+
     local onlyTopLevel = string.match(line, '%s*matchonlytop = (%w*),') == 'true';
     if (onlyTopLevel) then
       self.onlyTopLevel:attr('value', onlyTopLevel);
     end
+
     local matchMultiple = string.match(line, '%s*matchmultiple = "(%w*)",') == 'true';
     if (matchMultiple) then
       self.matchMultiple:attr('value', matchMultiple);
     end
+
     local search = string.match(line, '%s*search = "(.*)",');
     if (search) then
       self:addSearchInputs(search);
     end
   end
+end
+
+--******************************************************************************
+--
+-- Write the data to the ActionFile corresponding to this MixManagement
+--
+--******************************************************************************
+function MixManagement:writeActionFile()
+  local lines = {};
+  for line in io.lines(self.filterFilePath) do
+    lines[#lines + 1] = line;
+  end
+
+  local actionFile = assert(io.open(self.filterFilePath, "w"))
+  for i = 1, #lines do
+    local line = lines[i];
+
+    if string.match(line, '%s*showsiblings = (%w*),') then
+      local value = self.showSiblings.value and 'true' or 'false';
+      line = '\tshowsiblings = ' .. value .. ',';
+    end
+
+    if string.match(line, '%s*showparents = (%w*),') then
+      local value = self.showParents.value and 'true' or 'false';
+      line = '\tshowparents = ' .. value .. ',';
+    end
+
+    if string.match(line, '%s*showchildren = (%w*),') then
+      local value = self.showChildren.value and 'true' or 'false';
+      line = '\tshowchildren = ' .. value .. ',';
+    end
+
+    if string.match(line, '%s*matchonlytop = (%w*),') then
+      local value = self.onlyTopLevel.value and 'true' or 'false';
+      line = '\tmatchonlytop = ' .. value .. ',';
+    end
+
+    if string.match(line, '%s*matchmultiple = (%w*),') then
+      local value = self.matchMultiple.value and 'true' or 'false';
+      line = '\tmatchmultiple = ' .. value .. ',';
+    end
+
+    if string.match(line, '%s*search = "(.*)",') then
+      local value = '';
+      for j = 1, #self.inputList.children do
+        local widget, attrs = table.unpack(self.inputList.children[j])
+        if (value ~= '') then
+          value = value .. '|';
+        end
+        value = value .. widget.value;
+      end
+      line = '\tsearch = "' .. value .. '",';
+    end
+    actionFile:write(line .. '\n');
+  end
+  actionFile:close();
+end
+
+--******************************************************************************
+--
+-- Read the color and name from the mix management ZoneFile
+--
+--******************************************************************************
+function MixManagement:readZoneFile()
+  for line in io.lines(self.zoneFilePath) do
+    local displayText = string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "(%w*)"');
+
+    if (displayText) then
+      self.displayText:attr('value', displayText)
+    end
+
+    local color = string.match(line, '%s*Select' .. self.filterId .. '%s*FixedRGBColourDisplay%s*%{%s(.*)%s%}');
+    if (color) then
+      self:setFilterColor(color);
+    end
+  end
+end
+
+--******************************************************************************
+--
+-- Write the color and name to the mix management ZoneFile
+--
+--******************************************************************************
+function MixManagement:writeZoneFile()
+  local lines = {};
+  for line in io.lines(self.zoneFilePath) do
+    lines[#lines + 1] = line;
+  end
+
+  local zoneFile = assert(io.open(self.zoneFilePath, "w"))
+  for i = 1, #lines do
+    local line = lines[i];
+
+    if (string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "(%w*)"')) then
+      local value = self.displayText.value;
+      line = '  ScribbleLine3_' .. self.filterId .. '     FixedTextDisplay "' .. value .. '" {% Invert %}';
+    end
+
+    if (string.match(line, '%s*Select' .. self.filterId .. '%s*FixedRGBColourDisplay%s{%s(.*)%s%}')) then
+      local value = self.colorPicker.getCSIValue();
+      line = '  Select' .. self.filterId .. '             FixedRGBColourDisplay { ' .. value .. ' }';
+    end
+    zoneFile:write(line .. '\n');
+  end
+  zoneFile:close();
 end
 
 function MixManagement:setFilterColor(clr)
@@ -172,20 +283,6 @@ function MixManagement:setFilterColor(clr)
   self.colorPicker.setValue(color[1], color[2], color[3]);
 end
 
-function MixManagement:readZoneFile()
-  for line in io.lines(self.zoneFilePath) do
-    local displayText = string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "(%w*)"');
-    if (displayText) then
-      self.displayText:attr('value', displayText)
-    end
-    local color = string.match(line, '%s*Select' .. self.filterId .. '%s*Reaper%s*%S*%s*%{%s(.*)%s%}');
-
-    if (color) then
-      self:setFilterColor(color);
-    end
-  end
-end
-
 function MixManagement:addSearchInputs(searchQuery)
   for word in string.gmatch(searchQuery, "%w+") do
     local entry = uiElements.createEntry()
@@ -194,90 +291,11 @@ function MixManagement:addSearchInputs(searchQuery)
   end
 end
 
---******************************************************************************
---
--- Write the data to the ActionFile corresponding to this MixManagement
--- with the new actionId
---
---******************************************************************************
-function MixManagement:writeActionFile()
-  local actionFile = assert(io.open(self.functionFilePath, "w"))
-  for i = 1, #self.fileLines do
-    local line = self.fileLines[i];
-    if string.match(line, '%s*local MixManagement = (%d+);') then
-      line = '  local MixManagement = ' .. self.actionId .. ';';
-    end
-    actionFile:write(line .. '\n');
-  end
-  actionFile:close();
+function MixManagement:writeChangesToFile()
+  self:writeActionFile();
+  self:writeZoneFile();
   uiElements.showSavePopup(resetSurfaces);
-end
 
---******************************************************************************
---
--- Show a Popup with the information of the action of this MixManagement
---
---******************************************************************************
-function MixManagement:showActionInfoPopup()
-  local fullName = reaper.CF_GetCommandText(0, self.actionId)
-  local actionType, actionName = string.match(fullName, "(.*):%s(.*)");
-  local content = rtk.VBox {
-    w       = 400,
-    spacing = 10
-  }
-  local idLine = content:add(rtk.HBox {})
-  idLine:add(rtk.Text { text = 'Action Id', w = .3 })
-  idLine:add(rtk.Text { text = self.actionId })
-  if (actionType) then
-    local typeLine = content:add(rtk.HBox {})
-    typeLine:add(rtk.Text { text = 'Action Type', w = .3 })
-    typeLine:add(rtk.Text { text = actionType, w = 1 })
-  end
-  if (not actionName) then
-    actionName = fullName
-  end
-  local nameLine = content:add(rtk.HBox {})
-  nameLine:add(rtk.Text { text = 'Action Name', w = .3 })
-  nameLine:add(rtk.Text {
-    text = actionName,
-    w    = 1,
-    wrap = rtk.Text.WRAP_NORMAL,
-  })
-  uiElements.showPopup('Action info', content)
-end
-
---******************************************************************************
---
--- Trigger the actionslist and store the selected action id
---
---******************************************************************************
-function MixManagement:getSelectedAction()
-  local action;
-  return function()
-    if (not self.actionPaneOpened) then
-      action = reaper.PromptForAction(1, 0, 0);
-      self.actionPaneOpened = true;
-    else
-      action = reaper.PromptForAction(0, 0, 0);
-    end
-
-    if action > 0 then
-      while action > 0 do
-        self:setActionId(action);
-        self:writeActionFile();
-        action = reaper.PromptForAction(0, 0, 0);
-        self.actionPaneOpened = false
-      end
-      -- we don't " have to end the session if we want the user to be
-      -- able to select actions multiple times
-      reaper.PromptForAction(-1, 0, 0);
-      self.actionPaneOpened = false;
-    elseif action == 0 and self.actionPaneOpened then
-      reaper.defer(self:getSelectedAction());
-    else
-      self.actionPaneOpened = false;
-    end
-  end
 end
 
 return MixManagement;

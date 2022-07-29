@@ -44,22 +44,14 @@ Zone Navigators
 // ===========================================
 // FUNCTION KEYS
 // ===========================================
-// Function-Action-1 
-    Shift+Channel       Reaper 40078    // View: Toggle mixer visible
-// Function-Action-2 
-    Shift+Zoom          Reaper 50124    // Media explorer: Show/hide media explorer
-// Function-Action-3 
-    Shift+Scroll        Reaper 40251    // View: Show routing matrix window
-// Function-Action-4 
-    Shift+Bank          Reaper 40271    // View: Show FX browser window
-// Function-Action-5 
-    Shift+Master        Reaper 40326    // View: Show region/marker manager window
-// Function-Action-6 
-    Shift+Click         Reaper 41157    // View: Show project bay window
-// Function-Action-7 
-    Shift+Section       Reaper 40378    // View: Show big clock window
-// Function-Action-8 
-    Shift+Marker        Reaper 41074    // Toggle show all floating windows
+    Shift+Channel       Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
+    Shift+Zoom          Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
+    Shift+Scroll        Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
+    Shift+Bank          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
+    Shift+Master        Reaper _REASONUS_HANDLE_FUNCTION_KEY_5
+    Shift+Click         Reaper _REASONUS_HANDLE_FUNCTION_KEY_6
+    Shift+Section       Reaper _REASONUS_HANDLE_FUNCTION_KEY_7
+    Shift+Marker        Reaper _REASONUS_HANDLE_FUNCTION_KEY_8
     Property+Shift+Marker      NoFeedback    
 
 // ===========================================

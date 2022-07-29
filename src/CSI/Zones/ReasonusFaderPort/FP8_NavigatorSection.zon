@@ -30,5 +30,5 @@ Zone NavigatorSection
 
     Section                   Reaper _REASONUS_ALWAYS_ON       // Dummy Action
     Hold+Section              Reaper 40020               // Time selection: Remove (unselect) time selection and loop points 
-    Shift+Section             Reaper 40378               // View: Show big clock window
+    Shift+Section             Reaper _REASONUS_HANDLE_FUNCTION_KEY_7
 ZoneEnd
