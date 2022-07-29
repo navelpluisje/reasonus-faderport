@@ -178,6 +178,10 @@ pages.mixManagementPage = {
       tborder  = uiElements.Colors.Button.Border;
     })
     pages.mixManagementPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
+    local reloadButton = pages.mixManagementPage.buttonBar:add(uiElements.createButton('Reload',
+      uiElements.Icons.refresh));
+    reloadButton:attr('rmargin', 16)
+    reloadButton.onclick = pages.mixManagementPage.reload;
     local saveButton = pages.mixManagementPage.buttonBar:add(uiElements.createButton('Save filter',
       uiElements.Icons.save));
     saveButton:attr('halign', 'right')
@@ -216,7 +220,10 @@ pages.mixManagementPage = {
   end,
   save             = function()
     pages.mixManagementPage.filterActions[pages.mixManagementPage.activeIndex]:writeChangesToFile()
-  end
+  end,
+  reload           = function()
+    pages.mixManagementPage.filterActions[pages.mixManagementPage.activeIndex]:reloadFiles()
+  end,
 }
 
 return pages;

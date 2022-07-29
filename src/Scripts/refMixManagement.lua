@@ -68,7 +68,7 @@ function MixManagement:new(index, faderPortVersion)
       w = 1,
       spacing = 16,
     },
-    colorPicker = uiElements.colorPicker('Color');
+    colourPicker = uiElements.colourPicker('Color');
     showSiblings = uiElements.createCheckBox('Show track siblings'),
     showParents = uiElements.createCheckBox('Show track parents', true),
     showChildren = uiElements.createCheckBox('Show track children', true),
@@ -104,11 +104,13 @@ function MixManagement:buildMixManagement()
   self.right:add(self.showChildren);
   self.right:add(self.onlyTopLevel);
   self.right:add(self.matchMultiple);
-  self.right:add(self.colorPicker.colorPicker);
+  self.right:add(self.colourPicker.colourPicker);
 
   button:attr('halign', rtk.Widget.RIGHT)
   button.onclick = function()
-    self.inputList:add(uiElements.createEntry())
+    local entry = uiElements.createEntry();
+    self.inputList:add(entry);
+    entry:focus();
   end
 
   self:readActionFile();
@@ -132,29 +134,29 @@ function MixManagement:readActionFile()
   for line in io.lines(self.filterFilePath) do
     self.fileLines[#self.fileLines + 1] = line;
 
-    local showSibling = string.match(line, '%s*showsiblings = (%w*),') == 'true';
+    local showSibling = string.match(line, '%s*showsiblings = (%w*),');
     if (showSibling) then
-      self.showSiblings:attr('value', showSibling);
+      self.showSiblings:attr('value', showSibling == 'true');
     end
 
-    local showParents = string.match(line, '%s*showparents = (%w*),') == 'true';
+    local showParents = string.match(line, '%s*showparents = (%w*),');
     if (showParents) then
-      self.showParents:attr('value', showParents);
+      self.showParents:attr('value', showParents == 'true');
     end
 
-    local showChildren = string.match(line, '%s*showchildren = (%w*),') == 'true';
+    local showChildren = string.match(line, '%s*showchildren = (%w*),');
     if (showChildren) then
-      self.showChildren:attr('value', showChildren);
+      self.showChildren:attr('value', showChildren == 'true');
     end
 
-    local onlyTopLevel = string.match(line, '%s*matchonlytop = (%w*),') == 'true';
+    local onlyTopLevel = string.match(line, '%s*matchonlytop = (%w*),');
     if (onlyTopLevel) then
-      self.onlyTopLevel:attr('value', onlyTopLevel);
+      self.onlyTopLevel:attr('value', onlyTopLevel == 'true');
     end
 
-    local matchMultiple = string.match(line, '%s*matchmultiple = "(%w*)",') == 'true';
+    local matchMultiple = string.match(line, '%s*matchmultiple = (%w*),');
     if (matchMultiple) then
-      self.matchMultiple:attr('value', matchMultiple);
+      self.matchMultiple:attr('value', matchMultiple == 'true');
     end
 
     local search = string.match(line, '%s*search = "(.*)",');
@@ -208,10 +210,14 @@ function MixManagement:writeActionFile()
       local value = '';
       for j = 1, #self.inputList.children do
         local widget, attrs = table.unpack(self.inputList.children[j])
+        if (widget.value == '') then
+          goto continue
+          ; end
         if (value ~= '') then
           value = value .. '|';
         end
         value = value .. widget.value;
+        ::continue::
       end
       line = '\tsearch = "' .. value .. '",';
     end
@@ -222,20 +228,20 @@ end
 
 --******************************************************************************
 --
--- Read the color and name from the mix management ZoneFile
+-- Read the colour and name from the mix management ZoneFile
 --
 --******************************************************************************
 function MixManagement:readZoneFile()
   for line in io.lines(self.zoneFilePath) do
-    local displayText = string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "(%w*)"');
+    local displayText = string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "([%s%w]*)"');
 
     if (displayText) then
       self.displayText:attr('value', displayText)
     end
 
-    local color = string.match(line, '%s*Select' .. self.filterId .. '%s*FixedRGBColourDisplay%s*%{%s(.*)%s%}');
-    if (color) then
-      self:setFilterColor(color);
+    local colour = string.match(line, '%s*Select' .. self.filterId .. '%s*FixedRGBColourDisplay%s*%{%s(.*)%s%}');
+    if (colour) then
+      self:setFilterColour(colour);
     end
   end
 end
@@ -255,13 +261,13 @@ function MixManagement:writeZoneFile()
   for i = 1, #lines do
     local line = lines[i];
 
-    if (string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "(%w*)"')) then
+    if (string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "([%s%w]*)"')) then
       local value = self.displayText.value;
       line = '  ScribbleLine3_' .. self.filterId .. '     FixedTextDisplay "' .. value .. '" {% Invert %}';
     end
 
     if (string.match(line, '%s*Select' .. self.filterId .. '%s*FixedRGBColourDisplay%s{%s(.*)%s%}')) then
-      local value = self.colorPicker.getCSIValue();
+      local value = self.colourPicker.getCSIValue();
       line = '  Select' .. self.filterId .. '             FixedRGBColourDisplay { ' .. value .. ' }';
     end
     zoneFile:write(line .. '\n');
@@ -269,21 +275,22 @@ function MixManagement:writeZoneFile()
   zoneFile:close();
 end
 
-function MixManagement:setFilterColor(clr)
-  local color = {};
+function MixManagement:setFilterColour(clr)
+  local colour = {};
   local index = 1;
 
   for rgbValue in string.gmatch(clr, '%S+') do
     if (index < 4) then
-      color[index] = rgbValue;
+      colour[index] = rgbValue;
       index = index + 1;
     end
   end
 
-  self.colorPicker.setValue(color[1], color[2], color[3]);
+  self.colourPicker.setValue(colour[1], colour[2], colour[3]);
 end
 
 function MixManagement:addSearchInputs(searchQuery)
+  self.inputList.children = {};
   for word in string.gmatch(searchQuery, "%w+") do
     local entry = uiElements.createEntry()
     entry:attr('value', word);
@@ -294,8 +301,14 @@ end
 function MixManagement:writeChangesToFile()
   self:writeActionFile();
   self:writeZoneFile();
+  self:readActionFile();
+  self:readZoneFile();
   uiElements.showSavePopup(resetSurfaces);
+end
 
+function MixManagement:reloadFiles()
+  self:readActionFile();
+  self:readZoneFile();
 end
 
 return MixManagement;

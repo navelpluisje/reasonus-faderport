@@ -183,9 +183,9 @@ function FunctionAction:writeActionFile(showPopup)
     actionFile:write(line .. '\n');
   end
   actionFile:close();
-  -- if showPopup then
-  --   uiElements.showSavePopup(resetSurfaces);
-  -- end
+  if showPopup then
+    uiElements.showSavePopup(resetSurfaces);
+  end
 end
 
 --******************************************************************************

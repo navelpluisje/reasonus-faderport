@@ -6,7 +6,7 @@ local settings = {
   showsiblings = false,
   showparents = false,
   matchonlytop = true,
-  search = "Drum|Drms|Perc|Percussion",
+  search = "Vocals|vox",
   showchildren = true,
   matchmultiple = true,
 }

@@ -4,11 +4,11 @@ local showTracks = require("showTracksByName")
 
 local settings = {
   showsiblings = false,
-  showparents = true,
-  matchonlytop = false,
-  search = "Drum|drm",
+  showparents = false,
+  matchonlytop = true,
+  search = "Bass",
   showchildren = true,
-  matchmultiple = false,
+  matchmultiple = true,
 }
 
 showTracks.showTracks(settings)

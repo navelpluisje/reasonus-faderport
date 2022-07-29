@@ -53,7 +53,7 @@
     </div>
 
     <section>
-      <h1><span class="no-count">Table of Contents</span></h1>
+      <h1 id="toc"><span class="no-count">Table of Contents</span></h1>
       <section class="toc">
         <section class="toc-content">
           <a href="#welcome" class="h1 toc">Welcome to ReaSonus</a>
@@ -160,8 +160,8 @@
       </ul>
       <blockquote>
         <span class="strong">WARNING:</span> The current release is still a work in progress. Please report isses by <a
-          href="https://github.com/navelpluisje/reasonus-install/issues">the Github Issues</a> or the <a
-          href="https://forum.cockos.com/showthread.php?p=2562780#post2562780">Reaper Forum</a>
+          href="https://github.com/navelpluisje/reasonus-install/issues" target="_blank">the Github Issues</a> or the <a
+          href="https://forum.cockos.com/showthread.php?p=2562780#post2562780" target="_blank">Reaper Forum</a>
       </blockquote>
       <blockquote class="reaperblog">
         Checkout the video about SWS/S&M EXTENSION on <a target="_blank"
@@ -725,7 +725,7 @@
       <img src="assets/edit-plugins.png" alt="" class="large">
       <p>Your FaderPort provides two modes to view and control your Track effects: individually and
         globally. Pressing the button multiple times will toggle between the two modes. Both ways have a
-        different color for the Select button to make it more clear which way is selected.</p>
+        different colour for the Select button to make it more clear which way is selected.</p>
     </section>
     <section class="doc-row">
       <img src="assets/select-plugin.png" alt="" class="large">
@@ -733,7 +733,7 @@
         <h4>Individual mode</h4>
         <p>Press the Edit Plugins button once to show the effects menu for the currently selected Track. In this mode
           the
-          color of the Select buttons is white.</p>
+          colour of the Select buttons is white.</p>
         <p>Press the Select button under the scribble strip displaying the name of the plug-in you’d like to edit.
         </p>
       </div>
@@ -742,7 +742,7 @@
       <div>
         <h4>Globally mode</h4>
         <p>Press the Edit Plugins button again to control the first effects for all focused Tracks. In this mode the
-          color of the Select buttons is green.
+          colour of the Select buttons is green.
         </p>
         <p>
           While turning the pan knob now, you can cycle through all available effects until the
@@ -792,7 +792,7 @@
       <div>
         <p>Your FaderPort provides two modes to view and control your bus and FX sends: individually and
           globally. Pressing the button multiple times will toggle between the two modes. Both ways have a
-          different color for the Select button to make it more clear which way is selected.
+          different colour for the Select button to make it more clear which way is selected.
         </p>
         <p>In both modes the next controls will have the next functions:</p>
         <ul>
@@ -814,14 +814,14 @@
       <div>
         <h4>Individual mode</h4>
         <p>Press the Sends button once to control the send levels for all the sends on the currently selected
-          Track. In this mode the color of the Select buttons is white.</p>
+          Track. In this mode the colour of the Select buttons is white.</p>
       </div>
     </section>
     <section class="doc-row">
       <div>
         <h4>Globally mode</h4>
         <p>Press the Sends button again to control the first insert bus send levels for all focused Tracks. In
-          this mode the color of the Select buttons is yellow.
+          this mode the colour of the Select buttons is yellow.
         </p>
         <p>
           <img src="assets/sends-hiu-style.png" alt="">
@@ -841,7 +841,7 @@
       <div>
         <p>Your FaderPort provides two modes to view and control your receives: individually and
           globally. Pressing the button multiple times will toggle between the two modes. Both ways have a
-          different color for the Select button to make it more clear which way is selected.
+          different colour for the Select button to make it more clear which way is selected.
         </p>
         <p>In both modes the next controls will have the next functions:</p>
         <ul>
@@ -864,14 +864,14 @@
         <h4>Individual mode</h4>
         <p>Press the Receives (Pan) button once to control the send levels for all the sends on the currently
           selected
-          Track. In this mode the color of the Select buttons is white.</p>
+          Track. In this mode the colour of the Select buttons is white.</p>
       </div>
     </section>
     <section class="doc-row">
       <div>
         <h4>Globally mode</h4>
         <p>Press the Receives (Pan) button again to control the first insert bus send levels for all focused
-          Tracks. In this mode the color of the Select buttons is blue.
+          Tracks. In this mode the colour of the Select buttons is blue.
         </p>
         <p>
           <img src="assets/sends-hiu-style.png" alt="">
@@ -1334,6 +1334,83 @@
       </ul>
     </section>
 
+    <h2 id="plugin-mix-management"><span>Mix Management</span></h2>
+    <section class="doc-row">
+      <img src="assets/mix-management.png" class="small" alt="">
+      <div>
+        <p>Mix Management is only available for the FaderPort 8 &amp; 16 and helps you create your own filters for the
+          Mix Management part of the controller. When pressing the <span class="key">Audio</span> button the displays
+          and select buttons can be used to select a filter. By default the filters are:<br>
+          <span class="strong">Drum, Bass, Guitar, Keys, Vocals, Piano, Strings, Brass</span>.<br>
+          On the FaderPort 16 the next 8 are not pre-configured.
+        </p>
+        <p>
+          Mix Management helps you to create your own filters. It will let you give it a name to display and set a
+          colour for the <span class="key">Select</span> button. Mix Management can be entered by clicking the <span
+            class="key">Mix Management</span> button in the menu.
+        </p>
+      </div>
+    </section>
+
+    <h3 id="mm-the-screen"><span>The Filters</span></h3>
+    <section class="doc-row">
+      <h4>The Screen</h4>
+      <p>After opening and selecting Mix Management from the menu, the next screen appears: </p>
+      <p><img src="assets/mm-screen.png" /></p>
+      <p>The top row is the number of the <span class="key">select</span> button to use. In this case it's for the
+        FaderPort 8. When using a
+        FaderPort 16, 16 buttons will appear at the top of the screen. Clicking a number will open the settings for that
+        filter.</p>
+    </section>
+    <section class="doc-row">
+      <img src="assets/mm-text-inputs.png" />
+      <div>
+        <h4>Filter Settings</h4>
+        <ul>
+          <li><span class="strong">Display Text:</span> This is the text appearing in the display</li>
+          <li><span class="strong">Filter Text:</span> The words to search for. The search is case insensitive and parts
+            of words will also do the trick. So <code>Perc</code> and <code>percussion</code> will both match
+            <code>Percussion</code>.<br>Clicking the <span class="key">Add Word</span> button will add an extra field
+            for
+            a word to filter on. Leaving a single field empty will remove it after saving.<br>
+            Leaving this / these field(s) empty, so no <span class="strong">Filter Text</span> will select all tracks.
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="doc-row">
+      <img src="assets/mm-settings.png" />
+      <div>
+        <ul>
+          <li><span class="strong">Show track siblings:</span> whether or not to select also the direct siblings of a
+            Track matching the <span class="strong">Filter Text</span>.</li>
+          <li><span class="strong">Show track parents:</span> whether or not to select also the parent tracks of a Track
+            matching the <span class="strong">Filter Text</span>.</li>
+          <li><span class="strong">Show track children:</span> whether or not to select also the child tracks of a Track
+            matching the <span class="strong">Filter Text</span>.</li>
+          <li><span class="strong">Show only top level tracks:</span> whether or not the <span class="strong">Filter
+              Text</span> only matches the top level tracks.</li>
+          <li><span class="strong">Match multiple:</span> whether or not to stop after the first track matching the
+            <span class="strong">Filter Text</span>.
+          </li>
+          <li><span class="strong">Colour:</span> create the colour for the <span class="key">Select</span> button. The
+            colro as is in the screen will not always reflect the reality. Play around with it to get your colour</li>
+        </ul>
+      </div>
+    </section>
+    <section class="doc-row">
+      <img src="assets/mm-buttons.png" />
+      <div>
+
+        <h4>The Buttons</h4>
+        <ul>
+          <li><span class="strong">Reload:</span> Undo all your unsaved changes</li>
+          <li><span class="strong">Save filter:</span> Saves your filter to the files and resets the controller</li>
+        </ul>
+      </div>
+    </section>
+
+    <h3 id="mm-creating-filter"><span>Creating / Editing filters</span></h3>
 
     <h1 id="additional-help"><span>Additional help</span></h1>
 

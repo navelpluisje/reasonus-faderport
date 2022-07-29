@@ -28,16 +28,19 @@ local Colors = {
 uiElements.Colors = Colors;
 
 uiElements.Icons = {
-  logo      = rtk.Image():load('./assets/reasonus-logo.png'),
+  about     = rtk.Image():load('./assets/info.png'),
+  add       = rtk.Image():load('./assets/add.png'),
+  book      = rtk.Image():load('./assets/book.png'),
+  check     = rtk.Image():load('./assets/check.png'),
+  close     = rtk.Image():load('./assets/close.png'),
+  coffee    = rtk.Image():load('./assets/coffee.png'),
   functions = rtk.Image():load('./assets/grid.png'),
   home      = rtk.Image():load('./assets/home.png'),
+  logo      = rtk.Image():load('./assets/reasonus-logo.png'),
   mix       = rtk.Image():load('./assets/mix.png'),
-  about     = rtk.Image():load('./assets/info.png'),
-  search    = rtk.Image():load('./assets/search.png'),
+  refresh   = rtk.Image():load('./assets/refresh.png'),
   save      = rtk.Image():load('./assets/save.png'),
-  coffee    = rtk.Image():load('./assets/coffee.png'),
-  close     = rtk.Image():load('./assets/close.png'),
-  add       = rtk.Image():load('./assets/add.png'),
+  search    = rtk.Image():load('./assets/search.png'),
 }
 
 
@@ -221,10 +224,10 @@ function uiElements.showConfirm(title, content, trueText, onTrue, falseText, onF
   })
   footer:add(rtk.Spacer(), { expand = 1, fillh = false, fillv = false })
   if (falseText) then
-    popupFalsebutton = footer:add(uiElements.createButton(falseText))
+    popupFalsebutton = footer:add(uiElements.createButton(falseText, uiElements.Icons.close))
     popupFalsebutton:attr('rmargin', 16)
   end
-  local popupTruebutton = footer:add(uiElements.createButton(trueText))
+  local popupTruebutton = footer:add(uiElements.createButton(trueText, uiElements.Icons.check))
   footer:add(rtk.Spacer(), { expand = 1, fillh = false, fillv = false })
 
   popupFalsebutton.onclick = function()
@@ -266,7 +269,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   local navHome          = uiElements.createNavigationButton('Home', uiElements.Icons.home, true);
   local navFunction      = uiElements.createNavigationButton('Edit Function keys', uiElements.Icons.functions, false);
   local navMixManagement = uiElements.createNavigationButton('Mix Management', uiElements.Icons.mix, false);
-  local navDocumentation = uiElements.createNavigationButton('Documentation', uiElements.Icons.mix, false);
+  local navDocumentation = uiElements.createNavigationButton('Documentation', uiElements.Icons.book, false);
   local navAbout         = uiElements.createNavigationButton('About', uiElements.Icons.about, false);
 
   navHome.onclick = function()
@@ -300,7 +303,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   end
 
   navDocumentation.onclick = function()
-    rtk.open_url('https://www.buymeacoffee.com/navelpluisje')
+    rtk.open_url('https://navelpluisje.github.io/reasonus-faderport/#toc')
   end
 
   navAbout.onclick = function()
@@ -333,7 +336,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   sidebar:add(navAbout)
 end
 
-function uiElements.colorPicker(label, r, g, b)
+function uiElements.colourPicker(label, r, g, b)
   local redValue   = r or 0;
   local greenValue = g or 0;
   local blueValue  = b or 0;
@@ -368,9 +371,9 @@ function uiElements.colorPicker(label, r, g, b)
   });
   local blueValueLabel = blue:add(rtk.Text { text = blueValue, w = 30, lpadding = 5, fontsize = 16 })
 
-  local sliderContainer      = rtk.VBox { w = 1, spacing = 8 };
-  local controlContainer     = rtk.HBox { w = 1, spacing = 8 };
-  local colorPickerContainer = rtk.VBox { w = 1, spacing = 8, tborder = Colors.Button.Border, tpadding = 8 };
+  local sliderContainer       = rtk.VBox { w = 1, spacing = 8 };
+  local controlContainer      = rtk.HBox { w = 1, spacing = 8 };
+  local colourPickerContainer = rtk.VBox { w = 1, spacing = 8, tborder = Colors.Button.Border, tpadding = 8 };
 
   local swatch = rtk.Container {
     w      = 32,
@@ -425,11 +428,11 @@ function uiElements.colorPicker(label, r, g, b)
   sliderContainer:add(blue)
   controlContainer:add(swatch);
   controlContainer:add(sliderContainer);
-  colorPickerContainer:add(rtk.Text { text = label, fontsize = 20 });
-  colorPickerContainer:add(controlContainer);
+  colourPickerContainer:add(rtk.Text { text = label, fontsize = 20 });
+  colourPickerContainer:add(controlContainer);
 
   return {
-    colorPicker = colorPickerContainer,
+    colourPicker = colourPickerContainer,
     getValue = function()
       return {
         redValue,
