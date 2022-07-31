@@ -68,7 +68,7 @@ function MixManagement:new(index, faderPortVersion)
       w = 1,
       spacing = 16,
     },
-    colourPicker = uiElements.colourPicker('Color');
+    colourPicker = uiElements.colourPicker('Colour');
     showSiblings = uiElements.createCheckBox('Show track siblings'),
     showParents = uiElements.createCheckBox('Show track parents', true),
     showChildren = uiElements.createCheckBox('Show track children', true),
@@ -248,7 +248,7 @@ end
 
 --******************************************************************************
 --
--- Write the color and name to the mix management ZoneFile
+-- Write the colour and name to the mix management ZoneFile
 --
 --******************************************************************************
 function MixManagement:writeZoneFile()

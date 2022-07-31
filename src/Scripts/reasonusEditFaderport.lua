@@ -19,7 +19,7 @@ csiIni:close()
 local log = rtk.log
 log.clear()
 
-local Colors = uiElements.Colors;
+local Colours = uiElements.Colours;
 
 -- UI variables
 local contentHeight = 0
@@ -51,8 +51,8 @@ local window = rtk.Window {
   minw      = 800,
   minh      = 400,
   resizable = false,
-  bg        = Colors.Primary,
-  title     = 'ReaSonus FaderPort'
+  bg        = Colours.Primary,
+  title     = 'ReaSonus FaderPort Control'
 }
 
 --******************************************************************************
@@ -76,7 +76,7 @@ local content = mainBox:add(rtk.Container {
   w        = 1,
   margin   = 10,
   padding  = 5,
-  bg       = Colors.BackGround,
+  bg       = Colours.BackGround,
   minw     = 400,
   vspacing = 8,
   hspacing = 8,

@@ -3,7 +3,7 @@ package.path = reaper.GetResourcePath() .. '/Scripts/ReaSonus/?.lua'
 -- Load the package
 local rtk = require('rtk')
 local uiElements = require('refUiElements')
-local Colors = uiElements.Colors;
+local Colours = uiElements.Colours;
 
 --******************************************************************************
 --
@@ -36,8 +36,8 @@ function FunctionAction:new(index)
       h        = 30,
       expand   = 1,
       vpadding = 10,
-      bg       = Colors.Label.BackGround,
-      border   = Colors.Label.Border,
+      bg       = Colours.Label.BackGround,
+      border   = Colours.Label.Border,
     },
     labelText = rtk.Text {
       text     = '',
@@ -52,7 +52,7 @@ function FunctionAction:new(index)
       h        = 40,
       t        = 1,
       vpadding = 15,
-      border   = Colors.Label.Border
+      border   = Colours.Label.Border
     },
     actionButton = rtk.Button {
       icon    = uiElements.Icons.search,

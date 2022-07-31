@@ -223,8 +223,8 @@
       "register": false
     },
     {
-      "actionId": "REASONUS_EDIT_FADERPORT",
-      "displayName": "Edit your FaderPort from within REAPER",
+      "actionId": "REASONUS_FADERPORT_CONTROL",
+      "displayName": "ReaSonus FaderPort Control: Edit your FaderPort from within REAPER",
       "fileName": "reasonusEditFaderport.lua",
       "register": true
     },

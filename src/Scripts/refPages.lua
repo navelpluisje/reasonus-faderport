@@ -105,7 +105,7 @@ pages.functionsPage = {
       w        = 1,
       tmargin  = 20,
       tpadding = 8,
-      tborder  = uiElements.Colors.Button.Border;
+      tborder  = uiElements.Colours.Button.Border;
     })
     pages.functionsPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
     local resetButton = pages.functionsPage.buttonBar:add(uiElements.createButton('Reset to defaults',
@@ -175,7 +175,7 @@ pages.mixManagementPage = {
       w        = 1,
       tmargin  = 20,
       tpadding = 8,
-      tborder  = uiElements.Colors.Button.Border;
+      tborder  = uiElements.Colours.Button.Border;
     })
     pages.mixManagementPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
     local reloadButton = pages.mixManagementPage.buttonBar:add(uiElements.createButton('Reload',

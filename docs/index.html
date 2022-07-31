@@ -94,11 +94,14 @@
           <a href="#plugin-edit-function" class="h2 toc">Edit Function keys</a>
           <a href="#plugin-action-info" class="h3 toc">Action Info</a>
           <a href="#plugin-action-edit" class="h3 toc">Edit Action</a>
+          <a href="#plugin-mix-management" class="h2 toc">Mix Management</a>
+          <a href="#mm-the-screen" class="h3 toc">The Filters</a>
+          <a href="#mm-creating-filter" class="h3 toc">Creating / Editing filters</a>
 
           <a href="#additional-help" class="h1 toc">Additional Help</a>
           <a href="#resource-path-action" class="h2 toc">Create REAPER resource path Action</a>
+          <a href="#control-to-menu" class="h2 toc">Add ReaSonus FaderPort Control to the toolbar</a>
           <a href="#known-issues" class="h2 toc">Known Issues</a>
-
         </section>
       </section>
     </section>
@@ -1293,6 +1296,9 @@
         <p>
           <img src="assets/plugin-home.png" alt="">
         </p>
+        <blockquote><span class="strong">Power User Tip:</span> You can make a toolbar item for ReaSonus FaderPort
+          Control to make it easier to access. Check chapter <a href="#control-to-menu">Add ReaSonus FaderPort Control
+            to the toolbar</a> for the howto.</blockquote>
       </div>
     </section>
 
@@ -1440,6 +1446,44 @@ reaper.ShowConsoleMsg("Path: " .. path)
       </div>
     </section>
 
+    <h2 id="control-to-menu"><span>Add ReaSonus FaderPort Control to the toolbar</span></h2>
+    <section class="doc-row">
+      <div>
+        <p>Here are the steps to add the <span class="strong">ReaSonus FaderPort Control</span> to a toolbar</p>
+        <ol>
+          <li>Right click in an enpty area of the toolbar and select: <span class="strong">Customize
+              toolbar&hellip;</span><br>
+            <img src="assets/toolbar-right-click.png" alt="" class="small">
+          </li>
+          <li>
+            The next screen pops up. Select <span class="key">Add&hellip;</span><br>
+            <img src="assets/toolbar-edit.png" alt="">
+          </li>
+          <li>The action pane pops up. Start typing <code>reasonus faderport</code>. Select the action
+            and click <span class="key">Select/Close</span> and click <span class="key">Apply</span> in the bottom right
+            corner of the <span class="strong">Customize menus/toolbars window</span>. The button should be in the
+            toolbar now.<br>
+            <img src="assets/toolbar-action-select.png" alt="">
+          </li>
+          <li>In the left column of the <span class="strong">Customize menus/toolbars window</span>, scroll down to the
+            added action and select it and click <span class="key">Icon&hellip;</span> and select <span
+              class="strong">Text icon&hellip;</span><br>
+            <img src="assets/toolbar-select-added.png" alt="">
+          </li>
+          <li>A small window shows up. Give it a proper name (<span class="strong">ReaSonus</span> will do ;-)) and
+            check the <span class="strong">Double width toolbar button</span> check box and click <span
+              class="key">OK</span>.<br>
+            <img src="assets/toolbar-rename.png" alt="">
+          </li>
+          <li>
+            Now click <span class="key">OK</span> in the <span class="strong">Customize menus/toolbars window</span> and
+            you're done. It should look
+            something like:<br>
+            <img src="assets/toolbar-done.png" alt="">
+          </li>
+        </ol>
+      </div>
+    </section>
     <h2 id="known-issues"><span>Known Issues</span></h2>
     <section class="doc-row">
       <ul>

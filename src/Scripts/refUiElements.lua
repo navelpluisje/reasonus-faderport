@@ -10,7 +10,7 @@ local methods = {
 
 local uiElements = {}
 
-local Colors = {
+local Colours = {
   Primary    = '#00529C',
   BackGround = '#ffffff0f',
   Border     = '#ffffff55',
@@ -25,7 +25,7 @@ local Colors = {
   },
 }
 
-uiElements.Colors = Colors;
+uiElements.Colours = Colours;
 
 uiElements.Icons = {
   about     = rtk.Image():load('./assets/info.png'),
@@ -60,8 +60,8 @@ function uiElements.createButton(label, icon, width)
     h      = 36,
     halign = rtk.Widget.CENTER,
     flat   = rtk.Button.FLAT,
-    bg     = Colors.Button.BackGround,
-    border = Colors.Button.Border,
+    bg     = Colours.Button.BackGround,
+    border = Colours.Button.Border,
   }
 end
 
@@ -79,10 +79,10 @@ function uiElements.createEntry(width, height)
     halign         = rtk.Widget.LEFT,
     padding        = 7,
     valign         = rtk.Widget.CENTER,
-    bg             = Colors.Button.BackGround,
-    border         = Colors.Button.Border,
-    border_hover   = Colors.Button.BorderHover,
-    border_focused = Colors.Button.BorderHover,
+    bg             = Colours.Button.BackGround,
+    border         = Colours.Button.Border,
+    border_hover   = Colours.Button.BorderHover,
+    border_focused = Colours.Button.BorderHover,
     fontsize       = 20,
   }
 end
@@ -102,7 +102,7 @@ function uiElements.createCheckBox(label, tborder)
     valign   = rtk.Widget.CENTER,
     label    = label,
     fontsize = 20,
-    tborder  = tborder and Colors.Button.Border or nil,
+    tborder  = tborder and Colours.Button.Border or nil,
     tpadding = 10,
   }
 end
@@ -120,8 +120,8 @@ function uiElements.createNavigationButton(label, icon, hover)
     icon    = icon,
     label   = label,
     flat    = rtk.Button.FLAT,
-    bg      = Colors.Button.BackGround,
-    border  = Colors.Button.Border,
+    bg      = Colours.Button.BackGround,
+    border  = Colours.Button.Border,
     w       = 1,
     padding = 10,
     hover   = hover,
@@ -141,7 +141,7 @@ function uiElements.showPopup(title, content, onClose)
   local popup = rtk.Popup {
     child   = popupBody,
     overlay = '#000000aa',
-    bg      = Colors.Primary,
+    bg      = Colours.Primary,
     padding = 0,
     w       = 460
   }
@@ -152,8 +152,8 @@ function uiElements.showPopup(title, content, onClose)
     w       = 1,
     bmargin = 5,
     padding = 10,
-    bg      = Colors.Label.BackGround,
-    bborder = Colors.Label.Border,
+    bg      = Colours.Label.BackGround,
+    bborder = Colours.Label.Border,
     halign  = 'center',
   })
 
@@ -165,7 +165,7 @@ function uiElements.showPopup(title, content, onClose)
 
   local footer = popupBody:add(rtk.HBox {
     padding = 10,
-    tborder = Colors.Label.Border,
+    tborder = Colours.Label.Border,
   })
   footer:add(rtk.Spacer(), { expand = 1, fillh = false, fillv = false })
   local popupClosebutton = footer:add(uiElements.createButton('Close', uiElements.Icons.close))
@@ -195,7 +195,7 @@ function uiElements.showConfirm(title, content, trueText, onTrue, falseText, onF
   local popup = rtk.Popup {
     child   = popupBody,
     overlay = '#000000aa',
-    bg      = Colors.Primary,
+    bg      = Colours.Primary,
     padding = 0,
     w       = 460
   }
@@ -206,8 +206,8 @@ function uiElements.showConfirm(title, content, trueText, onTrue, falseText, onF
     w       = 1,
     bmargin = 5,
     padding = 10,
-    bg      = Colors.Label.BackGround,
-    bborder = Colors.Label.Border,
+    bg      = Colours.Label.BackGround,
+    bborder = Colours.Label.Border,
     halign  = 'center',
   })
 
@@ -220,7 +220,7 @@ function uiElements.showConfirm(title, content, trueText, onTrue, falseText, onF
 
   local footer = popupBody:add(rtk.HBox {
     padding = 10,
-    tborder = Colors.Label.Border,
+    tborder = Colours.Label.Border,
   })
   footer:add(rtk.Spacer(), { expand = 1, fillh = false, fillv = false })
   if (falseText) then
@@ -344,36 +344,36 @@ function uiElements.colourPicker(label, r, g, b)
   local red = rtk.HBox { w = 1 };
   red:add(rtk.Text { text = 'R', w = 15, fontsize = 16 })
   local redSlider = red:add(rtk.Slider {
-    max        = 255,
-    value      = redValue,
-    trackcolor = Colors.Border,
-    color      = "white",
+    max         = 255,
+    value       = redValue,
+    trackcolour = Colours.Border,
+    colour      = "white",
   });
   local redValueLabel = red:add(rtk.Text { text = redValue, w = 30, lpadding = 5, fontsize = 16 })
 
   local green = rtk.HBox { w = 1 };
   green:add(rtk.Text { text = 'G', w = 15, fontsize = 16 })
   local greenSlider = green:add(rtk.Slider {
-    max        = 255,
-    value      = greenValue,
-    trackcolor = Colors.Border,
-    color      = "white",
+    max         = 255,
+    value       = greenValue,
+    trackcolour = Colours.Border,
+    colour      = "white",
   });
   local greenValueLabel = green:add(rtk.Text { text = greenValue, w = 30, lpadding = 5, fontsize = 16 })
 
   local blue = rtk.HBox { w = 1 };
   blue:add(rtk.Text { text = 'B', w = 15, fontsize = 16 })
   local blueSlider = blue:add(rtk.Slider {
-    max        = 255,
-    value      = blueValue,
-    trackcolor = Colors.Border,
-    color      = "white",
+    max         = 255,
+    value       = blueValue,
+    trackcolour = Colours.Border,
+    colour      = "white",
   });
   local blueValueLabel = blue:add(rtk.Text { text = blueValue, w = 30, lpadding = 5, fontsize = 16 })
 
   local sliderContainer       = rtk.VBox { w = 1, spacing = 8 };
   local controlContainer      = rtk.HBox { w = 1, spacing = 8 };
-  local colourPickerContainer = rtk.VBox { w = 1, spacing = 8, tborder = Colors.Button.Border, tpadding = 8 };
+  local colourPickerContainer = rtk.VBox { w = 1, spacing = 8, tborder = Colours.Button.Border, tpadding = 8 };
 
   local swatch = rtk.Container {
     w      = 32,
@@ -382,27 +382,27 @@ function uiElements.colourPicker(label, r, g, b)
     bg     = { 0, 0, 0 }
   };
 
-  local function updateColorSwatch()
-    local color = { redValue / 255, greenValue / 255, blueValue / 255 }
-    swatch:attr('bg', color);
+  local function updateColourSwatch()
+    local colour = { redValue / 255, greenValue / 255, blueValue / 255 }
+    swatch:attr('bg', colour);
   end
 
   local function setRedValue(value)
     redValue = math.round(value.value);
     redValueLabel:attr('text', redValue)
-    updateColorSwatch();
+    updateColourSwatch();
   end
 
   local function setGreenValue(value)
     greenValue = math.round(value.value)
     greenValueLabel:attr('text', greenValue)
-    updateColorSwatch();
+    updateColourSwatch();
   end
 
   local function setBlueValue(value)
     blueValue = math.round(value.value)
     blueValueLabel:attr('text', blueValue)
-    updateColorSwatch();
+    updateColourSwatch();
   end
 
   local function setValue(red, green, blue)
@@ -412,7 +412,7 @@ function uiElements.colourPicker(label, r, g, b)
     greenSlider:attr('value', green);
     blueValue = blue;
     blueSlider:attr('value', blue);
-    updateColorSwatch();
+    updateColourSwatch();
   end
 
   local function getCSIValue()
