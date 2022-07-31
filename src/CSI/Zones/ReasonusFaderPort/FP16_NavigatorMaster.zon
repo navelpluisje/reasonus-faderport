@@ -27,5 +27,5 @@ Zone NavigatorMaster
     RotaryBig             TrackVolume
   
     Master                Reaper _REASONUS_ALWAYS_ON    // Dummy Action
-    Shift+Master          Reaper 40326    // View: Show region/marker manager window
+    Shift+Master          Reaper _REASONUS_HANDLE_FUNCTION_KEY_5
 ZoneEnd

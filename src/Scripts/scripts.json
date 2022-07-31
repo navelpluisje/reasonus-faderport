@@ -25,54 +25,6 @@
       "register": true
     },
     {
-      "actionId": "REASONUS_SHOW_BASS_TRACKS",
-      "displayName": "Show All Bass Tracks",
-      "fileName": "showTracksByBass.lua",
-      "register": true
-    },
-    {
-      "actionId": "REASONUS_SHOW_BRASS_TRACKS",
-      "displayName": "Show All Brass Tracks",
-      "fileName": "showTracksByBrass.lua",
-      "register": true
-    },
-    {
-      "actionId": "REASONUS_SHOW_DRUMS_TRACKS",
-      "displayName": "Show All Drum Tracks",
-      "fileName": "showTracksByDrums.lua",
-      "register": true
-    },
-    {
-      "actionId": "REASONUS_SHOW_GUITAR_TRACKS",
-      "displayName": "Show All Guitar Tracks",
-      "fileName": "showTracksByGuitar.lua",
-      "register": true
-    },
-    {
-      "actionId": "REASONUS_SHOW_KEYS_TRACKS",
-      "displayName": "Show All Keys Tracks",
-      "fileName": "showTracksByKeys.lua",
-      "register": true
-    },
-    {
-      "actionId": "REASONUS_SHOW_PIANO_TRACKS",
-      "displayName": "Show All Piano Tracks",
-      "fileName": "showTracksByPiano.lua",
-      "register": true
-    },
-    {
-      "actionId": "REASONUS_SHOW_STRINGS_TRACKS",
-      "displayName": "Show All String Tracks",
-      "fileName": "showTracksByStrings.lua",
-      "register": true
-    },
-    {
-      "actionId": "REASONUS_SHOW_VOCAL_TRACKS",
-      "displayName": "Show All Vocal Tracks",
-      "fileName": "showTracksByVocals.lua",
-      "register": true
-    },
-    {
       "actionId": "REASONUS_SHOW_TOP_LEVEL_TRACKS",
       "displayName": "Show All Top Level Tracks",
       "fileName": "showAllParentsTracks.lua",
@@ -214,6 +166,102 @@
       "actionId": "REASONUS_HANDLE_FUNCTION_KEY_8",
       "displayName": "Trigger the action for the function key 8.",
       "fileName": "handleFunctionKey8.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_1",
+      "displayName": "Mix management filter 1",
+      "fileName": "mixManagementFilter1.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_2",
+      "displayName": "Mix management filter 2",
+      "fileName": "mixManagementFilter2.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_3",
+      "displayName": "Mix management filter 3",
+      "fileName": "mixManagementFilter3.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_4",
+      "displayName": "Mix management filter 4",
+      "fileName": "mixManagementFilter4.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_5",
+      "displayName": "Mix management filter 5",
+      "fileName": "mixManagementFilter5.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_6",
+      "displayName": "Mix management filter 6",
+      "fileName": "mixManagementFilter6.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_7",
+      "displayName": "Mix management filter 7",
+      "fileName": "mixManagementFilter7.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_8",
+      "displayName": "Mix management filter 8",
+      "fileName": "mixManagementFilter8.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_9",
+      "displayName": "Mix management filter 9",
+      "fileName": "mixManagementFilter9.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_10",
+      "displayName": "Mix management filter 10",
+      "fileName": "mixManagementFilter10.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_11",
+      "displayName": "Mix management filter 11",
+      "fileName": "mixManagementFilter11.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_12",
+      "displayName": "Mix management filter 12",
+      "fileName": "mixManagementFilter12.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_13",
+      "displayName": "Mix management filter 13",
+      "fileName": "mixManagementFilter13.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_14",
+      "displayName": "Mix management filter 14",
+      "fileName": "mixManagementFilter14.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_15",
+      "displayName": "Mix management filter 15",
+      "fileName": "mixManagementFilter15.lua",
+      "register": true
+    },
+    {
+      "actionId": "REASONUS_MIX_MANAGEMENT_FILTER_16",
+      "displayName": "Mix management filter 16",
+      "fileName": "mixManagementFilter16.lua",
       "register": true
     },
     {

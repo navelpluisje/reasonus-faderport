@@ -20,7 +20,7 @@ Zone "TracksByName"
   ScribbleLine3_1     FixedTextDisplay "Drum" {% Invert %}
   ScribbleLine4_1     FixedTextDisplay "Tracks"
   Select1             FixedRGBColourDisplay { 20 0 0 }
-  Select1             Reaper _REASONUS_SHOW_DRUMS_TRACKS // Show all Drum tracks
+  Select1             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_1
   Select1             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
   Select1             GoZone "Home"
   ValueBar1           NoAction
@@ -31,7 +31,7 @@ Zone "TracksByName"
   ScribbleLine3_2     FixedTextDisplay "Bass" {% Invert %}
   ScribbleLine4_2     FixedTextDisplay "Tracks"
   Select2             FixedRGBColourDisplay { 20 20 0 }
-  Select2             Reaper _REASONUS_SHOW_BASS_TRACKS // Show all Bass tracks
+  Select2             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_2
   Select2             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
   Select2             GoZone "Home"
   ValueBar2           NoAction
@@ -42,7 +42,7 @@ Zone "TracksByName"
   ScribbleLine3_3     FixedTextDisplay "Guitar" {% Invert %}
   ScribbleLine4_3     FixedTextDisplay "Tracks"
   Select3             FixedRGBColourDisplay { 0 20 0 }
-  Select3             Reaper _REASONUS_SHOW_GUITAR_TRACKS // Show all Guitar tracks
+  Select3             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_3
   Select3             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
   Select3             GoZone "Home"
   ValueBar3           NoAction
@@ -53,7 +53,7 @@ Zone "TracksByName"
   ScribbleLine3_4     FixedTextDisplay "Key" {% Invert %}
   ScribbleLine4_4     FixedTextDisplay "Tracks"
   Select4             FixedRGBColourDisplay { 5 20 10 }
-  Select4             Reaper _REASONUS_SHOW_KEYS_TRACKS // Show all Key tracks
+  Select4             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_4
   Select4             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
   Select4             GoZone "Home"
   ValueBar4           NoAction
@@ -64,7 +64,7 @@ Zone "TracksByName"
   ScribbleLine3_5     FixedTextDisplay "Vocal" {% Invert %}
   ScribbleLine4_5     FixedTextDisplay "Tracks"
   Select5             FixedRGBColourDisplay { 5 0 20 }
-  Select5             Reaper _REASONUS_SHOW_VOCAL_TRACKS // Show all Vocal tracks
+  Select5             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_5
   Select5             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
   Select5             GoZone "Home"
   ValueBar5           NoAction
@@ -75,7 +75,7 @@ Zone "TracksByName"
   ScribbleLine3_6     FixedTextDisplay "Piano" {% Invert %}
   ScribbleLine4_6     FixedTextDisplay "Tracks"
   Select6             FixedRGBColourDisplay { 5 0 20 }
-  Select6             Reaper _REASONUS_SHOW_PIANO_TRACKS // Show all Piano tracks
+  Select6             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_6
   Select6             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
   Select6             GoZone "Home"
   ValueBar6           NoAction
@@ -86,7 +86,7 @@ Zone "TracksByName"
   ScribbleLine3_7     FixedTextDisplay "Strings" {% Invert %}
   ScribbleLine4_7     FixedTextDisplay "Tracks"
   Select7             FixedRGBColourDisplay { 5 0 20 }
-  Select7             Reaper _REASONUS_SHOW_STRINGS_TRACKS // Show all Strings tracks
+  Select7             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_7
   Select7             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
   Select7             GoZone "Home"
   ValueBar7           NoAction
@@ -97,72 +97,88 @@ Zone "TracksByName"
   ScribbleLine3_8     FixedTextDisplay "Brass" {% Invert %}
   ScribbleLine4_8     FixedTextDisplay "Tracks"
   Select8             FixedRGBColourDisplay { 20 0 5 }
-  Select8             Reaper _REASONUS_SHOW_BRASS_TRACKS // Show all Brass tracks
+  Select8             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_8
   Select8             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
   Select8             GoZone "Home"
   ValueBar8           NoAction
 
   DisplayType9        DisplayType 2
   ScribbleLine1_9     NoAction
-  ScribbleLine2_9     NoAction
-  ScribbleLine3_9     NoAction
-  ScribbleLine4_9     NoAction
-  Select9             NoAction
+  ScribbleLine2_9     FixedTextDisplay "Show only"
+  ScribbleLine3_9     FixedTextDisplay "All" {% Invert %}
+  ScribbleLine4_9     FixedRGBColourDisplay { 5 5 5 }
+  Select9             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_9
+  Select9             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select9             GoZone "Home"
   ValueBar9           NoAction
 
   DisplayType10       DisplayType 2
   ScribbleLine1_10    NoAction
-  ScribbleLine2_10    NoAction
-  ScribbleLine3_10    NoAction
-  ScribbleLine4_10    NoAction
-  Select10            NoAction
+  ScribbleLine2_10    FixedTextDisplay "Show only"
+  ScribbleLine3_10    FixedTextDisplay "All" {% Invert %}
+  ScribbleLine4_10    FixedRGBColourDisplay { 5 5 5 }
+  Select10            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_10
+  Select10            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select10            GoZone "Home"
   ValueBar10          NoAction
 
   DisplayType11       DisplayType 2
   ScribbleLine1_11    NoAction
-  ScribbleLine2_11    NoAction
-  ScribbleLine3_11    NoAction
-  ScribbleLine4_11    NoAction
-  Select11            NoAction
+  ScribbleLine2_11    FixedTextDisplay "Show only"
+  ScribbleLine3_11    FixedTextDisplay "All" {% Invert %}
+  ScribbleLine4_11    FixedRGBColourDisplay { 5 5 5 }
+  Select11            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_11
+  Select11            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select11            GoZone "Home"
   ValueBar11          NoAction
 
   DisplayType12       DisplayType 2
   ScribbleLine1_12    NoAction
-  ScribbleLine2_12    NoAction
-  ScribbleLine3_12    NoAction
-  ScribbleLine4_12   NoAction
-  Select12            NoAction
+  ScribbleLine2_12    FixedTextDisplay "Show only"
+  ScribbleLine3_12    FixedTextDisplay "All" {% Invert %}
+  ScribbleLine4_12    FixedRGBColourDisplay { 5 5 5 }
+  Select12            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_12
+  Select12            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select12            GoZone "Home"
   ValueBar12          NoAction
 
   DisplayType13       DisplayType 2
   ScribbleLine1_13    NoAction
-  ScribbleLine2_13    NoAction
-  ScribbleLine3_13    NoAction
-  ScribbleLine4_13    NoAction
-  Select13            NoAction
+  ScribbleLine2_13    FixedTextDisplay "Show only"
+  ScribbleLine3_13    FixedTextDisplay "All" {% Invert %}
+  ScribbleLine4_13    FixedRGBColourDisplay { 5 5 5 }
+  Select13            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_13
+  Select13            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select13            GoZone "Home"
   ValueBar13          NoAction
 
   DisplayType14       DisplayType 2
   ScribbleLine1_14    NoAction
-  ScribbleLine2_14    NoAction
-  ScribbleLine3_14    NoAction
-  ScribbleLine4_14    NoAction
-  Select14            NoAction
+  ScribbleLine2_14    FixedTextDisplay "Show only"
+  ScribbleLine3_14    FixedTextDisplay "All" {% Invert %}
+  ScribbleLine4_14    FixedRGBColourDisplay { 5 5 5 }
+  Select14            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_14
+  Select14            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select14            GoZone "Home"
   ValueBar14          NoAction
 
   DisplayType15       DisplayType 2
   ScribbleLine1_15    NoAction
-  ScribbleLine2_15    NoAction
-  ScribbleLine3_15    NoAction
-  ScribbleLine4_15    NoAction
-  Select15            NoAction
+  ScribbleLine2_15    FixedTextDisplay "Show only"
+  ScribbleLine3_15    FixedTextDisplay "All" {% Invert %}
+  ScribbleLine4_15    FixedRGBColourDisplay { 5 5 5 }
+  Select15            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_15
+  Select15            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select15            GoZone "Home"
   ValueBar15          NoAction
 
   DisplayType16       DisplayType 2
   ScribbleLine1_16    NoAction
-  ScribbleLine2_16    NoAction
-  ScribbleLine3_16    NoAction
-  ScribbleLine4_16    NoAction
-  Select16            NoAction
+  ScribbleLine2_16    FixedTextDisplay "Show only"
+  ScribbleLine3_16    FixedTextDisplay "All" {% Invert %}
+  ScribbleLine4_16    FixedRGBColourDisplay { 5 5 5 }
+  Select16            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_16
+  Select16            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select16            GoZone "Home"
   ValueBar16          NoAction
 ZoneEnd 
