@@ -1,4 +1,5 @@
 local function main()
+  -- Toggle show all floating windows
   -- Default value: 41074
   local functionAction = 41074;
   reaper.Main_OnCommandEx(functionAction, 0, 0);

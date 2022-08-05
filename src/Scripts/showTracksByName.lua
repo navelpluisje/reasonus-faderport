@@ -1,5 +1,20 @@
 local showTracks = {}
 
+local function merge_tables(...)
+  local tables = { ... }
+  local ret = {}
+
+  for i = #tables, 1, -1 do
+    if tables[i] then
+      for k, v in pairs(tables[i]) do
+        if v then ret[k] = v end
+      end
+    end
+  end
+
+  return ret
+end
+
 -- Returns true if the individual words of str_b all appear in str_a
 -- str a = track name
 local function fuzzy_match(str_a, str_b)
@@ -41,47 +56,15 @@ local function select_first_visible_MCP()
   end
 end
 
-local function get_tracks_to_show(settings)
-  local matches = {}
+local function get_top_level_tracks()
+  local top = {}
 
-  -- Find all matches
-  for i = 1, reaper.CountTracks(0) do
-    local tr = reaper.GetTrack(0, i - 1)
-    local _, name = reaper.GetTrackName(tr, "")
-    local idx = math.floor(reaper.GetMediaTrackInfo_Value(tr, "IP_TRACKNUMBER"))
-    local ischild = reaper.GetTrackDepth(tr) > 0
-
-    if (test.is_match(settings.search, name, idx) and not (ischild and settings.matchonlytop)) then
-      matches[idx] = true
-      if not settings.matchmultiple then break end
+  for i = 1, reaper.CountTracks() do
+    if reaper.GetTrackDepth(reaper.GetTrack(0, i - 1)) == 0 then
+      top[i] = true
     end
   end
-
-  -- Hacky way to check if length of a hash table == 0
-  for k in pairs(matches) do
-    if not k then return {} end
-  end
-
-  local parents = settings.showparents and get_parents(matches)
-  local children = settings.showchildren and get_children(matches)
-  local siblings = settings.showsiblings and get_siblings(matches)
-
-  return merge_tables(matches, parents, children, siblings)
-end
-
-local function merge_tables(...)
-  local tables = { ... }
-  local ret = {}
-
-  for i = #tables, 1, -1 do
-    if tables[i] then
-      for k, v in pairs(tables[i]) do
-        if v then ret[k] = v end
-      end
-    end
-  end
-
-  return ret
+  return top
 end
 
 -- Returns an array of MediaTrack == true for all parents of the given MediaTrack
@@ -124,17 +107,6 @@ local function get_parents(tracks)
   return parents
 end
 
-local function get_top_level_tracks()
-  local top = {}
-
-  for i = 1, reaper.CountTracks() do
-    if reaper.GetTrackDepth(reaper.GetTrack(0, i - 1)) == 0 then
-      top[i] = true
-    end
-  end
-  return top
-end
-
 local function get_siblings(tracks)
   local siblings = {}
 
@@ -161,7 +133,35 @@ local function get_siblings(tracks)
   return siblings
 end
 
-function set_visibility(tracks, settings)
+local function get_tracks_to_show(settings)
+  local matches = {}
+
+  -- Find all matches
+  for i = 1, reaper.CountTracks(0) do
+    local tr = reaper.GetTrack(0, i - 1)
+    local _, name = reaper.GetTrackName(tr, "")
+    local idx = math.floor(reaper.GetMediaTrackInfo_Value(tr, "IP_TRACKNUMBER"))
+    local ischild = reaper.GetTrackDepth(tr) > 0
+
+    if (is_match(settings.search, name, idx) and not (ischild and settings.matchonlytop)) then
+      matches[idx] = true
+      if not settings.matchmultiple then break end
+    end
+  end
+
+  -- Hacky way to check if length of a hash table == 0
+  for k in pairs(matches) do
+    if not k then return {} end
+  end
+
+  local parents = settings.showparents and get_parents(matches)
+  local children = settings.showchildren and get_children(matches)
+  local siblings = settings.showsiblings and get_siblings(matches)
+
+  return merge_tables(matches, parents, children, siblings)
+end
+
+local function set_visibility(tracks, settings)
   if not tracks then return end
   --if not tracks or #tracks == 0 then return end
 
