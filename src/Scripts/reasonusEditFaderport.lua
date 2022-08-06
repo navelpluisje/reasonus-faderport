@@ -183,9 +183,11 @@ window.onresize = function()
 end
 
 local function main()
-  window:open()
+  window:open({
+    align = 'center'
+  });
   uiElements.createNavigationSideBar(sidebar, app, faderPortVersion);
-  checkContentSize()
+  checkContentSize();
 end
 
 main()

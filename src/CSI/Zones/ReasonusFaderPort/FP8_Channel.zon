@@ -51,6 +51,7 @@ Zone "Channel"
   Bypass                    Reaper 8           { 20 0 0 255 0 0 } // Track: Toggle FX bypass for selected tracks
   Shift+Bypass              Reaper 40344       { 20 0 0 255 0 0 } // Track: Toggle FX bypass on all tracks
 
+  Macro                     Reaper _REASONUS_FADERPORT_CONTROL { 0 20 0 0 20 0 }
   Link                      Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
 
 

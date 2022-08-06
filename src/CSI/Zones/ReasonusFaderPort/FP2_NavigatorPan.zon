@@ -15,8 +15,8 @@ Zone NavigatorPan
 // ===========================================
   Prev                  Reaper 40286   // Track: Go to previous track
   Next                  Reaper 40285   // Track: Go to next track
-  Shift+Prev            NoAction
-  Shift+Next            NoAction
+  Shift+Prev            Reaper 40029   // Edit: Undo
+  Shift+Next            Reaper 40030   // Edit: Redo
   ScrollLeft            NoAction
   ScrollRight           NoAction
   Shift+ScrollLeft      NoAction
@@ -29,6 +29,9 @@ Zone NavigatorPan
 // ===========================================
 // All the button States and action
 // ===========================================
+  Link                  Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
+  Shift+Link            Reaper _REASONUS_FADERPORT_CONTROL { 0 20 0 0 20 0 }
+
   Pan                   FixedRGBColourDisplay { 0 55 255 }
 
   Channel               FixedRGBColourDisplay { 0 5 20 }

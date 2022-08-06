@@ -331,6 +331,13 @@
     },
     {
       "actionId": "",
+      "displayName": "Ref mix management actions",
+      "fileName": "refMixManagement.lua",
+      "register": false,
+      "overwrite": true
+    },
+    {
+      "actionId": "",
       "displayName": "ref pages",
       "fileName": "refPages.lua",
       "register": false,

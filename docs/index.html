@@ -613,8 +613,15 @@
           <li><span class="strong">F5:</span> Open or close the Regions and Markers window</li>
           <li><span class="strong">F6:</span> Open or close the Project Media browser</li>
           <li><span class="strong">F7:</span> Open or close the Big Clock</li>
-          <li><span class="strong">F8:</span> Toggle all floating windows</li>
+          <li><span class="strong">F8:</span> Open or close the track Manager</li>
         </ul>
+      </div>
+    </section>
+    <section class="doc-row">
+      <img src="assets/macro.png" alt="" class="tiny">
+      <div>
+        <p>Press the <span class="strong">Macro</span> button to open the <span class="strong">ReaSonus FaderPort
+            Control</span>. This gives you the ability to edit the functionality of the Function keys.
       </div>
     </section>
 
@@ -939,11 +946,20 @@
           </li>
           <li><span class="strong">Brass:</span> Filters on <code>Trumpet</code> and <code>Saxophone</code></li>
         </ul>
+
+
         <blockquote>
-          <span class="strong">Contribution Tip:</span> If you have tips or ideas to improve these filters you can drop
-          those at <a href="https://github.com/navelpluisje/reasonus-install/issues">the Github repository</a> or the <a
-            href="https://forum.cockos.com/showthread.php?p=2562780#post2562780">Reaper Forum</a>
+          <span class="strong">Pro User Tip:</span> With the ReaSonus FaderPort Control you can edit the filters of the
+          Audio filters. Press the <span class="key">Macro</span> button to open it. More info about <a
+            href="#reasonus-action"><span class="strong">ReaSonus FaderPort Control</span></a>
         </blockquote>
+      </div>
+    </section>
+    <section class="doc-row">
+      <img src="assets/macro.png" alt="" class="tiny">
+      <div>
+        <p>Press the <span class="strong">Macro</span> button to open the <span class="strong">ReaSonus FaderPort
+            Control</span>. This gives you the ability to edit the functionality of the Function keys
       </div>
     </section>
 
@@ -1021,7 +1037,7 @@
 
 
     <!-- SESSION NAVIGATOR -->
-    <h2 id="fpv2-session-navigator"><span>The Session Navigator</span></h2>
+    <h2 id="fpv2-session-navigator" class="reset-h4"><span>The Session Navigator</span></h2>
     <section class="doc-row">
       <p>The Session Navigator provides quick navigation and session controls. Each button alters the functions of
         the push-button encoder and the Next and Prev buttons on either side.</p>
@@ -1040,23 +1056,19 @@
     </section>
 
 
-    <!-- CHANNE NAVIGATOR -->
+    <!-- LINK -->
     <section class="doc-row">
       <img src="assets/navigation.png" class="large" />
       <div>
-        <h4>Track Navigator</h4>
-        <ul>
-          <li>
-            <span class="strong">Encoder:</span> Controls individual Track scrolling
-          </li>
-          <li>
-            <span class="strong">[Left Shift] + Encoder:</span> Adds the tracks to the selection
-          </li>
-          <li>
-            <span class="strong">Navigation buttons:</span> Adjust the currently visible fader bank on the
-            FaderPort by one bank of 8 or 16 Tracks (model dependent)
-          </li>
-        </ul>
+        <h4>Link</h4>
+        <p>
+          Press the Link button to follow the play cursor. Press again to un-follow.<br>
+          <span class="strong">[Shift] + Link</span> opens the <span class="strong">ReaSonus FaderPort Control</span>
+          for editing the function keys
+        </p>
+        <p>
+          The previous, next and encoder keep the last function.
+        </p>
       </div>
     </section>
 
@@ -1067,44 +1079,52 @@
       <p>In this section all channel buttons handle the master Track</p>
       <ul>
         <li>
+          <span class="strong">Encoder:</span> Handle the panning for the master Track
+        </li>
+        <li>
+          <span class="strong">Encoder push:</span> Resets the panning to the center position.
+        </li>
+        <li>
           <span class="strong">Prev:</span> No action
         </li>
         <li>
           <span class="strong">Next:</span> No action
         </li>
         <li>
-          <span class="strong">Encoder:</span> Handle the panning for the master Track
+          <span class="strong">[Shift] + Prev:</span> Undo last action
+        </li>
+        <li>
+          <span class="strong">[Shift] + Next:</span> Redo the last undone action
         </li>
       </ul>
     </section>
 
 
-    <!-- ZOOM NAVIGATOR -->
+    <!-- PAN NAVIGATOR -->
     <section class="doc-row">
-      <h4>Zoom Navigator</h4>
-      <ul>
-        <li>
-          <span class="strong">Prev:</span> Zoom out horizontal
-        </li>
-        <li>
-          <span class="strong">[Shift] + Prev:</span> Zoom out vertical
-        </li>
-        <li>
-          <span class="strong">Next:</span> Zoom in horizontal
-        </li>
-        <li>
-          <span class="strong">[Shift] + Next:</span> Zoom in vertical
-        </li>
-        <li>
-          <span class="strong">Encoder:</span> Zoom in/out horizontal
-        </li>
-        <li>
-          <span class="strong">[Left Shift] + Encoder:</span> Zoom in/out vertical
-        </li>
-        <li>
-          <span class="strong">Encoder push:</span> Toggle zoom to minimum track height
-        </li>
-      </ul>
+      <div>
+        <h4>Pan Navigator</h4>
+        <ul>
+          <li>
+            <span class="strong">Encoder:</span> Controls the panning of the selected Track.
+          </li>
+          <li>
+            <span class="strong">Encoder push:</span> Resets the panning to the center position.
+          </li>
+          <li>
+            <span class="strong">Prev:</span> Go to the previous Track
+          </li>
+          <li>
+            <span class="strong">Next:</span> Go to the next Track
+          </li>
+          <li>
+            <span class="strong">[Shift] + Prev:</span> Undo last action
+          </li>
+          <li>
+            <span class="strong">[Shift] + Next:</span> Redo the last undone action
+          </li>
+        </ul>
+      </div>
     </section>
 
 
@@ -1123,6 +1143,12 @@
           <span class="strong">Next:</span> Set the metronome speed to four times the original speed
         </li>
         <li>
+          <span class="strong">[Shift] + Prev:</span> Undo last action
+        </li>
+        <li>
+          <span class="strong">[Shift] + Next:</span> Redo the last undone action
+        </li>
+        <li>
           <span class="strong">Encoder push:</span> Set the metronome speed to the original speed
         </li>
         <li>
@@ -1135,29 +1161,31 @@
     </section>
 
 
-    <!-- SCROLL NAVIGATOR -->
+    <!-- CHANNEL NAVIGATOR -->
     <section class="doc-row">
-      <h4>Scroll Navigator</h4>
-      <ul>
-        <li>
-          <span class="strong">Prev:</span> Select the previous Track
-        </li>
-        <li>
-          <span class="strong">Next:</span> Select the next Track
-        </li>
-        <li>
-          <span class="strong">Encoder:</span> Scroll the view vertically
-        </li>
-        <li>
-          <span class="strong">[Shift] + Encoder:</span> Scroll the view horizontally
-        </li>
-        <li>
-          <span class="strong">Encoder push:</span> Scroll the view vertically to the selected track
-        </li>
-        <li>
-          <span class="strong">[Shift] + Encoder push:</span> Scroll the view horizontally to the play cursor
-        </li>
-      </ul>
+      <div>
+        <h4>Track Navigator (Channel)</h4>
+        <ul>
+          <li>
+            <span class="strong">Encoder:</span> Controls individual Track scrolling
+          </li>
+          <li>
+            <span class="strong">[Shift] + Encoder:</span> Adds the tracks to the selection
+          </li>
+          <li>
+            <span class="strong">Prev:</span> Go to the previous Track
+          </li>
+          <li>
+            <span class="strong">Next:</span> Go to the next Track
+          </li>
+          <li>
+            <span class="strong">[Shift] + Prev:</span> Undo last action
+          </li>
+          <li>
+            <span class="strong">[Shift] + Next:</span> Redo the last undone action
+          </li>
+        </ul>
+      </div>
     </section>
 
 
@@ -1195,6 +1223,32 @@
     </section>
 
 
+    <!-- SCROLL NAVIGATOR -->
+    <section class="doc-row">
+      <h4>Scroll Navigator</h4>
+      <ul>
+        <li>
+          <span class="strong">Prev:</span> Select the previous Track
+        </li>
+        <li>
+          <span class="strong">Next:</span> Select the next Track
+        </li>
+        <li>
+          <span class="strong">Encoder:</span> Scroll the view vertically
+        </li>
+        <li>
+          <span class="strong">[Shift] + Encoder:</span> Scroll the view horizontally
+        </li>
+        <li>
+          <span class="strong">Encoder push:</span> Scroll the view vertically to the selected track
+        </li>
+        <li>
+          <span class="strong">[Shift] + Encoder push:</span> Scroll the view horizontally to the play cursor
+        </li>
+      </ul>
+    </section>
+
+
     <!-- MARKER NAVIGATOR -->
     <section class="doc-row">
       <h4>Marker Navigator</h4>
@@ -1224,6 +1278,36 @@
         </li>
       </ul>
     </section>
+
+
+    <!-- ZOOM NAVIGATOR -->
+    <section class="doc-row">
+      <h4>Zoom Navigator ([Shift] + Scroll)</h4>
+      <ul>
+        <li>
+          <span class="strong">Prev:</span> Zoom out horizontal
+        </li>
+        <li>
+          <span class="strong">[Shift] + Prev:</span> Zoom out vertical
+        </li>
+        <li>
+          <span class="strong">Next:</span> Zoom in horizontal
+        </li>
+        <li>
+          <span class="strong">[Shift] + Next:</span> Zoom in vertical
+        </li>
+        <li>
+          <span class="strong">Encoder:</span> Zoom in/out horizontal
+        </li>
+        <li>
+          <span class="strong">[Left Shift] + Encoder:</span> Zoom in/out vertical
+        </li>
+        <li>
+          <span class="strong">Encoder push:</span> Toggle zoom to minimum track height
+        </li>
+      </ul>
+    </section>
+
 
 
     <h3 id="fpv2-function-keys"><span>F1-F4 Functions</span></h3>

@@ -247,6 +247,10 @@ h3 {
   counter-reset: h4counter;
 }
 
+.reset-h4 {
+  counter-reset: h4counter;
+}
+
 h3 span::before {
   content: counter(h1counter) '.' counter(h2counter) '.' counter(h3counter) "\0000a0\0000a0";
 }

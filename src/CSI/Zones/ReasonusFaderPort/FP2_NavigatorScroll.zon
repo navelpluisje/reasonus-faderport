@@ -27,6 +27,9 @@ Zone NavigatorScroll
 // ===========================================
 // All the button States and action
 // ===========================================
+  Link                  Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
+  Shift+Link            Reaper _REASONUS_FADERPORT_CONTROL { 0 20 0 0 20 0 }
+
   Pan                   FixedRGBColourDisplay { 0 5 20 }
   Pan                   GoZone "Home"
   Pan                   GoZone "NavigatorPan"
