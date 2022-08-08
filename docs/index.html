@@ -1018,7 +1018,7 @@
 
 
     <!-- SESSION NAVIGATOR -->
-    <h2 id="fpv2-session-navigator"><span>The Session Navigator</span></h2>
+    <h2 id="fpv2-session-navigator" class="reset-h4"><span>The Session Navigator</span></h2>
     <section class="doc-row">
       <p>The Session Navigator provides quick navigation and session controls. Each button alters the functions of
         the push-button encoder and the Next and Prev buttons on either side.</p>
@@ -1037,23 +1037,12 @@
     </section>
 
 
-    <!-- CHANNE NAVIGATOR -->
+    <!-- LINK -->
     <section class="doc-row">
       <img src="assets/navigation.png" class="large" />
       <div>
-        <h4>Track Navigator</h4>
-        <ul>
-          <li>
-            <span class="strong">Encoder:</span> Controls individual Track scrolling
-          </li>
-          <li>
-            <span class="strong">[Left Shift] + Encoder:</span> Adds the tracks to the selection
-          </li>
-          <li>
-            <span class="strong">Navigation buttons:</span> Adjust the currently visible fader bank on the
-            FaderPort by one bank of 8 or 16 Tracks (model dependent)
-          </li>
-        </ul>
+        <h4>Link</h4>
+        <p>Is not implemented yet. This will be in the next release</p>
       </div>
     </section>
 
@@ -1064,44 +1053,40 @@
       <p>In this section all channel buttons handle the master Track</p>
       <ul>
         <li>
+          <span class="strong">Encoder:</span> Handle the panning for the master Track
+        </li>
+        <li>
+          <span class="strong">Encoder push:</span> Resets the panning to the center position.
+        </li>
+        <li>
           <span class="strong">Prev:</span> No action
         </li>
         <li>
           <span class="strong">Next:</span> No action
         </li>
-        <li>
-          <span class="strong">Encoder:</span> Handle the panning for the master Track
-        </li>
       </ul>
     </section>
 
 
-    <!-- ZOOM NAVIGATOR -->
+    <!-- PAN NAVIGATOR -->
     <section class="doc-row">
-      <h4>Zoom Navigator</h4>
-      <ul>
-        <li>
-          <span class="strong">Prev:</span> Zoom out horizontal
-        </li>
-        <li>
-          <span class="strong">[Shift] + Prev:</span> Zoom out vertical
-        </li>
-        <li>
-          <span class="strong">Next:</span> Zoom in horizontal
-        </li>
-        <li>
-          <span class="strong">[Shift] + Next:</span> Zoom in vertical
-        </li>
-        <li>
-          <span class="strong">Encoder:</span> Zoom in/out horizontal
-        </li>
-        <li>
-          <span class="strong">[Left Shift] + Encoder:</span> Zoom in/out vertical
-        </li>
-        <li>
-          <span class="strong">Encoder push:</span> Toggle zoom to minimum track height
-        </li>
-      </ul>
+      <div>
+        <h4>Pan Navigator</h4>
+        <ul>
+          <li>
+            <span class="strong">Encoder:</span> Controls the panning of the selected Track.
+          </li>
+          <li>
+            <span class="strong">Encoder push:</span> Resets the panning to the center position.
+          </li>
+          <li>
+            <span class="strong">Prev:</span> Go to the previous Track
+          </li>
+          <li>
+            <span class="strong">Next:</span> Go to the next Track
+          </li>
+        </ul>
+      </div>
     </section>
 
 
@@ -1132,29 +1117,25 @@
     </section>
 
 
-    <!-- SCROLL NAVIGATOR -->
+    <!-- CHANNEL NAVIGATOR -->
     <section class="doc-row">
-      <h4>Scroll Navigator</h4>
-      <ul>
-        <li>
-          <span class="strong">Prev:</span> Select the previous Track
-        </li>
-        <li>
-          <span class="strong">Next:</span> Select the next Track
-        </li>
-        <li>
-          <span class="strong">Encoder:</span> Scroll the view vertically
-        </li>
-        <li>
-          <span class="strong">[Shift] + Encoder:</span> Scroll the view horizontally
-        </li>
-        <li>
-          <span class="strong">Encoder push:</span> Scroll the view vertically to the selected track
-        </li>
-        <li>
-          <span class="strong">[Shift] + Encoder push:</span> Scroll the view horizontally to the play cursor
-        </li>
-      </ul>
+      <div>
+        <h4>Track Navigator (Channel)</h4>
+        <ul>
+          <li>
+            <span class="strong">Encoder:</span> Controls individual Track scrolling
+          </li>
+          <li>
+            <span class="strong">[Shift] + Encoder:</span> Adds the tracks to the selection
+          </li>
+          <li>
+            <span class="strong">Prev:</span> Go to the previous Track
+          </li>
+          <li>
+            <span class="strong">Next:</span> Go to the next Track
+          </li>
+        </ul>
+      </div>
     </section>
 
 
@@ -1192,6 +1173,32 @@
     </section>
 
 
+    <!-- SCROLL NAVIGATOR -->
+    <section class="doc-row">
+      <h4>Scroll Navigator</h4>
+      <ul>
+        <li>
+          <span class="strong">Prev:</span> Select the previous Track
+        </li>
+        <li>
+          <span class="strong">Next:</span> Select the next Track
+        </li>
+        <li>
+          <span class="strong">Encoder:</span> Scroll the view vertically
+        </li>
+        <li>
+          <span class="strong">[Shift] + Encoder:</span> Scroll the view horizontally
+        </li>
+        <li>
+          <span class="strong">Encoder push:</span> Scroll the view vertically to the selected track
+        </li>
+        <li>
+          <span class="strong">[Shift] + Encoder push:</span> Scroll the view horizontally to the play cursor
+        </li>
+      </ul>
+    </section>
+
+
     <!-- MARKER NAVIGATOR -->
     <section class="doc-row">
       <h4>Marker Navigator</h4>
@@ -1218,6 +1225,35 @@
         </li>
         <li>
           <span class="strong">[Shift] + Encoder push:</span> Delete the marker near the cursor
+        </li>
+      </ul>
+    </section>
+
+
+    <!-- ZOOM NAVIGATOR -->
+    <section class="doc-row">
+      <h4>Zoom Navigator ([Shift] + Scroll)</h4>
+      <ul>
+        <li>
+          <span class="strong">Prev:</span> Zoom out horizontal
+        </li>
+        <li>
+          <span class="strong">[Shift] + Prev:</span> Zoom out vertical
+        </li>
+        <li>
+          <span class="strong">Next:</span> Zoom in horizontal
+        </li>
+        <li>
+          <span class="strong">[Shift] + Next:</span> Zoom in vertical
+        </li>
+        <li>
+          <span class="strong">Encoder:</span> Zoom in/out horizontal
+        </li>
+        <li>
+          <span class="strong">[Left Shift] + Encoder:</span> Zoom in/out vertical
+        </li>
+        <li>
+          <span class="strong">Encoder push:</span> Toggle zoom to minimum track height
         </li>
       </ul>
     </section>
