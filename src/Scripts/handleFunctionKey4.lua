@@ -7,7 +7,7 @@ local function main()
   local actionState = reaper.GetToggleCommandStateEx(0, functionAction);
   reaper.Main_OnCommandEx(functionAction, 0, 0);
 
-  reaper.SetToggleCommandState(sec, cmd, actionState == 0 and 1 or 0)
+  reaper.SetToggleCommandState(sec, cmd, 0)
   reaper.RefreshToolbar2(sec, cmd);
 end
 

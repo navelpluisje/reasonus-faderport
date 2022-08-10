@@ -16,18 +16,10 @@ Zone NavigatorMetronome
   Next                  Reaper 42458    // Options: Set metronome speed to 4x
   Shift+Prev            NoAction
   Shift+Next            NoAction
-  / TODO: Not quite sure if the scripts are working correct
-  ScrollLeft            Reaper _S&M_METRO_VOL_DOWN // SWS/S&M: Decrease metronome volume
-  ScrollRight           Reaper _S&M_METRO_VOL_UP   // SWS/S&M: Increase metronome volume
-  Shift+ScrollLeft      NoAction
-  Shift+ScrollRight     NoAction
 
   RotaryBigPush         Reaper 42456    // Options: Set metronome speed to 1x
   Shift+RotaryBigPush   Reaper 40363    // Options: Show metronome/pre-roll settings
   Option+RotaryBigPush  NoAction
-  RotaryBig             NoAction
-
-  Click                 Reaper 40364    // Options: Toggle metronome
-  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_6
-
+  RotaryBig             Reaper [< _S&M_METRO_VOL_DOWN, _S&M_METRO_VOL_UP >]  // SWS/S&M: Decrease metronome volume, SWS/S&M: Increase metronome volume
+  Shift+RotaryBig       NoAction
 ZoneEnd 

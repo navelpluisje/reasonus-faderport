@@ -33,11 +33,8 @@ Zone "TrackReceiveSlot"
   Fader|                  TrackReceiveVolume
   Shift+Fader|            TrackReceivePan
 
-
-  RotarySmall             NoAction  
+  RotarySmall             ReceiveSlotBank 1
   RotarySmallPush         NoAction
-  ScrollLeftSmall         ReceiveSlotBank "-1"
-  ScrollRightSmall        ReceiveSlotBank "1"
 
 // ===========================================
 // TRACK NAVIGATION

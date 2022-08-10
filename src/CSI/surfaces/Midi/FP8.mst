@@ -75,14 +75,6 @@ Widget RotarySmall
 	Encoder b0 10 7f
 WidgetEnd
 
-Widget ScrollLeftSmall
-	Press b0 10 41
-WidgetEnd
-
-Widget ScrollRightSmall
-	Press b0 10 01
-WidgetEnd
-
 Widget Arm
 	Press 90 00 7f 90 00 00
 WidgetEnd
@@ -153,7 +145,7 @@ WidgetEnd
 // SESSION NAVIGATOR
 // ===========================================
 Widget Prev
-	Press 90 2e 7f 90 2e 00 
+	Press 90 2e 7f 
 	/ FB_TwoState 90 2e 7f 90 2e 00
 WidgetEnd
 
@@ -168,14 +160,6 @@ WidgetEnd
 Widget Next
 	Press 90 2f 7f
 	/ FB_TwoState 90 2f 7f 90 2f 00
-WidgetEnd
-
-Widget ScrollLeft
-	Press b0 3c 41
-WidgetEnd
-
-Widget ScrollRight
-	Press b0 3c 01
 WidgetEnd
 
 Widget Channel

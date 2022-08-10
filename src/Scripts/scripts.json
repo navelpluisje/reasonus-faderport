@@ -15,6 +15,13 @@
       "overwrite": true
     },
     {
+      "actionId": "REASONUS_INITIALISE",
+      "displayName": "Some ReaSonus initialisation",
+      "fileName": "initialise.lua",
+      "register": true,
+      "overwrite": true
+    },
+    {
       "actionId": "REASONUS_SHOW_ALL_TRACKS",
       "displayName": "Show All Tracks",
       "fileName": "showAllTracks.lua",
@@ -130,6 +137,55 @@
       "actionId": "REASONUS_LED_STATE_MIX_VI_BTN",
       "displayName": "Handle the led state for the VI button",
       "fileName": "ledStateMixViBtn.lua",
+      "register": true,
+      "overwrite": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_NAVI_CHANNEL_BTN",
+      "displayName": "Handle the led state for the Channel button",
+      "fileName": "ledStateNaviChannelBtn.lua",
+      "register": true,
+      "overwrite": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_NAVI_ZOOM_BTN",
+      "displayName": "Handle the led state for the Zoom button",
+      "fileName": "ledStateNaviZoomBtn.lua",
+      "register": true,
+      "overwrite": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_NAVI_SCROLL_BTN",
+      "displayName": "Handle the led state for the Scroll button",
+      "fileName": "ledStateNaviScrollBtn.lua",
+      "register": true,
+      "overwrite": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_NAVI_BANK_BTN",
+      "displayName": "Handle the led state for the Bank button",
+      "fileName": "ledStateNaviBankBtn.lua",
+      "register": true,
+      "overwrite": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_NAVI_MASTER_BTN",
+      "displayName": "Handle the led state for the Master button",
+      "fileName": "ledStateNaviMasterBtn.lua",
+      "register": true,
+      "overwrite": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_NAVI_SECTION_BTN",
+      "displayName": "Handle the led state for the Section button",
+      "fileName": "ledStateNaviSectionBtn.lua",
+      "register": true,
+      "overwrite": true
+    },
+    {
+      "actionId": "REASONUS_LED_STATE_NAVI_CHANNEL_BTN",
+      "displayName": "Handle the led state for the Channel button",
+      "fileName": "ledStateNaviChannelBtn.lua",
       "register": true,
       "overwrite": true
     },

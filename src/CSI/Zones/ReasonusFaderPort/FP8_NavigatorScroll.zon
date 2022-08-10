@@ -15,16 +15,10 @@ Zone NavigatorScroll
     Next                  Reaper 40285   // Track: Go to next track
     Shift+Prev            NoAction
     Shift+Next            NoAction
-    ScrollLeft            Reaper 40139   // View: Scroll view down
-    ScrollRight           Reaper 40138   // View: Scroll view up
-    Shift+ScrollLeft      Reaper 40140   // View: Scroll view left
-    Shift+ScrollRight     Reaper 40141   // View: Scroll view right
 
-    RotaryBigPush         Reaper 40913   // Track: Vertical scroll selected tracks into view
-    Shift+RotaryBigPush   Reaper _SWS_HSCROLLPLAY50  // SWS: Horizontal scroll to put play cursor at 50%
+    RotaryBigPush         Reaper 40913                // Track: Vertical scroll selected tracks into view
+    Shift+RotaryBigPush   Reaper _SWS_HSCROLLPLAY50   // SWS: Horizontal scroll to put play cursor at 50%
     Option+RotaryBigPush  NoAction
-    RotaryBig             NoAction
-  
-    Scroll                Reaper _REASONUS_ALWAYS_ON    // Dummy Action
-    Shift+Scroll          Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
+    RotaryBig             Reaper [< 40139 40138 >]    // View: Scroll view down, View: Scroll view up
+    Shift+RotaryBig       Reaper [< 40140 40141 >]    // View: Scroll view left, View: Scroll view Right
 ZoneEnd

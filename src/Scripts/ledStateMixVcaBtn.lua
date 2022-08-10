@@ -32,5 +32,3 @@ local function main()
 end
 
 main()
-
-return

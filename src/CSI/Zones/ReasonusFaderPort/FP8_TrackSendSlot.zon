@@ -33,10 +33,8 @@ Zone "TrackSendSlot"
   Fader|                  TrackSendVolume
   Shift+Fader|            TrackSendPan
 
-  RotarySmall             NoAction  
+  RotarySmall             SendSlotBank 1
   RotarySmallPush         NoAction
-  ScrollLeftSmall         SendSlotBank "-1"
-  ScrollRightSmall        SendSlotBank "1"
 
 // ===========================================
 // TRACK NAVIGATION

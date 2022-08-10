@@ -15,16 +15,10 @@ Zone NavigatorBank
     Next                  TrackBank  16
     Shift+Prev            NoAction
     Shift+Next            NoAction
-    ScrollLeft            TrackBank -1
-    ScrollRight           TrackBank  1
-    Shift+ScrollLeft      TrackBank -16
-    Shift+ScrollRight     TrackBank  16
 
     RotaryBigPush         NoAction
     Shift+RotaryBigPush   NoAction
     Option+RotaryBigPush  NoAction
-    RotaryBig             NoAction
-
-    Bank                  Reaper _REASONUS_ALWAYS_ON    // Dummy Action
-    Shift+Bank            Reaper REASONUS_HANDLE_FUNCTION_KEY_3
+    RotaryBig             TrackBank 1
+    Shift+RotaryBig       TrackBank 16
 ZoneEnd

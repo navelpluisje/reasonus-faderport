@@ -348,6 +348,7 @@ function uiElements.colourPicker(label, r, g, b)
     value       = redValue,
     trackcolour = Colours.Border,
     colour      = "white",
+    step        = 5,
   });
   local redValueLabel = red:add(rtk.Text { text = redValue, w = 30, lpadding = 5, fontsize = 16 })
 
@@ -358,6 +359,7 @@ function uiElements.colourPicker(label, r, g, b)
     value       = greenValue,
     trackcolour = Colours.Border,
     colour      = "white",
+    step        = 5,
   });
   local greenValueLabel = green:add(rtk.Text { text = greenValue, w = 30, lpadding = 5, fontsize = 16 })
 
@@ -368,6 +370,7 @@ function uiElements.colourPicker(label, r, g, b)
     value       = blueValue,
     trackcolour = Colours.Border,
     colour      = "white",
+    step        = 5,
   });
   local blueValueLabel = blue:add(rtk.Text { text = blueValue, w = 30, lpadding = 5, fontsize = 16 })
 
@@ -382,8 +385,16 @@ function uiElements.colourPicker(label, r, g, b)
     bg     = { 0, 0, 0 }
   };
 
+  local function calculateSwatchValue(x)
+    return ((math.log(x + 1, 10)) ^ 2 * 45) / 255
+  end
+
   local function updateColourSwatch()
-    local colour = { redValue / 255, greenValue / 255, blueValue / 255 }
+    local swatchRed = calculateSwatchValue(redValue);
+    local swatchGreen = calculateSwatchValue(greenValue);
+    local swatchBlue = calculateSwatchValue(blueValue);
+
+    local colour = { swatchRed, swatchGreen, swatchBlue }
     swatch:attr('bg', colour);
   end
 
