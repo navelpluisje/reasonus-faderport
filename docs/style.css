@@ -561,3 +561,71 @@ a.toc {
   text-decoration: none;
   transform: translateY(.125rem);
 }
+
+.split {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: auto 1fr;
+}
+
+.split>.left {
+  grid-area: 1/1/2/2;
+}
+
+.split>.right {
+  grid-area: 1/2/2/3;
+}
+
+.filter-1 .track:not(.track-1)>* {
+  opacity: .3
+}
+
+.filter-1 .track:not(.track-1)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
+}
+
+.filter-2 .track:not(.track-1, .track-2, .track-3, .track-4)>* {
+  opacity: .3
+}
+
+.filter-2 .track:not(.track-1, .track-2, .track-3, .track-4)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
+}
+
+.filter-3 .track:not(.track-1, .track-5)>* {
+  opacity: .3
+}
+
+.filter-3 .track:not(.track-1, .track-5)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
+}
+
+.filter-4 .track:not(.track-1, .track-3)>* {
+  opacity: .3
+}
+
+.filter-4 .track:not(.track-1, .track-3)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
+}
+
+.filter-5 .track:not(.track-1, .track-5)>* {
+  opacity: .3
+}
+
+.filter-5 .track:not(.track-1, .track-5)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
+}
+
+.filter-6 .track:not(.track-1)>* {
+  opacity: .3
+}
+
+.filter-6 .track:not(.track-1)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
+}
