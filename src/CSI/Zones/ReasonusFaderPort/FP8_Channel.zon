@@ -53,8 +53,9 @@ Zone "Channel"
 
   Macro                     Reaper _REASONUS_FADERPORT_CONTROL { 20 20 20 20 20 20 }
   Shift+Macro               FixedRGBColourDisplay { 0 0 0 }
-  Link                      Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 20 20 20 255 255 255 }
-  Shift+Link               FixedRGBColourDisplay { 0 0 0 }
+  Link                      FixedRGBColourDisplay { 20 20 20 }
+  Link                      GoZone "FocusedFXParam"
+  Shift+Link                Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
 
 
 // ===========================================

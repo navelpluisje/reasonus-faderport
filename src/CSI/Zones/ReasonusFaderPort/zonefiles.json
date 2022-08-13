@@ -2,6 +2,7 @@
   "FP8": [
     "FP8_Automation.zon",
     "FP8_Channel.zon",
+    "FP8_FocusedFXParam.zon",
     "FP8_FX.zon",
     "FP8_FXSlot.zon",
     "FP8_Home.zon",
@@ -26,6 +27,7 @@
   "FP16": [
     "FP8_Automation.zon",
     "FP8_Channel.zon",
+    "FP16_FocusedFXParam.zon",
     "FP8_FX.zon",
     "FP8_FXSlot.zon",
     "FP8_Home.zon",
@@ -50,6 +52,7 @@
   "FP2": [
     "FP2_Automation.zon",
     "FP2_Channel.zon",
+    "FP2_FocusedFXParam.zon",
     "FP2_Home.zon",
     "FP2_NavigatorChannel.zon",
     "FP2_NavigatorMarker.zon",

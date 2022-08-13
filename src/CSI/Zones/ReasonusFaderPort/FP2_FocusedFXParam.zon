@@ -1,0 +1,5 @@
+Zone "FocusedFXParam"
+  Fader               FocusedFXParam
+  Link                FixedRGBColourDisplay { 255 255 255 }
+  Link                GoZone "Home"
+ZoneEnd

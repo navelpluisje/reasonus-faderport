@@ -1,0 +1,11 @@
+Zone "FocusedFXParam"
+  Fader8              FocusedFXParam
+  DisplayType8        DisplayType 2
+  ScribbleLine1_8     FixedTextDisplay "Fx Param" {% Invert %}
+  ScribbleLine2_8     NoAction
+  ScribbleLine3_8     FocusedFXParamNameDisplay
+  ScribbleLine4_8     FocusedFXParamValueDisplay
+  ValueBar8           FocusedFXParam {% Fill %}
+  Link                FixedRGBColourDisplay { 255 255 255 }
+  Link                GoZone Home
+ZoneEnd

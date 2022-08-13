@@ -37,12 +37,14 @@ Zone NavigatorMaster
 // ===========================================
 // All the button States and action
 // ===========================================
-  Link                  Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
-  Shift+Link            Reaper _REASONUS_FADERPORT_CONTROL { 0 20 0 0 20 0 }
+  Link                  FixedRGBColourDisplay { 20 20 20 }
+  Link                  GoZone "FocusedFXParam"
+  Shift+Link            Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
 
   Pan                   FixedRGBColourDisplay { 0 5 20 }
   Pan                   GoZone "Home"
   Pan                   GoZone "NavigatorPan"
+  Shift+Pan             Reaper _REASONUS_FADERPORT_CONTROL { 0 20 0 0 20 0 }
 
   Channel               FixedRGBColourDisplay { 0 5 20 }
   Channel               GoZone "Home"
