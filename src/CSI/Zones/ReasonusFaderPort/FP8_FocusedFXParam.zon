@@ -1,3 +1,9 @@
+//------------------------------------------------------------------------------
+// File:    FP8_FocusedFXParam.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+
 Zone "FocusedFXParam"
   Fader8              FocusedFXParam
   DisplayType8        DisplayType 2

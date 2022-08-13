@@ -1,3 +1,9 @@
+//------------------------------------------------------------------------------
+// File:    FP2_FocusedFXParam.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+
 Zone "FocusedFXParam"
   Fader               FocusedFXParam
   Link                FixedRGBColourDisplay { 255 255 255 }

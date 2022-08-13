@@ -8,9 +8,6 @@
 //------------------------------------------------------------------------------
 
 Zone Home
-  LeftShft   Shift
-  RightShft  Option
-
   IncludedZones
     "MixManagement"
     "Panning"

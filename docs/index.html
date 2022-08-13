@@ -92,7 +92,7 @@
 
           <a href="#reasonus-action" class="h1 toc">ReaSonus FaderPort Control</a>
           <a href="#plugin-start" class="h2 toc">Open ReaSonus FaderPort Control</a>
-          <a href="#plugin-edit-function" class="h2 toc">Edit Function keys</a>
+          <a href="#plugin-edit-function" class="h2 toc">Edit Function Button</a>
           <a href="#plugin-action-info" class="h3 toc">Action Info</a>
           <a href="#plugin-action-edit" class="h3 toc">Edit Action</a>
           <a href="#plugin-mix-management" class="h2 toc">Mix Management</a>
@@ -102,6 +102,7 @@
           <a href="#additional-help" class="h1 toc">Additional Help</a>
           <a href="#resource-path-action" class="h2 toc">Create REAPER resource path Action</a>
           <a href="#control-to-menu" class="h2 toc">Add ReaSonus FaderPort Control to the toolbar</a>
+          <a href="#swap-shift" class="h2 toc">Swapping Shift Buttons</a>
           <a href="#known-issues" class="h2 toc">Known Issues</a>
         </section>
       </section>
@@ -260,7 +261,7 @@
         </ol>
 
         <hr />
-        <p>While holding the <span class="strong">[Left Shift]</span> key, the display changes it's layout. The next
+        <p>While holding the <span class="strong">[Left Shift]</span> button, the display changes it's layout. The next
           info is displayed:</p>
         <ul>
           <li>
@@ -360,7 +361,7 @@
       <blockquote>
         <span class="strong">Power User Tip:</span> Press <span class="strong">[Left Shift]</span> with any of these
         buttons to access the F1-F8 Functions.
-        These functions are user definable. See <a href="#fp8-function-keys">Function Keys Section</a> for more
+        These functions are user definable. See <a href="#fp8-function-keys">Function Buttons Section</a> for more
         information.
       </blockquote>
       <p>
@@ -601,7 +602,7 @@
           functions for your FaderPort. By default, these are assigned as follows:</p>
         <blockquote>
           <span class="strong">Pro User Tip:</span> With the ReaSonus FaderPort Control you can edit the actions of the
-          Function keys. Press the <span class="key">Macro</span> button to open it. More info about <a
+          Function buttons. Press the <span class="key">Macro</span> button to open it. More info about <a
             href="#reasonus-action"><span class="strong">ReaSonus FaderPort Control</span></a>
         </blockquote>
 
@@ -957,7 +958,7 @@
       <img src="assets/macro.png" alt="" class="tiny">
       <p>
         This button opens the <span class="strong">ReaSonus FaderPort Control</span>, which helps you editing the
-        actions of the Function keys and modify the track filters for mix management. You can read more on it <a
+        actions of the Function buttons and modify the track filters for mix management. You can read more on it <a
           href="#reasonus-action">here</a>.
       </p>
     </section>
@@ -1058,7 +1059,7 @@
       <blockquote>
         <span class="strong">Power User Tip:</span> Press <span class="strong">[Shift]</span> with any of the bottom 4
         buttons to access the F1-F4 Functions.
-        These functions are user definable. See <a href="#fpv2-function-keys">Function Keys Section</a> for more
+        These functions are user definable. See <a href="#fpv2-function-keys">Function Buttons Section</a> for more
         information.
       </blockquote>
       <p>
@@ -1304,7 +1305,7 @@
         <h4>Flip ([Shift] + Pan)</h4>
         <p>
           This button opens the <span class="strong">ReaSonus FaderPort Control</span>, which helps you editing the
-          actions of the Function keys and modify the track filters for mix management. You can read more on it <a
+          actions of the Function buttons and modify the track filters for mix management. You can read more on it <a
             href="#reasonus-action">here</a>.
         </p>
         <p>
@@ -1349,7 +1350,7 @@
         <p>Using <span class="strong">[Shift]</span> plus any Session Navigator button will access alternate
           functions for your FaderPort. By default, these are assigned as follows:</p>
         <blockquote>
-          <span class="strong">Power User Tip:</span> The actions for the Functions keys can be managed with <span
+          <span class="strong">Power User Tip:</span> The actions for the Functions buttons can be managed with <span
             class="strong">ReaSonus FaderPort Control</span>. More about this can be found <a
             href="#reasonus-action">here</a>
         </blockquote>
@@ -1420,14 +1421,15 @@
       </div>
     </section>
 
-    <h2 id="plugin-edit-function"><span>Edit Function keys</span></h2>
+    <h2 id="plugin-edit-function"><span>Edit Function Buttons</span></h2>
     <section class="doc-row">
       <div>
-        <p>Click <span class="key">Edit Function keys</span> from the navigation on the left</p>
+        <p>Click <span class="key">Edit Function buttons</span> from the navigation on the left</p>
         <p>
           <img src="assets/plugin-functions.png" alt="">
         </p>
-        <p>This screen shows the action id's attached to the function keys. For the FaderPort v2 4 Function key actions
+        <p>This screen shows the action id's attached to the function buttons. For the FaderPort v2 4 Function button
+          actions
           are visible, and 8 for the other FaderPort versions</p>
       </div>
     </section>
@@ -1451,7 +1453,7 @@
       <img src="assets/editFaderPortOpenActions.png" class="large" alt="">
       <ul>
         <li>To edit an action you can click the magnifier icon left of the action id. This opens the actions list.</li>
-        <li>Search for the action you want to attach to the Function Key</li>
+        <li>Search for the action you want to attach to the Function Button</li>
         <li>Click the <span class="key">Select/Close</span> button or double-click the action to select it</li>
         <li>The action id should now be displayed and the action id is saved</li>
         <li>Repeat this for the actions you want to</li>
@@ -1701,7 +1703,7 @@ reaper.ShowConsoleMsg("Path: " .. path)
       <div>
         <p>Here are the steps to add the <span class="strong">ReaSonus FaderPort Control</span> to a toolbar</p>
         <ol>
-          <li>Right click in an enpty area of the toolbar and select: <span class="strong">Customize
+          <li>Right click in an empty area of the toolbar and select: <span class="strong">Customize
               toolbar&hellip;</span><br>
             <img src="assets/toolbar-right-click.png" alt="" class="small">
           </li>
@@ -1734,6 +1736,35 @@ reaper.ShowConsoleMsg("Path: " .. path)
         </ol>
       </div>
     </section>
+
+
+    <h2 id="swap-shift"><span>Swap Shift Buttons</span></h2>
+    <section class="doc-row">
+      <div>
+        <p>Here are some instructions on swapping the left and right Shift Buttons</p>
+        <ul>
+          <li>From the menu go to <span class="key">Options</span> and then select <span class="key">Preferences</span>
+          </li>
+          <li>The preferences pane opens an in the left section select <span class="key">Control/Osc/Web</span></li>
+          <li>Select <span class="string">Control Surface Integrator</span> and click <span class="key">Edit</span></li>
+          <li>Select the <span class="strong">Reasonus FaderPort</span> page (when there are muliple) and then your
+            FaderPort and click <span class="key">Edit</span></li>
+          <li>
+            In the <span class="strong">Templates</span> section, click the <span class="strong">Surfaces</span> select
+            and select the version with <span class="strng">swapped-shift</span> in the name.
+            <p>
+              <img src="assets/swapped-shift.png" alt="">
+            </p>
+          </li>
+          <li>Now press <span class="key">OK</span> to save the setting and press <span class="key">OK</span> in the
+            other popups.</li>
+        </ul>
+        <p>Your shift buttons should now be swapped. Keep in mind that the documentation does not take the swapped shift
+          buttons in account.</p>
+      </div>
+    </section>
+
+
     <h2 id="known-issues"><span>Known Issues</span></h2>
     <section class="doc-row">
       <p>Currently no known issues.</p>

@@ -1,3 +1,9 @@
+//------------------------------------------------------------------------------
+// File:    FP16_FocusedFXParam.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+
 Zone "FocusedFXParam"
   Fader16             FocusedFXParam
   DisplayType16       DisplayType 2
