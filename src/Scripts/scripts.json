@@ -176,9 +176,9 @@
       "overwrite": true
     },
     {
-      "actionId": "REASONUS_LED_STATE_NAVI_SECTION_BTN",
-      "displayName": "Handle the led state for the Section button",
-      "fileName": "ledStateNaviSectionBtn.lua",
+      "actionId": "REASONUS_LED_STATE_NAVI_MARKER_BTN",
+      "displayName": "Handle the led state for the Marker button",
+      "fileName": "ledStateNaviMarkerBtn.lua",
       "register": true,
       "overwrite": true
     },
