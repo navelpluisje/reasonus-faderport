@@ -146,7 +146,7 @@ WidgetEnd
 // ===========================================
 Widget Prev
 	Press 90 2e 7f 
-	/ FB_TwoState 90 2e 7f 90 2e 00
+	FB_TwoState 90 2e 7f 90 2e 00
 WidgetEnd
 
 Widget RotaryBigPush
@@ -159,7 +159,7 @@ WidgetEnd
 
 Widget Next
 	Press 90 2f 7f
-	/ FB_TwoState 90 2f 7f 90 2f 00
+	FB_TwoState 90 2f 7f 90 2f 00
 WidgetEnd
 
 Widget Channel
