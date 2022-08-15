@@ -9,27 +9,27 @@
 
 
 Zone "Track"
-  SubZones
-    "TrackRecArm"
-  SubZonesEnd
-
-  Arm Control
-  // Some display stuff
-  / DisplayType|              DisplayType 5
-  ScribbleLine1_|           TrackNameDisplay {% Left %}
-  / ScribbleLine2_|           TrackIdxDisplay
+  DisplayType|              DisplayType 5
+  ScribbleLine1_|           TrackNameDisplay
+  Property+ScribbleLine1_|  TextAlign Left            
+  Property+Shift+ScribbleLine1_|  Invert 0
+  ScribbleLine2_|           TrackNumberDisplay
   ScribbleLine2_|           TrackVolumeDisplay
   ScribbleLine3_|           TrackPanDisplay
-  ScribbleLine4_|           NoAction
-  / ValueBar|                 TrackPan {% BiPolar %}
-  / VUMeter|                  TrackOutputMeter
+  ScribbleLine4_|           TrackPanDisplay
+  ValueBar|                 TrackPan
+  Property+ValueBar|        Mode BiPolar
+  VUMeter|                  TrackOutputMeter
 
-  / Shift+DisplayType|        DisplayType 2
-  / Shift+ScribbleLine1_|     TrackNameDisplay {% Left Invert %}
-  / Shift+ScribbleLine2_|     TrackVolumeDisplay
-  / Shift+ScribbleLine3_|     TrackAutoModeDisplay
-  / Shift+ScribbleLine4_|     TrackPanDisplay
-  / Shift+ValueBar|           TrackVolume {% Fill %}
+  Shift+DisplayType|        DisplayType 2
+  Shift+ScribbleLine1_|     TrackNameDisplay {% Left Invert %}
+  Property+Shift+ScribbleLine1_|  TextAlign Center           
+  Property+Shift+ScribbleLine1_|  Invert 1       
+  Shift+ScribbleLine2_|     TrackVolumeDisplay
+  Shift+ScribbleLine3_|     TrackAutoModeDisplay
+  Shift+ScribbleLine4_|     TrackPanDisplay
+  Shift+ValueBar|           TrackVolume
+  Property+Shift+ValueBar|   Mode Fill
   / Shift+VUMeter|            NoAction
 
   Mute|                     TrackMute
@@ -40,8 +40,8 @@ Zone "Track"
 
   / Arm                       GoSubZone "TrackRecArm"
   Control+Select|           TrackRecordArm     { 20 0 0 255 0 0 }
-  Shift+Arm                 Reaper 40490       // Track: Arm all tracks for recording
-  Option+Arm                Reaper 40491       // Track: Unarm all tracks for recording
+  / Shift+Arm                 Reaper 40490       // Track: Arm all tracks for recording
+  / Option+Arm                Reaper 40491       // Track: Unarm all tracks for recording
       
   SoloClear                 Reaper 40340       // Track: Unsolo all tracks
   MuteClear                 Reaper 40339       // Track: Unmute all tracks
@@ -51,16 +51,18 @@ Zone "Track"
   FaderTouch+Fader|         TrackVolume
   FaderTouch|               TrackTouch
 
-  Bypass                    Reaper 8           { 20 0 0 255 0 0 } // Track: Toggle FX bypass for selected tracks
+  Bypass                    Reaper 8           { 20 20 20 255 0 0 } // Track: Toggle FX bypass for selected tracks
   Shift+Bypass              Reaper 40344       { 20 0 0 255 0 0 } // Track: Toggle FX bypass on all tracks
 
 
 // ===========================================
 // TRACK NAVIGATION
 // ===========================================
-  Track                 Reaper _REASONUS_ALWAYS_ON
+  Track      GoHome
+  Plugin     GoTrackFXmenu
 
-  / Plugin              NoAction
+  / Plugin                GoSelectedTrackFXMenu
+  / Shift+Plugin          GoTrackFXMenu
   / Plugin              MapSelectedTrackFXToMenu
   / Shift+Plugin        MapTrackFXMenusSlotToWidgets
 

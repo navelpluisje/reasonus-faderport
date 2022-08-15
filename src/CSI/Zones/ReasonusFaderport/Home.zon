@@ -9,7 +9,18 @@
 
 Zone Home
   OnInitialization PreventFocusedFXMapping
+
+  LeftShft Shift
+
   IncludedZones
     "Track"
   IncludedZonesEnd
+  AssociatedZones
+    "SelectedTrackFXMenu"
+    / "SelectedTrackSend"
+    / "SelectedTrackReceive"
+    / "TrackFXMenu"
+    / "TrackSend"
+    / "TrackReceive"
+  AssociatedZonesEnd
 ZoneEnd

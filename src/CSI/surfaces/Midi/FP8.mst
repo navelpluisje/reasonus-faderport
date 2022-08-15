@@ -344,42 +344,42 @@ WidgetEnd
 // ===========================================
 Widget Select1
   Press 90 18 7f 90 18 00
-  FB_FaderportRGB7Bit 90 18 7f
+  FB_FaderportTwoStateRGB 90 18 7f
 WidgetEnd
 
 Widget Select2
   Press 90 19 7f 90 19 00
-  FB_FaderportRGB7Bit 90 19 7f
+  FB_FaderportTwoStateRGB 90 19 7f
 WidgetEnd
 
 Widget Select3
   Press 90 1a 7f 90 1a 00
-  FB_FaderportRGB7Bit 90 1a 7f
+  FB_FaderportTwoStateRGB 90 1a 7f
 WidgetEnd
 
 Widget Select4
   Press 90 1b 7f 90 1b 00
-  FB_FaderportRGB7Bit 90 1b 7f
+  FB_FaderportTwoStateRGB 90 1b 7f
 WidgetEnd
 
 Widget Select5
   Press 90 1c 7f 90 1c 00
-  FB_FaderportRGB7Bit 90 1c 7f
+  FB_FaderportTwoStateRGB 90 1c 7f
 WidgetEnd
 
 Widget Select6
   Press 90 1d 7f 90 1d 00
-  FB_FaderportRGB7Bit 90 1d 7f
+  FB_FaderportTwoStateRGB 90 1d 7f
 WidgetEnd
 
 Widget Select7
   Press 90 1e 7f 90 1e 00
-  FB_FaderportRGB7Bit 90 1e 7f
+  FB_FaderportTwoStateRGB 90 1e 7f
 WidgetEnd
 
 Widget Select8
   Press 90 1f 7f 90 1f 00
-  FB_FaderportRGB7Bit 90 1f 7f
+  FB_FaderportTwoStateRGB 90 1f 7f
 WidgetEnd
 
 
