@@ -67,7 +67,6 @@ local mainBox = window:add(rtk.HBox {
 local sidebar = mainBox:add(rtk.VBox {
   h       = 1,
   w       = 230,
-  minw    = 400,
   padding = 10,
   spacing = 8,
 })
