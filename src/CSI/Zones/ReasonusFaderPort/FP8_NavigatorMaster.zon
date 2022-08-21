@@ -16,16 +16,10 @@ Zone NavigatorMaster
     Next                  TrackBank  8
     Shift+Prev            NoAction
     Shift+Next            NoAction
-    ScrollLeft            NoAction
-    ScrollRight           NoAction
-    Shift+ScrollLeft      NoAction
-    Shift+ScrollRight     NoAction
 
-    RotaryBigPush         NoAction
-    Shift+RotaryBigPush   NoAction
+    RotaryBigPush         Reaper _XENAKIOS_SETMASTVOLTO0  // Xenakios/SWS: Set master volume to 0 dB
+    Shift+RotaryBigPush   Reaper _REASONUS_MASTER_PAN_CENTER  // Set master pan to center position
     Option+RotaryBigPush  NoAction
     RotaryBig             TrackVolume
-  
-    Master                Reaper _REASONUS_ALWAYS_ON    // Dummy Action
-    Shift+Master          Reaper 40326    // View: Show region/marker manager window
+    Shift+RotaryBig       TrackPan
 ZoneEnd

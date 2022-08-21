@@ -8,8 +8,8 @@
 //------------------------------------------------------------------------------
 
 Zone Home
-  LeftShft   Shift
-  RightShft  Option
+  LeftShft Shift
+  RightShft Option
 
   IncludedZones
     "MixManagement"

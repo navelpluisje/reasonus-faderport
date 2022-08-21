@@ -53,7 +53,7 @@
     </div>
 
     <section>
-      <h1><span class="no-count">Table of Contents</span></h1>
+      <h1 id="toc"><span class="no-count">Table of Contents</span></h1>
       <section class="toc">
         <section class="toc-content">
           <a href="#welcome" class="h1 toc">Welcome to ReaSonus</a>
@@ -81,6 +81,7 @@
           <a href="#fp8-sends-mode" class="h3 toc">Sends Mode</a>
           <a href="#fp8-receives-mode" class="h3 toc">Receives Mode</a>
           <a href="#fp8-mix-management" class="h2 toc">Mix Management</a>
+          <a href="#fp8-other-controls" class="h2 toc">Other Controls</a>
 
           <a href="#faderport-v2" class="h1 toc">FaderPort V2 in REAPER</a>
           <a href="#fpv2-track" class="h2 toc">Track</a>
@@ -89,16 +90,20 @@
           <a href="#fpv2-function-keys" class="h3 toc">F1-F4 Functions</a>
           <a href="#fpv2-automation-controls" class="h2 toc">Automation Controls</a>
 
-          <!-- <a href="#reasonus-action" class="h1 toc">ReaSonus FaderPort Control</a>
+          <a href="#reasonus-action" class="h1 toc">ReaSonus FaderPort Control</a>
           <a href="#plugin-start" class="h2 toc">Open ReaSonus FaderPort Control</a>
-          <a href="#plugin-edit-function" class="h2 toc">Edit Function keys</a>
+          <a href="#plugin-edit-function" class="h2 toc">Edit Function Button</a>
           <a href="#plugin-action-info" class="h3 toc">Action Info</a>
           <a href="#plugin-action-edit" class="h3 toc">Edit Action</a>
- -->
+          <a href="#plugin-mix-management" class="h2 toc">Mix Management</a>
+          <a href="#mm-the-screen" class="h3 toc">The Filters</a>
+          <a href="#mm-creating-filter" class="h3 toc">Creating / Editing filters</a>
+
           <a href="#additional-help" class="h1 toc">Additional Help</a>
           <a href="#resource-path-action" class="h2 toc">Create REAPER resource path Action</a>
+          <a href="#control-to-menu" class="h2 toc">Add ReaSonus FaderPort Control to the toolbar</a>
+          <a href="#swap-shift" class="h2 toc">Swapping Shift Buttons</a>
           <a href="#known-issues" class="h2 toc">Known Issues</a>
-
         </section>
       </section>
     </section>
@@ -160,8 +165,8 @@
       </ul>
       <blockquote>
         <span class="strong">WARNING:</span> The current release is still a work in progress. Please report isses by <a
-          href="https://github.com/navelpluisje/reasonus-install/issues">the Github Issues</a> or the <a
-          href="https://forum.cockos.com/showthread.php?p=2562780#post2562780">Reaper Forum</a>
+          href="https://github.com/navelpluisje/reasonus-install/issues" target="_blank">the Github Issues</a> or the <a
+          href="https://forum.cockos.com/showthread.php?p=2562780#post2562780" target="_blank">Reaper Forum</a>
       </blockquote>
       <blockquote class="reaperblog">
         Checkout the video about SWS/S&M EXTENSION on <a target="_blank"
@@ -256,7 +261,7 @@
         </ol>
 
         <hr />
-        <p>While holding the <span class="strong">[Left Shift]</span> key, the display changes it's layout. The next
+        <p>While holding the <span class="strong">[Left Shift]</span> button, the display changes it's layout. The next
           info is displayed:</p>
         <ul>
           <li>
@@ -346,14 +351,6 @@
         </li>
       </ol>
     </section>
-    <section class="doc-row">
-      <img src="assets/link.png" alt="" class="tiny">
-      <div>
-        <p>Press the <span class="strong">Link</span> button to follow the play cursor. Press again to un-follow.
-        </p>
-      </div>
-    </section>
-
 
 
     <!-- SESSION NAVIGATOR -->
@@ -364,7 +361,7 @@
       <blockquote>
         <span class="strong">Power User Tip:</span> Press <span class="strong">[Left Shift]</span> with any of these
         buttons to access the F1-F8 Functions.
-        These functions are user definable. See <a href="#fp8-function-keys">Function Keys Section</a> for more
+        These functions are user definable. See <a href="#fp8-function-keys">Function Buttons Section</a> for more
         information.
       </blockquote>
       <p>
@@ -406,6 +403,15 @@
         </li>
         <li>
           <span class="strong">Encoder:</span> Set the master volume
+        </li>
+        <li>
+          <span class="strong">Encoder push:</span> Set the master volume to 0dB
+        </li>
+        <li>
+          <span class="strong">[Left Shift] + Encoder:</span> Set the master pan
+        </li>
+        <li>
+          <span class="strong">[Left Shift] + Encoder push:</span> Set the master pan to center
         </li>
       </ul>
     </section>
@@ -595,8 +601,9 @@
         <p>Using <span class="strong">[Left Shift]</span> plus any Session Navigator button will access alternate
           functions for your FaderPort. By default, these are assigned as follows:</p>
         <blockquote>
-          <span class="strong">Power User Tip:</span> The actions for the Functions keys can be managed with the
-          ReaSonus application
+          <span class="strong">Pro User Tip:</span> With the ReaSonus FaderPort Control you can edit the actions of the
+          Function buttons. Press the <span class="key">Macro</span> button to open it. More info about <a
+            href="#reasonus-action"><span class="strong">ReaSonus FaderPort Control</span></a>
         </blockquote>
 
         <p>
@@ -610,11 +617,10 @@
           <li><span class="strong">F5:</span> Open or close the Regions and Markers window</li>
           <li><span class="strong">F6:</span> Open or close the Project Media browser</li>
           <li><span class="strong">F7:</span> Open or close the Big Clock</li>
-          <li><span class="strong">F8:</span> Toggle all floating windows</li>
+          <li><span class="strong">F8:</span> Open or close the track Manager</li>
         </ul>
       </div>
     </section>
-
 
     <h3 id="fp8-screen-sets"><span>Screensets</span></h3>
     <section class="doc-row">
@@ -725,7 +731,7 @@
       <img src="assets/edit-plugins.png" alt="" class="large">
       <p>Your FaderPort provides two modes to view and control your Track effects: individually and
         globally. Pressing the button multiple times will toggle between the two modes. Both ways have a
-        different color for the Select button to make it more clear which way is selected.</p>
+        different colour for the Select button to make it more clear which way is selected.</p>
     </section>
     <section class="doc-row">
       <img src="assets/select-plugin.png" alt="" class="large">
@@ -733,7 +739,7 @@
         <h4>Individual mode</h4>
         <p>Press the Edit Plugins button once to show the effects menu for the currently selected Track. In this mode
           the
-          color of the Select buttons is white.</p>
+          colour of the Select buttons is white.</p>
         <p>Press the Select button under the scribble strip displaying the name of the plug-in you’d like to edit.
         </p>
       </div>
@@ -742,7 +748,7 @@
       <div>
         <h4>Globally mode</h4>
         <p>Press the Edit Plugins button again to control the first effects for all focused Tracks. In this mode the
-          color of the Select buttons is green.
+          colour of the Select buttons is green.
         </p>
         <p>
           While turning the pan knob now, you can cycle through all available effects until the
@@ -792,7 +798,7 @@
       <div>
         <p>Your FaderPort provides two modes to view and control your bus and FX sends: individually and
           globally. Pressing the button multiple times will toggle between the two modes. Both ways have a
-          different color for the Select button to make it more clear which way is selected.
+          different colour for the Select button to make it more clear which way is selected.
         </p>
         <p>In both modes the next controls will have the next functions:</p>
         <ul>
@@ -814,14 +820,14 @@
       <div>
         <h4>Individual mode</h4>
         <p>Press the Sends button once to control the send levels for all the sends on the currently selected
-          Track. In this mode the color of the Select buttons is white.</p>
+          Track. In this mode the colour of the Select buttons is white.</p>
       </div>
     </section>
     <section class="doc-row">
       <div>
         <h4>Globally mode</h4>
         <p>Press the Sends button again to control the first insert bus send levels for all focused Tracks. In
-          this mode the color of the Select buttons is yellow.
+          this mode the colour of the Select buttons is yellow.
         </p>
         <p>
           <img src="assets/sends-hiu-style.png" alt="">
@@ -841,7 +847,7 @@
       <div>
         <p>Your FaderPort provides two modes to view and control your receives: individually and
           globally. Pressing the button multiple times will toggle between the two modes. Both ways have a
-          different color for the Select button to make it more clear which way is selected.
+          different colour for the Select button to make it more clear which way is selected.
         </p>
         <p>In both modes the next controls will have the next functions:</p>
         <ul>
@@ -864,14 +870,14 @@
         <h4>Individual mode</h4>
         <p>Press the Receives (Pan) button once to control the send levels for all the sends on the currently
           selected
-          Track. In this mode the color of the Select buttons is white.</p>
+          Track. In this mode the colour of the Select buttons is white.</p>
       </div>
     </section>
     <section class="doc-row">
       <div>
         <h4>Globally mode</h4>
         <p>Press the Receives (Pan) button again to control the first insert bus send levels for all focused
-          Tracks. In this mode the color of the Select buttons is blue.
+          Tracks. In this mode the colour of the Select buttons is blue.
         </p>
         <p>
           <img src="assets/sends-hiu-style.png" alt="">
@@ -936,12 +942,37 @@
           </li>
           <li><span class="strong">Brass:</span> Filters on <code>Trumpet</code> and <code>Saxophone</code></li>
         </ul>
+
         <blockquote>
-          <span class="strong">Contribution Tip:</span> If you have tips or ideas to improve these filters you can drop
-          those at <a href="https://github.com/navelpluisje/reasonus-install/issues">the Github repository</a> or the <a
-            href="https://forum.cockos.com/showthread.php?p=2562780#post2562780">Reaper Forum</a>
+          <span class="strong">Pro User Tip:</span> With the ReaSonus FaderPort Control you can edit the filters of the
+          Audio filters. Press the <span class="key">Macro</span> button to open it. More info about <a
+            href="#reasonus-action"><span class="strong">ReaSonus FaderPort Control</span></a>
         </blockquote>
       </div>
+    </section>
+
+
+    <h2 id="fp8-other-controls"><span>Other Controls</span></h2>
+    <h3 id="fp8-other-macro"><span>Macro / ReaSonus FaderPort Control</span></h3>
+    <section class="doc-row">
+      <img src="assets/macro.png" alt="" class="tiny">
+      <p>
+        This button opens the <span class="strong">ReaSonus FaderPort Control</span>, which helps you editing the
+        actions of the Function buttons and modify the track filters for mix management. You can read more on it <a
+          href="#reasonus-action">here</a>.
+      </p>
+    </section>
+    <h3 id="fp8-other-link"><span>Link</span></h3>
+    <section class="doc-row">
+      <img src="assets/link.png" alt="" class="tiny">
+      <ul>
+        <li>
+          <span class="strong">Link:</span> Toggle link the last fader (8 or 16) to the last touched plugin parameter
+        </li>
+        <li>
+          <span class="strong">[Left Shift] + Link:</span> Toggle following the play cursor.
+        </li>
+      </ul>
     </section>
 
 
@@ -1028,7 +1059,7 @@
       <blockquote>
         <span class="strong">Power User Tip:</span> Press <span class="strong">[Shift]</span> with any of the bottom 4
         buttons to access the F1-F4 Functions.
-        These functions are user definable. See <a href="#fpv2-function-keys">Function Keys Section</a> for more
+        These functions are user definable. See <a href="#fpv2-function-keys">Function Buttons Section</a> for more
         information.
       </blockquote>
       <p>
@@ -1042,7 +1073,12 @@
       <img src="assets/navigation.png" class="large" />
       <div>
         <h4>Link</h4>
-        <p>Is not implemented yet. This will be in the next release</p>
+        <p>
+          Press the Link button Toggle link the fader to the last touched plugin parameter.
+        </p>
+        <p>
+          The previous, next and encoder keep the last function.
+        </p>
       </div>
     </section>
 
@@ -1062,7 +1098,13 @@
           <span class="strong">Prev:</span> No action
         </li>
         <li>
-          <span class="strong">Next:</span> No action
+          <span class="strong">Encoder push:</span> Resets the panning to the center position.
+        </li>
+        <li>
+          <span class="strong">[Shift] + Prev:</span> Undo last action
+        </li>
+        <li>
+          <span class="strong">[Shift] + Next:</span> Redo the last undone action
         </li>
       </ul>
     </section>
@@ -1085,6 +1127,12 @@
           <li>
             <span class="strong">Next:</span> Go to the next Track
           </li>
+          <li>
+            <span class="strong">[Shift] + Prev:</span> Undo last action
+          </li>
+          <li>
+            <span class="strong">[Shift] + Next:</span> Redo the last undone action
+          </li>
         </ul>
       </div>
     </section>
@@ -1103,6 +1151,12 @@
         </li>
         <li>
           <span class="strong">Next:</span> Set the metronome speed to four times the original speed
+        </li>
+        <li>
+          <span class="strong">[Shift] + Prev:</span> Undo last action
+        </li>
+        <li>
+          <span class="strong">[Shift] + Next:</span> Redo the last undone action
         </li>
         <li>
           <span class="strong">Encoder push:</span> Set the metronome speed to the original speed
@@ -1133,6 +1187,12 @@
           </li>
           <li>
             <span class="strong">Next:</span> Go to the next Track
+          </li>
+          <li>
+            <span class="strong">[Shift] + Prev:</span> Undo last action
+          </li>
+          <li>
+            <span class="strong">[Shift] + Next:</span> Redo the last undone action
           </li>
         </ul>
       </div>
@@ -1173,29 +1233,25 @@
     </section>
 
 
-    <!-- SCROLL NAVIGATOR -->
+    <!-- CHANNEL NAVIGATOR -->
     <section class="doc-row">
-      <h4>Scroll Navigator</h4>
-      <ul>
-        <li>
-          <span class="strong">Prev:</span> Select the previous Track
-        </li>
-        <li>
-          <span class="strong">Next:</span> Select the next Track
-        </li>
-        <li>
-          <span class="strong">Encoder:</span> Scroll the view vertically
-        </li>
-        <li>
-          <span class="strong">[Shift] + Encoder:</span> Scroll the view horizontally
-        </li>
-        <li>
-          <span class="strong">Encoder push:</span> Scroll the view vertically to the selected track
-        </li>
-        <li>
-          <span class="strong">[Shift] + Encoder push:</span> Scroll the view horizontally to the play cursor
-        </li>
-      </ul>
+      <div>
+        <h4>Track Navigator (Channel)</h4>
+        <ul>
+          <li>
+            <span class="strong">Encoder:</span> Controls individual Track scrolling
+          </li>
+          <li>
+            <span class="strong">[Shift] + Encoder:</span> Adds the tracks to the selection
+          </li>
+          <li>
+            <span class="strong">Prev:</span> Go to the previous Track
+          </li>
+          <li>
+            <span class="strong">Next:</span> Go to the next Track
+          </li>
+        </ul>
+      </div>
     </section>
 
 
@@ -1227,6 +1283,35 @@
           <span class="strong">[Shift] + Encoder push:</span> Delete the marker near the cursor
         </li>
       </ul>
+    </section>
+
+    <!-- LOCK -->
+    <section class="doc-row">
+      <div>
+        <h4>Lock ([Shift] + Link)</h4>
+        <p>
+          Press the [Shift] + Link button to follow the play cursor. Press again to un-follow.<br>
+        </p>
+        <p>
+          The previous, next and encoder keep the last function.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- FLIP -->
+    <section class="doc-row">
+      <div>
+        <h4>Flip ([Shift] + Pan)</h4>
+        <p>
+          This button opens the <span class="strong">ReaSonus FaderPort Control</span>, which helps you editing the
+          actions of the Function buttons and modify the track filters for mix management. You can read more on it <a
+            href="#reasonus-action">here</a>.
+        </p>
+        <p>
+          The previous, next and encoder keep the last function.
+        </p>
+      </div>
     </section>
 
 
@@ -1265,8 +1350,9 @@
         <p>Using <span class="strong">[Shift]</span> plus any Session Navigator button will access alternate
           functions for your FaderPort. By default, these are assigned as follows:</p>
         <blockquote>
-          <span class="strong">Power User Tip:</span> The actions for the Functions keys can be managed with the
-          ReaSonus application
+          <span class="strong">Power User Tip:</span> The actions for the Functions buttons can be managed with <span
+            class="strong">ReaSonus FaderPort Control</span>. More about this can be found <a
+            href="#reasonus-action">here</a>
         </blockquote>
 
         <p>
@@ -1275,8 +1361,8 @@
         <ul>
           <li><span class="strong">F1:</span> Open or close the Mixer</li>
           <li><span class="strong">F2:</span> Open or close the Media Explorer</li>
-          <li><span class="strong">F3:</span> Open or close the Effects Browser</li>
-          <li><span class="strong">F4:</span> Toggle all floating windows</li>
+          <li><span class="strong">F3:</span> Open or close the Matrix window</li>
+          <li><span class="strong">F4:</span> Open or close the FX browser window</li>
         </ul>
       </div>
     </section>
@@ -1315,7 +1401,7 @@
     </section>
 
 
-    <!-- <h1 id="reasonus-action"><span>ReaSonus FaderPort Control</span></h1>
+    <h1 id="reasonus-action"><span>ReaSonus FaderPort Control</span></h1>
 
     <h2 id="plugin-start"><span>Open ReaSonus FaderPort Control</span></h2>
     <section class="doc-row">
@@ -1329,22 +1415,28 @@
         <p>
           <img src="assets/plugin-home.png" alt="">
         </p>
+        <blockquote><span class="strong">Power User Tip:</span> You can make a toolbar item for ReaSonus FaderPort
+          Control to make it easier to access. Check chapter <a href="#control-to-menu">Add ReaSonus FaderPort Control
+            to the toolbar</a> for the howto.</blockquote>
       </div>
     </section>
 
-    <h2 id="plugin-edit-function"><span>Edit Function keys</span></h2>
+    <h2 id="plugin-edit-function"><span>Edit Function Buttons</span></h2>
     <section class="doc-row">
       <div>
-        <p>Click <span class="key">Edit Function keys</span> from the navigation on the left</p>
+        <p>Click <span class="key">Edit Function buttons</span> from the navigation on the left</p>
         <p>
           <img src="assets/plugin-functions.png" alt="">
         </p>
-        <p>This screen shows the action id's attached to the function keys.</p>
+        <p>This screen shows the action id's attached to the function buttons. For the FaderPort v2 4 Function button
+          actions
+          are visible, and 8 for the other FaderPort versions</p>
       </div>
     </section>
 
     <h3 id="plugin-action-info"><span>Action Info</span></h3>
     <section class="doc-row">
+      <img src="assets/editFaderportInfoButton.png" class="large" alt="">
       <div>
         <p>If you want to see more info about the action you can hover the action with your mouse mouse, a tooltip
           pops up with the description.</p>
@@ -1358,16 +1450,225 @@
 
     <h3 id="plugin-action-edit"><span>Edit Action</span></h3>
     <section class="doc-row">
+      <img src="assets/editFaderPortOpenActions.png" class="large" alt="">
       <ul>
         <li>To edit an action you can click the magnifier icon left of the action id. This opens the actions list.</li>
-        <li>Search for the action you want to attach to the Function Key</li>
+        <li>Search for the action you want to attach to the Function Button</li>
         <li>Click the <span class="key">Select/Close</span> button or double-click the action to select it</li>
-        <li>The action id should now be displayed</li>
+        <li>The action id should now be displayed and the action id is saved</li>
         <li>Repeat this for the actions you want to</li>
-        <li>Click <span class="key">Save</span> to save your changes</li>
-        </div>
+      </ul>
     </section>
- -->
+
+    <h2 id="plugin-mix-management"><span>Mix Management</span></h2>
+    <section class="doc-row">
+      <img src="assets/mix-management.png" class="small" alt="">
+      <div>
+        <p>Mix Management is only available for the FaderPort 8 &amp; 16 and helps you create your own filters for the
+          Mix Management part of the controller. When pressing the <span class="key">Audio</span> button the displays
+          and select buttons can be used to select a filter. By default the filters are:<br>
+          <span class="strong">Drum, Bass, Guitar, Keys, Vocals, Piano, Strings, Brass</span>.<br>
+          On the FaderPort 16 the next 8 are not pre-configured.
+        </p>
+        <p>
+          Mix Management helps you to create your own filters. It will let you give it a name to display and set a
+          colour for the <span class="key">Select</span> button. Mix Management can be entered by clicking the <span
+            class="key">Mix Management</span> button in the menu.
+        </p>
+      </div>
+    </section>
+
+    <h3 id="mm-the-screen"><span>The Filters</span></h3>
+    <section class="doc-row">
+      <h4>The Screen</h4>
+      <p>After opening and selecting Mix Management from the menu, the next screen appears: </p>
+      <p><img src="assets/mm-screen.png" /></p>
+      <p>The top row is the number of the <span class="key">select</span> button to use. In this case it's for the
+        FaderPort 8. When using a
+        FaderPort 16, 16 buttons will appear at the top of the screen. Clicking a number will open the settings for that
+        filter.</p>
+    </section>
+    <section class="doc-row">
+      <img src="assets/mm-text-inputs.png" />
+      <div>
+        <h4>Filter Settings</h4>
+        <ul>
+          <li><span class="strong">Display Text:</span> This is the text appearing in the display</li>
+          <li><span class="strong">Filter Text:</span> The words to search for. The search is case insensitive and parts
+            of words will also do the trick. So <code>Perc</code> and <code>percussion</code> will both match
+            <code>Percussion</code>.<br>Clicking the <span class="key">Add Word</span> button will add an extra field
+            for
+            a word to filter on. Leaving a single field empty will remove it after saving.<br>
+            Leaving this / these field(s) empty, so no <span class="strong">Filter Text</span> will select all tracks.
+          </li>
+        </ul>
+      </div>
+    </section>
+    <section class="doc-row">
+      <img src="assets/mm-settings.png" />
+      <div>
+        <ul>
+          <li><span class="strong">Show track siblings:</span> whether or not to select also the direct siblings of a
+            Track matching the <span class="strong">Filter Text</span>.</li>
+          <li><span class="strong">Show track parents:</span> whether or not to select also the parent tracks of a Track
+            matching the <span class="strong">Filter Text</span>.</li>
+          <li><span class="strong">Show track children:</span> whether or not to select also the child tracks of a Track
+            matching the <span class="strong">Filter Text</span>.</li>
+          <li><span class="strong">Show only top level tracks:</span> whether or not the <span class="strong">Filter
+              Text</span> only matches the top level tracks.</li>
+          <li><span class="strong">Match multiple:</span> whether or not to stop after the first track matching the
+            <span class="strong">Filter Text</span>.
+          </li>
+          <li><span class="strong">Colour:</span> create the colour for the <span class="key">Select</span> button. The
+            colro as is in the screen will not always reflect the reality. Play around with it to get your colour</li>
+        </ul>
+      </div>
+    </section>
+    <section class="doc-row">
+      <img src="assets/mm-buttons.png" />
+      <div>
+
+        <h4>The Buttons</h4>
+        <ul>
+          <li><span class="strong">Reload:</span> Undo all your unsaved changes</li>
+          <li><span class="strong">Save filter:</span> Saves your filter to the files and resets the controller</li>
+        </ul>
+      </div>
+    </section>
+
+    <h3 id="mm-creating-filter"><span>Creating / Editing filters</span></h3>
+    <section class="doc-row">
+      <div>
+        <p>Here are 6 examples of different filter configurations. Click the filters to see the settings and which
+          tracks will be visible.</p>
+        <svg viewBox="0 0 420 206" fill="none" xmlns="http://www.w3.org/2000/svg" id="tracklist" class="filter-1">
+          <g class="track track-1">
+            <rect x="0.5" y="0.5" width="59" height="205" rx="3.5" stroke="#333333" class="outline" />
+            <rect x="28" y="47" width="4" height="121" rx="2" fill="#333333" />
+            <rect x="34.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="8.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="34.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="8.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="20.5" y="89.5" width="19" height="29" rx="2.5" fill="white" stroke="#333333" />
+            <path
+              d="M17.8269 186H14.7331V177.273H17.8525C18.7303 177.273 19.486 177.447 20.1195 177.797C20.753 178.143 21.2402 178.642 21.5811 179.293C21.9249 179.943 22.0968 180.722 22.0968 181.628C22.0968 182.537 21.9249 183.318 21.5811 183.972C21.2402 184.625 20.7502 185.126 20.111 185.476C19.4746 185.825 18.7132 186 17.8269 186ZM16.5783 184.419H17.7502C18.2956 184.419 18.7544 184.322 19.1266 184.129C19.5016 183.933 19.7828 183.631 19.9703 183.222C20.1607 182.81 20.2559 182.278 20.2559 181.628C20.2559 180.983 20.1607 180.456 19.9703 180.047C19.7828 179.638 19.503 179.337 19.1309 179.143C18.7587 178.95 18.2999 178.854 17.7544 178.854H16.5783V184.419ZM23.4295 186V179.455H25.1895V180.597H25.2576C25.377 180.19 25.5772 179.884 25.8585 179.676C26.1397 179.466 26.4636 179.361 26.8301 179.361C26.921 179.361 27.019 179.366 27.1241 179.378C27.2292 179.389 27.3216 179.405 27.4011 179.425V181.036C27.3159 181.01 27.198 180.987 27.0474 180.967C26.8968 180.947 26.7591 180.938 26.6341 180.938C26.367 180.938 26.1284 180.996 25.9181 181.112C25.7108 181.226 25.546 181.385 25.4238 181.589C25.3045 181.794 25.2449 182.03 25.2449 182.297V186H23.4295ZM32.5371 183.213V179.455H34.3525V186H32.6096V184.811H32.5414C32.3936 185.195 32.1479 185.503 31.8042 185.736C31.4632 185.969 31.0471 186.085 30.5556 186.085C30.1181 186.085 29.7331 185.986 29.4007 185.787C29.0684 185.588 28.8084 185.305 28.6209 184.939C28.4363 184.572 28.3425 184.134 28.3397 183.622V179.455H30.155V183.298C30.1578 183.685 30.2615 183.99 30.4661 184.214C30.6706 184.439 30.9448 184.551 31.2885 184.551C31.5073 184.551 31.7118 184.501 31.9022 184.402C32.0925 184.3 32.2459 184.149 32.3624 183.95C32.4817 183.751 32.54 183.506 32.5371 183.213ZM35.8045 186V179.455H37.5346V180.609H37.6113C37.7477 180.226 37.975 179.923 38.2931 179.702C38.6113 179.48 38.992 179.369 39.4352 179.369C39.8841 179.369 40.2662 179.482 40.5815 179.706C40.8968 179.928 41.1071 180.229 41.2122 180.609H41.2804C41.4139 180.234 41.6554 179.935 42.0048 179.71C42.3571 179.483 42.7733 179.369 43.2534 179.369C43.8642 179.369 44.3599 179.564 44.7406 179.953C45.1241 180.339 45.3159 180.888 45.3159 181.598V186H43.5048V181.956C43.5048 181.592 43.4082 181.32 43.215 181.138C43.0218 180.956 42.7804 180.865 42.4906 180.865C42.161 180.865 41.9039 180.97 41.7193 181.18C41.5346 181.388 41.4423 181.662 41.4423 182.003V186H39.6824V181.918C39.6824 181.597 39.59 181.341 39.4054 181.151C39.2235 180.96 38.9835 180.865 38.6852 180.865C38.4835 180.865 38.3017 180.916 38.1397 181.018C37.9806 181.118 37.8542 181.259 37.7605 181.44C37.6667 181.619 37.6199 181.83 37.6199 182.071V186H35.8045Z"
+              fill="#333333" />
+            <rect x="0.5" y="173.5" width="59" height="17" stroke="#333333" />
+          </g>
+          <g class="track track-2">
+            <rect x="60.5" y="0.5" width="59" height="190" rx="3.5" stroke="#333333" class="outline" />
+            <rect x="88" y="47" width="4" height="106" rx="2" fill="#333333" />
+            <rect x="94.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="68.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="94.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="68.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="80.5" y="89.5" width="19" height="29" rx="2.5" fill="white" stroke="#333333" />
+            <path
+              d="M77.7683 171V162.273H79.6135V166.121H79.7285L82.8691 162.273H85.0808L81.8422 166.18L85.1191 171H82.9118L80.5211 167.412L79.6135 168.52V171H77.7683ZM86.4178 171V164.455H88.2331V171H86.4178ZM87.3297 163.611C87.0598 163.611 86.8283 163.521 86.6351 163.342C86.4448 163.161 86.3496 162.943 86.3496 162.69C86.3496 162.44 86.4448 162.226 86.6351 162.047C86.8283 161.865 87.0598 161.774 87.3297 161.774C87.5996 161.774 87.8297 161.865 88.0201 162.047C88.2132 162.226 88.3098 162.44 88.3098 162.69C88.3098 162.943 88.2132 163.161 88.0201 163.342C87.8297 163.521 87.5996 163.611 87.3297 163.611ZM92.6447 171.128C91.9743 171.128 91.3975 170.986 90.9146 170.702C90.4345 170.415 90.0652 170.017 89.8066 169.509C89.551 169 89.4231 168.415 89.4231 167.753C89.4231 167.082 89.5524 166.494 89.8109 165.989C90.0723 165.48 90.443 165.084 90.9231 164.8C91.4032 164.513 91.9743 164.369 92.6362 164.369C93.2072 164.369 93.7072 164.473 94.1362 164.68C94.5652 164.888 94.9047 165.179 95.1547 165.554C95.4047 165.929 95.5424 166.369 95.568 166.875H93.8549C93.8066 166.548 93.6788 166.286 93.4714 166.087C93.2669 165.885 92.9984 165.784 92.666 165.784C92.3848 165.784 92.139 165.861 91.9288 166.014C91.7214 166.165 91.5595 166.385 91.443 166.675C91.3265 166.964 91.2683 167.315 91.2683 167.727C91.2683 168.145 91.3251 168.5 91.4387 168.793C91.5552 169.085 91.7186 169.308 91.9288 169.462C92.139 169.615 92.3848 169.692 92.666 169.692C92.8734 169.692 93.0595 169.649 93.2243 169.564C93.3919 169.479 93.5297 169.355 93.6376 169.193C93.7484 169.028 93.8208 168.831 93.8549 168.601H95.568C95.5396 169.101 95.4032 169.541 95.1589 169.922C94.9174 170.3 94.5836 170.595 94.1575 170.808C93.7314 171.021 93.2271 171.128 92.6447 171.128ZM98.3752 169.116L98.3794 166.939H98.6436L100.74 164.455H102.824L100.007 167.744H99.5769L98.3752 169.116ZM96.7303 171V162.273H98.5456V171H96.7303ZM100.821 171L98.8951 168.149L100.105 166.866L102.948 171H100.821Z"
+              fill="#333333" />
+            <rect x="60.5" y="158.5" width="59" height="17" stroke="#333333" />
+          </g>
+          <g class="track track-3">
+            <rect x="120.5" y="0.5" width="59" height="190" rx="3.5" stroke="#333333" class="outline" />
+            <rect x="148" y="47" width="4" height="106" rx="2" fill="#333333" />
+            <rect x="154.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="128.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="154.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="128.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="140.5" y="89.5" width="19" height="29" rx="2.5" fill="white" stroke="#333333" />
+            <path
+              d="M138.46 164.783C138.426 164.439 138.279 164.172 138.021 163.982C137.762 163.791 137.411 163.696 136.968 163.696C136.667 163.696 136.413 163.739 136.205 163.824C135.998 163.906 135.839 164.021 135.728 164.169C135.62 164.317 135.566 164.484 135.566 164.672C135.561 164.828 135.593 164.964 135.664 165.081C135.738 165.197 135.839 165.298 135.967 165.384C136.095 165.466 136.242 165.538 136.41 165.601C136.578 165.661 136.757 165.712 136.947 165.754L137.731 165.942C138.112 166.027 138.461 166.141 138.779 166.283C139.097 166.425 139.373 166.599 139.606 166.807C139.839 167.014 140.019 167.259 140.147 167.54C140.278 167.821 140.345 168.143 140.347 168.507C140.345 169.041 140.208 169.504 139.938 169.896C139.671 170.286 139.285 170.588 138.779 170.804C138.276 171.017 137.67 171.124 136.96 171.124C136.255 171.124 135.642 171.016 135.119 170.8C134.599 170.584 134.193 170.264 133.9 169.841C133.61 169.415 133.458 168.888 133.444 168.26H135.23C135.249 168.553 135.333 168.797 135.481 168.993C135.632 169.186 135.832 169.332 136.082 169.432C136.335 169.528 136.62 169.577 136.938 169.577C137.251 169.577 137.522 169.531 137.752 169.44C137.985 169.349 138.166 169.223 138.294 169.061C138.421 168.899 138.485 168.713 138.485 168.503C138.485 168.307 138.427 168.142 138.311 168.009C138.197 167.875 138.029 167.761 137.808 167.668C137.589 167.574 137.32 167.489 137.002 167.412L136.052 167.173C135.316 166.994 134.735 166.714 134.309 166.334C133.883 165.953 133.671 165.44 133.674 164.795C133.671 164.267 133.812 163.805 134.096 163.411C134.383 163.016 134.776 162.707 135.276 162.486C135.776 162.264 136.345 162.153 136.981 162.153C137.629 162.153 138.194 162.264 138.677 162.486C139.163 162.707 139.541 163.016 139.811 163.411C140.08 163.805 140.22 164.263 140.228 164.783H138.46ZM143.37 167.216V171H141.555V164.455H143.285V165.609H143.361C143.506 165.229 143.749 164.928 144.09 164.706C144.431 164.482 144.844 164.369 145.33 164.369C145.785 164.369 146.181 164.469 146.519 164.668C146.857 164.866 147.12 165.151 147.307 165.52C147.495 165.886 147.589 166.324 147.589 166.832V171H145.773V167.156C145.776 166.756 145.674 166.443 145.466 166.219C145.259 165.991 144.974 165.878 144.61 165.878C144.366 165.878 144.15 165.93 143.962 166.036C143.778 166.141 143.633 166.294 143.528 166.496C143.425 166.695 143.373 166.935 143.37 167.216ZM150.886 171.124C150.468 171.124 150.096 171.051 149.769 170.906C149.443 170.759 149.184 170.541 148.994 170.254C148.806 169.964 148.713 169.604 148.713 169.172C148.713 168.808 148.779 168.503 148.913 168.256C149.046 168.009 149.228 167.81 149.458 167.659C149.688 167.509 149.95 167.395 150.242 167.318C150.538 167.241 150.847 167.188 151.171 167.156C151.552 167.116 151.859 167.08 152.092 167.045C152.325 167.009 152.494 166.955 152.599 166.884C152.704 166.812 152.757 166.707 152.757 166.568V166.543C152.757 166.273 152.671 166.064 152.501 165.916C152.333 165.768 152.095 165.695 151.785 165.695C151.458 165.695 151.198 165.767 151.005 165.912C150.812 166.054 150.684 166.233 150.622 166.449L148.943 166.312C149.028 165.915 149.195 165.571 149.445 165.281C149.695 164.989 150.018 164.764 150.413 164.608C150.811 164.449 151.271 164.369 151.794 164.369C152.157 164.369 152.505 164.412 152.838 164.497C153.173 164.582 153.47 164.714 153.728 164.893C153.99 165.072 154.195 165.303 154.346 165.584C154.497 165.862 154.572 166.196 154.572 166.585V171H152.85V170.092H152.799C152.694 170.297 152.553 170.477 152.377 170.634C152.201 170.787 151.99 170.908 151.742 170.996C151.495 171.081 151.21 171.124 150.886 171.124ZM151.406 169.871C151.673 169.871 151.909 169.818 152.113 169.713C152.318 169.605 152.478 169.46 152.595 169.278C152.711 169.097 152.769 168.891 152.769 168.661V167.966C152.713 168.003 152.634 168.037 152.535 168.068C152.438 168.097 152.329 168.124 152.207 168.149C152.085 168.172 151.963 168.193 151.84 168.213C151.718 168.23 151.607 168.246 151.508 168.26C151.295 168.291 151.109 168.341 150.95 168.409C150.791 168.477 150.667 168.57 150.579 168.686C150.491 168.8 150.447 168.942 150.447 169.112C150.447 169.359 150.536 169.548 150.715 169.679C150.897 169.807 151.127 169.871 151.406 169.871ZM155.98 171V164.455H157.74V165.597H157.808C157.928 165.19 158.128 164.884 158.409 164.676C158.691 164.466 159.014 164.361 159.381 164.361C159.472 164.361 159.57 164.366 159.675 164.378C159.78 164.389 159.872 164.405 159.952 164.425V166.036C159.867 166.01 159.749 165.987 159.598 165.967C159.448 165.947 159.31 165.938 159.185 165.938C158.918 165.938 158.679 165.996 158.469 166.112C158.262 166.226 158.097 166.385 157.975 166.589C157.855 166.794 157.796 167.03 157.796 167.297V171H155.98ZM163.569 171.128C162.895 171.128 162.316 170.991 161.83 170.719C161.347 170.443 160.975 170.054 160.714 169.551C160.452 169.045 160.322 168.447 160.322 167.757C160.322 167.084 160.452 166.493 160.714 165.984C160.975 165.476 161.343 165.08 161.817 164.795C162.295 164.511 162.854 164.369 163.496 164.369C163.928 164.369 164.33 164.439 164.702 164.578C165.077 164.714 165.404 164.92 165.682 165.196C165.964 165.472 166.182 165.818 166.339 166.236C166.495 166.651 166.573 167.136 166.573 167.693V168.192H161.046V167.067H164.864C164.864 166.805 164.807 166.574 164.694 166.372C164.58 166.17 164.422 166.013 164.221 165.899C164.022 165.783 163.79 165.724 163.526 165.724C163.251 165.724 163.006 165.788 162.793 165.916C162.583 166.041 162.418 166.21 162.299 166.423C162.18 166.634 162.118 166.868 162.116 167.126V168.196C162.116 168.52 162.175 168.8 162.295 169.036C162.417 169.271 162.589 169.453 162.81 169.581C163.032 169.709 163.295 169.773 163.599 169.773C163.8 169.773 163.985 169.744 164.153 169.688C164.32 169.631 164.464 169.545 164.583 169.432C164.702 169.318 164.793 169.179 164.856 169.014L166.535 169.125C166.449 169.528 166.275 169.881 166.01 170.182C165.749 170.48 165.411 170.713 164.996 170.881C164.584 171.045 164.108 171.128 163.569 171.128Z"
+              fill="#333333" />
+            <rect x="120.5" y="158.5" width="59" height="17" stroke="#333333" />
+          </g>
+          <g class="track track-4">
+            <rect x="180.5" y="0.5" width="59" height="190" rx="3.5" stroke="#333333" class="outline" />
+            <rect x="208" y="47" width="4" height="106" rx="2" fill="#333333" />
+            <rect x="214.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="188.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="214.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="188.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="200.5" y="89.5" width="19" height="29" rx="2.5" fill="white" stroke="#333333" />
+            <path
+              d="M209.608 166.636C209.608 167.588 209.428 168.398 209.067 169.065C208.709 169.733 208.221 170.243 207.601 170.595C206.985 170.945 206.292 171.119 205.522 171.119C204.746 171.119 204.05 170.943 203.434 170.591C202.817 170.239 202.33 169.729 201.972 169.061C201.614 168.393 201.435 167.585 201.435 166.636C201.435 165.685 201.614 164.875 201.972 164.207C202.33 163.54 202.817 163.031 203.434 162.682C204.05 162.33 204.746 162.153 205.522 162.153C206.292 162.153 206.985 162.33 207.601 162.682C208.221 163.031 208.709 163.54 209.067 164.207C209.428 164.875 209.608 165.685 209.608 166.636ZM207.738 166.636C207.738 166.02 207.645 165.5 207.461 165.077C207.279 164.653 207.022 164.332 206.689 164.114C206.357 163.895 205.968 163.786 205.522 163.786C205.076 163.786 204.687 163.895 204.354 164.114C204.022 164.332 203.763 164.653 203.579 165.077C203.397 165.5 203.306 166.02 203.306 166.636C203.306 167.253 203.397 167.773 203.579 168.196C203.763 168.619 204.022 168.94 204.354 169.159C204.687 169.378 205.076 169.487 205.522 169.487C205.968 169.487 206.357 169.378 206.689 169.159C207.022 168.94 207.279 168.619 207.461 168.196C207.645 167.773 207.738 167.253 207.738 166.636ZM210.975 171V162.273H212.82V165.874H216.566V162.273H218.407V171H216.566V167.395H212.82V171H210.975Z"
+              fill="#333333" />
+            <rect x="180.5" y="158.5" width="59" height="17" stroke="#333333" />
+          </g>
+          <g class="track track-5">
+            <rect x="240.5" y="0.5" width="59" height="205" rx="3.5" stroke="#333333" class="outline" />
+            <rect x="268" y="47" width="4" height="121" rx="2" fill="#333333" />
+            <rect x="274.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="248.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="274.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="248.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="260.5" y="89.5" width="19" height="29" rx="2.5" fill="white" stroke="#333333" />
+            <path
+              d="M258.346 180.094C258.287 179.886 258.203 179.703 258.095 179.544C257.987 179.382 257.855 179.246 257.699 179.135C257.545 179.021 257.369 178.935 257.17 178.875C256.974 178.815 256.757 178.786 256.518 178.786C256.072 178.786 255.68 178.896 255.342 179.118C255.007 179.339 254.745 179.662 254.558 180.085C254.37 180.506 254.277 181.02 254.277 181.628C254.277 182.236 254.369 182.753 254.554 183.179C254.738 183.605 255 183.93 255.338 184.155C255.676 184.376 256.075 184.487 256.535 184.487C256.953 184.487 257.309 184.413 257.605 184.266C257.903 184.115 258.13 183.903 258.287 183.631C258.446 183.358 258.525 183.036 258.525 182.663L258.9 182.719H256.65V181.33H260.302V182.429C260.302 183.196 260.14 183.855 259.816 184.406C259.493 184.955 259.047 185.378 258.478 185.676C257.91 185.972 257.26 186.119 256.527 186.119C255.708 186.119 254.99 185.939 254.37 185.578C253.751 185.214 253.268 184.699 252.922 184.031C252.578 183.361 252.406 182.565 252.406 181.645C252.406 180.937 252.508 180.307 252.713 179.753C252.92 179.196 253.21 178.724 253.582 178.338C253.954 177.952 254.387 177.658 254.882 177.456C255.376 177.254 255.912 177.153 256.488 177.153C256.983 177.153 257.443 177.226 257.869 177.371C258.295 177.513 258.673 177.714 259.002 177.976C259.335 178.237 259.606 178.548 259.816 178.909C260.027 179.267 260.162 179.662 260.221 180.094H258.346ZM265.852 183.213V179.455H267.667V186H265.924V184.811H265.856C265.708 185.195 265.462 185.503 265.119 185.736C264.778 185.969 264.362 186.085 263.87 186.085C263.433 186.085 263.048 185.986 262.715 185.787C262.383 185.588 262.123 185.305 261.935 184.939C261.751 184.572 261.657 184.134 261.654 183.622V179.455H263.469V183.298C263.472 183.685 263.576 183.99 263.781 184.214C263.985 184.439 264.259 184.551 264.603 184.551C264.822 184.551 265.026 184.501 265.217 184.402C265.407 184.3 265.56 184.149 265.677 183.95C265.796 183.751 265.854 183.506 265.852 183.213ZM269.119 186V179.455H270.934V186H269.119ZM270.031 178.611C269.761 178.611 269.529 178.521 269.336 178.342C269.146 178.161 269.051 177.943 269.051 177.69C269.051 177.44 269.146 177.226 269.336 177.047C269.529 176.865 269.761 176.774 270.031 176.774C270.301 176.774 270.531 176.865 270.721 177.047C270.914 177.226 271.011 177.44 271.011 177.69C271.011 177.943 270.914 178.161 270.721 178.342C270.531 178.521 270.301 178.611 270.031 178.611ZM275.87 179.455V180.818H271.928V179.455H275.87ZM272.823 177.886H274.638V183.989C274.638 184.156 274.664 184.287 274.715 184.381C274.766 184.472 274.837 184.536 274.928 184.572C275.022 184.609 275.13 184.628 275.252 184.628C275.337 184.628 275.423 184.621 275.508 184.607C275.593 184.589 275.658 184.577 275.704 184.568L275.989 185.919C275.898 185.947 275.771 185.98 275.606 186.017C275.441 186.057 275.241 186.081 275.005 186.089C274.567 186.107 274.184 186.048 273.854 185.915C273.528 185.781 273.273 185.574 273.092 185.293C272.91 185.011 272.82 184.656 272.823 184.227V177.886ZM278.919 186.124C278.501 186.124 278.129 186.051 277.803 185.906C277.476 185.759 277.217 185.541 277.027 185.254C276.839 184.964 276.746 184.604 276.746 184.172C276.746 183.808 276.813 183.503 276.946 183.256C277.08 183.009 277.261 182.81 277.491 182.659C277.722 182.509 277.983 182.395 278.276 182.318C278.571 182.241 278.881 182.188 279.205 182.156C279.585 182.116 279.892 182.08 280.125 182.045C280.358 182.009 280.527 181.955 280.632 181.884C280.737 181.812 280.79 181.707 280.79 181.568V181.543C280.79 181.273 280.705 181.064 280.534 180.916C280.366 180.768 280.128 180.695 279.818 180.695C279.491 180.695 279.232 180.767 279.038 180.912C278.845 181.054 278.717 181.233 278.655 181.449L276.976 181.312C277.061 180.915 277.229 180.571 277.479 180.281C277.729 179.989 278.051 179.764 278.446 179.608C278.844 179.449 279.304 179.369 279.827 179.369C280.19 179.369 280.538 179.412 280.871 179.497C281.206 179.582 281.503 179.714 281.761 179.893C282.023 180.072 282.229 180.303 282.379 180.584C282.53 180.862 282.605 181.196 282.605 181.585V186H280.884V185.092H280.832C280.727 185.297 280.587 185.477 280.411 185.634C280.234 185.787 280.023 185.908 279.776 185.996C279.528 186.081 279.243 186.124 278.919 186.124ZM279.439 184.871C279.706 184.871 279.942 184.818 280.146 184.713C280.351 184.605 280.511 184.46 280.628 184.278C280.744 184.097 280.803 183.891 280.803 183.661V182.966C280.746 183.003 280.668 183.037 280.568 183.068C280.472 183.097 280.362 183.124 280.24 183.149C280.118 183.172 279.996 183.193 279.874 183.213C279.751 183.23 279.641 183.246 279.541 183.26C279.328 183.291 279.142 183.341 278.983 183.409C278.824 183.477 278.7 183.57 278.612 183.686C278.524 183.8 278.48 183.942 278.48 184.112C278.48 184.359 278.57 184.548 278.749 184.679C278.93 184.807 279.161 184.871 279.439 184.871ZM284.013 186V179.455H285.773V180.597H285.842C285.961 180.19 286.161 179.884 286.442 179.676C286.724 179.466 287.048 179.361 287.414 179.361C287.505 179.361 287.603 179.366 287.708 179.378C287.813 179.389 287.906 179.405 287.985 179.425V181.036C287.9 181.01 287.782 180.987 287.631 180.967C287.481 180.947 287.343 180.938 287.218 180.938C286.951 180.938 286.712 180.996 286.502 181.112C286.295 181.226 286.13 181.385 286.008 181.589C285.888 181.794 285.829 182.03 285.829 182.297V186H284.013Z"
+              fill="#333333" />
+            <rect x="240.5" y="173.5" width="59" height="17" stroke="#333333" />
+          </g>
+          <g class="track track-6">
+            <rect x="300.5" y="0.5" width="59" height="190" rx="3.5" stroke="#333333" class="outline" />
+            <rect x="328" y="47" width="4" height="106" rx="2" fill="#333333" />
+            <rect x="334.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="308.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="334.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="308.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="320.5" y="89.5" width="19" height="29" rx="2.5" fill="white" stroke="#333333" />
+            <path
+              d="M321.513 165.328H319.647C319.613 165.087 319.543 164.872 319.438 164.685C319.333 164.494 319.198 164.332 319.033 164.199C318.869 164.065 318.678 163.963 318.462 163.892C318.249 163.821 318.018 163.786 317.768 163.786C317.316 163.786 316.923 163.898 316.587 164.122C316.252 164.344 315.992 164.668 315.808 165.094C315.623 165.517 315.531 166.031 315.531 166.636C315.531 167.259 315.623 167.781 315.808 168.205C315.995 168.628 316.256 168.947 316.592 169.163C316.927 169.379 317.315 169.487 317.755 169.487C318.002 169.487 318.231 169.455 318.441 169.389C318.654 169.324 318.843 169.229 319.008 169.104C319.173 168.976 319.309 168.821 319.417 168.639C319.528 168.457 319.604 168.25 319.647 168.017L321.513 168.026C321.465 168.426 321.344 168.812 321.151 169.185C320.961 169.554 320.704 169.885 320.38 170.178C320.059 170.467 319.675 170.697 319.229 170.868C318.786 171.036 318.285 171.119 317.725 171.119C316.947 171.119 316.251 170.943 315.637 170.591C315.026 170.239 314.543 169.729 314.188 169.061C313.836 168.393 313.66 167.585 313.66 166.636C313.66 165.685 313.839 164.875 314.197 164.207C314.555 163.54 315.04 163.031 315.654 162.682C316.268 162.33 316.958 162.153 317.725 162.153C318.231 162.153 318.7 162.224 319.131 162.366C319.566 162.509 319.951 162.716 320.286 162.989C320.621 163.259 320.894 163.589 321.104 163.982C321.317 164.374 321.454 164.822 321.513 165.328ZM324.618 162.273V171H322.803V162.273H324.618ZM329.055 171.128C328.382 171.128 327.802 170.991 327.316 170.719C326.833 170.443 326.461 170.054 326.2 169.551C325.939 169.045 325.808 168.447 325.808 167.757C325.808 167.084 325.939 166.493 326.2 165.984C326.461 165.476 326.829 165.08 327.304 164.795C327.781 164.511 328.341 164.369 328.983 164.369C329.414 164.369 329.816 164.439 330.189 164.578C330.564 164.714 330.89 164.92 331.169 165.196C331.45 165.472 331.669 165.818 331.825 166.236C331.981 166.651 332.059 167.136 332.059 167.693V168.192H326.532V167.067H330.35C330.35 166.805 330.294 166.574 330.18 166.372C330.066 166.17 329.909 166.013 329.707 165.899C329.508 165.783 329.277 165.724 329.012 165.724C328.737 165.724 328.493 165.788 328.279 165.916C328.069 166.041 327.904 166.21 327.785 166.423C327.666 166.634 327.605 166.868 327.602 167.126V168.196C327.602 168.52 327.662 168.8 327.781 169.036C327.903 169.271 328.075 169.453 328.297 169.581C328.518 169.709 328.781 169.773 329.085 169.773C329.287 169.773 329.471 169.744 329.639 169.688C329.806 169.631 329.95 169.545 330.069 169.432C330.189 169.318 330.279 169.179 330.342 169.014L332.021 169.125C331.936 169.528 331.761 169.881 331.497 170.182C331.235 170.48 330.897 170.713 330.483 170.881C330.071 171.045 329.595 171.128 329.055 171.128ZM335.11 171.124C334.693 171.124 334.321 171.051 333.994 170.906C333.667 170.759 333.409 170.541 333.218 170.254C333.031 169.964 332.937 169.604 332.937 169.172C332.937 168.808 333.004 168.503 333.137 168.256C333.271 168.009 333.453 167.81 333.683 167.659C333.913 167.509 334.174 167.395 334.467 167.318C334.762 167.241 335.072 167.188 335.396 167.156C335.777 167.116 336.083 167.08 336.316 167.045C336.549 167.009 336.718 166.955 336.824 166.884C336.929 166.812 336.981 166.707 336.981 166.568V166.543C336.981 166.273 336.896 166.064 336.725 165.916C336.558 165.768 336.319 165.695 336.01 165.695C335.683 165.695 335.423 165.767 335.23 165.912C335.037 166.054 334.909 166.233 334.846 166.449L333.167 166.312C333.252 165.915 333.42 165.571 333.67 165.281C333.92 164.989 334.243 164.764 334.637 164.608C335.035 164.449 335.495 164.369 336.018 164.369C336.382 164.369 336.73 164.412 337.062 164.497C337.397 164.582 337.694 164.714 337.953 164.893C338.214 165.072 338.42 165.303 338.571 165.584C338.721 165.862 338.797 166.196 338.797 166.585V171H337.075V170.092H337.024C336.919 170.297 336.778 170.477 336.602 170.634C336.426 170.787 336.214 170.908 335.967 170.996C335.72 171.081 335.434 171.124 335.11 171.124ZM335.63 169.871C335.897 169.871 336.133 169.818 336.338 169.713C336.542 169.605 336.703 169.46 336.819 169.278C336.936 169.097 336.994 168.891 336.994 168.661V167.966C336.937 168.003 336.859 168.037 336.76 168.068C336.663 168.097 336.554 168.124 336.431 168.149C336.309 168.172 336.187 168.193 336.065 168.213C335.943 168.23 335.832 168.246 335.733 168.26C335.52 168.291 335.333 168.341 335.174 168.409C335.015 168.477 334.892 168.57 334.804 168.686C334.716 168.8 334.672 168.942 334.672 169.112C334.672 169.359 334.761 169.548 334.94 169.679C335.122 169.807 335.352 169.871 335.63 169.871ZM342.02 167.216V171H340.205V164.455H341.935V165.609H342.012C342.157 165.229 342.4 164.928 342.74 164.706C343.081 164.482 343.495 164.369 343.98 164.369C344.435 164.369 344.831 164.469 345.169 164.668C345.507 164.866 345.77 165.151 345.958 165.52C346.145 165.886 346.239 166.324 346.239 166.832V171H344.424V167.156C344.426 166.756 344.324 166.443 344.117 166.219C343.909 165.991 343.624 165.878 343.26 165.878C343.016 165.878 342.8 165.93 342.613 166.036C342.428 166.141 342.283 166.294 342.178 166.496C342.076 166.695 342.023 166.935 342.02 167.216Z"
+              fill="#333333" />
+            <rect x="300.5" y="158.5" width="59" height="17" stroke="#333333" />
+          </g>
+          <g class="track track-7">
+            <rect x="360.5" y="0.5" width="59" height="190" rx="3.5" stroke="#333333" class="outline" />
+            <rect x="388" y="47" width="4" height="106" rx="2" fill="#333333" />
+            <rect x="394.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="368.5" y="26.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="394.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="368.5" y="8.5" width="17" height="13" rx="2.5" stroke="#333333" />
+            <rect x="380.5" y="89.5" width="19" height="29" rx="2.5" fill="white" stroke="#333333" />
+            <path
+              d="M382.151 171H379.057V162.273H382.177C383.055 162.273 383.81 162.447 384.444 162.797C385.077 163.143 385.564 163.642 385.905 164.293C386.249 164.943 386.421 165.722 386.421 166.628C386.421 167.537 386.249 168.318 385.905 168.972C385.564 169.625 385.074 170.126 384.435 170.476C383.799 170.825 383.037 171 382.151 171ZM380.903 169.419H382.074C382.62 169.419 383.079 169.322 383.451 169.129C383.826 168.933 384.107 168.631 384.295 168.222C384.485 167.81 384.58 167.278 384.58 166.628C384.58 165.983 384.485 165.456 384.295 165.047C384.107 164.638 383.827 164.337 383.455 164.143C383.083 163.95 382.624 163.854 382.079 163.854H380.903V169.419ZM387.754 171V164.455H389.569V171H387.754ZM388.666 163.611C388.396 163.611 388.164 163.521 387.971 163.342C387.781 163.161 387.686 162.943 387.686 162.69C387.686 162.44 387.781 162.226 387.971 162.047C388.164 161.865 388.396 161.774 388.666 161.774C388.936 161.774 389.166 161.865 389.356 162.047C389.549 162.226 389.646 162.44 389.646 162.69C389.646 162.943 389.549 163.161 389.356 163.342C389.166 163.521 388.936 163.611 388.666 163.611ZM396.469 166.321L394.807 166.423C394.779 166.281 394.718 166.153 394.624 166.04C394.53 165.923 394.407 165.831 394.253 165.763C394.103 165.692 393.922 165.656 393.712 165.656C393.431 165.656 393.194 165.716 393.001 165.835C392.807 165.952 392.711 166.108 392.711 166.304C392.711 166.46 392.773 166.592 392.898 166.7C393.023 166.808 393.238 166.895 393.542 166.96L394.726 167.199C395.363 167.33 395.837 167.54 396.15 167.83C396.462 168.119 396.618 168.5 396.618 168.972C396.618 169.401 396.492 169.777 396.239 170.101C395.989 170.425 395.645 170.678 395.208 170.859C394.773 171.038 394.272 171.128 393.704 171.128C392.837 171.128 392.147 170.947 391.633 170.587C391.121 170.223 390.822 169.729 390.733 169.104L392.519 169.01C392.573 169.274 392.704 169.476 392.911 169.615C393.118 169.751 393.384 169.82 393.708 169.82C394.026 169.82 394.282 169.759 394.475 169.636C394.671 169.511 394.77 169.351 394.773 169.155C394.77 168.99 394.701 168.855 394.564 168.75C394.428 168.642 394.218 168.56 393.934 168.503L392.8 168.277C392.161 168.149 391.685 167.928 391.373 167.612C391.063 167.297 390.908 166.895 390.908 166.406C390.908 165.986 391.022 165.624 391.249 165.32C391.479 165.016 391.802 164.781 392.216 164.616C392.634 164.452 393.123 164.369 393.682 164.369C394.509 164.369 395.16 164.544 395.634 164.893C396.111 165.243 396.39 165.719 396.469 166.321ZM401.243 164.455V165.818H397.301V164.455H401.243ZM398.196 162.886H400.012V168.989C400.012 169.156 400.037 169.287 400.088 169.381C400.139 169.472 400.21 169.536 400.301 169.572C400.395 169.609 400.503 169.628 400.625 169.628C400.71 169.628 400.796 169.621 400.881 169.607C400.966 169.589 401.031 169.577 401.077 169.568L401.362 170.919C401.271 170.947 401.144 170.98 400.979 171.017C400.814 171.057 400.614 171.081 400.378 171.089C399.941 171.107 399.557 171.048 399.227 170.915C398.901 170.781 398.646 170.574 398.465 170.293C398.283 170.011 398.193 169.656 398.196 169.227V162.886Z"
+              fill="#333333" />
+            <rect x="360.5" y="158.5" width="59" height="17" stroke="#333333" />
+          </g>
+        </svg>
+      </div>
+    </section>
+    <section class="doc-row">
+      <div class="split">
+        <section class="left">
+          <div class="text-input">
+            <input id="filter-1" value="filter-1" name="filter" type="radio" />
+            <label for="filter-1">Example 1</label>
+          </div>
+          <div class="text-input">
+            <input id="filter-2" value="filter-2" name="filter" type="radio" />
+            <label for="filter-2">Example 2</label>
+          </div>
+          <div class="text-input">
+            <input id="filter-3" value="filter-3" name="filter" type="radio" />
+            <label for="filter-3">Example 3</label>
+          </div>
+          <div class="text-input">
+            <input id="filter-4" value="filter-4" name="filter" type="radio" />
+            <label for="filter-4">Example 4</label>
+          </div>
+          <div class="text-input">
+            <input id="filter-5" value="filter-5" name="filter" type="radio" />
+            <label for="filter-5">Example 5</label>
+          </div>
+          <div class="text-input">
+            <input id="filter-6" value="filter-6" name="filter" type="radio" />
+            <label for="filter-6">Example 6</label>
+          </div>
+        </section>
+        <section class="right">
+          <img src="assets/filter-1.png" alt="" id="filter-image">
+        </section>
+      </div>
+    </section>
 
     <h1 id="additional-help"><span>Additional help</span></h1>
 
@@ -1397,15 +1698,84 @@ reaper.ShowConsoleMsg("Path: " .. path)
       </div>
     </section>
 
+    <h2 id="control-to-menu"><span>Add ReaSonus FaderPort Control to the toolbar</span></h2>
+    <section class="doc-row">
+      <div>
+        <p>Here are the steps to add the <span class="strong">ReaSonus FaderPort Control</span> to a toolbar</p>
+        <ol>
+          <li>Right click in an empty area of the toolbar and select: <span class="strong">Customize
+              toolbar&hellip;</span><br>
+            <img src="assets/toolbar-right-click.png" alt="" class="small">
+          </li>
+          <li>
+            The next screen pops up. Select <span class="key">Add&hellip;</span><br>
+            <img src="assets/toolbar-edit.png" alt="">
+          </li>
+          <li>The action pane pops up. Start typing <code>reasonus faderport</code>. Select the action
+            and click <span class="key">Select/Close</span> and click <span class="key">Apply</span> in the bottom right
+            corner of the <span class="strong">Customize menus/toolbars window</span>. The button should be in the
+            toolbar now.<br>
+            <img src="assets/toolbar-action-select.png" alt="">
+          </li>
+          <li>In the left column of the <span class="strong">Customize menus/toolbars window</span>, scroll down to the
+            added action and select it and click <span class="key">Icon&hellip;</span> and select <span
+              class="strong">Text icon&hellip;</span><br>
+            <img src="assets/toolbar-select-added.png" alt="">
+          </li>
+          <li>A small window shows up. Give it a proper name (<span class="strong">ReaSonus</span> will do ;-)) and
+            check the <span class="strong">Double width toolbar button</span> check box and click <span
+              class="key">OK</span>.<br>
+            <img src="assets/toolbar-rename.png" alt="">
+          </li>
+          <li>
+            Now click <span class="key">OK</span> in the <span class="strong">Customize menus/toolbars window</span> and
+            you're done. It should look
+            something like:<br>
+            <img src="assets/toolbar-done.png" alt="">
+          </li>
+        </ol>
+      </div>
+    </section>
+
+
+    <h2 id="swap-shift"><span>Swap Shift Buttons</span></h2>
+    <section class="doc-row">
+      <div>
+        <p>Here are some instructions on swapping the left and right Shift Buttons</p>
+        <ul>
+          <li>From the menu go to <span class="key">Options</span> and then select <span class="key">Preferences</span>
+          </li>
+          <li>The preferences pane opens an in the left section select <span class="key">Control/Osc/Web</span></li>
+          <li>Select <span class="string">Control Surface Integrator</span> and click <span class="key">Edit</span></li>
+          <li>Select the <span class="strong">Reasonus FaderPort</span> page (when there are muliple) and then your
+            FaderPort and click <span class="key">Edit</span></li>
+          <li>
+            In the <span class="strong">Templates</span> section, click the <span class="strong">Surfaces</span> select
+            and select the version with <span class="strng">swapped-shift</span> in the name.
+            <p>
+              <img src="assets/swapped-shift.png" alt="">
+            </p>
+          </li>
+          <li>Now press <span class="key">OK</span> to save the setting and press <span class="key">OK</span> in the
+            other popups.</li>
+        </ul>
+        <p>Your shift buttons should now be swapped. Keep in mind that the documentation does not take the swapped shift
+          buttons in account.</p>
+      </div>
+    </section>
+
+
     <h2 id="known-issues"><span>Known Issues</span></h2>
     <section class="doc-row">
+      <p>Currently no known issues.</p>
+      <p>If you run into an issue, don't hassitate to let me know. <br>You can report issues <a
+          href="https://github.com/navelpluisje/reasonus-install/issues" target="_blank">here</a></p>
       <ul>
-        <li>The encoders are not always responding as expected. When the encoders are used for panning and volume
-          control, turning the encoder slowly will result in no response. In all other cases like banking etc. It is the
-          other way around. These only work while turning slowly. The cause of the issue is known and will be resolved.
+        <li>-
         </li>
       </ul>
     </section>
   </body>
+  <script src="filter.js"></script>
 
 </html>

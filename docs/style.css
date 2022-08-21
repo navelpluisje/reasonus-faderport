@@ -107,9 +107,8 @@ blockquote.reaperblog>* {
 
 .home {
   display: grid;
-  grid-template-rows: auto repeat(6, 1fr);
+  grid-template-rows: repeat(3, auto) 4rem 4rem auto auto auto;
   grid-template-columns: repeat(10, 1fr);
-  height: 100vh;
 }
 
 .header {
@@ -126,9 +125,9 @@ blockquote.reaperblog>* {
 .faderport {
   background-image: url('assets/Faderport8.png');
   background-size: contain;
-  background-position: center left;
+  background-position: center;
   background-repeat: no-repeat;
-  grid-area: 3/7/7/10;
+  grid-area: 4/2/6/10;
   z-index: 1;
 }
 
@@ -138,19 +137,19 @@ blockquote.reaperblog>* {
 
 .title {
   color: var(--alternate-text);
-  font-size: 3.5rem;
+  font-size: 2rem;
   font-weight: 100;
   text-shadow: 0 .5rem .5rem rgba(0, 0, 0, .25);
   text-transform: capitalize;
 }
 
 .title.first {
-  grid-area: 2/2/4/10;
+  grid-area: 2/2/3/10;
   align-self: center;
 }
 
 .title.second {
-  grid-area: 4/2/5/10;
+  grid-area: 3/2/4/10;
   align-self: top;
 }
 
@@ -161,8 +160,7 @@ blockquote.reaperblog>* {
 }
 
 .content {
-  align-self: center;
-  grid-area: 5/2/8/7;
+  grid-area: 6/2/7/10;
   padding: 0 2rem 0 0;
 }
 
@@ -380,6 +378,38 @@ a.toc {
 }
 
 @media screen and (min-width:40rem) {
+  .home {
+    grid-template-rows: auto auto auto auto auto repeat(3, 1fr);
+    grid-template-columns: repeat(10, 1fr);
+  }
+
+  .title {
+    font-size: 3.5rem;
+  }
+
+  .title.first {
+    grid-area: 2/2/4/10;
+    align-self: center;
+  }
+
+  .title.second {
+    grid-area: 4/2/5/10;
+    align-self: top;
+  }
+
+  .banner {
+    grid-area: 2/1/5/11;
+  }
+
+  .faderport {
+    background-position: center left;
+    grid-area: 3/7/7/10;
+  }
+
+  .content {
+    grid-area: 5/2/8/7;
+  }
+
   .doc-row {
     column-gap: 1rem;
     display: grid;
@@ -432,6 +462,11 @@ a.toc {
 }
 
 @media screen and (min-width:63rem) {
+  .home {
+    height: 100vh;
+    grid-template-rows: auto repeat(6, 1fr);
+  }
+
   .doc-row {
     grid-template-columns: 1fr 15rem 45rem 1fr;
   }
@@ -525,4 +560,72 @@ a.toc {
   font-size: 1.75rem;
   text-decoration: none;
   transform: translateY(.125rem);
+}
+
+.split {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: auto 1fr;
+}
+
+.split>.left {
+  grid-area: 1/1/2/2;
+}
+
+.split>.right {
+  grid-area: 1/2/2/3;
+}
+
+.filter-1 .track:not(.track-1)>* {
+  opacity: .3
+}
+
+.filter-1 .track:not(.track-1)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
+}
+
+.filter-2 .track:not(.track-1, .track-2, .track-3, .track-4)>* {
+  opacity: .3
+}
+
+.filter-2 .track:not(.track-1, .track-2, .track-3, .track-4)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
+}
+
+.filter-3 .track:not(.track-1, .track-5)>* {
+  opacity: .3
+}
+
+.filter-3 .track:not(.track-1, .track-5)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
+}
+
+.filter-4 .track:not(.track-1, .track-3)>* {
+  opacity: .3
+}
+
+.filter-4 .track:not(.track-1, .track-3)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
+}
+
+.filter-5 .track:not(.track-1, .track-5)>* {
+  opacity: .3
+}
+
+.filter-5 .track:not(.track-1, .track-5)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
+}
+
+.filter-6 .track:not(.track-1)>* {
+  opacity: .3
+}
+
+.filter-6 .track:not(.track-1)>.outline {
+  stroke: rgb(255, 0, 0);
+  fill: rgba(255, 0, 0, .05)
 }

@@ -26,9 +26,14 @@ Zone NavigatorSection
 // ===========================================
 // All the button States and action
 // ===========================================
-  Pan                     FixedRGBColourDisplay { 0 5 20 }
-  Pan                     GoZone "Home"
-  Pan                     GoZone "NavigatorPan"
+  Link                  FixedRGBColourDisplay { 20 20 20 }
+  Link                  GoZone "FocusedFXParam"
+  Shift+Link            Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
+
+  Pan                   FixedRGBColourDisplay { 0 5 20 }
+  Pan                   GoZone "Home"
+  Pan                   GoZone "NavigatorPan"
+  Shift+Pan             Reaper _REASONUS_FADERPORT_CONTROL { 0 20 0 0 20 0 }
 
   Chanmnel                FixedRGBColourDisplay { 0 5 20 }
   Chanmnel                GoZone "Home"
@@ -61,13 +66,13 @@ Zone NavigatorSection
 // FUNCTION KEYS
 // ===========================================
 // Function-Action-1
-  Shift+Master            Reaper 40078    // View: Toggle mixer visible
+  Shift+Master            Reaper REASONUS_HANDLE_FUNCTION_KEY_1
 // Function-Action-2    
-  Shift+Click             Reaper 50124    // Media explorer: Show/hide media explorer
+  Shift+Click             Reaper REASONUS_HANDLE_FUNCTION_KEY_2
 // Function-Action-3 
-  Shift+Section           Reaper 40271    // View: SShow FX browser window
+  Shift+Section           Reaper REASONUS_HANDLE_FUNCTION_KEY_3
 // Function-Action-4 
-  Shift+Marker            Reaper 41074    // Toggle show all floating windows
+  Shift+Marker            Reaper REASONUS_HANDLE_FUNCTION_KEY_4
   Property+Shift+Marker      NoFeedback    
   
 ZoneEnd

@@ -30,47 +30,52 @@ Zone NavigatorMarker
 // ===========================================
 // All the button States and action
 // ===========================================
-  Pan                        FixedRGBColourDisplay { 0 5 20 }
-  Pan                        GoZone "Home"
-  Pan                        GoZone "NavigatorPan"
+  Link                  FixedRGBColourDisplay { 20 20 20 }
+  Link                  GoZone "FocusedFXParam"
+  Shift+Link            Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
 
-  Channel                    FixedRGBColourDisplay { 0 5 20 }
-  Channel                    GoZone "Home"
-  Channel                    GoZone "NavigatorChannel"
+  Pan                   FixedRGBColourDisplay { 0 5 20 }
+  Pan                   GoZone "Home"
+  Pan                   GoZone "NavigatorPan"
+  Shift+Pan             Reaper _REASONUS_FADERPORT_CONTROL { 0 20 0 0 20 0 }
 
-  Scroll                     FixedRGBColourDisplay { 0 5 20 }
-  Scroll                     GoZone "Home"
-  Scroll                     GoZone "NavigatorScroll"
+  Channel               FixedRGBColourDisplay { 0 5 20 }
+  Channel               GoZone "Home"
+  Channel               GoZone "NavigatorChannel"
 
-  Shift+Scroll               FixedRGBColourDisplay { 0 5 20 }
-  Shift+Scroll               GoZone "Home"
-  Shift+Scroll               GoZone "NavigatorZoom"
+  Scroll                FixedRGBColourDisplay { 0 5 20 }
+  Scroll                GoZone "Home"
+  Scroll                GoZone "NavigatorScroll"
 
-  Master                     NoAction
-  Master                     GoZone "Home"
-  Master                     GoZone "NavigatorMaster"
+  Shift+Scroll          FixedRGBColourDisplay { 0 5 20 }
+  Shift+Scroll          GoZone "Home"
+  Shift+Scroll          GoZone "NavigatorZoom"
 
-  Click                      Reaper 40364    // Options: Toggle metronome
-  Hold+Click                 GoZone "Home"
-  Hold+Click                 GoZone "NavigatorMetronome" 
+  Master                NoAction
+  Master                GoZone "Home"
+  Master                GoZone "NavigatorMaster"
 
-  Section                    NoAction
-  Section                    GoZone "Home"
-  Section                    GoZone "NavigatorSection"
+  Click                 Reaper 40364    // Options: Toggle metronome
+  Hold+Click            GoZone "Home"
+  Hold+Click            GoZone "NavigatorMetronome" 
 
-  Marker                     Reaper _REASONUS_ALWAYS_ON    // Dummy Action
+  Section               NoAction
+  Section               GoZone "Home"
+  Section               GoZone "NavigatorSection"
+
+  Marker                Reaper _REASONUS_ALWAYS_ON    // Dummy Action
 
 // ===========================================
 // FUNCTION KEYS
 // ===========================================
 // Function-Action-1
-  Shift+Master        Reaper 40078    // View: Toggle mixer visible
+  Shift+Master        Reaper REASONUS_HANDLE_FUNCTION_KEY_1
 // Function-Action-2 
-  Shift+Click         Reaper 50124    // Media explorer: Show/hide media explorer
+  Shift+Click         Reaper REASONUS_HANDLE_FUNCTION_KEY_2
 // Function-Action-3 
-  Shift+Section       Reaper 40271    // View: SShow FX browser window
+  Shift+Section       Reaper REASONUS_HANDLE_FUNCTION_KEY_3
 // Function-Action-4 
-  Shift+Marker        Reaper 41074    // Toggle show all floating windows
+  Shift+Marker        Reaper REASONUS_HANDLE_FUNCTION_KEY_4
   Property+Shift+Marker      NoFeedback    
   
 ZoneEnd

@@ -1,0 +1,17 @@
+//------------------------------------------------------------------------------
+// File:    FP16_FocusedFXParam.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+
+Zone "FocusedFXParam"
+  Fader16             FocusedFXParam
+  DisplayType16       DisplayType 2
+  ScribbleLine1_16    FixedTextDisplay "Fx Param" {% Invert %}
+  ScribbleLine2_16    NoAction
+  ScribbleLine3_16    FocusedFXParamNameDisplay
+  ScribbleLine4_16    FocusedFXParamValueDisplay
+  ValueBar8           FocusedFXParam {% Fill %}
+  Link                FixedRGBColourDisplay { 255 255 255 }
+  Link                GoZone Home
+ZoneEnd

@@ -27,10 +27,8 @@ Zone "TrackFXMenuSlot"
   Solo|               Reaper _S&M_TOGLFLOATFX|
 
 
-  RotarySmall         NoAction  
+  RotarySmall         FXMenuSlotBank 1 
   RotarySmallPush     NoAction
-  ScrollLeftSmall     FXMenuSlotBank "-1"
-  ScrollRightSmall    FXMenuSlotBank "1"
 
 // ===========================================
 // TRACK NAVIGATION

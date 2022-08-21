@@ -9,23 +9,23 @@
 //------------------------------------------------------------------------------
 
 Zone Navigators
-    Channel             NoAction
+    Channel             Reaper _REASONUS_LED_STATE_NAVI_CHANNEL_BTN
     Channel             GoZone "Navigators"
     Channel             GoZone "NavigatorChannel"
 
-    Zoom                NoAction
+    Zoom                Reaper _REASONUS_LED_STATE_NAVI_ZOOM_BTN
     Zoom                GoZone "Navigators"
     Zoom                GoZone "NavigatorZoom"
 
-    Scroll              NoAction
+    Scroll              Reaper _REASONUS_LED_STATE_NAVI_SCROLL_BTN
     Scroll              GoZone "Navigators"
     Scroll              GoZone "NavigatorScroll"
 
-    Bank                NoAction
+    Bank                Reaper _REASONUS_LED_STATE_NAVI_BANK_BTN
     Bank                GoZone "Navigators"
     Bank                GoZone "NavigatorBank"
 
-    Master              NoAction
+    Master              Reaper _REASONUS_LED_STATE_NAVI_MASTER_BTN
     Master              GoZone "Navigators"
     Master              GoZone "NavigatorMaster"
 
@@ -33,45 +33,45 @@ Zone Navigators
     Hold+Click          GoZone "Navigators"
     Hold+Click          GoZone "NavigatorMetronome"
 
-    Section             NoAction
+    Section             Reaper _REASONUS_LED_STATE_NAVI_SECTION_BTN
     Section             GoZone "Navigators"
     Section             GoZone "NavigatorSection"
+    Hold+Section        Reaper 40020               // Time selection: Remove (unselect) time selection and loop points 
 
-    Marker              NoAction
+    Marker              Reaper _REASONUS_LED_STATE_NAVI_MARKER_BTN
     Marker              GoZone "Navigators"
     Marker              GoZone "NavigatorMarker"
 
 // ===========================================
 // FUNCTION KEYS
 // ===========================================
-// Function-Action-1 
-    Shift+Channel       Reaper 40078    // View: Toggle mixer visible
-// Function-Action-2 
-    Shift+Zoom          Reaper 50124    // Media explorer: Show/hide media explorer
-// Function-Action-3 
-    Shift+Scroll        Reaper 40251    // View: Show routing matrix window
-// Function-Action-4 
-    Shift+Bank          Reaper 40271    // View: Show FX browser window
-// Function-Action-5 
-    Shift+Master        Reaper 40326    // View: Show region/marker manager window
-// Function-Action-6 
-    Shift+Click         Reaper 41157    // View: Show project bay window
-// Function-Action-7 
-    Shift+Section       Reaper 40378    // View: Show big clock window
-// Function-Action-8 
-    Shift+Marker        Reaper 41074    // Toggle show all floating windows
-    Property+Shift+Marker      NoFeedback    
+    Shift+Channel       Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
+    Shift+Zoom          Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
+    Shift+Scroll        Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
+    Shift+Bank          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
+    Shift+Master        Reaper _REASONUS_HANDLE_FUNCTION_KEY_5
+    Shift+Click         Reaper _REASONUS_HANDLE_FUNCTION_KEY_6
+    Shift+Section       Reaper _REASONUS_HANDLE_FUNCTION_KEY_7
+    Shift+Marker        Reaper _REASONUS_HANDLE_FUNCTION_KEY_8
 
 // ===========================================
 // SCREENSETS
 // ===========================================
     Option+Channel      Reaper 40454    // Screenset: Load window set #01
+    Property+Option+Channel    NoFeedback
     Option+Zoom         Reaper 40455    // Screenset: Load window set #02
+    Property+Option+Zoom       NoFeedback
     Option+Scroll       Reaper 40456    // Screenset: Load window set #03
+    Property+Option+Scroll     NoFeedback
     Option+Bank         Reaper 40457    // Screenset: Load window set #04
+    Property+Option+Bank       NoFeedback
     Option+Master       Reaper 40458    // Screenset: Load window set #05
+    Property+Option+Master     NoFeedback
     Option+Click        Reaper 40459    // Screenset: Load window set #06
+    Property+Option+Click      NoFeedback
     Option+Section      Reaper 40460    // Screenset: Load window set #07
+    Property+Option+Section    NoFeedback
     Option+Marker       Reaper 40461    // Screenset: Load window set #08
+    Property+Option+Marker     NoFeedback
 
 ZoneEnd

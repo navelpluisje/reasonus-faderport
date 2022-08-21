@@ -11,20 +11,14 @@ Zone NavigatorChannel
 // ===========================================
 // BUTTONS AND SCROLL
 // ===========================================
-    Prev                Reaper 40286   // Track: Go to previous track
-    Next                Reaper 40285   // Track: Go to next track
-    Shift+Prev          NoAction
-    Shift+Next          NoAction
-    ScrollLeft          Reaper 40286   // Track: Go to previous track
-    ScrollRight         Reaper 40285   // Track: Go to next track
-    Shift+ScrollLeft    Reaper 40288   // Track: Go to previous track (leaving other tracks selected)
-    Shift+ScrollRight   Reaper 40287   // Track: Go to next track (leaving other tracks selected)
+    Prev                  Reaper 40286   // Track: Go to previous track
+    Next                  Reaper 40285   // Track: Go to next track
+    Shift+Prev            NoAction
+    Shift+Next            NoAction
 
-    RotaryBigPush       NoAction
+    RotaryBigPush         NoAction
     Shift+RotaryBigPush   NoAction
     Option+RotaryBigPush  NoAction
-    RotaryBig           NoAction
-
-    Channel             Reaper _REASONUS_ALWAYS_ON    // Dummy Action
-    Shift+Channel       Reaper 40078    //View: Toggle mixer visible
+    RotaryBig             Reaper [< 40286 40285 >] // Track: Go to previous track, Track: Go to next track
+    Shift+RotaryBig       Reaper [< 40288 40287 >] // Track: Go to previous track (leaving other tracks selected), Track: Go to next track (leaving other tracks selected)
 ZoneEnd
