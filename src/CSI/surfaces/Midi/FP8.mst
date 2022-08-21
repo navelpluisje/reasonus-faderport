@@ -225,7 +225,7 @@ WidgetEnd
 
 Widget Rewind
 	Press 90 5b 7f 90 5b 00
-	/ FB_TwoState 90 5b 00 90 5b 7f
+	FB_TwoState 90 5b 00 90 5b 7f
 WidgetEnd
 
 Widget FastForward

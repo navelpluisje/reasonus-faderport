@@ -9,6 +9,11 @@
 
 
 Zone "Track"
+
+  SubZones
+    TrackRecArm
+  SubZonesEnd
+
   ScribbleStripMode|        SetWidgetMode
   ScribbleStripMode|        WidgetMode 8
   ScribbleLine1_|           TrackNameDisplay
@@ -22,7 +27,7 @@ Zone "Track"
 
   Shift+ScribbleStripMode|  SetWidgetMode
   Shift+ScribbleStripMode|  WidgetMode 2
-  / Shift+ScribbleLine1_|     TrackNameDisplay
+  Shift+ScribbleLine1_|     TrackNameDisplay
   Shift+ScribbleLine1_|     WidgetMode "Center"
   Shift+ScribbleLine2_|     TrackVolumeDisplay
   Shift+ScribbleLine3_|     TrackPanDisplay
@@ -37,12 +42,9 @@ Zone "Track"
   Shift+Select|             TrackSelect        { "Track" }
   Option+Select|            TrackSelect        { "Track" }
 
-  / Arm                       GoSubZone "TrackRecArm"
-  Arm                       ToggleChannel
-  Toggle+Select|            TrackRecordArm     { 20 0 0 255 0 0 }
-  / Shift+Arm                 Reaper 40490       // Track: Arm all tracks for recording
-  / Option+Arm                Reaper 40491       // Track: Unarm all tracks for recording
-      
+  Arm                       Alt
+  Alt+Select|               TrackRecordArm  { 20 0 0 255 0 0 } 
+
   SoloClear                 Reaper 40340       // Track: Unsolo all tracks
   MuteClear                 Reaper 40339       // Track: Unmute all tracks
         
@@ -74,5 +76,3 @@ Zone "Track"
   / Pan                 MapSelectedTrackReceivesToWidgets
   / Shift+Pan           MapTrackReceivesSlotToWidgets
 ZoneEnd 
-
-No account for team "36M3KR9P73". Add a new account in the Accounts preference pane or verify that your accounts have valid credentials.

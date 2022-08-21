@@ -1,0 +1,24 @@
+//------------------------------------------------------------------------------
+// File:    FP8_Transport.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    Handle your transport buttons
+//------------------------------------------------------------------------------
+
+Zone "Buttons"
+
+
+//------------------------------------------------------------------------------
+// TRANSPORT
+//------------------------------------------------------------------------------
+  Loop                  CycleTimeline
+  InvertFB+Rewind       Rewind
+  Hold+Rewind           Reaper "40042"  // Go to the project start
+  InvertFB+FastForward  FastForward
+  Hold+FastForward      Reaper "40043"  // Go to the project end
+  Play                  Play
+  Stop                  Stop
+  Record                Record
+ZoneEnd

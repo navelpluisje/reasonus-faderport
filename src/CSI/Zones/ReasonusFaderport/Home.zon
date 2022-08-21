@@ -11,9 +11,11 @@ Zone Home
   OnInitialization PreventFocusedFXMapping
 
   LeftShft Shift
+  RightShft Option
 
   IncludedZones
     "Track"
+    "Buttons"
   IncludedZonesEnd
   AssociatedZones
     "SelectedTrackFXMenu"
