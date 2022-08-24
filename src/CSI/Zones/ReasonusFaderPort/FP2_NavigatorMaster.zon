@@ -24,15 +24,11 @@ Zone NavigatorMaster
   Next                  NoAction
   Shift+Prev            Reaper 40029   // Edit: Undo
   Shift+Next            Reaper 40030   // Edit: Redo
-  ScrollLeft            NoAction
-  ScrollRight           NoAction
-  Shift+ScrollLeft      NoAction
-  Shift+ScrollRight     NoAction
 
   RotaryBigPush         Reaper _REASONUS_MASTER_PAN_CENTER // Set master pan to center position
   Shift+RotaryBigPush   NoAction
   RotaryBig             TrackPan
-
+  Shift+RotaryBig       NoAction
 
 // ===========================================
 // All the button States and action
@@ -76,13 +72,13 @@ Zone NavigatorMaster
 // FUNCTION KEYS
 // ===========================================
 // Function-Action-1
-  Shift+Master          Reaper REASONUS_HANDLE_FUNCTION_KEY_1
+  Shift+Master          Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
 // Function-Action-2 
-  Shift+Click           Reaper REASONUS_HANDLE_FUNCTION_KEY_2
+  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
 // Function-Action-3 
-  Shift+Section         Reaper REASONUS_HANDLE_FUNCTION_KEY_3
+  Shift+Section         Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
 // Function-Action-4 
-  Shift+Marker          Reaper REASONUS_HANDLE_FUNCTION_KEY_4
+  Shift+Marker          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
   Property+Shift+Marker      NoFeedback    
 
 ZoneEnd

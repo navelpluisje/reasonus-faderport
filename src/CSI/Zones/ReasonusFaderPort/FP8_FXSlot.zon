@@ -22,6 +22,8 @@ Zone "TrackFXMenuSlot"
   Select|             TrackUniqueSelect  { 0 20 0 0 255 0 }
 
   Mute|               Reaper _S&M_FXBYP|
+  Property+Solo|      NoFeedback
+  Solo|               TrackUniqueSelect
   Solo|               GoFXSlot
   Solo|               Reaper "_S&M_WNCLS5"
   Solo|               Reaper _S&M_TOGLFLOATFX|

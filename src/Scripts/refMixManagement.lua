@@ -1,5 +1,9 @@
 -- Set package path to find rtk installed via ReaPack
-package.path = reaper.GetResourcePath() .. '/Scripts/ReaSonus/?.lua'
+local function createPath(path)
+  return path:gsub("/", package.config:sub(1, 1));
+end
+
+package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua')
 -- Load the package
 local rtk = require('rtk')
 local uiElements = require('refUiElements')
@@ -23,9 +27,9 @@ local MixManagement = {};
 function MixManagement:new(index, faderPortVersion)
   local obj = {
     filterId = index,
-    filterFilePath = reaper.GetResourcePath() .. '/Scripts/Reasonus/mixManagementFilter' .. index .. '.lua',
+    filterFilePath = reaper.GetResourcePath() .. createPath('/Scripts/Reasonus/mixManagementFilter') .. index .. '.lua',
     zoneFilePath = reaper.GetResourcePath() ..
-        '/CSI/Zones/ReasonusFaderPort/FP' .. faderPortVersion .. '_TracksByName.zon',
+        createPath('/CSI/Zones/ReasonusFaderPort/FP') .. faderPortVersion .. '_TracksByName.zon',
     fileLines = {},
     actionPaneOpened = false,
     isBuild = false,
@@ -211,8 +215,8 @@ function MixManagement:writeActionFile()
       for j = 1, #self.inputList.children do
         local widget, attrs = table.unpack(self.inputList.children[j])
         if (widget.value == '') then
-          goto continue
-          ; end
+          goto continue;
+        end
         if (value ~= '') then
           value = value .. '|';
         end

@@ -1,5 +1,13 @@
+local function createPath(path)
+  return path:gsub("/", package.config:sub(1, 1));
+end
+
 -- Set package path to find the packages to import
-package.path = reaper.GetResourcePath() .. '/Scripts/ReaSonus/?.lua';
+local function createPath(path)
+  return path:gsub("/", package.config:sub(1, 1));
+end
+
+package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua');
 -- Load the packages
 local rtk = require('rtk');
 local uiElements = require('refUiElements');

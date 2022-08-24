@@ -1,5 +1,9 @@
 -- Set package path to find rtk installed via ReaPack
-package.path = reaper.GetResourcePath() .. '/Scripts/ReaSonus/?.lua'
+local function createPath(path)
+  return path:gsub("/", package.config:sub(1, 1));
+end
+
+package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua')
 -- Load the package
 local rtk = require('rtk')
 local uiElements = require('refUiElements')
@@ -24,7 +28,7 @@ local FunctionAction = {};
 function FunctionAction:new(index)
   local obj = {
     functionId = index,
-    functionFilePath = reaper.GetResourcePath() .. '/Scripts/Reasonus/handleFunctionKey' .. index .. '.lua',
+    functionFilePath = reaper.GetResourcePath() .. createPath('/Scripts/Reasonus/handleFunctionKey') .. index .. '.lua',
     fileLines = {},
     actionPaneOpened = false,
     element = rtk.VBox {

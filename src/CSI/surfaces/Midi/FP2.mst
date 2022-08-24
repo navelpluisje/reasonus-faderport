@@ -69,14 +69,6 @@ Widget RotaryBig
 	Encoder b0 10 7f
 WidgetEnd
 
-Widget ScrollLeft
-	Press b0 10 41
-WidgetEnd
-
-Widget ScrollRight
-	Press b0 10 01
-WidgetEnd
-
 Widget Next
 	Press 90 2f 7f
 WidgetEnd

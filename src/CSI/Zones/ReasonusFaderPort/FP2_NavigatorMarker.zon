@@ -11,19 +11,16 @@ Zone NavigatorMarker
 // ===========================================
 // BUTTONS AND SCROLL
 // ===========================================
-    Prev                    Reaper _SWS_SELPREVMORR   // SWS: Goto/select previous marker/region
-    Next                    Reaper _SWS_SELNEXTMORR   // SWS: Goto/select next marker/region
-    Shift+Prev              NoAction
-    Shift+Next              NoAction
-    ScrollLeft              Reaper 41045              // Move edit cursor back one beat
-    ScrollRight             Reaper 41044              // Move edit cursor forward one beat
-    Shift+ScrollLeft        Reaper 40104              // View: Move cursor left one pixel
-    Shift+ScrollRight       Reaper 40105              // View: Move cursor right one pixel
-                  
-    RotaryBigPush           Reaper 40157              // Markers: Insert marker at current position
-    Hold+RotaryBigPush      Reaper 40171              // Markers: Insert and/or edit marker at current position
-    Shift+RotaryBigPush     Reaper 40613              // Markers: Delete marker near cursor
-    RotaryBig               NoAction
+  Prev                  Reaper _SWS_SELPREVMORR   // SWS: Goto/select previous marker/region
+  Next                  Reaper _SWS_SELNEXTMORR   // SWS: Goto/select next marker/region
+  Shift+Prev            NoAction
+  Shift+Next            NoAction
+                
+  RotaryBigPush         Reaper 40157              // Markers: Insert marker at current position
+  Hold+RotaryBigPush    Reaper 40171              // Markers: Insert and/or edit marker at current position
+  Shift+RotaryBigPush   Reaper 40613              // Markers: Delete marker near cursor
+  RotaryBig             Reaper [< 41045 41044 >]
+  Shift+RotaryBig       Reaper [< 40104 40105 >]
 
 
 
@@ -69,13 +66,13 @@ Zone NavigatorMarker
 // FUNCTION KEYS
 // ===========================================
 // Function-Action-1
-  Shift+Master        Reaper REASONUS_HANDLE_FUNCTION_KEY_1
+  Shift+Master          Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
 // Function-Action-2 
-  Shift+Click         Reaper REASONUS_HANDLE_FUNCTION_KEY_2
+  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
 // Function-Action-3 
-  Shift+Section       Reaper REASONUS_HANDLE_FUNCTION_KEY_3
+  Shift+Section         Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
 // Function-Action-4 
-  Shift+Marker        Reaper REASONUS_HANDLE_FUNCTION_KEY_4
+  Shift+Marker          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
   Property+Shift+Marker      NoFeedback    
   
 ZoneEnd

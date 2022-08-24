@@ -15,14 +15,11 @@ Zone NavigatorScroll
   Next                  Reaper 40285   // Track: Go to next track
   Shift+Prev            NoAction
   Shift+Next            NoAction
-  ScrollLeft            Reaper 40139   // View: Scroll view down
-  ScrollRight           Reaper 40138   // View: Scroll view up
-  Shift+ScrollLeft      Reaper 40140   // View: Scroll view left
-  Shift+ScrollRight     Reaper 40141   // View: Scroll view right
 
   RotaryBigPush         Reaper 40913   // Track: Vertical scroll selected tracks into view
   Shift+RotaryBigPush   Reaper _SWS_HSCROLLPLAY50  // SWS: Horizontal scroll to put play cursor at 50%
-  RotaryBig             NoAction
+  RotaryBig             Reaper [< 40139 40138 >]
+  Shift+RotaryBig       Reaper [< 40140 40141 >]
   
 // ===========================================
 // All the button States and action
@@ -66,13 +63,13 @@ Zone NavigatorScroll
 // FUNCTION KEYS
 // ===========================================
 // Function-Action-1
-  Shift+Master          Reaper REASONUS_HANDLE_FUNCTION_KEY_1
+  Shift+Master          Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
 // Function-Action-2 
-  Shift+Click           Reaper REASONUS_HANDLE_FUNCTION_KEY_2
+  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
 // Function-Action-3 
-  Shift+Section         Reaper REASONUS_HANDLE_FUNCTION_KEY_3
+  Shift+Section         Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
 // Function-Action-4 
-  Shift+Marker          Reaper REASONUS_HANDLE_FUNCTION_KEY_4
+  Shift+Marker          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
   Property+Shift+Marker      NoFeedback    
 
 ZoneEnd

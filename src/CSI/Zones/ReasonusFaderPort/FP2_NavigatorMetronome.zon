@@ -17,10 +17,6 @@ Zone NavigatorMetronome
   Shift+Prev            Reaper 40029   // Edit: Undo
   Shift+Next            Reaper 40030   // Edit: Redo
   / TODO: Not quite sure if the scripts are working correct
-  ScrollLeft            Reaper _S&M_METRO_VOL_DOWN // SWS/S&M: Decrease metronome volume
-  ScrollRight           Reaper _S&M_METRO_VOL_UP   // SWS/S&M: Increase metronome volume
-  Shift+ScrollLeft      NoAction
-  Shift+ScrollRight     NoAction
 
   RotaryBigPush         Reaper 42456    // Options: Set metronome speed to 1x
   Shift+RotaryBigPush   Reaper 40363    // Options: Show metronome/pre-roll settings
@@ -71,13 +67,13 @@ Zone NavigatorMetronome
 // FUNCTION KEYS
 // ===========================================
 // Function-Action-1
-  Shift+Master          Reaper REASONUS_HANDLE_FUNCTION_KEY_1
+  Shift+Master          Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
 // Function-Action-2 
-  Shift+Click           Reaper REASONUS_HANDLE_FUNCTION_KEY_2
+  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
 // Function-Action-3 
-  Shift+Section         Reaper REASONUS_HANDLE_FUNCTION_KEY_3
+  Shift+Section         Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
 // Function-Action-4 
-  Shift+Marker          Reaper REASONUS_HANDLE_FUNCTION_KEY_4
+  Shift+Marker          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
   Property+Shift+Marker      NoFeedback    
 
 ZoneEnd 

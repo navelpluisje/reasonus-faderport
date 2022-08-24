@@ -1,4 +1,8 @@
-package.path = reaper.GetResourcePath() .. '/Scripts/ReaSonus/?.lua'
+local function createPath(path)
+  return path:gsub("/", package.config:sub(1, 1));
+end
+
+package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua')
 -- Load the package
 local rtk = require('rtk')
 

@@ -8,18 +8,15 @@
 //------------------------------------------------------------------------------
 
 Zone NavigatorSection
-  Prev                    Reaper _SWS_SELPREVMORR   // SWS: Goto/select previous marker/region
-  Next                    Reaper _SWS_SELNEXTMORR   // SWS: Goto/select next marker/region
-  Shift+Prev              Reaper 40625              // Time selection: Set start point
-  Shift+Next              Reaper 40626              // Time selection: Set end point
-  ScrollLeft              Reaper 41045              // Move edit cursor back one beat
-  ScrollRight             Reaper 41044              // Move edit cursor forward one beat
-  Shift+ScrollLeft        Reaper 40104              // View: Move cursor left one pixel
-  Shift+ScrollRight       Reaper 40105              // View: Move cursor right one pixel
+  Prev                  Reaper _SWS_SELPREVMORR   // SWS: Goto/select previous marker/region
+  Next                  Reaper _SWS_SELNEXTMORR   // SWS: Goto/select next marker/region
+  Shift+Prev            Reaper 40625              // Time selection: Set start point
+  Shift+Next            Reaper 40626              // Time selection: Set end point
 
-  RotaryBigPush           Reaper 40616              // Markers: Edit region near cursor
-  Shift+RotaryBigPush     Reaper 40306              // Markers: Insert region from time selection and edit...
-  RotaryBig               NoAction
+  RotaryBigPush         Reaper 40616              // Markers: Edit region near cursor
+  Shift+RotaryBigPush   Reaper 40306              // Markers: Insert region from time selection and edit...
+  RotaryBig             Reaper [< 41045 41044 >]
+  Shift+RotaryBig       Reaper [< 40104 40105 >]
 
 
 
@@ -35,44 +32,44 @@ Zone NavigatorSection
   Pan                   GoZone "NavigatorPan"
   Shift+Pan             Reaper _REASONUS_FADERPORT_CONTROL { 0 20 0 0 20 0 }
 
-  Chanmnel                FixedRGBColourDisplay { 0 5 20 }
-  Chanmnel                GoZone "Home"
-  Chanmnel                GoZone "NavigatorChannel"
+  Chanmnel              FixedRGBColourDisplay { 0 5 20 }
+  Chanmnel              GoZone "Home"
+  Chanmnel              GoZone "NavigatorChannel"
 
-  Scroll                  FixedRGBColourDisplay { 0 5 20 }
-  Scroll                  GoZone "Home"
-  Scroll                  GoZone "NavigatorScroll"
+  Scroll                FixedRGBColourDisplay { 0 5 20 }
+  Scroll                GoZone "Home"
+  Scroll                GoZone "NavigatorScroll"
 
-  Shift+Scroll            FixedRGBColourDisplay { 0 5 20 }
-  Shift+Scroll            GoZone "Home"
-  Shift+Scroll            GoZone "NavigatorZoom"
+  Shift+Scroll          FixedRGBColourDisplay { 0 5 20 }
+  Shift+Scroll          GoZone "Home"
+  Shift+Scroll          GoZone "NavigatorZoom"
 
-  Master                  NoAction
-  Master                  GoZone "Home"
-  Master                  GoZone "NavigatorMaster"
+  Master                NoAction
+  Master                GoZone "Home"
+  Master                GoZone "NavigatorMaster"
 
-  Click                   Reaper 40364    // Options: Toggle metronome
-  Hold+Click              GoZone "Home"
-  Hold+Click              GoZone "NavigatorMetronome" 
+  Click                 Reaper 40364    // Options: Toggle metronome
+  Hold+Click            GoZone "Home"
+  Hold+Click            GoZone "NavigatorMetronome" 
 
-  Section                       Reaper _REASONUS_ALWAYS_ON // Dummy Action
-  Hold+Section                  Reaper 40020               // Time selection: Remove (unselect) time selection and loop points 
+  Section               Reaper _REASONUS_ALWAYS_ON // Dummy Action
+  Hold+Section          Reaper 40020               // Time selection: Remove (unselect) time selection and loop points 
 
-  Marker                  NoAction
-  Marker                  GoZone "Home"
-  Marker                  GoZone "NavigatorMarker"
+  Marker                NoAction
+  Marker                GoZone "Home"
+  Marker                GoZone "NavigatorMarker"
 
 // ===========================================
 // FUNCTION KEYS
 // ===========================================
 // Function-Action-1
-  Shift+Master            Reaper REASONUS_HANDLE_FUNCTION_KEY_1
+  Shift+Master          Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
 // Function-Action-2    
-  Shift+Click             Reaper REASONUS_HANDLE_FUNCTION_KEY_2
+  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
 // Function-Action-3 
-  Shift+Section           Reaper REASONUS_HANDLE_FUNCTION_KEY_3
+  Shift+Section         Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
 // Function-Action-4 
-  Shift+Marker            Reaper REASONUS_HANDLE_FUNCTION_KEY_4
+  Shift+Marker          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
   Property+Shift+Marker      NoFeedback    
   
 ZoneEnd
