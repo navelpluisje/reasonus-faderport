@@ -295,7 +295,7 @@ end
 
 function MixManagement:addSearchInputs(searchQuery)
   self.inputList.children = {};
-  for word in string.gmatch(searchQuery, "%w+") do
+  for word in string.gmatch(searchQuery, "[^%|]+") do
     local entry = uiElements.createEntry()
     entry:attr('value', word);
     self.inputList:add(entry);

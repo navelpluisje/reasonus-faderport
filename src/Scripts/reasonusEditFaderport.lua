@@ -63,6 +63,14 @@ local window = rtk.Window {
   title     = 'ReaSonus FaderPort Control'
 }
 
+window.onclose = function()
+  rtk.quit();
+end
+
+rtk.onerror = function()
+  rtk.quit();
+end
+
 --******************************************************************************
 --
 -- Define all the main areas of the UI

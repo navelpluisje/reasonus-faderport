@@ -83,7 +83,7 @@ function uiElements.createEntry(width, height)
     halign         = rtk.Widget.LEFT,
     padding        = 7,
     valign         = rtk.Widget.CENTER,
-    bg             = Colours.Button.BackGround,
+    bg             = '#ffffff3f', -- Colours.Button.BackGround,
     border         = Colours.Button.Border,
     border_hover   = Colours.Button.BorderHover,
     border_focused = Colours.Button.BorderHover,
