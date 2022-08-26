@@ -155,8 +155,5 @@ WidgetEnd
 Widget Fader
   Fader14Bit e0 7f 7f
   FB_Fader14Bit e0 7f 7f
-WidgetEnd
-
-Widget FaderTouch
-  Press 90 68 7f 90 68 00
+  Touch 90 68 7f 90 68 00
 WidgetEnd

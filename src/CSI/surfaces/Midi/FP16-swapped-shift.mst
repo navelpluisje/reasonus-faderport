@@ -498,149 +498,97 @@ WidgetEnd
 Widget Fader1
   Fader14Bit e0 7f 7f
   FB_Fader14Bit e0 7f 7f
+  Touch 90 68 7f 90 68 00
 WidgetEnd
 
 Widget Fader2
   Fader14Bit e1 7f 7f
   FB_Fader14Bit e1 7f 7f
+  Touch 90 69 7f 90 69 00
 WidgetEnd
 
 Widget Fader3
   Fader14Bit e2 7f 7f
   FB_Fader14Bit e2 7f 7f
+  Touch 90 6a 7f 90 6a 00
 WidgetEnd
 
 Widget Fader4
   Fader14Bit e3 7f 7f
   FB_Fader14Bit e3 7f 7f
+  Touch 90 6b 7f 90 6b 00
 WidgetEnd
 
 Widget Fader5
   Fader14Bit e4 7f 7f
   FB_Fader14Bit e4 7f 7f
+  Touch 90 6c 7f 90 6c 00
 WidgetEnd
 
 Widget Fader6
   Fader14Bit e5 7f 7f
   FB_Fader14Bit e5 7f 7f
+  Touch 90 6d 7f 90 6d 00
 WidgetEnd
 
 Widget Fader7
   Fader14Bit e6 7f 7f
   FB_Fader14Bit e6 7f 7f
+  Touch 90 6e 7f 90 6e 00
 WidgetEnd
 
 Widget Fader8
   Fader14Bit e7 7f 7f
   FB_Fader14Bit e7 7f 7f
+  Touch 90 6f 7f 90 6f 00
 WidgetEnd
 
 Widget Fader9
   Fader14Bit e8 7f 7f
   FB_Fader14Bit e8 7f 7f
+  Touch 90 70 7f 90 70 00
 WidgetEnd
 
 Widget Fader10
   Fader14Bit e9 7f 7f
   FB_Fader14Bit e9 7f 7f
+  Touch 90 71 7f 90 71 00
 WidgetEnd
 
 Widget Fader11
   Fader14Bit ea 7f 7f
   FB_Fader14Bit ea 7f 7f
+  Touch 90 72 7f 90 72 00
 WidgetEnd
 
 Widget Fader12
   Fader14Bit eb 7f 7f
   FB_Fader14Bit eb 7f 7f
+  Touch 90 73 7f 90 73 00
 WidgetEnd
 
 Widget Fader13
   Fader14Bit ec 7f 7f
   FB_Fader14Bit ec 7f 7f
+  Touch 90 74 7f 90 74 00
 WidgetEnd
 
 Widget Fader14
   Fader14Bit ed 7f 7f
   FB_Fader14Bit ed 7f 7f
+  Touch 90 75 7f 90 75 00
 WidgetEnd
 
 Widget Fader15
   Fader14Bit ee 7f 7f
   FB_Fader14Bit ee 7f 7f
+  Touch 90 76 7f 90 76 00
 WidgetEnd
 
 Widget Fader16
   Fader14Bit ef 7f 7f
   FB_Fader14Bit ef 7f 7f
-WidgetEnd
-
-
-// ===========================================
-// TOUCH
-// ===========================================
-Widget FaderTouch1
-  Press 90 68 7f 90 68 00
-WidgetEnd
-
-Widget FaderTouch2
-  Press 90 69 7f 90 69 00
-WidgetEnd
-
-Widget FaderTouch3
-  Press 90 6a 7f 90 6a 00
-WidgetEnd
-
-Widget FaderTouch4
-  Press 90 6b 7f 90 6b 00
-WidgetEnd
-
-Widget FaderTouch5
-  Press 90 6c 7f 90 6c 00
-WidgetEnd
-
-Widget FaderTouch6
-  Press 90 6d 7f 90 6d 00
-WidgetEnd
-
-Widget FaderTouch7
-  Press 90 6e 7f 90 6e 00
-WidgetEnd
-
-Widget FaderTouch8
-  Press 90 6f 7f 90 6f 00
-WidgetEnd
-
-Widget FaderTouch9
-  Press 90 70 7f 90 70 00
-WidgetEnd
-
-Widget FaderTouch10
-  Press 90 71 7f 90 71 00
-WidgetEnd
-
-Widget FaderTouch11
-  Press 90 72 7f 90 72 00
-WidgetEnd
-
-Widget FaderTouch12
-  Press 90 73 7f 90 73 00
-WidgetEnd
-
-Widget FaderTouch13
-  Press 90 74 7f 90 74 00
-WidgetEnd
-
-Widget FaderTouch14
-  Press 90 75 7f 90 75 00
-WidgetEnd
-
-Widget FaderTouch15
-  Press 90 76 7f 90 76 00
-WidgetEnd
-
-Widget FaderTouch16
-  Press 90 77 7f 90 77 00
+  Touch 90 77 7f 90 77 00
 WidgetEnd
 
 

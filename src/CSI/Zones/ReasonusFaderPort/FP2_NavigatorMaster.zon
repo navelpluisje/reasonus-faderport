@@ -17,8 +17,6 @@ Zone NavigatorMaster
 
   Shift+Fader           TrackPan
   Fader                 TrackVolume
-  FaderTouch+Fader      TrackVolume
-  FaderTouch            TrackTouch
   
   Prev                  NoAction
   Next                  NoAction
