@@ -8,12 +8,16 @@ local rtk = require('rtk');
 local uiElements = require('refUiElements');
 local FunctionAction = require('refFunctionAction')
 local MixManagement = require('refMixManagement')
+local CreatePluginZone = require('refCreatePluginZone')
 
 local faderPortImages = {
   fp2 = rtk.Image():load('./assets/faderport2.png'),
   fp8 = rtk.Image():load('./assets/faderport8.png'),
   fp16 = rtk.Image():load('./assets/faderport16.png'),
 }
+
+local log = rtk.log
+log.level = log.WARNING
 
 local pages = {};
 
@@ -230,4 +234,84 @@ pages.mixManagementPage = {
   end,
 }
 
+pages.createPluginZoneFile = {
+  nbTracks      = 16,
+  filterActions = {},
+  activeIndex   = 1,
+  page          = {},
+  content       = {},
+  buttonBar     = {},
+  pluginEditor  = {},
+  create        = function(nbTracks)
+    pages.createPluginZoneFile.nbTracks = nbTracks;
+    pages.createPluginZoneFile.page = rtk.VBox {
+      -- h      = 1,
+      w      = 1,
+      margin = 8;
+    }
+    pages.createPluginZoneFile.content = pages.createPluginZoneFile.page:add(rtk.HBox {
+      w = 1,
+    })
+    pages.createPluginZoneFile.buttonBar = pages.createPluginZoneFile.page:add(rtk.HBox {
+      w        = 1,
+      tmargin  = 20,
+      tpadding = 8,
+      tborder  = uiElements.Colours.Button.Border;
+    })
+    pages.createPluginZoneFile.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
+    local loadButton = pages.createPluginZoneFile.buttonBar:add(uiElements.createButton('Load',
+      uiElements.Icons.refresh));
+    loadButton:attr('rmargin', 16)
+    loadButton.onclick = pages.createPluginZoneFile.loadPlugin;
+    loadButton.ondragstart = function(a, b)
+      reaper.ShowConsoleMsg('drag start')
+      return true, true
+    end
+    loadButton.ondragmousemove = function(event, arg)
+      loadButton:attr('x', rtk.mouse.x)
+      loadButton:attr('y', rtk.mouse.y)
+      log.warning(table.tostring(rtk.mouse))
+    end
+    local saveButton = pages.createPluginZoneFile.buttonBar:add(uiElements.createButton('Save filter',
+      uiElements.Icons.save));
+    saveButton:attr('halign', 'right')
+    saveButton.onclick = pages.createPluginZoneFile.save;
+    saveButton.ondropfocus = function()
+      saveButton:attr('border', '1px red');
+      return true
+    end
+
+    pages.createPluginZoneFile.pluginEditor = CreatePluginZone:new(nbTracks);
+    pages.createPluginZoneFile.content:add(pages.createPluginZoneFile.pluginEditor:getPluginEditor())
+
+
+    -- local activeEffect, a, b, c = CreatePluginZone.getPluginData();
+
+    -- reaper.ShowConsoleMsg(activeEffect and 'active' or 'inactive');
+    -- if (activeEffect) then
+    --   reaper.ShowConsoleMsg(a .. ' ' .. b .. ' ' .. c .. '\n')
+    -- else
+    --   reaper.ShowConsoleMsg('No Effect selected \n');
+    -- end
+
+    return pages.createPluginZoneFile.page;
+  end,
+  save          = function()
+    pages.createPluginZoneFile.filterActions[pages.createPluginZoneFile.activeIndex]:writeChangesToFile()
+  end,
+  loadPlugin    = function()
+    -- pages.createPluginZoneFile.content.clear();
+    reaper.ShowConsoleMsg('Cleared')
+    -- pages.createPluginZoneFile.plugin = CreatePluginZone:new(pages.createPluginZoneFile.nbTracks);
+    reaper.ShowConsoleMsg('nbTracks set')
+    local hasPlugin = pages.createPluginZoneFile.pluginEditor:loadPlugin()
+    reaper.ShowConsoleMsg('nbTracks loaded')
+    -- if (not hasPlugin) then
+    --   reaper.MB('NoPlugin', 'No plugin selected')
+    -- else
+    --   reaper.MB('Plugin', 'Plugin selected')
+
+    -- end
+  end,
+}
 return pages;

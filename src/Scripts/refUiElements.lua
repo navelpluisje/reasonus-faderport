@@ -273,6 +273,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   local navHome          = uiElements.createNavigationButton('Home', uiElements.Icons.home, true);
   local navFunction      = uiElements.createNavigationButton('Edit Function keys', uiElements.Icons.functions, false);
   local navMixManagement = uiElements.createNavigationButton('Mix Management', uiElements.Icons.mix, false);
+  local navCreateFxZone  = uiElements.createNavigationButton('Create Plugin Zone', uiElements.Icons.mix, false);
   local navDocumentation = uiElements.createNavigationButton('Documentation', uiElements.Icons.book, false);
   local navAbout         = uiElements.createNavigationButton('About', uiElements.Icons.about, false);
 
@@ -282,6 +283,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navFunction:attr('hover', false)
     if (faderPortVersion ~= '2') then
       navMixManagement:attr('hover', false)
+      navCreateFxZone:attr('hover', false)
     end
     navAbout:attr('hover', false)
   end
@@ -292,6 +294,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navFunction:attr('hover', true)
     if (faderPortVersion ~= '2') then
       navMixManagement:attr('hover', false)
+      navCreateFxZone:attr('hover', false)
     end
     navAbout:attr('hover', false)
   end
@@ -302,6 +305,18 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navFunction:attr('hover', false)
     if (faderPortVersion ~= '2') then
       navMixManagement:attr('hover', true)
+      navCreateFxZone:attr('hover', false)
+    end
+    navAbout:attr('hover', false)
+  end
+
+  navCreateFxZone.onclick = function()
+    app:push_screen('create-plgin-zone')
+    navHome:attr('hover', false)
+    navFunction:attr('hover', false)
+    if (faderPortVersion ~= '2') then
+      navMixManagement:attr('hover', false)
+      navCreateFxZone:attr('hover', true)
     end
     navAbout:attr('hover', false)
   end
@@ -316,6 +331,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navFunction:attr('hover', false)
     if (faderPortVersion ~= '2') then
       navMixManagement:attr('hover', false)
+      navCreateFxZone:attr('hover', false)
     end
     navAbout:attr('hover', true)
   end
@@ -326,6 +342,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navFunction:attr('hover', false)
     if (faderPortVersion ~= '2') then
       navMixManagement:attr('hover', false)
+      navCreateFxZone:attr('hover', false)
     end
     navAbout:attr('hover', false)
   end
@@ -335,6 +352,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   sidebar:add(navFunction)
   if (faderPortVersion ~= '2') then
     sidebar:add(navMixManagement)
+    sidebar:add(navCreateFxZone)
   end
   sidebar:add(navDocumentation)
   sidebar:add(navAbout)

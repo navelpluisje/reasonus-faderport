@@ -129,6 +129,13 @@ if (faderPortVersion ~= '2') then
       screen.widget = pages.mixManagementPage.create(nbMixManagementFilters)
     end,
   }
+
+  app:add_screen {
+    name = 'create-plgin-zone',
+    init = function(_, screen)
+      screen.widget = pages.createPluginZoneFile.create(nbMixManagementFilters)
+    end,
+  }
 end
 
 app:add_screen {
