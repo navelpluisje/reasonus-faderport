@@ -1,0 +1,23 @@
+Zone Buttons
+  SubZones
+ 	  "ChannelNavigator"
+ 	  "ZoomNavigator"
+  SubZonesEnd
+  
+  Channel GoSubZone ChannelNavigator
+  Zoom    GoSubZone ZoomNavigator
+  Master  GoMasterTrack
+
+
+//------------------------------------------------------------------------------
+// TRANSPORT
+//------------------------------------------------------------------------------
+  Loop                  CycleTimeline
+  InvertFB+Rewind       Rewind
+  Hold+Rewind           Reaper "40042"  // Go to the project start
+  InvertFB+FastForward  FastForward
+  Hold+FastForward      Reaper "40043"  // Go to the project end
+  Play                  Play
+  Stop                  Stop
+  Record                Record
+ZoneEnd

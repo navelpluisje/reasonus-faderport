@@ -7,16 +7,16 @@
 //    Handle your transport buttons
 //------------------------------------------------------------------------------
 
-Zone "Buttons"
+Zone "Transport"
 
 
 //------------------------------------------------------------------------------
 // TRANSPORT
 //------------------------------------------------------------------------------
   Loop                  CycleTimeline
-  InvertFB+Rewind       Rewind
+  Rewind                Rewind
   Hold+Rewind           Reaper "40042"  // Go to the project start
-  InvertFB+FastForward  FastForward
+  FastForward           FastForward
   Hold+FastForward      Reaper "40043"  // Go to the project end
   Play                  Play
   Stop                  Stop

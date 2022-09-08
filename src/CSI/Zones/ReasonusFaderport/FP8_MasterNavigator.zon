@@ -1,0 +1,21 @@
+//------------------------------------------------------------------------------
+// File:    FP8_NavigatorMaster.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+
+Zone "MasterTrack"
+// ===========================================
+// BUTTONS AND SCROLL
+// ===========================================
+    Prev                  TrackBank -8
+    Next                  TrackBank  8
+    Shift+Prev            NoAction
+    Shift+Next            NoAction
+
+    RotaryBigPush         Reaper _XENAKIOS_SETMASTVOLTO0  // Xenakios/SWS: Set master volume to 0 dB
+    Shift+RotaryBigPush   Reaper _REASONUS_MASTER_PAN_CENTER  // Set master pan to center position
+    Option+RotaryBigPush  NoAction
+    RotaryBig             TrackVolume
+    Shift+RotaryBig       TrackPan
+ZoneEnd

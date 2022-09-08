@@ -16,9 +16,11 @@ Zone Home
   IncludedZones
     "Track"
     "Buttons"
+    "SelectedTrack"
   IncludedZonesEnd
   AssociatedZones
     "SelectedTrackFXMenu"
+    "MasterTrack"
     / "SelectedTrackSend"
     / "SelectedTrackReceive"
     / "TrackFXMenu"

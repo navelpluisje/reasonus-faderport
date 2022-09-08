@@ -1,0 +1,26 @@
+
+//------------------------------------------------------------------------------
+// File:    FP8_ZoomNavigator.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+
+Zone "ZoomNavigator"
+// ===========================================
+// BUTTONS
+// ===========================================
+  Prev                Reaper 1011               // View: Zoom out horizontal
+  Next                Reaper 1012               // View: Zoom in horizontal
+  Shift+Prev          Reaper 40112              // View: Zoom out vertical
+  Shift+Next          Reaper 40111              // View: Zoom in vertical
+
+// ===========================================
+// ENCODER
+// ===========================================
+  RotaryBigPush       Reaper 40110              // View: Toggle track zoom to minimum height
+  Increase+RotaryBig           Reaper 1012    // View: Zoom in horizontal
+  Decrease+RotaryBig           Reaper 1011    // View: Zoom out horizontal
+  Shift+Increase+RotaryBig     Reaper 40111   // View: Zoom in vertical
+  Shift+Decrease+RotaryBig     Reaper 40112  // View: Zoom out vertical
+
+  Zoom LeaveSubZone
+ZoneEnd

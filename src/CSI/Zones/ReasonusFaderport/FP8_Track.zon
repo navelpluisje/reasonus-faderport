@@ -3,17 +3,8 @@
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
 // Version: 1.0.0
 //------------------------------------------------------------------------------
-// Description:
-//    File contains handling the Channel
-//------------------------------------------------------------------------------
-
 
 Zone "Track"
-
-  SubZones
-    TrackRecArm
-  SubZonesEnd
-
   ScribbleStripMode|        SetWidgetMode
   ScribbleStripMode|        WidgetMode 8
   ScribbleLine1_|           TrackNameDisplay
