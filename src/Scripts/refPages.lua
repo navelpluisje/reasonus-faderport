@@ -242,10 +242,10 @@ pages.createPluginZoneFile = {
   content       = {},
   buttonBar     = {},
   pluginEditor  = {},
-  create        = function(nbTracks)
+  create        = function(nbTracks, window)
     pages.createPluginZoneFile.nbTracks = nbTracks;
     pages.createPluginZoneFile.page = rtk.VBox {
-      -- h      = 1,
+      h      = 1,
       w      = 1,
       margin = 8;
     }
@@ -281,7 +281,7 @@ pages.createPluginZoneFile = {
       return true
     end
 
-    pages.createPluginZoneFile.pluginEditor = CreatePluginZone:new(nbTracks);
+    pages.createPluginZoneFile.pluginEditor = CreatePluginZone:new(nbTracks, window);
     pages.createPluginZoneFile.content:add(pages.createPluginZoneFile.pluginEditor:getPluginEditor())
 
 

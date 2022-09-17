@@ -479,4 +479,119 @@ function uiElements.colourPicker(label, r, g, b)
 
 end
 
+local function onParamDropFocus(widget)
+  return function()
+    widget:animate { 'bg', dst = '#ffffff55', duration = 0.2 };
+    return true;
+  end
+end
+
+local function onParamDropBlur(widget)
+  return function()
+    widget:animate { 'bg', dst = '#ffffff00', duration = 0.2 };
+  end
+end
+
+uiElements.channelWidgets = function(id)
+  local container = rtk.HBox { border = uiElements.Colours.Border, h = 50 }
+  local trackIndex = rtk.Text {
+    text = id,
+    h = 1,
+    w = 25,
+    rborder = uiElements.Colours.Border,
+    halign = 'center',
+    valign = 'center'
+  };
+  local widgets = rtk.VBox { w = 1 }
+
+  local select = widgets:add(rtk.HBox { h = .5, w = 1, lpadding = 8, bborder = uiElements.Colours.Border,
+    bg = '#ffffff00' })
+  select:add(rtk.Text { text = 'Select', h = 1, valign = 'center', w = 60 });
+  select.ondropfocus = onParamDropFocus(select);
+  select.ondropblur = onParamDropBlur(select);
+  local dropSelect = select:add(rtk.Text { text = '', h = 1, w = 1, valign = 'center', minw = 60 });
+
+  local slider = widgets:add(rtk.HBox { h = 1, w = 1, lpadding = 8,
+    bg = '#ffffff00' })
+  slider:add(rtk.Text { text = 'Slider', h = 1, valign = 'center', w = 60 });
+  slider.ondropfocus = onParamDropFocus(slider);
+  slider.ondropblur = onParamDropBlur(slider);
+  local dropSlider = slider:add(rtk.Text { text = '', h = 1, w = 1, valign = 'center', minw = 60 });
+
+  container:add(trackIndex);
+  container:add(widgets);
+
+  local setSelectName = function(name)
+    dropSelect:attr('text', name)
+  end
+
+  local setOnSelectDrop = function(callback)
+    select.ondrop = callback;
+  end
+
+  local setOnSelectClick = function(callback)
+    dropSelect.onclick = callback;
+  end
+
+  local setSliderName = function(name)
+    dropSlider:attr('text', name)
+  end
+
+  local setOnSliderDrop = function(callback)
+    slider.ondrop = callback;
+  end
+
+  local setOnSliderClick = function(callback)
+    dropSlider.onclick = callback;
+  end
+
+  return {
+    element = container,
+    setSelectName = setSelectName,
+    setOnSelectDrop = setOnSelectDrop,
+    setOnSelectClick = setOnSelectClick,
+    setSliderName = setSliderName,
+    setOnSliderDrop = setOnSliderDrop,
+    setOnSliderClick = setOnSliderClick,
+  }
+end
+
+uiElements.pluginParam = function(name)
+  local param = rtk.Text {
+    text    = name,
+    padding = 4,
+    border  = uiElements.Colours.Border,
+    w       = 1,
+    bg      = uiElements.Colours.BackGround,
+    cursor  = rtk.mouse.cursors.MOVE
+  }
+
+  param.onmouseenter = function()
+    param:attr('border', '1px #ffffff')
+    return true
+  end
+
+  param.onmouseleave = function()
+    param:attr('border', uiElements.Colours.Border)
+    return true
+  end
+
+  param.ondragmousemove = function()
+    param:attr('cursor', rtk.mouse.cursors.REAPER_DRAGDROP_COPY);
+  end
+
+  param.ondragend = function()
+    param:attr('cursor', rtk.mouse.cursors.MOVE);
+  end
+
+  local setOnDragStart = function(callback)
+    param.ondragstart = callback;
+  end
+
+  return {
+    element = param,
+    setOnDragStart = setOnDragStart,
+  }
+end
+
 return uiElements
