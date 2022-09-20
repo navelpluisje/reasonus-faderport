@@ -1,6 +1,6 @@
 -- Set package path to find rtk installed via ReaPack
 local function createPath(path)
-  return path:gsub("/", package.config:sub(1, 1));
+  return path:gsub('/', package.config:sub(1, 1));
 end
 
 package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua')
@@ -54,7 +54,7 @@ function MixManagement:new(index, faderPortVersion)
       halign   = rtk.Widget.LEFT,
       valign   = rtk.Widget.CENTER,
       fontsize = 20,
-      tmargin  = 7
+      tmargin  = 7,
     },
     labelText = rtk.Text {
       text     = '',
@@ -62,7 +62,7 @@ function MixManagement:new(index, faderPortVersion)
       halign   = rtk.Widget.LEFT,
       valign   = rtk.Widget.CENTER,
       fontsize = 20,
-      tmargin  = 7
+      tmargin  = 7,
     },
     inputList = rtk.VBox {
       w = 1,
@@ -72,7 +72,7 @@ function MixManagement:new(index, faderPortVersion)
       w = 1,
       spacing = 16,
     },
-    colourPicker = uiElements.colourPicker('Colour');
+    colourPicker = uiElements.colourPicker('Colour'),
     showSiblings = uiElements.createCheckBox('Show track siblings'),
     showParents = uiElements.createCheckBox('Show track parents', true),
     showChildren = uiElements.createCheckBox('Show track children', true),
@@ -181,7 +181,7 @@ function MixManagement:writeActionFile()
     lines[#lines + 1] = line;
   end
 
-  local actionFile = assert(io.open(self.filterFilePath, "w"))
+  local actionFile = assert(io.open(self.filterFilePath, 'w'))
   for i = 1, #lines do
     local line = lines[i];
 
@@ -261,7 +261,7 @@ function MixManagement:writeZoneFile()
     lines[#lines + 1] = line;
   end
 
-  local zoneFile = assert(io.open(self.zoneFilePath, "w"))
+  local zoneFile = assert(io.open(self.zoneFilePath, 'w'))
   for i = 1, #lines do
     local line = lines[i];
 
@@ -295,7 +295,7 @@ end
 
 function MixManagement:addSearchInputs(searchQuery)
   self.inputList.children = {};
-  for word in string.gmatch(searchQuery, "[^%|]+") do
+  for word in string.gmatch(searchQuery, '[^%|]+') do
     local entry = uiElements.createEntry()
     entry:attr('value', word);
     self.inputList:add(entry);

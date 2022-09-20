@@ -1,5 +1,5 @@
 local function createPath(path)
-  return path:gsub("/", package.config:sub(1, 1));
+  return path:gsub('/', package.config:sub(1, 1));
 end
 
 package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua');
@@ -21,40 +21,35 @@ log.level = log.WARNING
 
 local pages = {};
 
---******************************************************************************
---
--- Create the home page
---
---******************************************************************************
+---Create the home page
+---@param faderPortVersion string
+---@return table rtk.Element
 function pages.createHomePage(faderPortVersion)
   local homePage = rtk.VBox { spacing = 25, w = 1, padding = 10 }
   homePage:add(rtk.Heading {
     text   = 'Welcome to ReaSonus FaderPort',
     halign = 'center',
-    w      = 1
+    w      = 1,
   })
   local imageArea = homePage:add(rtk.Container {
     w      = 1,
-    halign = rtk.Widget.CENTER
-  })
+    halign = rtk.Widget.CENTER,
+                                 })
   imageArea:add(rtk.ImageBox {
     faderPortImages['fp' .. faderPortVersion],
     maxh   = 400,
-    halign = rtk.Widget.CENTER
+    halign = rtk.Widget.CENTER,
   })
   homePage:add(rtk.Text {
     text   = 'Manage your FaderPort the best way possible in REAPER',
     w      = 1,
-    halign = rtk.Widget.CENTER
+    halign = rtk.Widget.CENTER,
   })
   return homePage
 end
 
---******************************************************************************
---
--- Create the about page
---
---******************************************************************************
+---Create the about page
+---@return table rtk.Element
 function pages.createAboutPage()
   local aboutPage = rtk.VBox { spacing = 15, w = 1, padding = 10 }
   aboutPage:add(rtk.Heading {
@@ -63,25 +58,25 @@ function pages.createAboutPage()
   aboutPage:add(rtk.Text {
     w    = 1,
     wrap = rtk.Text.WRAP_NORMAL,
-    text = 'ReaSonus FaderPort is created to make the use of your FaderPort with Reaper as easy as possible. It is build on top of CSI, a tool for connecting controllers to REAPER with a huge flexibility.'
+    text = 'ReaSonus FaderPort is created to make the use of your FaderPort with Reaper as easy as possible. It is build on top of CSI, a tool for connecting controllers to REAPER with a huge flexibility.',
   })
   aboutPage:add(rtk.Text {
     w    = 1,
     wrap = rtk.Text.WRAP_NORMAL,
-    text = 'Therefor a big thank you goes out to Geoff Waddington and the CSI community.'
+    text = 'Therefor a big thank you goes out to Geoff Waddington and the CSI community.',
   })
   aboutPage:add(rtk.Text {
     w    = 1,
     wrap = rtk.Text.WRAP_NORMAL,
-    text = 'I work on ReaSonus in my spare time and is Open Source, so if you want to, feel free to add code.'
+    text = 'I work on ReaSonus in my spare time and is Open Source, so if you want to, feel free to add code.',
   })
   aboutPage:add(rtk.Text {
     w    = 1,
     wrap = rtk.Text.WRAP_NORMAL,
-    text = 'You may also donate if you appreciate this project.'
+    text = 'You may also donate if you appreciate this project.',
   })
   local donateButton = aboutPage:add(uiElements.createButton('Buy me a coffe or beer', uiElements.Icons.coffee, 200), {
-    halign = rtk.Widget.RIGHT
+    halign = rtk.Widget.RIGHT,
   })
   donateButton.onclick = function()
     rtk.open_url('https://www.buymeacoffee.com/navelpluisje')
@@ -104,33 +99,50 @@ pages.functionsPage = {
       w = 1,
       padding = 8,
     }
-    pages.functionsPage.content = pages.functionsPage.page:add(rtk.FlowBox {
-      vspacing = 8;
-      hspacing = 8;
-      w = 1,
-    });
-    pages.functionsPage.buttonBar = pages.functionsPage.page:add(rtk.HBox {
-      w        = 1,
-      tmargin  = 20,
-      tpadding = 8,
-      tborder  = uiElements.Colours.Button.Border;
-    })
-    pages.functionsPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
-    local resetButton = pages.functionsPage.buttonBar:add(uiElements.createButton('Reset to defaults',
-      uiElements.Icons.save));
+    pages.functionsPage.content = pages.functionsPage.page:add(
+      rtk.FlowBox {
+        vspacing = 8,
+        hspacing = 8,
+        w = 1,
+      }
+    );
+    pages.functionsPage.buttonBar = pages.functionsPage.page:add(
+      rtk.HBox {
+        w        = 1,
+        tmargin  = 20,
+        tpadding = 8,
+        tborder  = uiElements.Colours.Button.Border,
+      }
+    );
+    pages.functionsPage.buttonBar:add(
+    rtk.Spacer(),
+        {
+          expand = 1,
+          fillw = true,
+          fillh = false,
+        }
+    );
+
+    local resetButton = pages.functionsPage.buttonBar:add(
+      uiElements.createButton(
+        'Reset to defaults',
+        uiElements.Icons.save
+      )
+    );
     resetButton:attr('halign', 'right');
     resetButton.onclick = function()
       uiElements.showConfirm(
-        'Reset the Function Id s',
-        rtk.Text { text = 'Do you really want to reset to the default values?\n This can not be undone',
-          wrap      = rtk.Text.WRAP_NORMAL,
-          textalign = rtk.Widget.CENTER,
-          w         = 1,
-          halign    = 'center',
-        },
-        'Yes, I do',
-        pages.functionsPage.resetActionId,
-        'Cancel'
+      'Reset the Function Id s',
+          rtk.Text {
+            text      = 'Do you really want to reset to the default values?\n This can not be undone',
+            wrap      = rtk.Text.WRAP_NORMAL,
+            textalign = rtk.Widget.CENTER,
+            w         = 1,
+            halign    = 'center',
+          },
+          'Yes, I do',
+          pages.functionsPage.resetActionId,
+          'Cancel'
       )
     end
     pages.functionsPage.populateContent();
@@ -171,27 +183,41 @@ pages.mixManagementPage = {
     pages.mixManagementPage.page = rtk.VBox {
       h      = 1,
       w      = 1,
-      margin = 8;
+      margin = 8,
     }
-    pages.mixManagementPage.tabBar = pages.mixManagementPage.page:add(rtk.HBox {
-      w = 1,
-    })
-    pages.mixManagementPage.content = pages.mixManagementPage.page:add(rtk.HBox {
-      w = 1,
-    })
-    pages.mixManagementPage.buttonBar = pages.mixManagementPage.page:add(rtk.HBox {
-      w        = 1,
-      tmargin  = 20,
-      tpadding = 8,
-      tborder  = uiElements.Colours.Button.Border;
-    })
+    pages.mixManagementPage.tabBar = pages.mixManagementPage.page:add(
+      rtk.HBox {
+        w = 1,
+      }
+    )
+    pages.mixManagementPage.content = pages.mixManagementPage.page:add(
+      rtk.HBox {
+        w = 1,
+      }
+    )
+    pages.mixManagementPage.buttonBar = pages.mixManagementPage.page:add(
+      rtk.HBox {
+        w        = 1,
+        tmargin  = 20,
+        tpadding = 8,
+        tborder  = uiElements.Colours.Button.Border,
+      }
+    )
     pages.mixManagementPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
-    local reloadButton = pages.mixManagementPage.buttonBar:add(uiElements.createButton('Reload',
-      uiElements.Icons.refresh));
+    local reloadButton = pages.mixManagementPage.buttonBar:add(
+      uiElements.createButton(
+        'Reload',
+        uiElements.Icons.refresh
+      )
+    );
     reloadButton:attr('rmargin', 16)
     reloadButton.onclick = pages.mixManagementPage.reload;
-    local saveButton = pages.mixManagementPage.buttonBar:add(uiElements.createButton('Save filter',
-      uiElements.Icons.save));
+    local saveButton = pages.mixManagementPage.buttonBar:add(
+      uiElements.createButton(
+        'Save filter',
+        uiElements.Icons.save
+      )
+    );
     saveButton:attr('halign', 'right')
     saveButton.onclick = pages.mixManagementPage.save;
     pages.mixManagementPage.createFilterTabs(nbFilters);
@@ -219,7 +245,7 @@ pages.mixManagementPage = {
       end
     end
     pages.mixManagementPage.content:add(pages.mixManagementPage.filterActions[pages.mixManagementPage.activeIndex]:
-      getMixManagement())
+        getMixManagement())
   end,
   createFilterTabs = function(nbFilters)
     for i = 1, pages.mixManagementPage.nbFilters do
@@ -247,20 +273,28 @@ pages.createPluginZoneFile = {
     pages.createPluginZoneFile.page = rtk.VBox {
       h      = 1,
       w      = 1,
-      margin = 8;
+      margin = 8,
     }
-    pages.createPluginZoneFile.content = pages.createPluginZoneFile.page:add(rtk.HBox {
-      w = 1,
-    })
-    pages.createPluginZoneFile.buttonBar = pages.createPluginZoneFile.page:add(rtk.HBox {
-      w        = 1,
-      tmargin  = 20,
-      tpadding = 8,
-      tborder  = uiElements.Colours.Button.Border;
-    })
+    pages.createPluginZoneFile.content = pages.createPluginZoneFile.page:add(
+      rtk.HBox {
+        w = 1,
+      }
+    )
+    pages.createPluginZoneFile.buttonBar = pages.createPluginZoneFile.page:add(
+      rtk.HBox {
+        w        = 1,
+        tmargin  = 20,
+        tpadding = 8,
+        tborder  = uiElements.Colours.Button.Border,
+      }
+    )
     pages.createPluginZoneFile.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
-    local loadButton = pages.createPluginZoneFile.buttonBar:add(uiElements.createButton('Load',
-      uiElements.Icons.refresh));
+    local loadButton = pages.createPluginZoneFile.buttonBar:add(
+      uiElements.createButton(
+        'Load',
+        uiElements.Icons.refresh
+      )
+    );
     loadButton:attr('rmargin', 16)
     loadButton.onclick = pages.createPluginZoneFile.loadPlugin;
     loadButton.ondragstart = function(a, b)
@@ -272,8 +306,12 @@ pages.createPluginZoneFile = {
       loadButton:attr('y', rtk.mouse.y)
       log.warning(table.tostring(rtk.mouse))
     end
-    local saveButton = pages.createPluginZoneFile.buttonBar:add(uiElements.createButton('Save filter',
-      uiElements.Icons.save));
+    local saveButton = pages.createPluginZoneFile.buttonBar:add(
+      uiElements.createButton(
+        'Save filter',
+        uiElements.Icons.save
+      )
+    );
     saveButton:attr('halign', 'right')
     saveButton.onclick = pages.createPluginZoneFile.save;
     saveButton.ondropfocus = function()
@@ -282,7 +320,7 @@ pages.createPluginZoneFile = {
     end
 
     pages.createPluginZoneFile.pluginEditor = CreatePluginZone:new(nbTracks, window);
-    pages.createPluginZoneFile.content:add(pages.createPluginZoneFile.pluginEditor:getPluginEditor())
+    pages.createPluginZoneFile.content:add(pages.createPluginZoneFile.pluginEditor:getZoneEditor())
 
 
     -- local activeEffect, a, b, c = CreatePluginZone.getPluginData();
@@ -297,15 +335,15 @@ pages.createPluginZoneFile = {
     return pages.createPluginZoneFile.page;
   end,
   save          = function()
-    pages.createPluginZoneFile.filterActions[pages.createPluginZoneFile.activeIndex]:writeChangesToFile()
+    pages.createPluginZoneFile.pluginEditor:saveZoneFiles();
   end,
   loadPlugin    = function()
     -- pages.createPluginZoneFile.content.clear();
-    reaper.ShowConsoleMsg('Cleared')
+    -- reaper.ShowConsoleMsg('Cleared')
     -- pages.createPluginZoneFile.plugin = CreatePluginZone:new(pages.createPluginZoneFile.nbTracks);
-    reaper.ShowConsoleMsg('nbTracks set')
+    -- reaper.ShowConsoleMsg('nbTracks set')
     local hasPlugin = pages.createPluginZoneFile.pluginEditor:loadPlugin()
-    reaper.ShowConsoleMsg('nbTracks loaded')
+    -- reaper.ShowConsoleMsg('nbTracks loaded\n\n')
     -- if (not hasPlugin) then
     --   reaper.MB('NoPlugin', 'No plugin selected')
     -- else

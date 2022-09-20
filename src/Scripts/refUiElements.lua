@@ -1,5 +1,5 @@
 local function createPath(path)
-  return path:gsub("/", package.config:sub(1, 1));
+  return path:gsub('/', package.config:sub(1, 1));
 end
 
 package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua')
@@ -9,7 +9,7 @@ local rtk = require('rtk')
 local methods = {
   func = function(self, ge)
     self.la = self.la + ge
-  end
+  end,
 }
 
 local uiElements = {}
@@ -48,14 +48,11 @@ uiElements.Icons = {
 }
 
 
---******************************************************************************
---
--- Show an rtk Button
--- label: String; label for the button
--- icon: rtk.Image; icon Image
--- width: Number; fixed widh of the button
---
---******************************************************************************
+---Show an rtk Button
+---@param label? string
+---@param icon? unknown
+---@param width? number
+---@return table rtk.Button
 function uiElements.createButton(label, icon, width)
   return rtk.Button {
     icon   = icon,
@@ -69,13 +66,10 @@ function uiElements.createButton(label, icon, width)
   }
 end
 
---******************************************************************************
---
--- Show an rtk Entry
--- width: Number; widh of the button
--- height: Number; height of the button
---
---******************************************************************************
+---Show an rtk Entry
+---@param width? number
+---@param height? number
+---@return table rtk.Entry
 function uiElements.createEntry(width, height)
   return rtk.Entry {
     w              = width or 1,
@@ -91,13 +85,10 @@ function uiElements.createEntry(width, height)
   }
 end
 
---******************************************************************************
---
--- Show an checkbox
--- width: Number; widh of the button
--- height: Number; height of the button
---
---******************************************************************************
+---Show an checkbox
+---@param label string
+---@param tborder? boolean do we need a top border yes or no
+---@return table rtk.CheckBox
 function uiElements.createCheckBox(label, tborder)
   return rtk.CheckBox {
     w        = 1,
@@ -111,14 +102,11 @@ function uiElements.createCheckBox(label, tborder)
   }
 end
 
---******************************************************************************
---
--- Create a navigation button
--- label: String; label for the button
--- icon: rtk.Image; icon Image
--- bover: Boolean; Display in hover state
---
---******************************************************************************
+---Create a navigation button
+---@param label string
+---@param icon table
+---@param hover boolean
+---@return table rtk.Button
 function uiElements.createNavigationButton(label, icon, hover)
   return rtk.Button {
     icon    = icon,
@@ -132,14 +120,10 @@ function uiElements.createNavigationButton(label, icon, hover)
   }
 end
 
---******************************************************************************
---
--- Show a rtk popup
--- title: String; title of the popup
--- content: rtk.Widget; Widget with the content for the popup
--- onClose: function; callback function for onclose
---
---******************************************************************************
+---Show an rtk popup
+---@param title string
+---@param content table
+---@param onClose? fun()
 function uiElements.showPopup(title, content, onClose)
   local popupBody = rtk.VBox { spacing = 20 }
   local popup = rtk.Popup {
@@ -147,7 +131,7 @@ function uiElements.showPopup(title, content, onClose)
     overlay = '#000000aa',
     bg      = Colours.Primary,
     padding = 0,
-    w       = 460
+    w       = 460,
   }
 
   popupBody:add(rtk.Heading {
@@ -164,13 +148,13 @@ function uiElements.showPopup(title, content, onClose)
   local container = popupBody:add(rtk.Container {
     lpadding = 30,
     rpadding = 30,
-  })
+                                  })
   container:add(content)
 
   local footer = popupBody:add(rtk.HBox {
     padding = 10,
     tborder = Colours.Label.Border,
-  })
+                               })
   footer:add(rtk.Spacer(), { expand = 1, fillh = false, fillv = false })
   local popupClosebutton = footer:add(uiElements.createButton('Close', uiElements.Icons.close))
   footer:add(rtk.Spacer(), { expand = 1, fillh = false, fillv = false })
@@ -185,14 +169,13 @@ function uiElements.showPopup(title, content, onClose)
   popup:open()
 end
 
---******************************************************************************
---
--- Show a rtk popup
--- title: String; title of the popup
--- content: rtk.Widget; Widget with the content for the popup
--- onClose: function; callback function for onclose
---
---******************************************************************************
+---Show an rtk popup as confirm message
+---@param title string
+---@param content table
+---@param trueText string
+---@param onTrue fun()
+---@param falseText string
+---@param onFalse? fun()
 function uiElements.showConfirm(title, content, trueText, onTrue, falseText, onFalse)
   local popupBody = rtk.VBox { spacing = 20 }
   local popupFalsebutton
@@ -201,7 +184,7 @@ function uiElements.showConfirm(title, content, trueText, onTrue, falseText, onF
     overlay = '#000000aa',
     bg      = Colours.Primary,
     padding = 0,
-    w       = 460
+    w       = 460,
   }
 
   popupBody:add(rtk.Heading {
@@ -219,13 +202,13 @@ function uiElements.showConfirm(title, content, trueText, onTrue, falseText, onF
     lpadding = 30,
     rpadding = 30,
     w        = 1,
-  })
+                                  })
   container:add(content)
 
   local footer = popupBody:add(rtk.HBox {
     padding = 10,
     tborder = Colours.Label.Border,
-  })
+                               })
   footer:add(rtk.Spacer(), { expand = 1, fillh = false, fillv = false })
   if (falseText) then
     popupFalsebutton = footer:add(uiElements.createButton(falseText, uiElements.Icons.close))
@@ -251,23 +234,19 @@ function uiElements.showConfirm(title, content, trueText, onTrue, falseText, onF
   popup:open()
 end
 
---******************************************************************************
---
--- Show opup with success message for saving the action
---
---******************************************************************************
+---Show opup with success message for saving the action
+---@param callback fun()
 function uiElements.showSavePopup(callback)
   local content = rtk.Text {
-    text = 'The changes have been saved successfully'
+    text = 'The changes have been saved successfully',
   }
   uiElements.showPopup('Message', content, callback)
 end
 
---******************************************************************************
---
--- Create the navigation buttons and attach the onclick event handling
---
---******************************************************************************
+---Create the navigation buttons and attach the onclick event handling
+---@param sidebar table rtk element
+---@param app table rtk application
+---@param faderPortVersion string
 function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   local navLogo          = rtk.ImageBox { uiElements.Icons.logo }
   local navHome          = uiElements.createNavigationButton('Home', uiElements.Icons.home, true);
@@ -358,6 +337,12 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   sidebar:add(navAbout)
 end
 
+---Create a colour picker
+---@param label string
+---@param r? number 0-255
+---@param g? number 0-255
+---@param b? number 0-255
+---@return table
 function uiElements.colourPicker(label, r, g, b)
   local redValue   = r or 0;
   local greenValue = g or 0;
@@ -369,20 +354,20 @@ function uiElements.colourPicker(label, r, g, b)
     max         = 255,
     value       = redValue,
     trackcolour = Colours.Border,
-    colour      = "white",
+    colour      = 'white',
     step        = 5,
-  });
+                            });
   local redValueLabel = red:add(rtk.Text { text = redValue, w = 30, lpadding = 5, fontsize = 16 })
 
   local green = rtk.HBox { w = 1 };
   green:add(rtk.Text { text = 'G', w = 15, fontsize = 16 })
-  local greenSlider = green:add(rtk.Slider {
+  local greenSLider = green:add(rtk.Slider {
     max         = 255,
     value       = greenValue,
     trackcolour = Colours.Border,
-    colour      = "white",
+    colour      = 'white',
     step        = 5,
-  });
+                                });
   local greenValueLabel = green:add(rtk.Text { text = greenValue, w = 30, lpadding = 5, fontsize = 16 })
 
   local blue = rtk.HBox { w = 1 };
@@ -391,12 +376,12 @@ function uiElements.colourPicker(label, r, g, b)
     max         = 255,
     value       = blueValue,
     trackcolour = Colours.Border,
-    colour      = "white",
+    colour      = 'white',
     step        = 5,
-  });
+                              });
   local blueValueLabel = blue:add(rtk.Text { text = blueValue, w = 30, lpadding = 5, fontsize = 16 })
 
-  local sliderContainer       = rtk.VBox { w = 1, spacing = 8 };
+  local faderContainer        = rtk.VBox { w = 1, spacing = 8 };
   local controlContainer      = rtk.HBox { w = 1, spacing = 8 };
   local colourPickerContainer = rtk.VBox { w = 1, spacing = 8, tborder = Colours.Button.Border, tpadding = 8 };
 
@@ -404,7 +389,7 @@ function uiElements.colourPicker(label, r, g, b)
     w      = 32,
     h      = 32,
     border = '2px white',
-    bg     = { 0, 0, 0 }
+    bg     = { 0, 0, 0 },
   };
 
   local function calculateSwatchValue(x)
@@ -442,7 +427,7 @@ function uiElements.colourPicker(label, r, g, b)
     redValue = red;
     redSlider:attr('value', red);
     greenValue = green;
-    greenSlider:attr('value', green);
+    greenSLider:attr('value', green);
     blueValue = blue;
     blueSlider:attr('value', blue);
     updateColourSwatch();
@@ -453,14 +438,14 @@ function uiElements.colourPicker(label, r, g, b)
   end
 
   redSlider.onchange = setRedValue;
-  greenSlider.onchange = setGreenValue;
+  greenSLider.onchange = setGreenValue;
   blueSlider.onchange = setBlueValue;
 
-  sliderContainer:add(red)
-  sliderContainer:add(green)
-  sliderContainer:add(blue)
+  faderContainer:add(red)
+  faderContainer:add(green)
+  faderContainer:add(blue)
   controlContainer:add(swatch);
-  controlContainer:add(sliderContainer);
+  controlContainer:add(faderContainer);
   colourPickerContainer:add(rtk.Text { text = label, fontsize = 20 });
   colourPickerContainer:add(controlContainer);
 
@@ -476,9 +461,11 @@ function uiElements.colourPicker(label, r, g, b)
     setValue = setValue,
     getCSIValue = getCSIValue,
   }
-
 end
 
+---callback function for parameter drop focus
+---@param widget table
+---@return function
 local function onParamDropFocus(widget)
   return function()
     widget:animate { 'bg', dst = '#ffffff55', duration = 0.2 };
@@ -486,12 +473,18 @@ local function onParamDropFocus(widget)
   end
 end
 
+---callback function for parameter drop blur
+---@param widget table
+---@return function
 local function onParamDropBlur(widget)
   return function()
     widget:animate { 'bg', dst = '#ffffff00', duration = 0.2 };
   end
 end
 
+---Create UI component for a select button and fader widget for the given track
+---@param id number
+---@return table
 uiElements.channelWidgets = function(id)
   local container = rtk.HBox { border = uiElements.Colours.Border, h = 50 }
   local trackIndex = rtk.Text {
@@ -500,23 +493,23 @@ uiElements.channelWidgets = function(id)
     w = 25,
     rborder = uiElements.Colours.Border,
     halign = 'center',
-    valign = 'center'
+    valign = 'center',
   };
   local widgets = rtk.VBox { w = 1 }
 
   local select = widgets:add(rtk.HBox { h = .5, w = 1, lpadding = 8, bborder = uiElements.Colours.Border,
-    bg = '#ffffff00' })
+                                        bg = '#ffffff00', })
   select:add(rtk.Text { text = 'Select', h = 1, valign = 'center', w = 60 });
   select.ondropfocus = onParamDropFocus(select);
   select.ondropblur = onParamDropBlur(select);
   local dropSelect = select:add(rtk.Text { text = '', h = 1, w = 1, valign = 'center', minw = 60 });
 
-  local slider = widgets:add(rtk.HBox { h = 1, w = 1, lpadding = 8,
-    bg = '#ffffff00' })
-  slider:add(rtk.Text { text = 'Slider', h = 1, valign = 'center', w = 60 });
-  slider.ondropfocus = onParamDropFocus(slider);
-  slider.ondropblur = onParamDropBlur(slider);
-  local dropSlider = slider:add(rtk.Text { text = '', h = 1, w = 1, valign = 'center', minw = 60 });
+  local fader = widgets:add(rtk.HBox { h = 1, w = 1, lpadding = 8,
+                                       bg = '#ffffff00', })
+  fader:add(rtk.Text { text = 'Fader', h = 1, valign = 'center', w = 60 });
+  fader.ondropfocus = onParamDropFocus(fader);
+  fader.ondropblur = onParamDropBlur(fader);
+  local dropFader = fader:add(rtk.Text { text = '', h = 1, w = 1, valign = 'center', minw = 60 });
 
   container:add(trackIndex);
   container:add(widgets);
@@ -533,16 +526,16 @@ uiElements.channelWidgets = function(id)
     dropSelect.onclick = callback;
   end
 
-  local setSliderName = function(name)
-    dropSlider:attr('text', name)
+  local setFaderName = function(name)
+    dropFader:attr('text', name)
   end
 
-  local setOnSliderDrop = function(callback)
-    slider.ondrop = callback;
+  local setOnFaderDrop = function(callback)
+    fader.ondrop = callback;
   end
 
-  local setOnSliderClick = function(callback)
-    dropSlider.onclick = callback;
+  local setOnFaderClick = function(callback)
+    dropFader.onclick = callback;
   end
 
   return {
@@ -550,12 +543,15 @@ uiElements.channelWidgets = function(id)
     setSelectName = setSelectName,
     setOnSelectDrop = setOnSelectDrop,
     setOnSelectClick = setOnSelectClick,
-    setSliderName = setSliderName,
-    setOnSliderDrop = setOnSliderDrop,
-    setOnSliderClick = setOnSliderClick,
+    setFaderName = setFaderName,
+    setOnFaderDrop = setOnFaderDrop,
+    setOnFaderClick = setOnFaderClick,
   }
 end
 
+---Create effect parameter list item
+---@param name string
+---@return table
 uiElements.pluginParam = function(name)
   local param = rtk.Text {
     text    = name,
@@ -563,7 +559,7 @@ uiElements.pluginParam = function(name)
     border  = uiElements.Colours.Border,
     w       = 1,
     bg      = uiElements.Colours.BackGround,
-    cursor  = rtk.mouse.cursors.MOVE
+    cursor  = rtk.mouse.cursors.MOVE,
   }
 
   param.onmouseenter = function()

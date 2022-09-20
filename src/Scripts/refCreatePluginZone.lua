@@ -1,5 +1,5 @@
 local function createPath(path)
-  return path:gsub("/", package.config:sub(1, 1));
+  return path:gsub('/', package.config:sub(1, 1));
 end
 
 package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua')
@@ -7,66 +7,11 @@ package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua')
 local rtk = require('rtk')
 local utils = require('utils')
 local uiElements = require('refUiElements')
+local zoneUtils = require('refCreatePluginZoneUtils')
 
 -- local log = rtk.log
 -- log.level = log.WARNING
 
-local function getEffectNameParts(effectName)
-  local type = '';
-  local name = '';
-  local developer = '';
-
-  for t, n, d in string.gmatch(effectName, "(%w+):(.*)%((%w+)%)") do
-    type = t;
-    name = n;
-    developer = d;
-  end
-
-  return utils.trim(type), utils.trim(name), utils.trim(developer);
-end
-
-local function createParamName(data)
-  local paramName = data.name;
-  if (data.istoggle or data.nbSteps == 2) then
-    paramName = paramName .. '  (toggle)';
-  end
-
-  if (data.nbSteps > 2) then
-    paramName = paramName .. string.format('  (%ssteps)', data.nbSteps);
-  end
-  return paramName;
-end
-
-local selectColors = {
-  white = '{ 20 20 20 255 255 255 }',
-  yellow = '{ 20 20 0 20 20 0 }',
-}
-
-local selectText = [[
-  Select{{id}}             FXParam {{paramId}} {{steps}} {{color}}
-  ScribbleLine1_{{id}}     FXParamNameDisplay {{paramId}} "{{paramName}}"
-  ScribbleLine2_{{id}}     FXParamValueDisplay {{paramId}}
-]]
-
-local selectNoActionText = [[
-  Select{{id}}             NoAction
-  ScribbleLine1_{{id}}     NoAction
-  ScribbleLine2_{{id}}     NoAction
-]]
-
-local sliderText = [[
-  Fader{{id}}              FXParam {{paramId}}
-  ScribbleLine3_{{id}}     FXParamNameDisplay {{paramId}} "{{paramName}}"
-  ScribbleLine4_{{id}}     FXParamValueDisplay {{paramId}}
-  ValueBar{{id}}           FXParam {{paramId}} {% {{valueBarId}} %}
-]]
-
-local sliderNoActionText = [[
-  Fader{{id}}              NoAction
-  ScribbleLine3_{{id}}     NoAction
-  ScribbleLine4_{{id}}     NoAction
-  ValueBar{{id}}           NoAction
-]]
 
 --******************************************************************************
 --
@@ -126,7 +71,7 @@ function CreatePluginZone:new(faderPortVersion, window)
       halign   = rtk.Widget.LEFT,
       valign   = rtk.Widget.CENTER,
       fontsize = 20,
-      tmargin  = 7
+      tmargin  = 7,
     },
     displayNameEntry = uiElements.createEntry(125),
     developerName = rtk.Text {
@@ -134,7 +79,7 @@ function CreatePluginZone:new(faderPortVersion, window)
       halign   = rtk.Widget.LEFT,
       valign   = rtk.Widget.CENTER,
       fontsize = 20,
-      tmargin  = 7
+      tmargin  = 7,
     },
     hSpacer = rtk.Spacer { expand = 1, fillw = true, fillh = false },
     pageNumber = rtk.Text {
@@ -143,7 +88,7 @@ function CreatePluginZone:new(faderPortVersion, window)
       halign   = rtk.Widget.LEFT,
       valign   = rtk.Widget.CENTER,
       fontsize = 20,
-      tmargin  = 7
+      tmargin  = 7,
     },
     paramListBox = rtk.VBox {
       w = 1,
@@ -203,13 +148,7 @@ function CreatePluginZone:buildPluginEditor()
   self:SetPluginValues();
 end
 
-function CreatePluginZone:resizeColumns(box)
-  local height = box[4];
-  reaper.ShowConsoleMsg(height .. '\n')
-  self.left:attr('h', height - 940 + 300);
-end
-
-function CreatePluginZone:getPluginEditor()
+function CreatePluginZone:getZoneEditor()
   if (not self.isBuild) then
     self.isBuild = true;
     self:buildPluginEditor();
@@ -224,11 +163,10 @@ end
 
 function CreatePluginZone:goToPreviousPage()
   return function()
-    self:generateZoneFiles();
-    -- if (self.currentPage > 1) then
-    --   self.currentPage = self.currentPage - 1;
-    --   self:updatePageNumber();
-    -- end
+    if (self.currentPage > 1) then
+      self.currentPage = self.currentPage - 1;
+      self:updatePageNumber();
+    end
   end
 end
 
@@ -244,6 +182,7 @@ end
 function CreatePluginZone:addPage()
   return function()
     self.pages[#self.pages + 1] = {};
+    self.currentPage = self.currentPage + 1;
     self:updatePageNumber();
   end
 end
@@ -253,24 +192,19 @@ end
 -- Read the colour and name from the mix management ZoneFile
 --
 --******************************************************************************
-function CreatePluginZone:readZoneFile()
-  for line in io.lines(self.zoneFilePath) do
+function CreatePluginZone:readZoneFile(fileName)
+  for line in io.lines(fileName) do
     local displayText = string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "([%s%w]*)"');
 
     if (displayText) then
       self.displayText:attr('value', displayText)
-    end
-
-    local colour = string.match(line, '%s*Select' .. self.filterId .. '%s*FixedRGBColourDisplay%s*%{%s(.*)%s%}');
-    if (colour) then
-      self:setFilterColour(colour);
     end
   end
 end
 
 function CreatePluginZone:createFileInfo(zoneNumber)
   local filePath = self.zoneFolder .. '/' .. self.pluginDeveloper;
-  os.execute("mkdir -p " .. filePath)
+  os.execute('mkdir -p ' .. filePath)
 
   local fileName = string.format(
     '/%s%s.%s.zon',
@@ -292,128 +226,117 @@ function CreatePluginZone:generateZoneFiles()
   end
 end
 
-function CreatePluginZone:getSteps(nbSteps)
-  if (nbSteps < 2) then
-    return '';
+function CreatePluginZone:loadZoneFiles()
+  local filePath, fileName = self:createFileInfo('');
+  local nbFiles = 0;
+  local isSubZone = false;
+
+  for line in io.lines(filePath .. fileName) do
+    if (isSubZone and string.find(line, 'SubZonesEnd')) then
+      isSubZone = false
+    end
+    if (isSubZone) then
+      nbFiles = nbFiles + 1;
+    end
+    if (nbFiles == 0 and string.find(line, 'SubZones')) then
+      nbFiles = 1;
+      isSubZone = true;
+    end
   end
-  local stepsize = 1 / (nbSteps - 1);
-  local steps = '[ ';
-  for i = 0, nbSteps - 1, 1 do
-    steps = steps .. string.sub(tostring(stepsize * i), 1, 6) .. ' ';
+
+  for i = 1, nbFiles, 1 do
+    local path, name = self:createFileInfo(zoneUtils.zoneNumber(i));
+    self:processZoneFile(i, path .. name);
   end
-  steps = steps .. ']';
-  return steps;
+  self:updatePageNumber();
 end
 
---******************************************************************************
---
--- Write the colour and name to the mix management ZoneFile
---
---******************************************************************************
+---Extract all the plugin data from teh zonefile
+---@param pageId number
+---@param fileName string
+function CreatePluginZone:processZoneFile(pageId, fileName)
+  self.pages[pageId] = {};
+
+  for line in io.lines(fileName) do
+    -- Get the plugin name
+    local pluginName = string.match(line, 'Zone%s".*"%s"(.*)"');
+    if (pluginName) then
+      self.pages[pageId].name = pluginName;
+    end
+
+    -- Get the param values for a select button
+    local selectTrack, selectParamId, steps, colour = string.match(
+      line,
+      'Select(%d%d?)%s+FXParam%s+([%d+]?)%s+(%[ [%s%.%d]+ %])%s+({[%d%s]+})'
+    );
+    if (selectTrack) then
+      self.pages[pageId]['select' .. selectTrack] = {
+        paramId = selectParamId,
+        paramData = self.pluginParamsList[selectParamId],
+      }
+    end
+
+    -- Get the param values for a fader
+    local faderTrack, faderParamId = string.match(
+      line,
+      'Fader(%d%d?)%s+FXParam%s+([%d+]?)'
+    );
+    if (faderTrack) then
+      self.pages[pageId]['fader' .. faderTrack] = {
+        paramId = faderParamId,
+        paramData = self.pluginParamsList[faderParamId],
+      }
+    end
+
+    -- Get the param name af the select button or fader
+    local descrId, descrTrack, descrParamId, description = string.match(
+      line,
+      'ScribbleLine([%d])_([%d]+)%s+FXParamNameDisplay%s+([%d]+)%s+"(.*)"'
+    );
+    if (descrId) then
+      local type = descrId == '1' and 'select' or 'fader';
+      self.pages[pageId][type .. descrTrack]['paramName'] = description;
+    end
+
+  end
+end
+
 function CreatePluginZone:writeZoneFile(pageId, page, nbPages)
-  local zoneNumber = function(id)
-    return (id == 1) and '' or ('-' .. id);
-  end
-  local nextZoneNumber = function()
-    if (pageId + 1 > nbPages) then
-      return '';
-    end
-    return '-' .. (pageId + 1)
-  end
-  local prevZoneNumber = function()
-    if ((nbPages == 2 and pageId == 2) or pageId - 1 == 1) then
-      return '';
-    end
-    if (pageId - 1 < 1) then
-      return '-' .. nbPages;
-    end
-    return '-' .. (pageId - 1)
-  end
-  local filePath, fileName = self:createFileInfo(zoneNumber(pageId));
+  local filePath, fileName = self:createFileInfo(zoneUtils.zoneNumber(pageId));
   local zoneFile = io.open(createPath(filePath .. fileName), 'w+')
 
   local zoneContent = string.format(
     'Zone "%s%s" "%s"\n  SelectedTrackNavigator\n',
     self.pluginRawName,
-    zoneNumber(pageId),
+    zoneUtils.zoneNumber(pageId),
     self.pluginName
   );
 
   if (nbPages > 1) then
-    zoneContent = zoneContent .. '  SubZones\n';
-    for i = 1, nbPages, 1 do
-      if (i ~= pageId) then
-        zoneContent = zoneContent .. string.format('    "%s%s"\n', self.pluginRawName, zoneNumber(i));
-      end
-    end
-    zoneContent = zoneContent .. '  SubZonesEnd\n\n';
-
-    zoneContent = zoneContent .. string.format('  Prev   GoSubZone "%s%s"\n', self.pluginRawName, prevZoneNumber());
-    zoneContent = zoneContent .. string.format('  Next   GoSubZone "%s%s"\n', self.pluginRawName, nextZoneNumber());
+    zoneContent = zoneContent .. zoneUtils.createSubZonesPart(pageId, nbPages, self.pluginRawName);
   end
 
   for trackId = 1, self.nbTracks do
     local select = page['select' .. trackId];
-    local slider = page['slider' .. trackId];
-    local selectString = '';
-    local sliderString = '';
+    local fader = page['fader' .. trackId];
 
-    if (select == nil or select.paramId == nil) then
-      selectString = string.gsub(selectNoActionText, '{{id}}', trackId);
-    elseif (select ~= nil) then
-      selectString = string.gsub(selectText, '{{id}}', trackId);
-      selectString = string.gsub(selectString, '{{paramId}}', select.paramId);
-      selectString = string.gsub(selectString, '{{paramName}}', select.paramName or select.paramData.name);
-      selectString = string.gsub(selectString, '{{steps}}', self:getSteps(select.paramData.nbSteps));
-      selectString = string.gsub(selectString, '{{color}}',
-        select.paramIsToggle == true and selectColors.white or selectColors.yellow);
-    end
-    zoneContent = zoneContent .. '\n' .. selectString;
-
-    if (slider == nil or slider.paramId == nil) then
-      sliderString = string.gsub(sliderNoActionText, '{{id}}', trackId);
-    elseif (slider ~= nil) then
-      sliderString = string.gsub(sliderText, '{{id}}', trackId);
-      sliderString = string.gsub(sliderString, '{{paramId}}', slider.paramId);
-      sliderString = string.gsub(sliderString, '{{paramName}}', slider.paramName or slider.paramData.name);
-      sliderString = string.gsub(sliderString, '{{valueBarId}}', 'blaa');
-    end
-    zoneContent = zoneContent .. '\n' .. sliderString;
+    zoneContent = zoneContent .. '\n' .. zoneUtils.createSelectPart(trackId, select);
+    zoneContent = zoneContent .. '\n' .. zoneUtils.createFaderPart(trackId, fader);
   end
+
   zoneContent = zoneContent .. 'ZoneEnd';
-
-  reaper.ShowConsoleMsg(zoneContent);
-
   ---@diagnostic disable-next-line: need-check-nil
   zoneFile:write(zoneContent);
   ---@diagnostic disable-next-line: need-check-nil
   zoneFile:close();
 end
 
-function CreatePluginZone:setFilterColour(clr)
-  local colour = {};
-  local index = 1;
-
-  for rgbValue in string.gmatch(clr, '%S+') do
-    if (index < 4) then
-      colour[index] = rgbValue;
-      index = index + 1;
-    end
-  end
-
-  self.colourPicker.setValue(colour[1], colour[2], colour[3]);
-end
-
-function CreatePluginZone:writeChangesToFile()
-  self:writeActionFile();
-  self:writeZoneFile();
-  self:readActionFile();
-  self:readZoneFile();
+function CreatePluginZone:saveZoneFiles()
+  self:generateZoneFiles();
   uiElements.showSavePopup(utils.resetSurfaces);
 end
 
 function CreatePluginZone:reloadFiles()
-  self:readActionFile();
   self:readZoneFile();
 end
 
@@ -452,53 +375,52 @@ function CreatePluginZone:createTracks()
   for i = 1, self.nbTracks do
     local channelWidget = uiElements.channelWidgets(i);
     local select = self.pages[self.currentPage] and self.pages[self.currentPage]['select' .. i];
-    local slider = self.pages[self.currentPage] and self.pages[self.currentPage]['slider' .. i];
+    local fader = self.pages[self.currentPage] and self.pages[self.currentPage]['fader' .. i];
 
     if (select ~= nil) then
       channelWidget.setSelectName(select.paramData.name)
     end
 
-    if (slider ~= nil) then
-      channelWidget.setSliderName(slider.paramData.name or '')
+    if (fader ~= nil) then
+      channelWidget.setFaderName(fader.paramData.name or '')
     end
 
     self.widgetListBox:add(channelWidget.element);
 
     channelWidget.setOnSelectDrop(
-      function(_, _, source, data)
-        channelWidget.setSelectName(data.name);
-        source:animate { 'alpha', dst = 0.5, duration = 0.3 };
-        self:addParamToPage('select' .. i, data)
-      end
+    function(_, _, source, data)
+      channelWidget.setSelectName(data.name);
+      source:animate { 'alpha', dst = 0.5, duration = 0.3 };
+      self:addParamToPage('select' .. i, data)
+    end
     );
 
     channelWidget.setOnSelectClick(
-      function()
-        local data = self.pages[self.currentPage]['select' .. i];
-        uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
-      end
+    function()
+      local data = self.pages[self.currentPage]['select' .. i];
+      uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
+    end
     )
 
-    channelWidget.setOnSliderDrop(
-      function(_, _, source, data)
-        channelWidget.setSliderName(data.name);
-        source:animate { 'alpha', dst = 0.5, duration = 0.3 };
-        self:addParamToPage('slider' .. i, data)
-      end
+    channelWidget.setOnFaderDrop(
+    function(_, _, source, data)
+      channelWidget.setFaderName(data.name);
+      source:animate { 'alpha', dst = 0.5, duration = 0.3 };
+      self:addParamToPage('fader' .. i, data)
+    end
     )
 
-    channelWidget.setOnSliderClick(
-      function()
-        local data = self.pages[self.currentPage]['select' .. i];
-        uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
-      end
+    channelWidget.setOnFaderClick(
+    function()
+      local data = self.pages[self.currentPage]['select' .. i];
+      uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
+    end
     )
   end
 end
 
-function CreatePluginZone:OnDrop(event, source, e, textWidget)
-end
-
+---Get the list of parameters of the selected plugin. Store the data and create
+---the add the parameters to the params list
 function CreatePluginZone:GetPluginParams()
   local nbParams = reaper.TrackFX_GetNumParams(self.track, self.pluginId);
 
@@ -520,14 +442,14 @@ function CreatePluginZone:GetPluginParams()
       }
       self.pluginParamsList[tostring(i)] = paramValues;
 
-      local listName = createParamName(paramValues);
+      local listName = zoneUtils.createParamName(paramValues);
       local param = uiElements.pluginParam(listName);
       self.paramListBox:add(param.element);
 
       param.setOnDragStart(
-        function()
-          return paramValues, true;
-        end
+      function()
+        return paramValues, true;
+      end
       )
     end
   end
@@ -541,7 +463,7 @@ function CreatePluginZone:loadPlugin()
   local track = reaper.GetTrack(0, trackId - 1);
 
   local _, fxName = reaper.TrackFX_GetFXName(track, pluginId);
-  local type, name, dev = getEffectNameParts(fxName);
+  local type, name, dev = zoneUtils.getEffectNameParts(fxName);
 
   self.trackId = trackId;
   self.pluginId = pluginId;
@@ -554,6 +476,7 @@ function CreatePluginZone:loadPlugin()
     self.pluginDeveloper = dev;
     self:SetPluginValues();
     self.pluginParamsList = self:GetPluginParams();
+    self:loadZoneFiles();
   end
 
   return utils.isString(name);

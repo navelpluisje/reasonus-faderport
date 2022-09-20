@@ -1,30 +1,21 @@
 -- Set package path to find rtk installed via ReaPack
 local function createPath(path)
-  return path:gsub("/", package.config:sub(1, 1));
+  return path:gsub('/', package.config:sub(1, 1));
 end
 
 package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua')
 -- Load the package
 local rtk = require('rtk')
+local utils = require('utils')
 local uiElements = require('refUiElements')
 local Colours = uiElements.Colours;
 
---******************************************************************************
---
--- Reset all the midi surfaces
---
---******************************************************************************
-local function resetSurfaces()
-  reaper.Main_OnCommandEx(41743, 0, 0)
-end
-
---******************************************************************************
---
--- Class for the function action elements
---
---******************************************************************************
+---Class for the function action elements
 local FunctionAction = {};
 
+---Create a FunctionAction instance
+---@param index number
+---@return table
 function FunctionAction:new(index)
   local obj = {
     functionId = index,
@@ -49,14 +40,14 @@ function FunctionAction:new(index)
       halign   = rtk.Widget.CENTER,
       valign   = rtk.Widget.CENTER,
       fontsize = 20,
-      tmargin  = 7
+      tmargin  = 7,
     },
     actionIdContainer = rtk.HBox {
       w        = 1,
       h        = 40,
       t        = 1,
       vpadding = 15,
-      border   = Colours.Label.Border
+      border   = Colours.Label.Border,
     },
     actionButton = rtk.Button {
       icon    = uiElements.Icons.search,
@@ -88,11 +79,8 @@ function FunctionAction:new(index)
   return obj;
 end
 
---******************************************************************************
---
--- Generate the UI for this FunctionAction and return it
---
---******************************************************************************
+---Generate the UI for this FunctionAction and return it
+---@return table
 function FunctionAction:getFunctionAction()
   self.labelText:attr('text', 'Function ' .. self.functionId);
   self.element:add(self.label);
@@ -111,24 +99,14 @@ function FunctionAction:getFunctionAction()
   return self.element;
 end
 
---******************************************************************************
---
--- Set position and size of the FunctionAction
--- x: Number; X-position og the FunctionAction
--- y: Number; Y-position of the FunctionAction
--- width: Number; Width of the FunctionAction
---
---******************************************************************************
+---Set position and size of the FunctionAction
+---@param width number
 function FunctionAction:setWidth(width)
   self.element:attr('w', width);
 end
 
---******************************************************************************
---
--- Set the actionId for this FunctionAction. Also updates the values in the UI
--- actionId: the actionId for this FunctionAction
---
---******************************************************************************
+---Set the actionId for this FunctionAction. Also updates the values in the UI
+---@param actionId number
 function FunctionAction:setActionId(actionId)
   self.actionId = actionId;
   self.actionIdText:attr('text', actionId);
@@ -136,21 +114,13 @@ function FunctionAction:setActionId(actionId)
   self.actionIdText:attr('tooltip', actionName);
 end
 
---******************************************************************************
---
--- Set the default actionId as the new actionId
---
---******************************************************************************
+---Set the default actionId as the new actionId
 function FunctionAction:setDefaultActionId()
   self:setActionId(self.defaultAction);
   self:writeActionFile(false);
 end
 
---******************************************************************************
---
--- Read the data from the ActionFile corresponding to this FunctionAction
---
---******************************************************************************
+---Read the data from the ActionFile corresponding to this FunctionAction
 function FunctionAction:readActionFile()
   for line in io.lines(self.functionFilePath) do
     self.fileLines[#self.fileLines + 1] = line;
@@ -166,19 +136,15 @@ function FunctionAction:readActionFile()
   end
 end
 
---******************************************************************************
---
--- Write the data to the ActionFile corresponding to this FunctionAction
--- with the new actionId
---
---******************************************************************************
+---Write the data to the ActionFile corresponding to this FunctionAction with the new actionId
+---@param showPopup boolean
 function FunctionAction:writeActionFile(showPopup)
   if (showPopup == false) then
     showPopup = false
   else
     showPopup = true
   end
-  local actionFile = assert(io.open(self.functionFilePath, "w"))
+  local actionFile = assert(io.open(self.functionFilePath, 'w'))
   for i = 1, #self.fileLines do
     local line = self.fileLines[i];
     if string.match(line, '%s*local functionAction = (%d+);') then
@@ -188,21 +154,17 @@ function FunctionAction:writeActionFile(showPopup)
   end
   actionFile:close();
   if showPopup then
-    uiElements.showSavePopup(resetSurfaces);
+    uiElements.showSavePopup(utils.resetSurfaces);
   end
 end
 
---******************************************************************************
---
--- Show a Popup with the information of the action of this FunctionAction
---
---******************************************************************************
+---Show a Popup with the information of the action of this FunctionAction
 function FunctionAction:showActionInfoPopup()
   local fullName = reaper.CF_GetCommandText(0, self.actionId)
-  local actionType, actionName = string.match(fullName, "(.*):%s(.*)");
+  local actionType, actionName = string.match(fullName, '(.*):%s(.*)');
   local content = rtk.VBox {
     w       = 400,
-    spacing = 10
+    spacing = 10,
   }
   local idLine = content:add(rtk.HBox {})
   idLine:add(rtk.Text { text = 'Action Id', w = .3 })
@@ -225,11 +187,8 @@ function FunctionAction:showActionInfoPopup()
   uiElements.showPopup('Action info', content)
 end
 
---******************************************************************************
---
--- Trigger the actionslist and store the selected action id
---
---******************************************************************************
+---Trigger the actionslist and store the selected action id
+---@return function
 function FunctionAction:getSelectedAction()
   local action;
   return function()
