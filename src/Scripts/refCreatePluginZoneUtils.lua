@@ -42,7 +42,7 @@ function zoneUtils.createParamName(data)
 end
 
 ---Get the current zone number data for file names, zone names etc
----@param pageId any
+---@param pageId integer
 ---@return string
 function zoneUtils.zoneNumber(pageId)
   return (pageId == 1) and '' or ('-' .. pageId);

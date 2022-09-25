@@ -144,8 +144,17 @@ function CreatePluginZone:buildPluginEditor()
   self.addPageButton.onclick = self:addPage()
   self.nextPageButton.onclick = self:goToNextPage();
 
+  -- self.displayNameEntry.onchange = self.setPluginName;
+
   self:createTracks();
-  self:SetPluginValues();
+  self:setPluginValues();
+  self:loadPlugin();
+end
+
+function CreatePluginZone:setPluginName(name)
+  if (self.pluginName ~= name) then
+    self.pluginName = name;
+  end
 end
 
 function CreatePluginZone:getZoneEditor()
@@ -187,21 +196,22 @@ function CreatePluginZone:addPage()
   end
 end
 
---******************************************************************************
---
--- Read the colour and name from the mix management ZoneFile
---
---******************************************************************************
-function CreatePluginZone:readZoneFile(fileName)
-  for line in io.lines(fileName) do
-    local displayText = string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "([%s%w]*)"');
+-- ---Read the colour and name from the mix management ZoneFile
+-- ---@param fileName string
+-- function CreatePluginZone:readZoneFile(fileName)
+--   for line in io.lines(fileName) do
+--     local displayText = string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "([%s%w]*)"');
 
-    if (displayText) then
-      self.displayText:attr('value', displayText)
-    end
-  end
-end
+--     if (displayText) then
+--       self.displayText:attr('value', displayText)
+--     end
+--   end
+-- end
 
+---Get the filePath and filename by zoneNumber. If the folder not already exists, it will be created
+---@param zoneNumber string
+---@return string
+---@return string
 function CreatePluginZone:createFileInfo(zoneNumber)
   local filePath = self.zoneFolder .. '/' .. self.pluginDeveloper;
   os.execute('mkdir -p ' .. filePath)
@@ -216,6 +226,7 @@ function CreatePluginZone:createFileInfo(zoneNumber)
   return filePath, fileName;
 end
 
+---remove the empty pages and create zone file per page
 function CreatePluginZone:generateZoneFiles()
   local pages = utils.filterTable(self.pages, function(value)
     return utils.tableCount(value) > 0;
@@ -231,6 +242,15 @@ function CreatePluginZone:loadZoneFiles()
   local nbFiles = 0;
   local isSubZone = false;
 
+  local file = io.open(filePath .. fileName, 'a')
+
+  if (file == nil) then
+    return;
+  end
+  file:close();
+
+  reaper.ShowConsoleMsg(filePath .. fileName)
+
   for line in io.lines(filePath .. fileName) do
     if (isSubZone and string.find(line, 'SubZonesEnd')) then
       isSubZone = false
@@ -245,6 +265,7 @@ function CreatePluginZone:loadZoneFiles()
   end
 
   for i = 1, nbFiles, 1 do
+    reaper.ShowConsoleMsg('Load file: ' .. 1)
     local path, name = self:createFileInfo(zoneUtils.zoneNumber(i));
     self:processZoneFile(i, path .. name);
   end
@@ -336,11 +357,7 @@ function CreatePluginZone:saveZoneFiles()
   uiElements.showSavePopup(utils.resetSurfaces);
 end
 
-function CreatePluginZone:reloadFiles()
-  self:readZoneFile();
-end
-
-function CreatePluginZone:SetPluginValues()
+function CreatePluginZone:setPluginValues()
   self.displayNameEntry:attr('value', self.pluginName);
   if (self.pluginDeveloper and self.pluginType) then
     self.developerName:attr('text', self.pluginDeveloper .. ' :: ' .. self.pluginType);
@@ -421,7 +438,7 @@ end
 
 ---Get the list of parameters of the selected plugin. Store the data and create
 ---the add the parameters to the params list
-function CreatePluginZone:GetPluginParams()
+function CreatePluginZone:getPluginParams()
   local nbParams = reaper.TrackFX_GetNumParams(self.track, self.pluginId);
 
   for i = 0, math.min(nbParams, 100), 1 do
@@ -456,6 +473,7 @@ function CreatePluginZone:GetPluginParams()
 end
 
 function CreatePluginZone:loadPlugin()
+  reaper.ShowConsoleMsg('loadPlugin')
   local hasFocussedFX, trackId, x, pluginId = reaper.GetFocusedFX2();
   if (hasFocussedFX == 0) then
     return false;
@@ -471,11 +489,14 @@ function CreatePluginZone:loadPlugin()
   self.track = track;
 
   if (utils.isString(name)) then
-    self.pluginName = name;
+    reaper.ShowConsoleMsg('loadPlugin');
+    self:setPluginName(name)
+    reaper.ShowConsoleMsg('loadPlugin 2');
     self.pluginType = type;
     self.pluginDeveloper = dev;
-    self:SetPluginValues();
-    self.pluginParamsList = self:GetPluginParams();
+    self:setPluginValues();
+    reaper.ShowConsoleMsg('loadPlugin 3');
+    self.pluginParamsList = self:getPluginParams();
     self:loadZoneFiles();
   end
 

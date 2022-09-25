@@ -137,7 +137,7 @@ function FunctionAction:readActionFile()
 end
 
 ---Write the data to the ActionFile corresponding to this FunctionAction with the new actionId
----@param showPopup boolean
+---@param showPopup? boolean
 function FunctionAction:writeActionFile(showPopup)
   if (showPopup == false) then
     showPopup = false
