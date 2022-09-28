@@ -30,27 +30,27 @@ WidgetEnd
 // ===========================================
 Widget AudioBtn
 	Press 90 3e 7f
-	FB_FaderportRGB7Bit 90 3e 7f
+	FB_FaderportRGB 90 3e 7f
 WidgetEnd
 
 Widget Instrument
 	Press 90 3f 7f
-	FB_FaderportRGB7Bit 90 3f 7f
+	FB_FaderportRGB 90 3f 7f
 WidgetEnd
 
 Widget BusBtn
 	Press 90 40 7f
-	FB_FaderportRGB7Bit 90 40 7f
+	FB_FaderportRGB 90 40 7f
 WidgetEnd
 
 Widget VCABtn
 	Press 90 41 7f
-	FB_FaderportRGB7Bit 90 41 7f
+	FB_FaderportRGB 90 41 7f
 WidgetEnd
 
 Widget AllBtn
 	Press 90 42 7f
-	FB_FaderportRGB7Bit 90 42 7f
+	FB_FaderportRGB 90 42 7f
 WidgetEnd
 
 Widget RightShft
@@ -84,17 +84,17 @@ WidgetEnd
 
 Widget Bypass
 	Press 90 03 7f
-	FB_FaderportRGB7Bit 90 03 7f
+	FB_FaderportRGB 90 03 7f
 WidgetEnd
 
 Widget Macro
 	Press 90 04 7f
-	FB_FaderportRGB7Bit 90 04 7f
+	FB_FaderportRGB 90 04 7f
 WidgetEnd
 
 Widget Link
 	Press 90 05 7f
-	FB_FaderportRGB7Bit 90 05 7f
+	FB_FaderportRGB 90 05 7f
 WidgetEnd
 
 Widget LeftShft
@@ -107,32 +107,32 @@ WidgetEnd
 // ===========================================
 Widget Latch
 	Press 90 4e 7f 90 4e 00
-	FB_FaderportRGB7Bit 90 4e 7f
+	FB_FaderportRGB 90 4e 7f
 WidgetEnd
 
 Widget Trim
 	Press 90 4c 7f 90 4c 00
-	FB_FaderportRGB7Bit 90 4c 7f
+	FB_FaderportRGB 90 4c 7f
 WidgetEnd
 
 Widget Off
 	Press 90 4f 7f 90 4f 00
-	FB_FaderportRGB7Bit 90 4f 7f
+	FB_FaderportRGB 90 4f 7f
 WidgetEnd
 
 Widget Touch
 	Press 90 4d 7f 90 4d 00
-	FB_FaderportRGB7Bit 90 4d 7f
+	FB_FaderportRGB 90 4d 7f
 WidgetEnd
 
 Widget Write
 	Press 90 4b 7f 90 4b 00
-	FB_FaderportRGB7Bit 90 4b 7f
+	FB_FaderportRGB 90 4b 7f
 WidgetEnd
 
 Widget Read
 	Press 90 4a 7f 90 4a 00
-	FB_FaderportRGB7Bit 90 4a 7f
+	FB_FaderportRGB 90 4a 7f
 WidgetEnd
 
 
@@ -372,79 +372,50 @@ WidgetEnd
 Widget Fader1
   Fader14Bit e0 7f 7f
   FB_Fader14Bit e0 7f 7f
+  Touch 90 68 7f 90 68 00
 WidgetEnd
 
 Widget Fader2
   Fader14Bit e1 7f 7f
   FB_Fader14Bit e1 7f 7f
+  Touch 90 69 7f 90 69 00
 WidgetEnd
 
 Widget Fader3
   Fader14Bit e2 7f 7f
   FB_Fader14Bit e2 7f 7f
+  Touch 90 6a 7f 90 6a 00
 WidgetEnd
 
 Widget Fader4
   Fader14Bit e3 7f 7f
   FB_Fader14Bit e3 7f 7f
+  Touch 90 6b 7f 90 6b 00
 WidgetEnd
 
 Widget Fader5
   Fader14Bit e4 7f 7f
   FB_Fader14Bit e4 7f 7f
+  Touch 90 6c 7f 90 6c 00
 WidgetEnd
 
 Widget Fader6
   Fader14Bit e5 7f 7f
   FB_Fader14Bit e5 7f 7f
+  Touch 90 6d 7f 90 6d 00
 WidgetEnd
 
 Widget Fader7
   Fader14Bit e6 7f 7f
   FB_Fader14Bit e6 7f 7f
+  Touch 90 6e 7f 90 6e 00
 WidgetEnd
 
 Widget Fader8
   Fader14Bit e7 7f 7f
   FB_Fader14Bit e7 7f 7f
+  Touch 90 6f 7f 90 6f 00
 WidgetEnd
-
-
-// ===========================================
-// TOUCH
-// ===========================================
-Widget FaderTouch1
-  Press 90 68 7f 90 68 00
-WidgetEnd
-
-Widget FaderTouch2
-  Press 90 69 7f 90 69 00
-WidgetEnd
-
-Widget FaderTouch3
-  Press 90 6a 7f 90 6a 00
-WidgetEnd
-
-Widget FaderTouch4
-  Press 90 6b 7f 90 6b 00
-WidgetEnd
-
-Widget FaderTouch5
-  Press 90 6c 7f 90 6c 00
-WidgetEnd
-
-Widget FaderTouch6
-  Press 90 6d 7f 90 6d 00
-WidgetEnd
-
-Widget FaderTouch7
-  Press 90 6e 7f 90 6e 00
-WidgetEnd
-
-Widget FaderTouch8
-  Press 90 6f 7f 90 6f 00
-WidgetEnd
-
 
 // ===========================================
 // SCRIBBLE LINES CHANNEL 1
