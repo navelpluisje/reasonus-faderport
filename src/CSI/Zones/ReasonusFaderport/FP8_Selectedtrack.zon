@@ -17,6 +17,16 @@ Zone "SelectedTrack"
   Read            TrackAutoMode 1     { 0 20 0 0 255 0 }
 
 // ===========================================
+// ACTIONS
+// ===========================================
+  Shift+Latch     SaveProject         { 0 20 0 0 20 0 }  // File: Save project
+  Shift+Trim      Redo                { 0 5 20 0 5 20 }  // Edit: Redo
+  Shift+Off       Undo                { 0 5 20 0 5 20 }  // Edit: Undo
+  Shift+Touch     NoAction
+  Shift+Write     NoAction
+  Shift+Read      NoAction
+
+// ===========================================
 // GLOBAL AUTOMATION
 // ===========================================
   Option+Latch    GlobalAutoMode 4    { 5 0 20 53 0 255 }       // Latch
@@ -28,15 +38,10 @@ Zone "SelectedTrack"
   Hold+Option+Off Reaper 40876        { 20 20 20 255 255 255 } // Global automation override: No override (set automation modes per track)
 
 // ===========================================
-// ACTIONS
+// PAN CONTROL
 // ===========================================
-  Shift+Latch     SaveProject         { 0 20 0 0 20 0 }  // File: Save project
-  Shift+Trim      Redo                { 0 5 20 0 5 20 }  // Edit: Redo
-  Shift+Off       Undo                { 0 5 20 0 5 20 }  // Edit: Undo
-  Shift+Touch     NoAction
-  Shift+Write     NoAction
-  Shift+Read      NoAction
-
-
-  RotarySmall     TrackPan
+  RotarySmall           TrackPan
+  Shift+RotarySmall     TrackPanWidth
+  RotarySmallPush       TrackPan [ 0.5 ]
+  Shift+RotarySmallPush TrackPanWidth [ 1.0 ]
 ZoneEnd

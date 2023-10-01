@@ -1,0 +1,30 @@
+//------------------------------------------------------------------------------
+// File:    FP8_SelectedTrackReceive.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    MCU style receive handling of the selected track
+//------------------------------------------------------------------------------
+
+Zone "SelectedTrackReceive"
+  ScribbleStripMode|      Mode=2
+  ScribbleLine1_|         NoAction
+  ScribbleLine1_7         FixedTextDisplay "Receives" TextInvert=Yes
+  ScribbleLine1_8         TrackNameDisplay TextAlign=Left TextInvert=Yes
+  ScribbleLine2_|         TrackReceiveNameDisplay TextAlign=Left TextInvert=Yes
+  ScribbleLine3_|         TrackReceiveVolumeDisplay
+  ScribbleLine4_|         TrackReceivePrePostDisplay
+  Shift+ScribbleLine4_|   TrackReceivePanDisplay
+  ValueBar|               TrackReceivePan BarStyle=BiPolar
+
+  SoloClear               Reaper "40293"   // Track: View routing and I/O for current/last touched track
+  Solo|                   TrackReceivePrePost
+  Shift+Solo|             TrackReceiveInvertPolarity
+  Mute|                   TrackReceiveMute
+
+  Fader|                  TrackReceiveVolume
+  Shift+Fader|            TrackReceivePan
+  TrackTouch+Fader|       TrackReceiveVolume
+  FaderTouch|             TrackTouch
+ZoneEnd

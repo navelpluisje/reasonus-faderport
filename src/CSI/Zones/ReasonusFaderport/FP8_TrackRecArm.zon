@@ -1,6 +1,0 @@
-Zone "TrackRecArm"
-  Select|  TrackRecordArm     { 20 0 0 255 0 0 }
-  Arm      LeaveSubZone
-  Shift+Arm                 Reaper 40490       // Track: Arm all tracks for recording
-  Option+Arm                Reaper 40491       // Track: Unarm all tracks for recording
-ZoneEnd

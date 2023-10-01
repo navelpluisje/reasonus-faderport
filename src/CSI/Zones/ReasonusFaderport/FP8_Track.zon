@@ -5,26 +5,26 @@
 //------------------------------------------------------------------------------
 
 Zone "Track"
-  ScribbleStripMode|        SetWidgetMode
-  ScribbleStripMode|        WidgetMode 8
-  ScribbleLine1_|           TrackNameDisplay
-  ScribbleLine1_|           WidgetMode "Left"
+  SubZones
+    TracksByName
+  SubZonesEnd
+
+  Arm                       Alt
+
+  ScribbleStripMode|        Mode=8
+  ScribbleLine1_|           TrackNameDisplay TextAlign=Left
   ScribbleLine2_|           TrackNumberDisplay
   ScribbleLine3_|           TrackPanDisplay
   ScribbleLine4_|           NoAction
-  ValueBar|                 TrackVolume
-  ValueBar|                 WidgetMode Fill
-  VUMeter|                  TrackOutputMeterAverageLR
+  ValueBar|                 TrackVolume BarStyle=Fill
+  VUMeter|                  TrackOutputMeter
 
-  Shift+ScribbleStripMode|  SetWidgetMode
-  Shift+ScribbleStripMode|  WidgetMode 2
-  Shift+ScribbleLine1_|     TrackNameDisplay
-  Shift+ScribbleLine1_|     WidgetMode "Center"
+  Shift+ScribbleStripMode|  Mode=2
+  Shift+ScribbleLine1_|     TrackNameDisplay TextAlign=Center
   Shift+ScribbleLine2_|     TrackVolumeDisplay
-  Shift+ScribbleLine3_|     TrackPanDisplay
-  Shift+ScribbleLine4_|     TrackAutoModeDisplay
-  Shift+ValueBar|           TrackPan
-  Shift+ValueBar|           WidgetMode BiPolar
+  Shift+ScribbleLine3_|     TrackAutoModeDisplay
+  Shift+ScribbleLine4_|     TrackPanDisplay
+  Shift+ValueBar|           TrackPan BarStyle=BiPolar
   Shift+VUMeter|            NoAction
 
   Mute|                     TrackMute
@@ -33,11 +33,13 @@ Zone "Track"
   Shift+Select|             TrackSelect        { "Track" }
   Option+Select|            TrackSelect        { "Track" }
 
-  Arm                       Alt
+  // Due to not being able to make this a SubZone, it has to be done the 'hacky' way
+  Alt+Mute|                 Reaper 40490        // Track: Arm all tracks for recording
+  Alt+Solo|                 Reaper 40491        // Track: Unarm all tracks for recording  
   Alt+Select|               TrackRecordArm  { 20 0 0 255 0 0 } 
 
-  SoloClear                 Reaper 40340       // Track: Unsolo all tracks
-  MuteClear                 Reaper 40339       // Track: Unmute all tracks
+  SoloClear                 Reaper 40340        // Track: Unsolo all tracks
+  MuteClear                 Reaper 40339        // Track: Unmute all tracks
         
   Shift+Fader|              TrackPan
   Fader|                    TrackVolume
@@ -47,23 +49,35 @@ Zone "Track"
   Bypass                    Reaper 8           { 20 20 20 255 0 0 } // Track: Toggle FX bypass for selected tracks
   Shift+Bypass              Reaper 40344       { 20 0 0 255 0 0 } // Track: Toggle FX bypass on all tracks
 
-
 // ===========================================
 // TRACK NAVIGATION
 // ===========================================
-  Track      GoHome
-  Plugin     GoTrackFXmenu
+  Track         GoHome
+  
+  Plugin        GoAssociatedZone SelectedTrackFXMenu
+  Shift+Plugin  GoAssociatedZone TrackFXMenu
 
-  / Plugin                GoSelectedTrackFXMenu
-  / Shift+Plugin          GoTrackFXMenu
-  / Plugin              MapSelectedTrackFXToMenu
-  / Shift+Plugin        MapTrackFXMenusSlotToWidgets
+  Send          GoAssociatedZone SelectedTrackSend
+  Shift+Send    GoAssociatedZone TrackSend
 
-  / Send                NoAction
-  / Send                MapSelectedTrackSendsToWidgets
-  / Shift+Send          MapTrackSendsSlotToWidgets
+  Pan           GoAssociatedZone SelectedTrackReceive
+  Shift+Pan     GoAssociatedZone TrackReceive
 
-  / Pan                 NoAction
-  / Pan                 MapSelectedTrackReceivesToWidgets
-  / Shift+Pan           MapTrackReceivesSlotToWidgets
+// ===========================================
+// MIX MANAGEMENT
+// ===========================================
+    / AudioBtn        Reaper _REASONUS_ALWAYS_ON { 20 20 20 20 20 20 } 
+  AudioBtn        Reaper _REASONUS_LED_STATE_MIX_AUDIO_BTN { 20 20 20 255 255 255 }
+  AudioBtn        GoSubZone "TracksByName"
+  Shift+AudioBtn  Reaper _REASONUS_LED_STATE_MIX_SHIFT_AUDIO_BTN { 20 20 20 255 255 255 }
+
+  Instrument      Reaper _REASONUS_LED_STATE_MIX_VI_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks With Instruments
+  
+  BusBtn          Reaper _REASONUS_LED_STATE_MIX_BUS_BTN { 20 20 20 255 255 255 } // Script: Show All Top Level Tracks
+  Shift+BusBtn    Reaper _REASONUS_LED_STATE_MIX_SHIFT_BUS_BTN { 20 20 20 255 255 255 }      // Script: Show All Tracks With Sends
+  
+  VCABtn          Reaper _REASONUS_LED_STATE_MIX_VCA_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks with hardware outputs
+  
+  AllBtn          Reaper _REASONUS_LED_STATE_MIX_ALL_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks
+
 ZoneEnd 

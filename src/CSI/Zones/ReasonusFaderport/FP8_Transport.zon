@@ -8,15 +8,13 @@
 //------------------------------------------------------------------------------
 
 Zone "Transport"
-
-
 //------------------------------------------------------------------------------
 // TRANSPORT
 //------------------------------------------------------------------------------
   Loop                  CycleTimeline
-  Rewind                Rewind
+  InvertFB+Rewind       Rewind
   Hold+Rewind           Reaper "40042"  // Go to the project start
-  FastForward           FastForward
+  InvertFB+FastForward  FastForward
   Hold+FastForward      Reaper "40043"  // Go to the project end
   Play                  Play
   Stop                  Stop

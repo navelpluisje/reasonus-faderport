@@ -1,0 +1,36 @@
+//------------------------------------------------------------------------------
+// File:    FP8_FXSlot.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    EUCon style Effects control. Every channel shows the effect of the track it is displayed on
+//    Use the pan knob to walk through all the effects of the tracks
+//------------------------------------------------------------------------------
+
+Zone "TrackFXMenu"
+  ScribbleStripMode|  Mode=2
+  ScribbleLine1_|     NoAction
+  ScribbleLine1_8     FixedTextDisplay "Effects" TextInvert=Yes
+  ScribbleLine2_|     TrackNameDisplay TextAlign=Left TextInvert=Yes
+  ScribbleLine3_|     NoAction
+  ScribbleLine4_|     FXMenuNameDisplay TextAlign=Left
+  ValueBar|           NoAction
+
+  Select|             TrackUniqueSelect  { 0 20 0 0 255 0 }
+
+  Mute|               Reaper _S&M_FXBYP|
+  Property+Solo|      NoFeedback
+  Solo|               TrackUniqueSelect
+  Solo|               GoFXSlot
+  Solo|               Reaper "_S&M_WNCLS5"
+  Solo|               Reaper _S&M_TOGLFLOATFX|
+
+  Increase+RotarySmall  Bank TrackFXMenu 1 
+  Decrease+RotarySmall  Bank TrackFXMenu -1 
+  RotarySmallPush        NoAction
+
+  Link AutoMapFX
+  Shift+Link RemapAutoZone
+
+ZoneEnd

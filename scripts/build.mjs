@@ -21,10 +21,10 @@ if (args._.includes('help')) {
 }
 
 console.clear()
-if (!process.env.ALWAYS_ON_ACTION) {
-  console.log(chalk.red('ALWAYS_ON_ACTION is not set.'));
-  console.log('The action id will not be replaced and may result in a not proper working FaderPort while developing \n\n\n');
-}
+// if (!process.env.ALWAYS_ON_ACTION) {
+//   console.log(chalk.red('ALWAYS_ON_ACTION is not set.'));
+//   console.log('The action id will not be replaced and may result in a not proper working FaderPort while developing \n\n\n');
+// }
 
 if (args._.includes('watch')) {
   console.log(chalk.blue('================================================================================'));

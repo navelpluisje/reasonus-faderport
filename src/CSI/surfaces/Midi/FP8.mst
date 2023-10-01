@@ -1,26 +1,40 @@
 //  Device in Studio One mode
 
+StepSize
+    RotaryWidgetClass   0.003
+    JogWheelWidgetClass 0.003
+StepSizeEnd
+
+AccelerationValues
+    RotaryWidgetClass   Dec 41     42    43    44    45    46    47  
+    RotaryWidgetClass   Inc 01     02    03    04    05    06    07  
+    RotaryWidgetClass   Val 0.0006 0.001 0.002 0.003 0.008 0.04  0.08 
+
+    JogWheelWidgetClass Dec 41     42    43    44    45    46    47  
+    JogWheelWidgetClass Inc 01     02    03    04    05    06    07  
+    JogWheelWidgetClass Val 0.0006 0.001 0.002 0.003 0.008 0.04  0.08 
+AccelerationValuesEnd
 
 // ===========================================
 // FADER MODE BUTTONS  
 // ===========================================
 Widget Track
-	Press 90 28 7f
+	Press 90 28 7f 90 28 00
 	FB_TwoState 90 28 7f 90 28 00
 WidgetEnd
 
 Widget Plugin
-	Press 90 2b 7f
+	Press 90 2b 7f 90 2b 00
 	FB_TwoState 90 2b 7f 90 2b 00
 WidgetEnd
 
 Widget Send
-	Press 90 29 7f
+	Press 90 29 7f 90 29 00
 	FB_TwoState 90 29 7f 90 29 00
 WidgetEnd
 
 Widget Pan
-	Press 90 2a 7f
+	Press 90 2a 7f 90 2a 00
 	FB_TwoState 90 2a 7f 90 2a 00
 WidgetEnd
 
@@ -29,27 +43,27 @@ WidgetEnd
 // MIX MANAGEMENT
 // ===========================================
 Widget AudioBtn
-	Press 90 3e 7f
+	Press 90 3e 7f 90 3e 00
 	FB_FaderportRGB 90 3e 7f
 WidgetEnd
 
 Widget Instrument
-	Press 90 3f 7f
+	Press 90 3f 7f 90 3f 00
 	FB_FaderportRGB 90 3f 7f
 WidgetEnd
 
 Widget BusBtn
-	Press 90 40 7f
+	Press 90 40 7f 90 40 00
 	FB_FaderportRGB 90 40 7f
 WidgetEnd
 
 Widget VCABtn
-	Press 90 41 7f
+	Press 90 41 7f 90 41 00
 	FB_FaderportRGB 90 41 7f
 WidgetEnd
 
 Widget AllBtn
-	Press 90 42 7f
+	Press 90 42 7f 90 42 00
 	FB_FaderportRGB 90 42 7f
 WidgetEnd
 
@@ -75,25 +89,25 @@ Widget Arm
 WidgetEnd
 
 Widget SoloClear
-	Press 90 01 7f
+	Press 90 01 7f 90 01 00
 WidgetEnd
 
 Widget MuteClear
-	Press 90 02 7f
+	Press 90 02 7f 90 02 00
 WidgetEnd
 
 Widget Bypass
-	Press 90 03 7f
+	Press 90 03 7f 90 03 00
 	FB_FaderportRGB 90 03 7f
 WidgetEnd
 
 Widget Macro
-	Press 90 04 7f
-	FB_FaderportRGB 90 04 7f
+	Press 90 03 7f 90 03 00
+	FB_FaderportRGB 90 03 7f
 WidgetEnd
 
 Widget Link
-	Press 90 05 7f
+	Press 90 05 7f 90 05 00
 	FB_FaderportRGB 90 05 7f
 WidgetEnd
 
@@ -141,7 +155,7 @@ WidgetEnd
 // ===========================================
 Widget Prev
 	Press 90 2e 7f 90 2e 00 
-	/ FB_TwoState 90 2e 7f 90 2e 00
+  // FB_TwoState 90 2e 7f 90 2e 00
 WidgetEnd
 
 Widget RotaryBigPush
@@ -154,31 +168,31 @@ WidgetEnd
 
 Widget Next
 	Press 90 2f 7f 90 2f 00
-	/ FB_TwoState 90 2f 7f 90 2f 00
+  // FB_TwoState 90 2f 7f 90 2f 00
 WidgetEnd
 
 Widget Channel
-	Press 90 36 7f
+	Press 90 36 7f 90 36 00
 	FB_TwoState 90 36 7f 90 36 00
 WidgetEnd
 
 Widget Zoom
-	Press 90 37 7f
+	Press 90 37 7f 90 37 00
 	FB_TwoState 90 37 7f 90 37 00
 WidgetEnd
 
 Widget Scroll
-	Press 90 38 7f
+	Press 90 38 7f 90 38 00
 	FB_TwoState 90 38 7f 90 38 00
 WidgetEnd
 
 Widget Bank
-	Press 90 39 7f
+	Press 90 39 7f 90 39 00
 	FB_TwoState 90 39 7f 90 39 00
 WidgetEnd
 
 Widget Master
-	Press 90 3a 7f
+	Press 90 3a 7f 90 3a 00
 	FB_TwoState 90 3a 7f 90 3a 00
 WidgetEnd
 
@@ -188,12 +202,12 @@ Widget Click
 WidgetEnd
 
 Widget Section
-	Press 90 3c 7f
+	Press 90 3c 7f 90 3c 00
 	FB_TwoState 90 3c 7f 90 3c 00
 WidgetEnd
 
 Widget Marker
-	Press 90 3d 7f
+	Press 90 3d 7f 90 3d 00
 	FB_TwoState 90 3d 7f 90 3d 00
 WidgetEnd
 
@@ -202,7 +216,7 @@ WidgetEnd
 // TRANSPORT
 // ===========================================
 Widget Loop
-	Press 90 56 7f
+	Press 90 56 7f 90 56 00
 	FB_TwoState 90 56 7f 90 56 00
 WidgetEnd
 
@@ -217,17 +231,17 @@ Widget FastForward
 WidgetEnd
 
 Widget Stop
-	Press 90 5d 7f
+	Press 90 5d 7f 90 5d 00
 	FB_TwoState 90 5d 7f 90 5d 00
 WidgetEnd
 
 Widget Play
-	Press 90 5e 7f
+	Press 90 5e 7f 90 5e 00
 	FB_TwoState 90 5e 7f 90 5e 00
 WidgetEnd
 
 Widget Record
-	Press 90 5f 7f
+	Press 90 5f 7f 90 5f 00
 	FB_TwoState 90 5f 7f 90 5f 00
 WidgetEnd
 
@@ -240,42 +254,42 @@ WidgetEnd
 // SOLO BUTTONS
 // ===========================================
 Widget Solo1
-  Press 90 08 7f
+  Press 90 08 7f 90 08 00
   FB_TwoState 90 08 7f 90 08 00
 WidgetEnd
 
 Widget Solo2
-  Press 90 09 7f
+  Press 90 09 7f 90 09 00
   FB_TwoState 90 09 7f 90 09 00
 WidgetEnd
 
 Widget Solo3
-  Press 90 0a 7f
+  Press 90 0a 7f 90 0a 00
   FB_TwoState 90 0a 7f 90 0a 00
 WidgetEnd
 
 Widget Solo4
-  Press 90 0b 7f
+  Press 90 0b 7f 90 0b 00
   FB_TwoState 90 0b 7f 90 0b 00
 WidgetEnd
 
 Widget Solo5
-  Press 90 0c 7f
+  Press 90 0c 7f 90 0c 00
   FB_TwoState 90 0c 7f 90 0c 00
 WidgetEnd
 
 Widget Solo6
-  Press 90 0d 7f
+  Press 90 0d 7f 90 0d 00
   FB_TwoState 90 0d 7f 90 0d 00
 WidgetEnd
 
 Widget Solo7
-  Press 90 0e 7f
+  Press 90 0e 7f 90 0e 00
   FB_TwoState 90 0e 7f 90 0e 00
 WidgetEnd
 
 Widget Solo8
-  Press 90 0f 7f
+  Press 90 0f 7f 90 0f 00
   FB_TwoState 90 0f 7f 90 0f 00
 WidgetEnd
 
@@ -283,42 +297,42 @@ WidgetEnd
 // MUTE BUTTONS
 // ===========================================
 Widget Mute1
-  Press 90 10 7f
+  Press 90 10 7f 90 10 00
   FB_TwoState 90 10 7f 90 10 00
 WidgetEnd
 
 Widget Mute2
-  Press 90 11 7f
+  Press 90 11 7f 90 11 00
   FB_TwoState 90 11 7f 90 11 00
 WidgetEnd
 
 Widget Mute3
-  Press 90 12 7f
+  Press 90 12 7f 90 12 00
   FB_TwoState 90 12 7f 90 12 00
 WidgetEnd
 
 Widget Mute4
-  Press 90 13 7f
+  Press 90 13 7f 90 13 00
   FB_TwoState 90 13 7f 90 13 00
 WidgetEnd
 
 Widget Mute5
-  Press 90 14 7f
+  Press 90 14 7f 90 14 00
   FB_TwoState 90 14 7f 90 14 00
 WidgetEnd
 
 Widget Mute6
-  Press 90 15 7f
+  Press 90 15 7f 90 15 00
   FB_TwoState 90 15 7f 90 15 00
 WidgetEnd
 
 Widget Mute7
-  Press 90 16 7f
+  Press 90 16 7f 90 16 00
   FB_TwoState 90 16 7f 90 16 00
 WidgetEnd
 
 Widget Mute8
-  Press 90 17 7f
+  Press 90 17 7f 90 17 00
   FB_TwoState 90 17 7f 90 17 00
 WidgetEnd
 
@@ -574,35 +588,35 @@ WidgetEnd
 // VALUE BAR
 // ===========================================
 Widget ValueBar1
-	FB_FPValueBar 0
+	FB_FaderportValueBar 0
 WidgetEnd
 
 Widget ValueBar2
-	FB_FPValueBar 1
+	FB_FaderportValueBar 1
 WidgetEnd
 
 Widget ValueBar3
-	FB_FPValueBar 2
+	FB_FaderportValueBar 2
 WidgetEnd
 
 Widget ValueBar4
-	FB_FPValueBar 3
+	FB_FaderportValueBar 3
 WidgetEnd
 
 Widget ValueBar5
-	FB_FPValueBar 4
+	FB_FaderportValueBar 4
 WidgetEnd
 
 Widget ValueBar6
-	FB_FPValueBar 5
+	FB_FaderportValueBar 5
 WidgetEnd
 
 Widget ValueBar7
-	FB_FPValueBar 6
+	FB_FaderportValueBar 6
 WidgetEnd
 
 Widget ValueBar8
-	FB_FPValueBar 7
+	FB_FaderportValueBar 7
 WidgetEnd
 
 

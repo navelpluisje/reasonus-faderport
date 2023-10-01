@@ -1,0 +1,34 @@
+//------------------------------------------------------------------------------
+// File:    FP8_TrackSendSlot.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    euCon style strack send management
+//------------------------------------------------------------------------------
+
+Zone "TrackSend"
+  ScribbleStripMode|      Mode=2
+  ScribbleLine1_|         NoAction
+  ScribbleLine1_8         FixedTextDisplay "Sends" TextInvert=Yes
+  ScribbleLine2_|         TrackNameDisplay TextAlign=Left TextInvert=Yes
+  ScribbleLine3_|         TrackSendNameDisplay
+  ScribbleLine4_|         TrackSendVolumeDisplay
+  Shift+ScribbleLine4_|   TrackSendPrePostDisplay
+  ValueBar|               TrackSendPan BarStyle=BiPolar
+
+
+  Select|                 TrackUniqueSelect  { 20 20 0 255 255 0 }
+  Hold+Select|            Reaper 40293 // Track: View routing and I/O for current/last touched track
+
+  Fader|                  TrackSendVolume
+  Solo|                   TrackSendPrePost
+  Shift+Solo|             TrackSendInvertPolarity
+  Mute|                   TrackSendMute
+  Fader|                  TrackSendVolume
+  Shift+Fader|            TrackSendPan
+
+  Increase+RotarySmall    Bank TrackSend 1 
+  Decrease+RotarySmall    Bank TrackSend -1 
+  RotarySmallPush         NoAction
+ZoneEnd

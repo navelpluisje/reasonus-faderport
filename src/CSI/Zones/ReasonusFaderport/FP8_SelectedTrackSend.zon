@@ -1,0 +1,30 @@
+//------------------------------------------------------------------------------
+// File:    FP8_SelectedTrackSend.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    MCU styled send handling for the selectred track
+//------------------------------------------------------------------------------
+
+Zone "SelectedTrackSend"
+  ScribbleStripMode|      Mode=2
+  ScribbleLine1_|         NoAction
+  ScribbleLine1_7         FixedTextDisplay "Sends" TextInvert=Yes
+  ScribbleLine1_8         TrackNameDisplay TextAlign=Left TextInvert=Yes
+  ScribbleLine2_|         TrackSendNameDisplay TextAlign=Left TextInvert=Yes
+  ScribbleLine3_|         TrackSendVolumeDisplay
+  ScribbleLine4_|         TrackSendPrePostDisplay
+  Shift+ScribbleLine4_|   TrackSendPanDisplay
+  ValueBar|               TrackSendPan BarStyle=BiPolar
+
+  SoloClear               Reaper "40293"   // Track: View routing and I/O for current/last touched track
+  Solo|                   TrackSendPrePost
+  Shift+Solo|             TrackSendInvertPolarity
+  Mute|                   TrackSendMute
+
+  Fader|                  TrackSendVolume
+  Shift+Fader|            TrackSendPan
+  TrackTouch+Fader|       TrackSendVolume
+  FaderTouch|             TrackTouch
+ZoneEnd

@@ -1,23 +1,67 @@
 Zone Buttons
+  OnZoneActivation GoSubZone BankNavigator
   SubZones
- 	  "ChannelNavigator"
- 	  "ZoomNavigator"
+ 	  ChannelNavigator
+    ZoomNavigator
+    ScrollNavigator
+    BankNavigator
+    MasterNavigator
+    ClickNavigator
+    SectionNavigator
+    MarkerNavigator
+    TracksByName
   SubZonesEnd
+
+/ // ===========================================
+/ // BUTTONS AND SCROLL, BY DEFAULT CHANNEL
+/ // ===========================================
+/   Prev                      Reaper 40286   // Track: Go to previous track
+/   Next                      Reaper 40285   // Track: Go to next track
+/   Shift+Prev                Reaper 40286   // Track: Go to previous track
+/   Shift+Next                Reaper 40285   // Track: Go to next track
+
+/ // ===========================================
+/ // ENCODER
+/ // ===========================================
+/   Increase+RotaryBig        Reaper 40285 // Track: Go to next track
+/   Decrease+RotaryBig        Reaper 40286 // Track: Go to previous track
+/   Shift+Inrease+RotaryBig   Reaper 40287 // Track: Go to next track (leaving other tracks selected)
+/   Shift+Derease+RotaryBig   Reaper 40288 // Track: Go to previous track (leaving other tracks selected)
+
   
+// ===========================================
+// NAVIGATOR BUTTONS
+// ===========================================
   Channel GoSubZone ChannelNavigator
   Zoom    GoSubZone ZoomNavigator
-  Master  GoMasterTrack
+  Scroll  GoSubZone ScrollNavigator
+  Bank    GoSubZone BankNavigator
+  Master  GoSubZone MasterNavigator
+  Click   GoSubZone ClickNavigator
+  Section GoSubZone SectionNavigator
+  Marker  GoSubZone MarkerNavigator
 
+// ===========================================
+// FUNCTION BUTTONS
+// ===========================================
+  Shift+Channel   Reaper _REASONUS_HANDLE_FUNCTION_KEY_1 Feedback=No
+  Shift+Zoom      Reaper _REASONUS_HANDLE_FUNCTION_KEY_2 Feedback=No
+  Shift+Scroll    Reaper _REASONUS_HANDLE_FUNCTION_KEY_3 Feedback=No
+  Shift+Bank      Reaper _REASONUS_HANDLE_FUNCTION_KEY_4 Feedback=No
+  Shift+Master    Reaper _REASONUS_HANDLE_FUNCTION_KEY_5 Feedback=No
+  Shift+Click     Reaper _REASONUS_HANDLE_FUNCTION_KEY_6 Feedback=No
+  Shift+Section   Reaper _REASONUS_HANDLE_FUNCTION_KEY_7 Feedback=No
+  Shift+Marker    Reaper _REASONUS_HANDLE_FUNCTION_KEY_8 Feedback=No
 
-//------------------------------------------------------------------------------
-// TRANSPORT
-//------------------------------------------------------------------------------
-  Loop                  CycleTimeline
-  InvertFB+Rewind       Rewind
-  Hold+Rewind           Reaper "40042"  // Go to the project start
-  InvertFB+FastForward  FastForward
-  Hold+FastForward      Reaper "40043"  // Go to the project end
-  Play                  Play
-  Stop                  Stop
-  Record                Record
+// ===========================================
+// SCREENSETS
+// ===========================================
+  Option+Channel      Reaper 40454 Feedback=No   // Screenset: Load window set #01
+  Option+Zoom         Reaper 40455 Feedback=No   // Screenset: Load window set #02
+  Option+Scroll       Reaper 40456 Feedback=No   // Screenset: Load window set #03
+  Option+Bank         Reaper 40457 Feedback=No   // Screenset: Load window set #04
+  Option+Master       Reaper 40458 Feedback=No   // Screenset: Load window set #05
+  Option+Click        Reaper 40459 Feedback=No   // Screenset: Load window set #06
+  Option+Section      Reaper 40460 Feedback=No   // Screenset: Load window set #07
+  Option+Marker       Reaper 40461 Feedback=No   // Screenset: Load window set #08
 ZoneEnd

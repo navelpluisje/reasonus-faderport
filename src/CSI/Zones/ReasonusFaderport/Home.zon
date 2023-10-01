@@ -17,14 +17,14 @@ Zone Home
     "Track"
     "Buttons"
     "SelectedTrack"
+    "Transport"
   IncludedZonesEnd
   AssociatedZones
     "SelectedTrackFXMenu"
-    "MasterTrack"
-    / "SelectedTrackSend"
-    / "SelectedTrackReceive"
-    / "TrackFXMenu"
-    / "TrackSend"
-    / "TrackReceive"
+    "TrackFXMenu"
+    "SelectedTrackSend"
+    "TrackSend"
+    "SelectedTrackReceive"
+    "TrackReceive"
   AssociatedZonesEnd
 ZoneEnd

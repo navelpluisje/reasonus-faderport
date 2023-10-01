@@ -4,18 +4,58 @@
 // Version: 1.0.0
 //------------------------------------------------------------------------------
 
-Zone "MasterTrack"
+Zone "MasterNavigator"
 // ===========================================
 // BUTTONS AND SCROLL
 // ===========================================
-    Prev                  TrackBank -8
-    Next                  TrackBank  8
-    Shift+Prev            NoAction
-    Shift+Next            NoAction
+  Prev                  Bank Track -8
+  Next                  Bank Track 8
+  Shift+Prev            NoAction
+  Shift+Next            NoAction
 
-    RotaryBigPush         Reaper _XENAKIOS_SETMASTVOLTO0  // Xenakios/SWS: Set master volume to 0 dB
-    Shift+RotaryBigPush   Reaper _REASONUS_MASTER_PAN_CENTER  // Set master pan to center position
-    Option+RotaryBigPush  NoAction
-    RotaryBig             TrackVolume
-    Shift+RotaryBig       TrackPan
+// ===========================================
+// ENCODER
+// ===========================================
+  RotaryBigPush         Reaper _XENAKIOS_SETMASTVOLTO0  // Xenakios/SWS: Set master volume to 0 dB
+  Shift+RotaryBigPush   Reaper _REASONUS_MASTER_PAN_CENTER  // Set master pan to center position
+  Option+RotaryBigPush  NoAction
+  Increase+RotaryBig    Reaper _XENAKIOS_NUDMASVOL1DBU // Xenakios/SWS: Nudge master volume 1 dB up
+  Decrease+RotaryBig    Reaper _XENAKIOS_NUDMASVOL1DBD // Xenakios/SWS: Nudge master volume 1 dB down
+  Shift+RotaryBig       NoAction
+
+// ===========================================
+// NAVIGATOR BUTTONS
+// ===========================================
+  Channel GoSubZone ChannelNavigator
+  Zoom    GoSubZone ZoomNavigator
+  Scroll  GoSubZone ScrollNavigator
+  Bank    GoSubZone BankNavigator
+  Master  LeaveSubZone
+  Click   GoSubZone ClickNavigator
+  Section GoSubZone SectionNavigator
+  Marker  GoSubZone MarkerNavigator
+
+// ===========================================
+// FUNCTION BUTTONS
+// ===========================================
+  Shift+Channel   Reaper _REASONUS_HANDLE_FUNCTION_KEY_1 Feedback=No
+  Shift+Zoom      Reaper _REASONUS_HANDLE_FUNCTION_KEY_2 Feedback=No
+  Shift+Scroll    Reaper _REASONUS_HANDLE_FUNCTION_KEY_3 Feedback=No
+  Shift+Bank      Reaper _REASONUS_HANDLE_FUNCTION_KEY_4 Feedback=No
+  Shift+Master    Reaper _REASONUS_HANDLE_FUNCTION_KEY_5 Feedback=No
+  Shift+Click     Reaper _REASONUS_HANDLE_FUNCTION_KEY_6 Feedback=No
+  Shift+Section   Reaper _REASONUS_HANDLE_FUNCTION_KEY_7 Feedback=No
+  Shift+Marker    Reaper _REASONUS_HANDLE_FUNCTION_KEY_8 Feedback=No
+
+// ===========================================
+// SCREENSETS
+// ===========================================
+  Option+Channel      Reaper 40454 Feedback=No   // Screenset: Load window set #01
+  Option+Zoom         Reaper 40455 Feedback=No   // Screenset: Load window set #02
+  Option+Scroll       Reaper 40456 Feedback=No   // Screenset: Load window set #03
+  Option+Bank         Reaper 40457 Feedback=No   // Screenset: Load window set #04
+  Option+Master       Reaper 40458 Feedback=No   // Screenset: Load window set #05
+  Option+Click        Reaper 40459 Feedback=No   // Screenset: Load window set #06
+  Option+Section      Reaper 40460 Feedback=No   // Screenset: Load window set #07
+  Option+Marker       Reaper 40461 Feedback=No   // Screenset: Load window set #08
 ZoneEnd
