@@ -8,6 +8,7 @@ local rtk = require('rtk');
 local uiElements = require('refUiElements');
 local FunctionAction = require('refFunctionAction')
 local MixManagement = require('refMixManagement')
+local CreatePluginZone = require('refCreatePluginZone')
 
 local faderPortImages = {
   fp2 = rtk.Image():load('./assets/faderport2.png'),
