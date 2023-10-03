@@ -59,7 +59,8 @@ function pages.createAboutPage()
   aboutPage:add(rtk.Text {
     w    = 1,
     wrap = rtk.Text.WRAP_NORMAL,
-    text = 'ReaSonus FaderPort is created to make the use of your FaderPort with Reaper as easy as possible. It is build on top of CSI, a tool for connecting controllers to REAPER with a huge flexibility.'
+    text =
+    'ReaSonus FaderPort is created to make the use of your FaderPort with Reaper as easy as possible. It is build on top of CSI, a tool for connecting controllers to REAPER with a huge flexibility.'
   })
   aboutPage:add(rtk.Text {
     w    = 1,
@@ -76,7 +77,7 @@ function pages.createAboutPage()
     wrap = rtk.Text.WRAP_NORMAL,
     text = 'You may also donate if you appreciate this project.'
   })
-  local donateButton = aboutPage:add(uiElements.createButton('Buy me a coffe or beer', uiElements.Icons.coffee, 200), {
+  local donateButton = aboutPage:add(uiElements.createButton('Buy me a coffee or beer', uiElements.Icons.coffee, 200), {
     halign = rtk.Widget.RIGHT
   })
   donateButton.onclick = function()
@@ -101,15 +102,15 @@ pages.functionsPage = {
       padding = 8,
     }
     pages.functionsPage.content = pages.functionsPage.page:add(rtk.FlowBox {
-      vspacing = 8;
-      hspacing = 8;
+      vspacing = 8,
+      hspacing = 8,
       w = 1,
     });
     pages.functionsPage.buttonBar = pages.functionsPage.page:add(rtk.HBox {
       w        = 1,
       tmargin  = 20,
       tpadding = 8,
-      tborder  = uiElements.Colours.Button.Border;
+      tborder  = uiElements.Colours.Button.Border,
     })
     pages.functionsPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
     local resetButton = pages.functionsPage.buttonBar:add(uiElements.createButton('Reset to defaults',
@@ -167,7 +168,7 @@ pages.mixManagementPage = {
     pages.mixManagementPage.page = rtk.VBox {
       h      = 1,
       w      = 1,
-      margin = 8;
+      margin = 8,
     }
     pages.mixManagementPage.tabBar = pages.mixManagementPage.page:add(rtk.HBox {
       w = 1,
@@ -179,7 +180,7 @@ pages.mixManagementPage = {
       w        = 1,
       tmargin  = 20,
       tpadding = 8,
-      tborder  = uiElements.Colours.Button.Border;
+      tborder  = uiElements.Colours.Button.Border,
     })
     pages.mixManagementPage.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
     local reloadButton = pages.mixManagementPage.buttonBar:add(uiElements.createButton('Reload',
@@ -215,7 +216,7 @@ pages.mixManagementPage = {
       end
     end
     pages.mixManagementPage.content:add(pages.mixManagementPage.filterActions[pages.mixManagementPage.activeIndex]:
-      getMixManagement())
+    getMixManagement())
   end,
   createFilterTabs = function(nbFilters)
     for i = 1, pages.mixManagementPage.nbFilters do

@@ -64,6 +64,7 @@ local window = rtk.Window {
 }
 
 window.onclose = function()
+  reaper.ShowConsoleMsg('kajhsdkajhdkajdhakdjsh')
   rtk.quit();
 end
 

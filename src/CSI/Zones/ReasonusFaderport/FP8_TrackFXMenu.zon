@@ -29,8 +29,4 @@ Zone "TrackFXMenu"
   Increase+RotarySmall  Bank TrackFXMenu 1 
   Decrease+RotarySmall  Bank TrackFXMenu -1 
   RotarySmallPush        NoAction
-
-  Link AutoMapFX
-  Shift+Link RemapAutoZone
-
 ZoneEnd

@@ -1,5 +1,4 @@
 Zone Buttons
-  OnZoneActivation GoSubZone BankNavigator
   SubZones
  	  ChannelNavigator
     ZoomNavigator
@@ -12,27 +11,28 @@ Zone Buttons
     TracksByName
   SubZonesEnd
 
-/ // ===========================================
-/ // BUTTONS AND SCROLL, BY DEFAULT CHANNEL
-/ // ===========================================
-/   Prev                      Reaper 40286   // Track: Go to previous track
-/   Next                      Reaper 40285   // Track: Go to next track
-/   Shift+Prev                Reaper 40286   // Track: Go to previous track
-/   Shift+Next                Reaper 40285   // Track: Go to next track
+// ===========================================
+// BUTTONS AND SCROLL, BY DEFAULT CHANNEL
+// ===========================================
+  Prev                      Reaper 40286   // Track: Go to previous track
+  Next                      Reaper 40285   // Track: Go to next track
+  Shift+Prev                Reaper 40286   // Track: Go to previous track
+  Shift+Next                Reaper 40285   // Track: Go to next track
 
-/ // ===========================================
-/ // ENCODER
-/ // ===========================================
-/   Increase+RotaryBig        Reaper 40285 // Track: Go to next track
-/   Decrease+RotaryBig        Reaper 40286 // Track: Go to previous track
-/   Shift+Inrease+RotaryBig   Reaper 40287 // Track: Go to next track (leaving other tracks selected)
-/   Shift+Derease+RotaryBig   Reaper 40288 // Track: Go to previous track (leaving other tracks selected)
+// ===========================================
+// ENCODER
+// ===========================================
+  Increase+RotaryBig        Reaper 40285 // Track: Go to next track
+  Decrease+RotaryBig        Reaper 40286 // Track: Go to previous track
+  Shift+Inrease+RotaryBig   Reaper 40287 // Track: Go to next track (leaving other tracks selected)
+  Shift+Derease+RotaryBig   Reaper 40288 // Track: Go to previous track (leaving other tracks selected)
 
   
 // ===========================================
 // NAVIGATOR BUTTONS
 // ===========================================
-  Channel GoSubZone ChannelNavigator
+  / Channel GoSubZone ChannelNavigator
+  Channel Reaper _REASONUS_ALWAYS_ON
   Zoom    GoSubZone ZoomNavigator
   Scroll  GoSubZone ScrollNavigator
   Bank    GoSubZone BankNavigator
@@ -64,4 +64,16 @@ Zone Buttons
   Option+Click        Reaper 40459 Feedback=No   // Screenset: Load window set #06
   Option+Section      Reaper 40460 Feedback=No   // Screenset: Load window set #07
   Option+Marker       Reaper 40461 Feedback=No   // Screenset: Load window set #08
+
+
+// ===========================================
+// MACRO AND LINK BUTTONS
+// ===========================================
+  Macro               Reaper _REASONUS_FADERPORT_CONTROL { 20 20 20 20 20 20 }
+  Shift+Macro         FixedRGBColorDisplay { 0 5 20 }
+  Shift+Macro         RemapAutoZone
+  Option+Macro        FixedRGBColorDisplay { 5 0 20 }
+  Option+Macro        AutoMapFX
+  Link                ToggleEnableFocusedFXParamMapping { 20 20 20 255 255 255 }
+  Shift+Link          Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
 ZoneEnd

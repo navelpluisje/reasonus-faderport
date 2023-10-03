@@ -49,6 +49,7 @@ Zone "Track"
   Bypass                    Reaper 8           { 20 20 20 255 0 0 } // Track: Toggle FX bypass for selected tracks
   Shift+Bypass              Reaper 40344       { 20 0 0 255 0 0 } // Track: Toggle FX bypass on all tracks
 
+
 // ===========================================
 // TRACK NAVIGATION
 // ===========================================
@@ -79,5 +80,4 @@ Zone "Track"
   VCABtn          Reaper _REASONUS_LED_STATE_MIX_VCA_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks with hardware outputs
   
   AllBtn          Reaper _REASONUS_LED_STATE_MIX_ALL_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks
-
 ZoneEnd 

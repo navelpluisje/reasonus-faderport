@@ -102,8 +102,8 @@ Widget Bypass
 WidgetEnd
 
 Widget Macro
-	Press 90 03 7f 90 03 00
-	FB_FaderportRGB 90 03 7f
+	Press 90 04 7f 90 04 00
+	FB_FaderportRGB 90 04 7f
 WidgetEnd
 
 Widget Link

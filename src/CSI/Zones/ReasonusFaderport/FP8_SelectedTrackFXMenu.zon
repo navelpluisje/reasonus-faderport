@@ -23,7 +23,4 @@ Zone "SelectedTrackFXMenu"
   Solo|               GoFXSlot
   Solo|               Reaper "_S&M_WNCLS5" { 0 20 0 0 255 0 }
   Solo|               Reaper _S&M_TOGLFLOATFX|
-
-  Link AutoMapFX
-  Shift+Link RemapAutoZone
 ZoneEnd

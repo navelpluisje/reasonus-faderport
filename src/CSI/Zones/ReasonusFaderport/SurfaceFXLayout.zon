@@ -1,13 +1,10 @@
 Zone SurfaceFXLayout
-    Fader FXParam
-    ScribbleStripMode|       Mode=6
-    ScribbleLine1_           FixedTextDisplay TextAlign=Left
+    Fader                    FXParam
+    ScribbleStripMode        Mode=2
+    ScribbleLine1_           FixedTextDisplay TextAlign=Left TextInvert=Yes
     ScribbleLine2_           FXParamValueDisplay
-    ScribbleLine3_           FixedTextDisplay TextAlign=Left
-    ScribbleLine4_           FXParamValueDisplay
-    / ValueBar                 FXParamValue BarStyle=Fill
+    ValueBar                 FXParamValue BarStyle=Fill
 ZoneEnd
 
-#WidgetTypes Fader Select
-#RingStyles Dot Fill BoostCut Spread
+#WidgetTypes Fader Select ValueBar
 #DisplayRows ScribbleLine1_ ScribbleLine2_ ScribbleLine3_ ScribbleLine4_
