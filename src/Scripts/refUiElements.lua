@@ -269,14 +269,14 @@ end
 --
 --******************************************************************************
 function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
-  local navLogo          = rtk.ImageBox { uiElements.Icons.logo }
-  local navHome          = uiElements.createNavigationButton('Home', uiElements.Icons.home, true);
-  local navFunction      = uiElements.createNavigationButton('Edit Function keys', uiElements.Icons.functions, false);
-  local navMixManagement = uiElements.createNavigationButton('Mix Management', uiElements.Icons.mix, false);
-  local navDocumentation = uiElements.createNavigationButton('Documentation', uiElements.Icons.book, false);
-  local navAbout         = uiElements.createNavigationButton('About', uiElements.Icons.about, false);
+  local navLogo            = rtk.ImageBox { uiElements.Icons.logo }
+  local navHome            = uiElements.createNavigationButton('Home', uiElements.Icons.home, true);
+  local navFunction        = uiElements.createNavigationButton('Edit Function keys', uiElements.Icons.functions, false);
+  local navMixManagement   = uiElements.createNavigationButton('Mix Management', uiElements.Icons.mix, false);
+  local navDocumentation   = uiElements.createNavigationButton('Documentation', uiElements.Icons.book, false);
+  local navAbout           = uiElements.createNavigationButton('About', uiElements.Icons.about, false);
 
-  navHome.onclick = function()
+  navHome.onclick          = function()
     app:push_screen('home')
     navHome:attr('hover', true)
     navFunction:attr('hover', false)
@@ -286,7 +286,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navAbout:attr('hover', false)
   end
 
-  navFunction.onclick = function()
+  navFunction.onclick      = function()
     app:push_screen('functions')
     navHome:attr('hover', false)
     navFunction:attr('hover', true)
@@ -310,7 +310,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     rtk.open_url('https://navelpluisje.github.io/reasonus-faderport/#toc')
   end
 
-  navAbout.onclick = function()
+  navAbout.onclick         = function()
     app:push_screen('about')
     navHome:attr('hover', false)
     navFunction:attr('hover', false)
@@ -320,7 +320,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navAbout:attr('hover', true)
   end
 
-  navLogo.onclick = function()
+  navLogo.onclick          = function()
     app:push_screen('home')
     navHome:attr('hover', true)
     navFunction:attr('hover', false)
@@ -345,7 +345,7 @@ function uiElements.colourPicker(label, r, g, b)
   local greenValue = g or 0;
   local blueValue  = b or 0;
 
-  local red = rtk.HBox { w = 1 };
+  local red        = rtk.HBox { w = 1 };
   red:add(rtk.Text { text = 'R', w = 15, fontsize = 16 })
   local redSlider = red:add(rtk.Slider {
     max         = 255,
@@ -369,20 +369,20 @@ function uiElements.colourPicker(label, r, g, b)
 
   local blue = rtk.HBox { w = 1 };
   blue:add(rtk.Text { text = 'B', w = 15, fontsize = 16 })
-  local blueSlider = blue:add(rtk.Slider {
+  local blueSlider            = blue:add(rtk.Slider {
     max         = 255,
     value       = blueValue,
     trackcolour = Colours.Border,
     colour      = "white",
     step        = 5,
   });
-  local blueValueLabel = blue:add(rtk.Text { text = blueValue, w = 30, lpadding = 5, fontsize = 16 })
+  local blueValueLabel        = blue:add(rtk.Text { text = blueValue, w = 30, lpadding = 5, fontsize = 16 })
 
   local sliderContainer       = rtk.VBox { w = 1, spacing = 8 };
   local controlContainer      = rtk.HBox { w = 1, spacing = 8 };
   local colourPickerContainer = rtk.VBox { w = 1, spacing = 8, tborder = Colours.Button.Border, tpadding = 8 };
 
-  local swatch = rtk.Container {
+  local swatch                = rtk.Container {
     w      = 32,
     h      = 32,
     border = '2px white',
@@ -458,7 +458,113 @@ function uiElements.colourPicker(label, r, g, b)
     setValue = setValue,
     getCSIValue = getCSIValue,
   }
-
 end
 
+---Create UI component for a select button and fader widget for the given track
+---@param id number
+---@return table
+uiElements.channelWidgets = function(id)
+  local container = rtk.HBox { border = uiElements.Colours.Border, h = 50 }
+  local trackIndex = rtk.Text {
+    text = id,
+    h = 1,
+    w = 25,
+    rborder = uiElements.Colours.Border,
+    halign = 'center',
+    valign = 'center',
+  };
+  local widgets = rtk.VBox { w = 1 }
+
+  local select = widgets:add(rtk.HBox { h = .5, w = 1, lpadding = 8, bborder = uiElements.Colours.Border,
+    bg = '#ffffff00', })
+  select:add(rtk.Text { text = 'Select', h = 1, valign = 'center', w = 60 });
+  select.ondropfocus = onParamDropFocus(select);
+  select.ondropblur = onParamDropBlur(select);
+  local dropSelect = select:add(rtk.Text { text = '', h = 1, w = 1, valign = 'center', minw = 60 });
+
+  local fader = widgets:add(rtk.HBox { h = 1, w = 1, lpadding = 8,
+    bg = '#ffffff00', })
+  fader:add(rtk.Text { text = 'Fader', h = 1, valign = 'center', w = 60 });
+  fader.ondropfocus = onParamDropFocus(fader);
+  fader.ondropblur = onParamDropBlur(fader);
+  local dropFader = fader:add(rtk.Text { text = '', h = 1, w = 1, valign = 'center', minw = 60 });
+
+  container:add(trackIndex);
+  container:add(widgets);
+
+  local setSelectName = function(name)
+    dropSelect:attr('text', name)
+  end
+
+  local setOnSelectDrop = function(callback)
+    select.ondrop = callback;
+  end
+
+  local setOnSelectClick = function(callback)
+    dropSelect.onclick = callback;
+  end
+
+  local setFaderName = function(name)
+    dropFader:attr('text', name)
+  end
+
+  local setOnFaderDrop = function(callback)
+    fader.ondrop = callback;
+  end
+
+  local setOnFaderClick = function(callback)
+    dropFader.onclick = callback;
+  end
+
+  return {
+    element = container,
+    setSelectName = setSelectName,
+    setOnSelectDrop = setOnSelectDrop,
+    setOnSelectClick = setOnSelectClick,
+    setFaderName = setFaderName,
+    setOnFaderDrop = setOnFaderDrop,
+    setOnFaderClick = setOnFaderClick,
+  }
+end
+
+---Create effect parameter list item
+---@param name string
+---@return table
+uiElements.pluginParam = function(name)
+  local param = rtk.Text {
+    text    = name,
+    padding = 4,
+    border  = uiElements.Colours.Border,
+    w       = 1,
+    bg      = uiElements.Colours.BackGround,
+    cursor  = rtk.mouse.cursors.MOVE,
+  }
+
+  param.onmouseenter = function()
+    param:attr('border', '1px #ffffff')
+    return true
+  end
+
+  param.onmouseleave = function()
+    param:attr('border', uiElements.Colours.Border)
+    return true
+  end
+
+  param.ondragmousemove = function()
+    param:attr('cursor', rtk.mouse.cursors.REAPER_DRAGDROP_COPY);
+  end
+
+  param.ondragend = function()
+    param:attr('cursor', rtk.mouse.cursors.MOVE);
+  end
+
+  local setOnDragStart = function(callback)
+    param.ondragstart = callback;
+  end
+
+  return {
+    element = param,
+    setOnDragStart = setOnDragStart,
+  }
+end
 return uiElements
