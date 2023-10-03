@@ -43,6 +43,16 @@ if (args._.includes('watch')) {
       }
     },
   );
+    fs.watch(
+    path.join(process.cwd(), 'src', 'Scripts'),
+    {
+      recursive: true,
+    },
+    (x, file) => {
+      copyFile(path.join(process.cwd(), 'src', 'Scripts'), path.join(process.env.REAPER_PATH, 'Scripts', 'Reasonus'), file);
+    },
+  );
+
 }
 
 if (args._.includes('build')) {

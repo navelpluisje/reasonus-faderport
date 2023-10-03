@@ -318,7 +318,6 @@ function CreatePluginZone:processZoneFile(pageId, fileName)
       local type = descrId == '1' and 'select' or 'fader';
       self.pages[pageId][type .. descrTrack]['paramName'] = description;
     end
-
   end
 end
 
@@ -374,7 +373,7 @@ function CreatePluginZone:addParamToPage(widget, paramData)
   local data = self.pages[self.currentPage][widget] or {};
 
   if (
-      not ((data.paramId == nil) or
+        not ((data.paramId == nil) or
           (data.paramId == paramData.paramId))
       ) then
     local paramItem = self.paramListBox.children[data.paramId + 1];
@@ -405,33 +404,33 @@ function CreatePluginZone:createTracks()
     self.widgetListBox:add(channelWidget.element);
 
     channelWidget.setOnSelectDrop(
-    function(_, _, source, data)
-      channelWidget.setSelectName(data.name);
-      source:animate { 'alpha', dst = 0.5, duration = 0.3 };
-      self:addParamToPage('select' .. i, data)
-    end
+      function(_, _, source, data)
+        channelWidget.setSelectName(data.name);
+        source:animate { 'alpha', dst = 0.5, duration = 0.3 };
+        self:addParamToPage('select' .. i, data)
+      end
     );
 
     channelWidget.setOnSelectClick(
-    function()
-      local data = self.pages[self.currentPage]['select' .. i];
-      uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
-    end
+      function()
+        local data = self.pages[self.currentPage]['select' .. i];
+        uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
+      end
     )
 
     channelWidget.setOnFaderDrop(
-    function(_, _, source, data)
-      channelWidget.setFaderName(data.name);
-      source:animate { 'alpha', dst = 0.5, duration = 0.3 };
-      self:addParamToPage('fader' .. i, data)
-    end
+      function(_, _, source, data)
+        channelWidget.setFaderName(data.name);
+        source:animate { 'alpha', dst = 0.5, duration = 0.3 };
+        self:addParamToPage('fader' .. i, data)
+      end
     )
 
     channelWidget.setOnFaderClick(
-    function()
-      local data = self.pages[self.currentPage]['select' .. i];
-      uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
-    end
+      function()
+        local data = self.pages[self.currentPage]['select' .. i];
+        uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
+      end
     )
   end
 end
@@ -464,9 +463,9 @@ function CreatePluginZone:getPluginParams()
       self.paramListBox:add(param.element);
 
       param.setOnDragStart(
-      function()
-        return paramValues, true;
-      end
+        function()
+          return paramValues, true;
+        end
       )
     end
   end

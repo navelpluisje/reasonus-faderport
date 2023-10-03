@@ -8,8 +8,8 @@ export const copyFile = (fromDir, toDir, fileName) => {
   console.log(chalk.green(`${new Date().toISOString()}: `) + chalk.yellow(fileName) + chalk.green(` changed.`));
 
   fs.copyFile(
-    path.join(process.cwd(), 'src', 'CSI', fileName),
-    path.join(process.env.REAPER_PATH, 'CSI', fileName),
+    path.join(fromDir, fileName),
+    path.join(toDir, fileName),
     0,
     (err) => {
       if (err) {

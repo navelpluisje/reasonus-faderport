@@ -130,8 +130,8 @@ function zoneUtils.createSelectPart(trackId, selectData)
     result = string.gsub(result, '{{paramName}}', selectData.paramName or selectData.paramData.name);
     result = string.gsub(result, '{{steps}}', zoneUtils.getSteps(selectData.paramData.nbSteps));
     result = string.gsub(result, '{{color}}',
-                         selectData.paramIsToggle == true and zoneUtils.selectColors.white or
-                         zoneUtils.selectColors.yellow);
+      selectData.paramIsToggle == true and zoneUtils.selectColors.white or
+      zoneUtils.selectColors.yellow);
   end
   return result;
 end
