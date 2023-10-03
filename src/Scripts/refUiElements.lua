@@ -460,6 +460,25 @@ function uiElements.colourPicker(label, r, g, b)
   }
 end
 
+---callback function for parameter drop focus
+---@param widget table
+---@return function
+local function onParamDropFocus(widget)
+  return function()
+    widget:animate { 'bg', dst = '#ffffff55', duration = 0.2 };
+    return true;
+  end
+end
+
+---callback function for parameter drop blur
+---@param widget table
+---@return function
+local function onParamDropBlur(widget)
+  return function()
+    widget:animate { 'bg', dst = '#ffffff00', duration = 0.2 };
+  end
+end
+
 ---Create UI component for a select button and fader widget for the given track
 ---@param id number
 ---@return table
