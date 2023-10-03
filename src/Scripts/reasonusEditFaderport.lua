@@ -1,7 +1,3 @@
-local function createPath(path)
-  return path:gsub("/", package.config:sub(1, 1));
-end
-
 -- Set package path to find the packages to import
 local function createPath(path)
   return path:gsub("/", package.config:sub(1, 1));
@@ -12,6 +8,8 @@ package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua')
 local rtk = require('rtk');
 local uiElements = require('refUiElements');
 local pages = require('refPages')
+
+
 
 --******************************************************************************
 --
@@ -64,7 +62,6 @@ local window = rtk.Window {
 }
 
 window.onclose = function()
-  reaper.ShowConsoleMsg('kajhsdkajhdkajdhakdjsh')
   rtk.quit();
 end
 
@@ -128,6 +125,13 @@ if (faderPortVersion ~= '2') then
     name = 'mix-management',
     init = function(_, screen)
       screen.widget = pages.mixManagementPage.create(nbMixManagementFilters)
+    end,
+  }
+
+  app:add_screen {
+    name = 'create-plgin-zone',
+    init = function(_, screen)
+      screen.widget = pages.createPluginZoneFile.create(nbMixManagementFilters, window)
     end,
   }
 end
