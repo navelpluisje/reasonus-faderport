@@ -4,7 +4,7 @@ import { config as envConfig } from 'dotenv';
 import fs from 'fs';
 import path from 'path';
 import chalk from 'chalk';
-import { subtractArgs, copyZoneFile, copyFile } from './utils/index.mjs';
+import { subtractArgs, copyFile } from './utils/index.mjs';
 import fse from 'fs-extra';
 import { zip } from 'zip-a-folder';
 
@@ -36,11 +36,7 @@ if (args._.includes('watch')) {
       recursive: true,
     },
     (x, file) => {
-      if (!process.env.ALWAYS_ON_ACTION) {
-        copyFile(path.join(process.cwd(), 'src', 'CSI'), path.join(process.env.REAPER_PATH, 'CSI'), file);
-      } else {
-        copyZoneFile(path.join(process.cwd(), 'src', 'CSI', file), path.join(process.env.REAPER_PATH, 'CSI', file), file);
-      }
+      copyFile(path.join(process.cwd(), 'src', 'CSI'), path.join(process.env.REAPER_PATH, 'CSI'), file);
     },
   );
     fs.watch(

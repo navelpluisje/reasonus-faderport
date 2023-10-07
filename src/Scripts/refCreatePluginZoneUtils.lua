@@ -9,6 +9,43 @@ local utils = require('utils')
 
 local zoneUtils = {};
 
+local unwantedPrefixes = {
+  '^Tube - Tech',
+  '^AU',
+  '^UAD',
+  '^UAD UA',
+  '^UAD Pultec',
+  '^UAD Tube - Tech',
+  '^UAD Softube',
+  '^UAD Teletronix',
+  '^UADx',
+  '^Acon Digital',
+  '^BC',
+  '^Blue Cat\'s',
+  '^NA',
+  '^PSP',
+  '^TR5',
+  '^Ozone 9',
+  '^RX9',
+  '^Valhalla',
+  '^bx_',
+  '^TDR',
+};
+
+local function stripUnwantedPrefix(name)
+  name = utils.trim(name);
+  for k, v in ipairs(unwantedPrefixes) do
+    local startIndex = string.find(name, v);
+
+    if (startIndex == 1) then
+      name = string.gsub(name, v, '');
+      break
+    end
+  end
+
+  return name;
+end
+
 ---Split the REAPER effect name into separate parts for name, developer and type
 ---@param effectName string The name of the current selected effect
 ---@return string type, string name, string developer
@@ -17,9 +54,9 @@ function zoneUtils.getEffectNameParts(effectName)
   local name = '';
   local developer = '';
 
-  for t, n, d in string.gmatch(effectName, '(%w+):(.*)%((%w+)%)') do
+  for t, n, d in string.gmatch(effectName, '(%w+):(.*)%(([%w%s%,]+)%)') do
     type = t;
-    name = n;
+    name = stripUnwantedPrefix(n);
     developer = d;
   end
 
@@ -160,12 +197,14 @@ zoneUtils.selectColors = {
 }
 
 zoneUtils.selectText = [[
+  ScribbleStripMode{{id}}  Mode=2
   Select{{id}}             FXParam {{paramId}} {{steps}} {{color}}
-  ScribbleLine1_{{id}}     FXParamNameDisplay {{paramId}} "{{paramName}}"
+  ScribbleLine1_{{id}}     FixedTextDisplay "{{paramName}}" TextAlign=Left TextInvert=Yes
   ScribbleLine2_{{id}}     FXParamValueDisplay {{paramId}}
-]]
+  ]]
 
 zoneUtils.selectNoActionText = [[
+  ScribbleStripMode{{id}}  Mode=2
   Select{{id}}             NoAction
   ScribbleLine1_{{id}}     NoAction
   ScribbleLine2_{{id}}     NoAction
@@ -173,9 +212,9 @@ zoneUtils.selectNoActionText = [[
 
 zoneUtils.faderText = [[
   Fader{{id}}              FXParam {{paramId}}
-  ScribbleLine3_{{id}}     FXParamNameDisplay {{paramId}} "{{paramName}}"
+  ScribbleLine3_{{id}}     FixedTextDisplay "{{paramName}}" TextAlign=Left TextInvert=Yes
   ScribbleLine4_{{id}}     FXParamValueDisplay {{paramId}}
-  ValueBar{{id}}           FXParam {{paramId}} {% {{valueBarId}} %}
+  ValueBar{{id}}           FXParam {{paramId}} BarStyle=Fill
 ]]
 
 zoneUtils.faderNoActionText = [[

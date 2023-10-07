@@ -8,7 +8,9 @@
 //------------------------------------------------------------------------------
 
 Zone Home
-  OnInitialization PreventFocusedFXMapping
+  OnInitialization ToggleEnableFocusedFXMapping
+  // Show all tracks and set the first track selected
+  OnInitialization Reaper _REASONUS_LED_STATE_MIX_ALL_BTN
   // Boolean values that can be used for giving a button an 'active' state
   OnInitialization Reaper _REASONUS_ALWAYS_ON
   OnInitialization Reaper _REASONUS_ALWAYS_OFF
@@ -23,6 +25,7 @@ Zone Home
     "Transport"
   IncludedZonesEnd
   AssociatedZones
+    "FocusedFXParam"
     "SelectedTrackFXMenu"
     "TrackFXMenu"
     "SelectedTrackSend"

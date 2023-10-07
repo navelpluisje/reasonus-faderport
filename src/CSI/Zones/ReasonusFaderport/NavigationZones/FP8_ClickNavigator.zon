@@ -1,35 +1,48 @@
+
 //------------------------------------------------------------------------------
-// File:    FP8_NavigatorChannel.zon 
+// File:    FP8_ZoomNavigator.zon 
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
 // Version: 1.0.0
-//------------------------------------------------------------------------------
 
-Zone "ChannelNavigator"
-// ===========================================
-// BUTTONS AND SCROLL
-// ===========================================
-  Prev                      Reaper 40286   // Track: Go to previous track
-  Next                      Reaper 40285   // Track: Go to next track
-  Shift+Prev                Reaper 40286   // Track: Go to previous track
-  Shift+Next                Reaper 40285   // Track: Go to next track
 
+Zone ClickNavigator
 // ===========================================
-// ENCODER
+// BUTTONS
 // ===========================================
-  Increase+RotaryBig        Reaper 40285 // Track: Go to next track
-  Decrease+RotaryBig        Reaper 40286 // Track: Go to previous track
-  Shift+Inrease+RotaryBig   Reaper 40287 // Track: Go to next track (leaving other tracks selected)
-  Shift+Derease+RotaryBig   Reaper 40288 // Track: Go to previous track (leaving other tracks selected)
+  Prev                  Reaper 42457    // Options: Set metronome speed to 2x
+  Next                  Reaper 42458    // Options: Set metronome speed to 4x
+  Shift+Prev            NoAction
+  Shift+Next            NoAction
+
+  RotaryBigPush         Reaper 42456    // Options: Set metronome speed to 1x
+  Hold+RotaryBigPush    Reaper 40364    // Options: Toggle metronome
+  Shift+RotaryBigPush   Reaper 40363 Feedback=No  // Options: Show metronome/pre-roll settings
+  Option+RotaryBigPush  NoAction
+
+  // Every tick of the Metronome volume is really small. So triggering 6 ticks per encoder tick makes it respond a bit better
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  // SWS/S&M: Decrease metronome volume, SWS/S&M: Increase metronome volume
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  // SWS/S&M: Decrease metronome volume, SWS/S&M: Increase metronome volume
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  
+  Shift+RotaryBig       NoAction
 
 // ===========================================
 // NAVIGATOR BUTTONS
 // ===========================================
-  Channel LeaveSubZone
+  Channel GoSubZone ChannelNavigator
   Zoom    GoSubZone ZoomNavigator
   Scroll  GoSubZone ScrollNavigator
   Bank    GoSubZone BankNavigator
   Master  GoSubZone MasterNavigator
-  Click   GoSubZone ClickNavigator
+  Click   LeaveSubZone
   Section GoSubZone SectionNavigator
   Marker  GoSubZone MarkerNavigator
 
@@ -56,5 +69,4 @@ Zone "ChannelNavigator"
   Option+Click        Reaper 40459 Feedback=No   // Screenset: Load window set #06
   Option+Section      Reaper 40460 Feedback=No   // Screenset: Load window set #07
   Option+Marker       Reaper 40461 Feedback=No   // Screenset: Load window set #08
-
 ZoneEnd

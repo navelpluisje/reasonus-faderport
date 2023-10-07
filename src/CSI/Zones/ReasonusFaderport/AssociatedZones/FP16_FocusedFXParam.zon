@@ -1,0 +1,15 @@
+//------------------------------------------------------------------------------
+// File:    FP8_FocusedFXParam.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+
+Zone FocusedFXParam
+  ScribbleStripMode16  Mode=2
+  Fader16              FocusedFXParam
+  ScribbleLine1_16     FixedTextDisplay "Fx Param" TextInvert=Yes
+  ScribbleLine2_16     NoAction
+  ScribbleLine3_16     FocusedFXParamNameDisplay TextAlign=Left
+  ScribbleLine4_16     FocusedFXParamValueDisplay
+  ValueBar16           TrackVolume BarStyle=Fill
+ZoneEnd

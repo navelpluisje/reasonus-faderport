@@ -4,7 +4,7 @@
 // Version: 1.0.0
 //------------------------------------------------------------------------------
 
-Zone "Track"
+Zone Track
   SubZones
     TracksByName
   SubZonesEnd
@@ -67,7 +67,6 @@ Zone "Track"
 // ===========================================
 // MIX MANAGEMENT
 // ===========================================
-    / AudioBtn        Reaper _REASONUS_ALWAYS_ON { 20 20 20 20 20 20 } 
   AudioBtn        Reaper _REASONUS_LED_STATE_MIX_AUDIO_BTN { 20 20 20 255 255 255 }
   AudioBtn        GoSubZone "TracksByName"
   Shift+AudioBtn  Reaper _REASONUS_LED_STATE_MIX_SHIFT_AUDIO_BTN { 20 20 20 255 255 255 }

@@ -4,37 +4,37 @@
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
 // Version: 1.0.0
 
-Zone "ScrollNavigator"
+Zone MarkerNavigator
 // ===========================================
 // BUTTONS
 // ===========================================
-  Prev                  Reaper 40286   // Track: Go to previous track
-  Next                  Reaper 40285   // Track: Go to next track
-  Shift+Prev            NoAction
-  Shift+Next            NoAction
-
+  Prev                    Reaper _SWS_SELPREVMORR   // SWS: Goto/select previous marker/region
+  Next                    Reaper _SWS_SELNEXTMORR   // SWS: Goto/select next marker/region
+  Shift+Prev              NoAction
+  Shift+Next              NoAction
+                  
 // ===========================================
 // ENCODER
 // ===========================================
-  RotaryBigPush             Reaper 40913                // Track: Vertical scroll selected tracks into view
-  Shift+RotaryBigPush       Reaper _SWS_HSCROLLPLAY50   // SWS: Horizontal scroll to put play cursor at 50%
-  Option+RotaryBigPush      NoAction
-  Increase+RotaryBig        Reaper 40138    // View: Scroll view down, View: Scroll view up
-  Decrease+RotaryBig        Reaper 40139    // View: Scroll view down, View: Scroll view up
-  Increase+Shift+RotaryBig  Reaper 40141    // View: Scroll view left, View: Scroll view Right
-  Decrease+Shift+RotaryBig  Reaper 40140    // View: Scroll view left, View: Scroll view Right
+  RotaryBigPush               Reaper 40157  // Markers: Insert marker at current position
+  Shift+RotaryBigPush         Reaper 40171  // Markers: Insert and/or edit marker at current position
+  Option+RotaryBigPush        Reaper 40613  // Markers: Delete marker near cursor
+  Increase+RotaryBig          Reaper 41044  // Move edit cursor back one beat, Move edit cursor forward one beat
+  Decrease+RotaryBig          Reaper 41045  // Move edit cursor back one beat, Move edit cursor forward one beat
+  Increase+Shift+RotaryBig    Reaper 40105  // View: Move cursor left one pixel, View: Move cursor right one pixel
+  Decrease+Shift+RotaryBig    Reaper 40104  // View: Move cursor left one pixel, View: Move cursor right one pixel
 
 // ===========================================
 // NAVIGATOR BUTTONS
 // ===========================================
   Channel GoSubZone ChannelNavigator
   Zoom    GoSubZone ZoomNavigator
-  Scroll  LeaveSubZone
+  Scroll  GoSubZone ScrollNavigator
   Bank    GoSubZone BankNavigator
   Master  GoSubZone MasterNavigator
   Click   GoSubZone ClickNavigator
   Section GoSubZone SectionNavigator
-  Marker  GoSubZone MarkerNavigator
+  Marker  LeaveSubZone
 
 // ===========================================
 // FUNCTION BUTTONS

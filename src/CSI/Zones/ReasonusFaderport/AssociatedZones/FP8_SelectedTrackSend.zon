@@ -7,7 +7,7 @@
 //    MCU styled send handling for the selectred track
 //------------------------------------------------------------------------------
 
-Zone "SelectedTrackSend"
+Zone SelectedTrackSend
   ScribbleStripMode|      Mode=2
   ScribbleLine1_|         NoAction
   ScribbleLine1_7         FixedTextDisplay "Sends" TextInvert=Yes

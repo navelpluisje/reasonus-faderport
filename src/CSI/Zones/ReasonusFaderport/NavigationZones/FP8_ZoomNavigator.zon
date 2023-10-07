@@ -4,33 +4,32 @@
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
 // Version: 1.0.0
 
-Zone "BankNavigator"
+Zone ZoomNavigator
 // ===========================================
 // BUTTONS
 // ===========================================
-  Prev                  Bank SelectedTrack -8
-  Next                  Bank SelectedTrack 8
-  Shift+Prev            NoAction
-  Shift+Next            NoAction
+  Prev                        Reaper 1011     // View: Zoom out horizontal
+  Next                        Reaper 1012     // View: Zoom in horizontal
+  Shift+Prev                  Reaper 40112    // View: Zoom out vertical
+  Shift+Next                  Reaper 40111    // View: Zoom in vertical
 
-/ // ===========================================
-/ // ENCODER
-/ // ===========================================
-  RotaryBigPush               NoAction
-  Shift+RotaryBigPush         NoAction
-  Option+RotaryBigPush        NoAction
-  Increase+RotaryBig          Bank SelectedTrack 8
-  Decrease+RotaryBig          Bank SelectedTrack -8
-  Increase+Shift+RotaryBig    Bank SelectedTrack 1
-  Decrease+Shift+RotaryBig    Bank SelectedTrack -1
+// ===========================================
+// ENCODER
+// ===========================================
+  RotaryBigPush               Reaper 40110    // View: Toggle track zoom to minimum height
+  Increase+RotaryBig          Reaper 1012     // View: Zoom in horizontal
+  Decrease+RotaryBig          Reaper 1011     // View: Zoom out horizontal
+  Shift+RotaryBigPush         Reaper 40113    // View: Toggle track zoom to maximum height
+  Shift+Increase+RotaryBig    Reaper 40111    // View: Zoom in vertical
+  Shift+Decrease+RotaryBig    Reaper 40112    // View: Zoom out vertical
 
-/ // ===========================================
-/ // NAVIGATOR BUTTONS
-/ // ===========================================
+// ===========================================
+// NAVIGATOR BUTTONS
+// ===========================================
   Channel GoSubZone ChannelNavigator
-  Zoom    GoSubZone ZoomNavigator
+  Zoom    LeaveSubZone
   Scroll  GoSubZone ScrollNavigator
-  Bank    LeaveSubZone
+  Bank    GoSubZone BankNavigator
   Master  GoSubZone MasterNavigator
   Click   GoSubZone ClickNavigator
   Section GoSubZone SectionNavigator

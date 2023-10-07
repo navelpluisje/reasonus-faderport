@@ -7,7 +7,7 @@
 //    euCon styled receives management
 //------------------------------------------------------------------------------
 
-Zone "TrackReceive"
+Zone TrackReceive
   ScribbleStripMode|      Mode=2
   ScribbleLine1_|         NoAction
   ScribbleLine1_8         FixedTextDisplay "Receives" TextInvert=Yes

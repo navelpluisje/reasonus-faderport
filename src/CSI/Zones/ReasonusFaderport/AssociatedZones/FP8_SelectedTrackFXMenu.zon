@@ -1,0 +1,27 @@
+//------------------------------------------------------------------------------
+// File:    FP8_FX.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 1.0.0
+//------------------------------------------------------------------------------
+// Description:
+//    MCU style Effects control. Every channel shows one of the 
+//    effects or instruments of the current selected track
+//------------------------------------------------------------------------------
+
+
+Zone SelectedTrackFXMenu
+  ScribbleStripMode|    Mode=2
+  ScribbleLine1_|       NoAction
+  ScribbleLine2_|       NoAction
+  ScribbleLine1_7       FixedTextDisplay "Effects" TextAlign=Center TextInvert=Yes
+  ScribbleLine1_8       TrackNameDisplay TextAlign=Left TextInvert=Yes
+  ScribbleLine3_|       FXMenuNameDisplay TextAlign=Left TextInvert=Yes
+  ScribbleLine4_|       FXBypassDisplay
+  ValueBar|             NoAction
+
+  InvertFB+Mute|        ToggleFXBypass
+  InvertFB+Shift+Mute|  ToggleFXOffline
+  Solo|                 Reaper "_S&M_WNCLS3" { 0 20 0 0 255 0 }
+  Solo|                 ShowFXSlot
+  Solo|                 GoFXSlot
+ZoneEnd

@@ -7,7 +7,7 @@
 //    MCU style receive handling of the selected track
 //------------------------------------------------------------------------------
 
-Zone "SelectedTrackReceive"
+Zone SelectedTrackReceive
   ScribbleStripMode|      Mode=2
   ScribbleLine1_|         NoAction
   ScribbleLine1_7         FixedTextDisplay "Receives" TextInvert=Yes

@@ -72,7 +72,7 @@ function MixManagement:new(index, faderPortVersion)
       w = 1,
       spacing = 16,
     },
-    colourPicker = uiElements.colourPicker('Colour');
+    colourPicker = uiElements.colourPicker('Colour'),
     showSiblings = uiElements.createCheckBox('Show track siblings'),
     showParents = uiElements.createCheckBox('Show track parents', true),
     showChildren = uiElements.createCheckBox('Show track children', true),
@@ -267,7 +267,7 @@ function MixManagement:writeZoneFile()
 
     if (string.match(line, '%s*ScribbleLine3_' .. self.filterId .. '%s*FixedTextDisplay "([%s%w]*)"')) then
       local value = self.displayText.value;
-      line = '  ScribbleLine3_' .. self.filterId .. '     FixedTextDisplay "' .. value .. '" {% Invert %}';
+      line = '  ScribbleLine3_' .. self.filterId .. '     FixedTextDisplay "' .. value .. '" TextInvert=Yes';
     end
 
     if (string.match(line, '%s*Select' .. self.filterId .. '%s*FixedRGBColourDisplay%s{%s(.*)%s%}')) then

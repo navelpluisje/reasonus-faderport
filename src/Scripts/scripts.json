@@ -141,55 +141,6 @@
       "overwrite": true
     },
     {
-      "actionId": "REASONUS_LED_STATE_NAVI_CHANNEL_BTN",
-      "displayName": "Handle the led state for the Channel button",
-      "fileName": "ledStateNaviChannelBtn.lua",
-      "register": true,
-      "overwrite": true
-    },
-    {
-      "actionId": "REASONUS_LED_STATE_NAVI_ZOOM_BTN",
-      "displayName": "Handle the led state for the Zoom button",
-      "fileName": "ledStateNaviZoomBtn.lua",
-      "register": true,
-      "overwrite": true
-    },
-    {
-      "actionId": "REASONUS_LED_STATE_NAVI_SCROLL_BTN",
-      "displayName": "Handle the led state for the Scroll button",
-      "fileName": "ledStateNaviScrollBtn.lua",
-      "register": true,
-      "overwrite": true
-    },
-    {
-      "actionId": "REASONUS_LED_STATE_NAVI_BANK_BTN",
-      "displayName": "Handle the led state for the Bank button",
-      "fileName": "ledStateNaviBankBtn.lua",
-      "register": true,
-      "overwrite": true
-    },
-    {
-      "actionId": "REASONUS_LED_STATE_NAVI_MASTER_BTN",
-      "displayName": "Handle the led state for the Master button",
-      "fileName": "ledStateNaviMasterBtn.lua",
-      "register": true,
-      "overwrite": true
-    },
-    {
-      "actionId": "REASONUS_LED_STATE_NAVI_SECTION_BTN",
-      "displayName": "Handle the led state for the Section button",
-      "fileName": "ledStateNaviSectionBtn.lua",
-      "register": true,
-      "overwrite": true
-    },
-    {
-      "actionId": "REASONUS_LED_STATE_NAVI_MARKER_BTN",
-      "displayName": "Handle the led state for the Marker button",
-      "fileName": "ledStateNaviMarkerBtn.lua",
-      "register": true,
-      "overwrite": true
-    },
-    {
       "actionId": "REASONUS_SHOW_TRACK_CLICK_ACTION",
       "displayName": "Handle the click of the show track by name actions",
       "fileName": "showTrackClickAction.lua",
@@ -424,6 +375,7 @@
     "reasonus-logo.png",
     "refresh.png",
     "save.png",
-    "search.png"
+    "search.png",
+    "plugin.png"
   ]
 }

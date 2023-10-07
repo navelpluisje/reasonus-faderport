@@ -4,7 +4,7 @@
 // Version: 1.0.0
 //------------------------------------------------------------------------------
 
-Zone "FocusedFXParam"
+Zone FocusedFXParam
   ScribbleStripMode8  Mode=2
   Fader8              FocusedFXParam
   ScribbleLine1_8     FixedTextDisplay "Fx Param" TextInvhert=Yes
@@ -12,4 +12,6 @@ Zone "FocusedFXParam"
   ScribbleLine3_8     FocusedFXParamNameDisplay TextAlign=Left
   ScribbleLine4_8     FocusedFXParamValueDisplay
   ValueBar8           TrackVolume BarStyle=Fill
+
+  / Link                LeaveSubZone
 ZoneEnd

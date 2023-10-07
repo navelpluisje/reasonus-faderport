@@ -9,7 +9,7 @@
   
 
 // TODO: This needs to be configurable
-Zone "TracksByName"
+Zone TracksByName
 
   AudioBtn            Reaper _REASONUS_LED_STATE_MIX_AUDIO_BTN { 20 20 20 0 255 0 }
   AudioBtn            LeaveSubZone
@@ -21,7 +21,7 @@ Zone "TracksByName"
   ScribbleLine4_1     FixedTextDisplay "Tracks"
   Select1             FixedRGBColourDisplay { 20 0 0 }
   Select1             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_1
-  Select1             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select1             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select1             LeaveSubZone
   ValueBar1           NoAction
 
@@ -32,7 +32,7 @@ Zone "TracksByName"
   ScribbleLine4_2     FixedTextDisplay "Tracks"
   Select2             FixedRGBColourDisplay { 20 20 0 }
   Select2             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_2
-  Select2             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select2             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select2             LeaveSubZone
   ValueBar2           NoAction
 
@@ -43,7 +43,7 @@ Zone "TracksByName"
   ScribbleLine4_3     FixedTextDisplay "Tracks"
   Select3             FixedRGBColourDisplay { 0 20 0 }
   Select3             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_3
-  Select3             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select3             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select3             LeaveSubZone
   ValueBar3           NoAction
 
@@ -54,7 +54,7 @@ Zone "TracksByName"
   ScribbleLine4_4     FixedTextDisplay "Tracks"
   Select4             FixedRGBColourDisplay { 5 20 10 }
   Select4             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_4
-  Select4             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select4             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select4             LeaveSubZone
   ValueBar4           NoAction
 
@@ -65,7 +65,7 @@ Zone "TracksByName"
   ScribbleLine4_5     FixedTextDisplay "Tracks"
   Select5             FixedRGBColourDisplay { 5 0 20 }
   Select5             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_5
-  Select5             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select5             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select5             LeaveSubZone
   ValueBar5           NoAction
 
@@ -76,7 +76,7 @@ Zone "TracksByName"
   ScribbleLine4_6     FixedTextDisplay "Tracks"
   Select6             FixedRGBColourDisplay { 5 0 20 }
   Select6             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_6
-  Select6             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select6             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select6             LeaveSubZone
   ValueBar6           NoAction
 
@@ -87,7 +87,7 @@ Zone "TracksByName"
   ScribbleLine4_7     FixedTextDisplay "Tracks"
   Select7             FixedRGBColourDisplay { 5 0 20 }
   Select7             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_7
-  Select7             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select7             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select7             LeaveSubZone
   ValueBar7           NoAction
 
@@ -98,7 +98,7 @@ Zone "TracksByName"
   ScribbleLine4_8     FixedTextDisplay "Tracks"
   Select8             FixedRGBColourDisplay { 20 0 5 }
   Select8             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_8
-  Select8             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select8             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select8             LeaveSubZone
   ValueBar8           NoAction
 
@@ -109,7 +109,7 @@ Zone "TracksByName"
   ScribbleLine4_9     FixedTextDisplay "Tracks"
   Select9             FixedRGBColourDisplay { 5 5 5 }
   Select9             Reaper _REASONUS_MIX_MANAGEMENT_FILTER_9
-  Select9             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select9             Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select9             LeaveSubZone
   ValueBar9           NoAction
 
@@ -120,7 +120,7 @@ Zone "TracksByName"
   ScribbleLine4_10    FixedTextDisplay "Tracks"
   Select10            FixedRGBColourDisplay { 5 5 5 }
   Select10            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_10
-  Select10            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select10            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select10            LeaveSubZone
   ValueBar10          NoAction
 
@@ -131,7 +131,7 @@ Zone "TracksByName"
   ScribbleLine4_11    FixedTextDisplay "Tracks"
   Select11            FixedRGBColourDisplay { 5 5 5 }
   Select11            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_11
-  Select11            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select11            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select11            LeaveSubZone
   ValueBar11          NoAction
 
@@ -142,7 +142,7 @@ Zone "TracksByName"
   ScribbleLine4_12    FixedTextDisplay "Tracks"
   Select12            FixedRGBColourDisplay { 5 5 5 }
   Select12            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_12
-  Select12            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select12            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select12            LeaveSubZone
   ValueBar12          NoAction
 
@@ -153,7 +153,7 @@ Zone "TracksByName"
   ScribbleLine4_13    FixedTextDisplay "Tracks"
   Select13            FixedRGBColourDisplay { 5 5 5 }
   Select13            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_13
-  Select13            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select13            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select13            LeaveSubZone
   ValueBar13          NoAction
 
@@ -164,7 +164,7 @@ Zone "TracksByName"
   ScribbleLine4_14    FixedTextDisplay "Tracks"
   Select14            FixedRGBColourDisplay { 5 5 5 }
   Select14            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_14
-  Select14            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select14            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select14            LeaveSubZone
   ValueBar14          NoAction
 
@@ -175,7 +175,7 @@ Zone "TracksByName"
   ScribbleLine4_15    FixedTextDisplay "Tracks"
   Select15            FixedRGBColourDisplay { 5 5 5 }
   Select15            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_15
-  Select15            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select15            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select15            LeaveSubZone
   ValueBar15          NoAction
 
@@ -186,7 +186,7 @@ Zone "TracksByName"
   ScribbleLine4_16    FixedTextDisplay "Tracks"
   Select16            FixedRGBColourDisplay { 5 5 5 }
   Select16            Reaper _REASONUS_MIX_MANAGEMENT_FILTER_16
-  Select16            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the adiobutton state
+  Select16            Reaper _REASONUS_SHOW_TRACK_CLICK_ACTION // Set the audiobutton state
   Select16            LeaveSubZone
   ValueBar16          NoAction
 ZoneEnd 

@@ -9,7 +9,14 @@ local rtk = require('rtk');
 local uiElements = require('refUiElements');
 local pages = require('refPages')
 
+-- Set the state to 'on'.
+local isNewValue, file, sec, cmd = reaper.get_action_context()
+local state = reaper.GetToggleCommandStateEx(sec, cmd);
+reaper.SetToggleCommandState(sec, cmd, 1)
+reaper.RefreshToolbar2(sec, cmd);
 
+rtk.long_press_delay = 1
+-- rtk.debug = true
 
 --******************************************************************************
 --
@@ -66,8 +73,16 @@ window.onclose = function()
 end
 
 rtk.onerror = function()
+  reaper.SetToggleCommandState(sec, cmd, 0)
+  reaper.RefreshToolbar2(sec, cmd);
   rtk.quit();
 end
+
+reaper.atexit(function()
+  -- Set the state to 'off' on closing the window.
+  reaper.SetToggleCommandState(sec, cmd, 0)
+  reaper.RefreshToolbar2(sec, cmd);
+end)
 
 --******************************************************************************
 --

@@ -45,6 +45,7 @@ uiElements.Icons = {
   refresh   = rtk.Image():load('./assets/refresh.png'),
   save      = rtk.Image():load('./assets/save.png'),
   search    = rtk.Image():load('./assets/search.png'),
+  plugin    = rtk.Image():load('./assets/plugin.png'),
 }
 
 
@@ -272,6 +273,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   local navLogo            = rtk.ImageBox { uiElements.Icons.logo }
   local navHome            = uiElements.createNavigationButton('Home', uiElements.Icons.home, true);
   local navFunction        = uiElements.createNavigationButton('Edit Function keys', uiElements.Icons.functions, false);
+  local navCreateFxZone    = uiElements.createNavigationButton('Create Plugin Zone', uiElements.Icons.plugin, false);
   local navMixManagement   = uiElements.createNavigationButton('Mix Management', uiElements.Icons.mix, false);
   local navDocumentation   = uiElements.createNavigationButton('Documentation', uiElements.Icons.book, false);
   local navAbout           = uiElements.createNavigationButton('About', uiElements.Icons.about, false);
@@ -282,6 +284,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navFunction:attr('hover', false)
     if (faderPortVersion ~= '2') then
       navMixManagement:attr('hover', false)
+      navCreateFxZone:attr('hover', false)
     end
     navAbout:attr('hover', false)
   end
@@ -292,6 +295,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navFunction:attr('hover', true)
     if (faderPortVersion ~= '2') then
       navMixManagement:attr('hover', false)
+      navCreateFxZone:attr('hover', false)
     end
     navAbout:attr('hover', false)
   end
@@ -302,6 +306,18 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navFunction:attr('hover', false)
     if (faderPortVersion ~= '2') then
       navMixManagement:attr('hover', true)
+      navCreateFxZone:attr('hover', false)
+    end
+    navAbout:attr('hover', false)
+  end
+
+  navCreateFxZone.onclick  = function()
+    app:push_screen('create-plgin-zone')
+    navHome:attr('hover', false)
+    navFunction:attr('hover', false)
+    if (faderPortVersion ~= '2') then
+      navMixManagement:attr('hover', false)
+      navCreateFxZone:attr('hover', true)
     end
     navAbout:attr('hover', false)
   end
@@ -326,6 +342,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
     navFunction:attr('hover', false)
     if (faderPortVersion ~= '2') then
       navMixManagement:attr('hover', false)
+      navCreateFxZone:attr('hover', false)
     end
     navAbout:attr('hover', false)
   end
@@ -335,6 +352,7 @@ function uiElements.createNavigationSideBar(sidebar, app, faderPortVersion)
   sidebar:add(navFunction)
   if (faderPortVersion ~= '2') then
     sidebar:add(navMixManagement)
+    sidebar:add(navCreateFxZone)
   end
   sidebar:add(navDocumentation)
   sidebar:add(navAbout)
@@ -523,6 +541,10 @@ uiElements.channelWidgets = function(id)
     dropSelect.onclick = callback;
   end
 
+  local setOnSelectLongPress = function(callback)
+    dropSelect.onlongpress = callback;
+  end
+
   local setFaderName = function(name)
     dropFader:attr('text', name)
   end
@@ -535,6 +557,10 @@ uiElements.channelWidgets = function(id)
     dropFader.onclick = callback;
   end
 
+  local setOnFaderLongPress = function(callback)
+    dropFader.onlongpress = callback;
+  end
+
   return {
     element = container,
     setSelectName = setSelectName,
@@ -543,6 +569,8 @@ uiElements.channelWidgets = function(id)
     setFaderName = setFaderName,
     setOnFaderDrop = setOnFaderDrop,
     setOnFaderClick = setOnFaderClick,
+    setOnSelectLongPress = setOnSelectLongPress,
+    setOnFaderLongPress = setOnFaderLongPress,
   }
 end
 

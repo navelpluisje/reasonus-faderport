@@ -4,35 +4,39 @@
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
 // Version: 1.0.0
 
-Zone "ZoomNavigator"
+Zone SectionNavigator
 // ===========================================
 // BUTTONS
 // ===========================================
-  Prev                        Reaper 1011     // View: Zoom out horizontal
-  Next                        Reaper 1012     // View: Zoom in horizontal
-  Shift+Prev                  Reaper 40112    // View: Zoom out vertical
-  Shift+Next                  Reaper 40111    // View: Zoom in vertical
+  Prev                      Reaper _SWS_SELPREVMORR   // SWS: Goto/select previous marker/region
+  Next                      Reaper _SWS_SELNEXTMORR   // SWS: Goto/select next marker/region
+  Shift+Prev                Reaper 40625              // Time selection: Set start point
+  Shift+Next                Reaper 40626              // Time selection: Set end point
 
 // ===========================================
 // ENCODER
 // ===========================================
-  RotaryBigPush               Reaper 40110    // View: Toggle track zoom to minimum height
-  Increase+RotaryBig          Reaper 1012     // View: Zoom in horizontal
-  Decrease+RotaryBig          Reaper 1011     // View: Zoom out horizontal
-  Shift+RotaryBigPush         Reaper 40113    // View: Toggle track zoom to maximum height
-  Shift+Increase+RotaryBig    Reaper 40111    // View: Zoom in vertical
-  Shift+Decrease+RotaryBig    Reaper 40112    // View: Zoom out vertical
+  RotaryBigPush               Reaper 40616  // Markers: Edit region near cursor
+  Hold+Shift+RotaryBigPush    Reaper 40306  // Markers: Insert region from time selection and edit...
+  Shift+RotaryBigPush         Reaper 41041  // Move edit cursor to start of current measure
+  Option+RotaryBigPush        Reaper 40615  // Markers: Delete region near cursor
+  Increase+RotaryBig          Reaper 41044  // Move edit cursor back one beat, Move edit cursor forward one beat
+  Decrease+RotaryBig          Reaper 41045  // Move edit cursor back one beat, Move edit cursor forward one beat
+  Increase+Shift+RotaryBig    Reaper 40105  // View: Move cursor left one pixel, View: Move cursor right one pixel
+  Decrease+Shift+RotaryBig    Reaper 40104  // View: Move cursor left one pixel, View: Move cursor right one pixel
+  Increase+Option+RotaryBig   Reaper 40103  // Time selection: Move cursor left, creating time selection, Time selection: Move cursor left, creating time selection
+  Decrease+Option+RotaryBig   Reaper 40102  // Time selection: Move cursor left, creating time selection, Time selection: Move cursor left, creating time selection
 
 // ===========================================
 // NAVIGATOR BUTTONS
 // ===========================================
   Channel GoSubZone ChannelNavigator
-  Zoom    LeaveSubZone
+  Zoom    GoSubZone ZoomNavigator
   Scroll  GoSubZone ScrollNavigator
   Bank    GoSubZone BankNavigator
   Master  GoSubZone MasterNavigator
   Click   GoSubZone ClickNavigator
-  Section GoSubZone SectionNavigator
+  Section LeaveSubZone
   Marker  GoSubZone MarkerNavigator
 
 // ===========================================

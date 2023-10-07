@@ -69,11 +69,8 @@ Zone Buttons
 // ===========================================
 // MACRO AND LINK BUTTONS
 // ===========================================
-  Macro               Reaper _REASONUS_FADERPORT_CONTROL { 20 20 20 20 20 20 }
-  Shift+Macro         FixedRGBColorDisplay { 0 5 20 }
-  Shift+Macro         RemapAutoZone
-  Option+Macro        FixedRGBColorDisplay { 5 0 20 }
-  Option+Macro        AutoMapFX
+  Macro               Reaper _REASONUS_FADERPORT_CONTROL { 20 20 20 255 255 255 }
+  / Link                GoAssociatedZone FocusedFXParam { 20 20 20 255 255 255 }
   Link                ToggleEnableFocusedFXParamMapping { 20 20 20 255 255 255 }
   Shift+Link          Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
 ZoneEnd

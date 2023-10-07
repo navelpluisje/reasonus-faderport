@@ -60,6 +60,7 @@ function CreatePluginZone:new(faderPortVersion, window)
     right = rtk.VBox {
       w = 1,
       spacing = 8,
+      h = 0.875,
     },
 
     topBar = rtk.HBox {
@@ -103,6 +104,13 @@ function CreatePluginZone:new(faderPortVersion, window)
     pageButtonBar = rtk.HBox {
       w = 1,
       spacing = 8,
+    },
+    removeParamButton = rtk.Button {
+      icon    = uiElements.Icons.close,
+      iconpos = rtk.Widget.CENTER,
+      w       = 28,
+      h       = 28,
+      flat    = rtk.Button.FLAT,
     },
     previousPageButton = uiElements.createButton('<'),
     addPageButton = uiElements.createButton('Add Page', uiElements.Icons.add),
@@ -208,17 +216,24 @@ end
 --   end
 -- end
 
+local function sanitizeString(str)
+  str = string.gsub(str, '%s', '_');
+  str = string.gsub(str, '%,', '');
+
+  return str;
+end
+
 ---Get the filePath and filename by zoneNumber. If the folder not already exists, it will be created
 ---@param zoneNumber string
 ---@return string
 ---@return string
 function CreatePluginZone:createFileInfo(zoneNumber)
-  local filePath = self.zoneFolder .. '/' .. self.pluginDeveloper;
+  local filePath = self.zoneFolder .. '/' .. sanitizeString(self.pluginDeveloper);
   os.execute('mkdir -p ' .. filePath)
 
   local fileName = string.format(
     '/%s%s.%s.zon',
-    self.pluginName,
+    sanitizeString(self.pluginName),
     zoneNumber,
     string.lower(self.pluginType)
   );
@@ -239,9 +254,8 @@ end
 
 function CreatePluginZone:loadZoneFiles()
   local filePath, fileName = self:createFileInfo('');
-  local nbFiles = 0;
+  local nbFiles = 1;
   local isSubZone = false;
-
   local file = io.open(filePath .. fileName, 'a')
 
   if (file == nil) then
@@ -249,10 +263,9 @@ function CreatePluginZone:loadZoneFiles()
   end
   file:close();
 
-  reaper.ShowConsoleMsg(filePath .. fileName)
-
   for line in io.lines(filePath .. fileName) do
     if (isSubZone and string.find(line, 'SubZonesEnd')) then
+      nbFiles = 0;
       isSubZone = false
     end
     if (isSubZone) then
@@ -264,8 +277,8 @@ function CreatePluginZone:loadZoneFiles()
     end
   end
 
+  -- self:processZoneFile('', filePath .. fileName);
   for i = 1, nbFiles, 1 do
-    reaper.ShowConsoleMsg('Load file: ' .. 1)
     local path, name = self:createFileInfo(zoneUtils.zoneNumber(i));
     self:processZoneFile(i, path .. name);
   end
@@ -288,7 +301,7 @@ function CreatePluginZone:processZoneFile(pageId, fileName)
     -- Get the param values for a select button
     local selectTrack, selectParamId, steps, colour = string.match(
       line,
-      'Select(%d%d?)%s+FXParam%s+([%d+]?)%s+(%[ [%s%.%d]+ %])%s+({[%d%s]+})'
+      'Select(%d%d?)%s+FXParam%s+(%d%d?%d?)' --%s+(%[ [%s%.%d]+ %])%s+({[%d%s]+})'
     );
     if (selectTrack) then
       self.pages[pageId]['select' .. selectTrack] = {
@@ -300,7 +313,7 @@ function CreatePluginZone:processZoneFile(pageId, fileName)
     -- Get the param values for a fader
     local faderTrack, faderParamId = string.match(
       line,
-      'Fader(%d%d?)%s+FXParam%s+([%d+]?)'
+      'Fader(%d%d?)%s+FXParam%s+(%d%d?%d?)'
     );
     if (faderTrack) then
       self.pages[pageId]['fader' .. faderTrack] = {
@@ -310,9 +323,9 @@ function CreatePluginZone:processZoneFile(pageId, fileName)
     end
 
     -- Get the param name af the select button or fader
-    local descrId, descrTrack, descrParamId, description = string.match(
+    local descrId, descrTrack, description = string.match(
       line,
-      'ScribbleLine([%d])_([%d]+)%s+FXParamNameDisplay%s+([%d]+)%s+"(.*)"'
+      'ScribbleLine([%d])_([%d]+)%s+FixedTextDisplay%s+"(.*)"'
     );
     if (descrId) then
       local type = descrId == '1' and 'select' or 'fader';
@@ -373,7 +386,7 @@ function CreatePluginZone:addParamToPage(widget, paramData)
   local data = self.pages[self.currentPage][widget] or {};
 
   if (
-        not ((data.paramId == nil) or
+        ((data.paramId ~= nil) and
           (data.paramId == paramData.paramId))
       ) then
     local paramItem = self.paramListBox.children[data.paramId + 1];
@@ -386,8 +399,24 @@ function CreatePluginZone:addParamToPage(widget, paramData)
   self.pages[self.currentPage][widget] = data;
 end
 
+function CreatePluginZone:setParamListBoxAlpha()
+  for i, child in pairs(self.paramListBox.children) do
+    self.paramListBox.children[i][1]:animate { 'alpha', dst = 1, duration = 0.3 }
+  end
+
+  for k, page in pairs(self.pages) do
+    for y, x in pairs(page) do
+      if (x.paramId ~= nil) then
+        self.paramListBox.children[x.paramId + 1][1]:animate { 'alpha', dst = 0.5, duration = 0.3 }
+      end
+    end
+  end
+end
+
 function CreatePluginZone:createTracks()
   self.widgetListBox:remove_all();
+  self:setParamListBoxAlpha();
+
   for i = 1, self.nbTracks do
     local channelWidget = uiElements.channelWidgets(i);
     local select = self.pages[self.currentPage] and self.pages[self.currentPage]['select' .. i];
@@ -414,7 +443,19 @@ function CreatePluginZone:createTracks()
     channelWidget.setOnSelectClick(
       function()
         local data = self.pages[self.currentPage]['select' .. i];
-        uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
+        if (data ~= nil) then
+          uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
+        end
+      end
+    )
+
+    channelWidget.setOnSelectLongPress(
+      function()
+        local data = self.pages[self.currentPage]['select' .. i];
+        if (data ~= nil) then
+          self.pages[self.currentPage]['select' .. i] = nil;
+          self:createTracks();
+        end
       end
     )
 
@@ -428,11 +469,54 @@ function CreatePluginZone:createTracks()
 
     channelWidget.setOnFaderClick(
       function()
-        local data = self.pages[self.currentPage]['select' .. i];
-        uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
+        local data = self.pages[self.currentPage]['fader' .. i];
+        if (data ~= nil) then
+          uiElements.showPopup(data.paramData.name, rtk.Text { 'Text' });
+        end
+      end
+    )
+
+    channelWidget.setOnFaderLongPress(
+      function()
+        local data = self.pages[self.currentPage]['fader' .. i];
+        if (data ~= nil) then
+          self.pages[self.currentPage]['fader' .. i] = nil;
+          self:createTracks();
+        end
       end
     )
   end
+end
+
+local unWantedNames = {
+  'midi cc',  -- Decomposer, Arturia
+  'reserved', -- Decomposer, Valhalla
+  -- Blue Cat
+  'midi program change',
+  'midi controller',
+  -- Arturia
+  'unassigned',
+  'vst_programchange_',
+  'mpe_',
+  -- Spitfire
+  'general purpose',
+  -- global
+  'undefined'
+}
+
+---Check if the param name is not in the list of unwanted names
+---@param name string The param name
+local function isWantedParam(name)
+  local result = true;
+
+  for i = 1, #unWantedNames do
+    local startIndex = string.find(string.lower(name), unWantedNames[i]);
+    if (startIndex ~= nil) then
+      result = false;
+    end
+  end
+
+  return result
 end
 
 ---Get the list of parameters of the selected plugin. Store the data and create
@@ -440,14 +524,14 @@ end
 function CreatePluginZone:getPluginParams()
   local nbParams = reaper.TrackFX_GetNumParams(self.track, self.pluginId);
 
-  for i = 0, math.min(nbParams, 100), 1 do
+  for i = 0, math.min(nbParams, 500), 1 do
     local _, name = reaper.TrackFX_GetParamName(self.track, self.pluginId, i);
     local hasSteps, step, _, _, istoggle = reaper.TrackFX_GetParameterStepSizes(
       self.track,
       self.pluginId,
       i
     )
-    if (utils.isString(name)) then
+    if (utils.isString(name) and isWantedParam(name)) then
       local nbSteps = hasSteps and utils.round(1 / step) + 1 or 0;
       local paramValues = {
         paramId = i,
@@ -472,13 +556,12 @@ function CreatePluginZone:getPluginParams()
 end
 
 function CreatePluginZone:loadPlugin()
-  reaper.ShowConsoleMsg('loadPlugin')
-  local hasFocussedFX, trackId, x, pluginId = reaper.GetFocusedFX2();
-  if (hasFocussedFX == 0) then
+  local retval, trackId, paramnumber, pluginId = reaper.GetFocusedFX2();
+  if (retval == 0) then
     return false;
   end
-  local track = reaper.GetTrack(0, trackId - 1);
 
+  local track = reaper.GetTrack(0, trackId - 1);
   local _, fxName = reaper.TrackFX_GetFXName(track, pluginId);
   local type, name, dev = zoneUtils.getEffectNameParts(fxName);
 
@@ -488,13 +571,10 @@ function CreatePluginZone:loadPlugin()
   self.track = track;
 
   if (utils.isString(name)) then
-    reaper.ShowConsoleMsg('loadPlugin');
     self:setPluginName(name)
-    reaper.ShowConsoleMsg('loadPlugin 2');
     self.pluginType = type;
     self.pluginDeveloper = dev;
     self:setPluginValues();
-    reaper.ShowConsoleMsg('loadPlugin 3');
     self.pluginParamsList = self:getPluginParams();
     self:loadZoneFiles();
   end

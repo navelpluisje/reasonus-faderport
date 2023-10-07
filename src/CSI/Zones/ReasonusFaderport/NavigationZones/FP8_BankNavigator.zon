@@ -1,27 +1,28 @@
+
 //------------------------------------------------------------------------------
-// File:    FP8_NavigatorMaster.zon 
+// File:    FP8_ZoomNavigator.zon 
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
 // Version: 1.0.0
-//------------------------------------------------------------------------------
 
-Zone "MasterNavigator"
+Zone BankNavigator
 // ===========================================
-// BUTTONS AND SCROLL
+// BUTTONS
 // ===========================================
-  Prev                  Bank Track -8
-  Next                  Bank Track 8
+  Prev                  Bank SelectedTrack -8
+  Next                  Bank SelectedTrack 8
   Shift+Prev            NoAction
   Shift+Next            NoAction
 
 // ===========================================
 // ENCODER
 // ===========================================
-  RotaryBigPush         Reaper _XENAKIOS_SETMASTVOLTO0  // Xenakios/SWS: Set master volume to 0 dB
-  Shift+RotaryBigPush   Reaper _REASONUS_MASTER_PAN_CENTER  // Set master pan to center position
-  Option+RotaryBigPush  NoAction
-  Increase+RotaryBig    Reaper _XENAKIOS_NUDMASVOL1DBU // Xenakios/SWS: Nudge master volume 1 dB up
-  Decrease+RotaryBig    Reaper _XENAKIOS_NUDMASVOL1DBD // Xenakios/SWS: Nudge master volume 1 dB down
-  Shift+RotaryBig       NoAction
+  RotaryBigPush               NoAction
+  Shift+RotaryBigPush         NoAction
+  Option+RotaryBigPush        NoAction
+  Increase+RotaryBig          Bank SelectedTrack 8
+  Decrease+RotaryBig          Bank SelectedTrack -8
+  Increase+Shift+RotaryBig    Bank SelectedTrack 1
+  Decrease+Shift+RotaryBig    Bank SelectedTrack -1
 
 // ===========================================
 // NAVIGATOR BUTTONS
@@ -29,8 +30,8 @@ Zone "MasterNavigator"
   Channel GoSubZone ChannelNavigator
   Zoom    GoSubZone ZoomNavigator
   Scroll  GoSubZone ScrollNavigator
-  Bank    GoSubZone BankNavigator
-  Master  LeaveSubZone
+  Bank    LeaveSubZone
+  Master  GoSubZone MasterNavigator
   Click   GoSubZone ClickNavigator
   Section GoSubZone SectionNavigator
   Marker  GoSubZone MarkerNavigator
