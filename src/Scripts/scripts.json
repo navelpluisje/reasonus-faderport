@@ -323,6 +323,13 @@
       "overwrite": true
     },
     {
+      "actionId": "REASONUS_PLUGIN_CONTROL",
+      "displayName": "ReaSonus Plugin Control: Map your plugin parameters",
+      "fileName": "reasonusEditFXParams.lua",
+      "register": true,
+      "overwrite": true
+    },
+    {
       "actionId": "REASONUS_FADERPORT_CONTROL",
       "displayName": "ReaSonus FaderPort Control: Edit your FaderPort from within REAPER",
       "fileName": "reasonusEditFaderport.lua",

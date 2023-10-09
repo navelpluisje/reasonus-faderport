@@ -141,12 +141,16 @@ function zoneUtils.createSubZonesPart(pageId, nbPages, pluginRawName)
   result = result .. '  SubZonesEnd\n\n';
 
   result = result .. string.format(
-    '  Prev   GoSubZone "%s%s"\n',
+    '  Prev   GoSubZone "%s%s"\n  Decrease+RotaryBig GoSubZone "%s%s"\n',
+    pluginRawName,
+    zoneUtils.prevZoneNumber(pageId, nbPages),
     pluginRawName,
     zoneUtils.prevZoneNumber(pageId, nbPages)
   );
   result = result .. string.format(
-    '  Next   GoSubZone "%s%s"\n',
+    '  Next   GoSubZone "%s%s"\n  Increase+RotaryBig GoSubZone "%s%s"\n',
+    pluginRawName,
+    zoneUtils.nextZoneNumber(pageId, nbPages),
     pluginRawName,
     zoneUtils.nextZoneNumber(pageId, nbPages)
   );

@@ -265,14 +265,13 @@ function CreatePluginZone:loadZoneFiles()
 
   for line in io.lines(filePath .. fileName) do
     if (isSubZone and string.find(line, 'SubZonesEnd')) then
-      nbFiles = 0;
       isSubZone = false
+      break;
     end
     if (isSubZone) then
       nbFiles = nbFiles + 1;
     end
-    if (nbFiles == 0 and string.find(line, 'SubZones')) then
-      nbFiles = 1;
+    if (not isSubZone and string.find(line, 'SubZones')) then
       isSubZone = true;
     end
   end
@@ -523,7 +522,7 @@ end
 ---the add the parameters to the params list
 function CreatePluginZone:getPluginParams()
   local nbParams = reaper.TrackFX_GetNumParams(self.track, self.pluginId);
-
+  self.paramListBox:remove_all();
   for i = 0, math.min(nbParams, 500), 1 do
     local _, name = reaper.TrackFX_GetParamName(self.track, self.pluginId, i);
     local hasSteps, step, _, _, istoggle = reaper.TrackFX_GetParameterStepSizes(

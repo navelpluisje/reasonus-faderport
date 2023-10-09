@@ -233,14 +233,14 @@ pages.mixManagementPage = {
 }
 
 pages.createPluginZoneFile = {
-  nbTracks      = 16,
-  filterActions = {},
-  activeIndex   = 1,
-  page          = {},
-  content       = {},
-  buttonBar     = {},
-  pluginEditor  = {},
-  create        = function(nbTracks, window)
+  nbTracks               = 16,
+  filterActions          = {},
+  activeIndex            = 1,
+  page                   = {},
+  content                = {},
+  buttonBar              = {},
+  pluginEditor           = {},
+  create                 = function(nbTracks, window, showDocsButton)
     pages.createPluginZoneFile.nbTracks = nbTracks;
     pages.createPluginZoneFile.page = rtk.VBox {
       h      = 1,
@@ -261,30 +261,47 @@ pages.createPluginZoneFile = {
       }
     )
     pages.createPluginZoneFile.buttonBar:add(rtk.Spacer(), { expand = 1, fillw = true, fillh = false });
+
+    if (showDocsButton) then
+      local documentationButton = pages.createPluginZoneFile.buttonBar:add(uiElements.createButton(
+        'Documentation',
+        uiElements.Icons.book
+      ));
+
+      documentationButton:attr('rmargin', 16)
+      documentationButton.onclick = function()
+        rtk.open_url('https://navelpluisje.github.io/reasonus-faderport/#toc')
+      end
+    end
+
     local loadButton = pages.createPluginZoneFile.buttonBar:add(
       uiElements.createButton(
         'Load',
         uiElements.Icons.refresh
       )
     );
+
     loadButton:attr('rmargin', 16)
     loadButton.onclick = pages.createPluginZoneFile.loadPlugin;
     loadButton.ondragstart = function(a, b)
       reaper.ShowConsoleMsg('drag start')
       return true, true
     end
+
     loadButton.ondragmousemove = function(event, arg)
       loadButton:attr('x', rtk.mouse.x)
       loadButton:attr('y', rtk.mouse.y)
-      log.warning(table.tostring(rtk.mouse))
     end
+
     local saveButton = pages.createPluginZoneFile.buttonBar:add(
       uiElements.createButton(
         'Save filter',
         uiElements.Icons.save
       )
     );
+
     saveButton:attr('halign', 'right')
+    saveButton:attr('z', 2)
     saveButton.onclick = pages.createPluginZoneFile.save;
     saveButton.ondropfocus = function()
       saveButton:attr('border', '1px red');
@@ -306,10 +323,22 @@ pages.createPluginZoneFile = {
 
     return pages.createPluginZoneFile.page;
   end,
-  save          = function()
+
+  addDocumentationButton = function()
+    local button = uiElements.createButton(
+      'Documentation',
+      uiElements.Icons.book
+    )
+    local documentationButton = pages.createPluginZoneFile.buttonBar:add(button);
+
+    documentationButton:attr('z', 0)
+    documentationButton.onclick = pages.createPluginZoneFile.save;
+  end,
+
+  save                   = function()
     pages.createPluginZoneFile.pluginEditor:saveZoneFiles();
   end,
-  loadPlugin    = function()
+  loadPlugin             = function()
     -- pages.createPluginZoneFile.content.clear();
     -- reaper.ShowConsoleMsg('Cleared')
     -- pages.createPluginZoneFile.plugin = CreatePluginZone:new(pages.createPluginZoneFile.nbTracks);

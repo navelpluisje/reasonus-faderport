@@ -1,0 +1,27 @@
+Zone "NoMap"
+  ScribbleStripMode1    Mode=2
+  ScribbleLine1_1       FixedTextDisplay "No Map" TextAlign=Center TextInvert=Yes
+  ScribbleLine2_1       NoAction
+  ScribbleLine3_1       FixedTextDisplay "Map" TextAlign=Center 
+  ScribbleLine4_1       FixedTextDisplay "Plugin" TextAlign=Center 
+
+  ValueBar1             NoAction
+
+  Select1     Reaper _REASONUS_PLUGIN_CONTROL
+  Select2     NoAction
+  Select3     NoAction
+  Select4     NoAction
+  Select5     NoAction
+  Select6     NoAction
+  Select7     NoAction
+  Select8     NoAction
+  Select9     NoAction
+  Select10    NoAction
+  Select11    NoAction
+  Select12    NoAction
+  Select13    NoAction
+  Select14    NoAction
+  Select15    NoAction
+  Select16    NoAction
+
+ZoneEnd
