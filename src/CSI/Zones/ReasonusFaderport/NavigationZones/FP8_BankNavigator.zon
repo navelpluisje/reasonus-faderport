@@ -2,16 +2,16 @@
 //------------------------------------------------------------------------------
 // File:    FP8_ZoomNavigator.zon 
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
-// Version: 1.0.0
+// Version: 2.0.0
 
 Zone BankNavigator
 // ===========================================
 // BUTTONS
 // ===========================================
-  Prev                  Bank SelectedTrack -8
-  Next                  Bank SelectedTrack 8
-  Shift+Prev            NoAction
-  Shift+Next            NoAction
+  Prev              Bank SelectedTrack -8
+  Next              Bank SelectedTrack 8
+  Shift+Prev        NoAction
+  Shift+Next        NoAction
 
 // ===========================================
 // ENCODER
@@ -27,36 +27,36 @@ Zone BankNavigator
 // ===========================================
 // NAVIGATOR BUTTONS
 // ===========================================
-  Channel GoSubZone ChannelNavigator
-  Zoom    GoSubZone ZoomNavigator
-  Scroll  GoSubZone ScrollNavigator
-  Bank    LeaveSubZone
-  Master  GoSubZone MasterNavigator
-  Click   GoSubZone ClickNavigator
-  Section GoSubZone SectionNavigator
-  Marker  GoSubZone MarkerNavigator
+  Channel           GoSubZone ChannelNavigator
+  Zoom              GoSubZone ZoomNavigator
+  Scroll            GoSubZone ScrollNavigator
+  Bank              LeaveSubZone
+  Master            GoSubZone MasterNavigator
+  Click             GoSubZone ClickNavigator
+  Section           GoSubZone SectionNavigator
+  Marker            GoSubZone MarkerNavigator
 
 // ===========================================
 // FUNCTION BUTTONS
 // ===========================================
-  Shift+Channel   Reaper _REASONUS_HANDLE_FUNCTION_KEY_1 Feedback=No
-  Shift+Zoom      Reaper _REASONUS_HANDLE_FUNCTION_KEY_2 Feedback=No
-  Shift+Scroll    Reaper _REASONUS_HANDLE_FUNCTION_KEY_3 Feedback=No
-  Shift+Bank      Reaper _REASONUS_HANDLE_FUNCTION_KEY_4 Feedback=No
-  Shift+Master    Reaper _REASONUS_HANDLE_FUNCTION_KEY_5 Feedback=No
-  Shift+Click     Reaper _REASONUS_HANDLE_FUNCTION_KEY_6 Feedback=No
-  Shift+Section   Reaper _REASONUS_HANDLE_FUNCTION_KEY_7 Feedback=No
-  Shift+Marker    Reaper _REASONUS_HANDLE_FUNCTION_KEY_8 Feedback=No
+  Shift+Channel     Reaper _REASONUS_HANDLE_FUNCTION_KEY_1 Feedback=No
+  Shift+Zoom        Reaper _REASONUS_HANDLE_FUNCTION_KEY_2 Feedback=No
+  Shift+Scroll      Reaper _REASONUS_HANDLE_FUNCTION_KEY_3 Feedback=No
+  Shift+Bank        Reaper _REASONUS_HANDLE_FUNCTION_KEY_4 Feedback=No
+  Shift+Master      Reaper _REASONUS_HANDLE_FUNCTION_KEY_5 Feedback=No
+  Shift+Click       Reaper _REASONUS_HANDLE_FUNCTION_KEY_6 Feedback=No
+  Shift+Section     Reaper _REASONUS_HANDLE_FUNCTION_KEY_7 Feedback=No
+  Shift+Marker      Reaper _REASONUS_HANDLE_FUNCTION_KEY_8 Feedback=No
 
 // ===========================================
 // SCREENSETS
 // ===========================================
-  Option+Channel      Reaper 40454 Feedback=No   // Screenset: Load window set #01
-  Option+Zoom         Reaper 40455 Feedback=No   // Screenset: Load window set #02
-  Option+Scroll       Reaper 40456 Feedback=No   // Screenset: Load window set #03
-  Option+Bank         Reaper 40457 Feedback=No   // Screenset: Load window set #04
-  Option+Master       Reaper 40458 Feedback=No   // Screenset: Load window set #05
-  Option+Click        Reaper 40459 Feedback=No   // Screenset: Load window set #06
-  Option+Section      Reaper 40460 Feedback=No   // Screenset: Load window set #07
-  Option+Marker       Reaper 40461 Feedback=No   // Screenset: Load window set #08
+  Option+Channel    Reaper 40454 Feedback=No   // Screenset: Load window set #01
+  Option+Zoom       Reaper 40455 Feedback=No   // Screenset: Load window set #02
+  Option+Scroll     Reaper 40456 Feedback=No   // Screenset: Load window set #03
+  Option+Bank       Reaper 40457 Feedback=No   // Screenset: Load window set #04
+  Option+Master     Reaper 40458 Feedback=No   // Screenset: Load window set #05
+  Option+Click      Reaper 40459 Feedback=No   // Screenset: Load window set #06
+  Option+Section    Reaper 40460 Feedback=No   // Screenset: Load window set #07
+  Option+Marker     Reaper 40461 Feedback=No   // Screenset: Load window set #08
 ZoneEnd

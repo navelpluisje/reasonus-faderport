@@ -1,0 +1,9 @@
+//------------------------------------------------------------------------------
+// File:    FP2_FocusedFXParam.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 2.0.0
+//------------------------------------------------------------------------------
+
+Zone FocusedFXParam
+  Fader              FocusedFXParam
+ZoneEnd

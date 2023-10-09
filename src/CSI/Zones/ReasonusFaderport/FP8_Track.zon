@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 // File:    FP8_Channel.zon 
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
-// Version: 1.0.0
+// Version: 2.0.0
 //------------------------------------------------------------------------------
 
 Zone Track
@@ -53,30 +53,30 @@ Zone Track
 // ===========================================
 // TRACK NAVIGATION
 // ===========================================
-  Track         GoHome
-  
-  Plugin        GoAssociatedZone SelectedTrackFXMenu
-  Shift+Plugin  GoAssociatedZone TrackFXMenu
+  Track                     GoHome
 
-  Send          GoAssociatedZone SelectedTrackSend
-  Shift+Send    GoAssociatedZone TrackSend
+  Plugin                    GoAssociatedZone SelectedTrackFXMenu
+  Shift+Plugin              GoAssociatedZone TrackFXMenu
 
-  Pan           GoAssociatedZone SelectedTrackReceive
-  Shift+Pan     GoAssociatedZone TrackReceive
+  Send                      GoAssociatedZone SelectedTrackSend
+  Shift+Send                GoAssociatedZone TrackSend
+
+  Pan                       GoAssociatedZone SelectedTrackReceive
+  Shift+Pan                 GoAssociatedZone TrackReceive
 
 // ===========================================
 // MIX MANAGEMENT
 // ===========================================
-  AudioBtn        Reaper _REASONUS_LED_STATE_MIX_AUDIO_BTN { 20 20 20 255 255 255 }
-  AudioBtn        GoSubZone "TracksByName"
-  Shift+AudioBtn  Reaper _REASONUS_LED_STATE_MIX_SHIFT_AUDIO_BTN { 20 20 20 255 255 255 }
+  AudioBtn                  Reaper _REASONUS_LED_STATE_MIX_AUDIO_BTN { 20 20 20 255 255 255 }
+  AudioBtn                  GoSubZone "TracksByName"
+  Shift+AudioBtn            Reaper _REASONUS_LED_STATE_MIX_SHIFT_AUDIO_BTN { 20 20 20 255 255 255 }
 
-  Instrument      Reaper _REASONUS_LED_STATE_MIX_VI_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks With Instruments
+  Instrument                Reaper _REASONUS_LED_STATE_MIX_VI_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks With Instruments
   
-  BusBtn          Reaper _REASONUS_LED_STATE_MIX_BUS_BTN { 20 20 20 255 255 255 } // Script: Show All Top Level Tracks
-  Shift+BusBtn    Reaper _REASONUS_LED_STATE_MIX_SHIFT_BUS_BTN { 20 20 20 255 255 255 }      // Script: Show All Tracks With Sends
+  BusBtn                    Reaper _REASONUS_LED_STATE_MIX_BUS_BTN { 20 20 20 255 255 255 } // Script: Show All Top Level Tracks
+  Shift+BusBtn              Reaper _REASONUS_LED_STATE_MIX_SHIFT_BUS_BTN { 20 20 20 255 255 255 }      // Script: Show All Tracks With Sends
   
-  VCABtn          Reaper _REASONUS_LED_STATE_MIX_VCA_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks with hardware outputs
+  VCABtn                    Reaper _REASONUS_LED_STATE_MIX_VCA_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks with hardware outputs
   
-  AllBtn          Reaper _REASONUS_LED_STATE_MIX_ALL_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks
+  AllBtn                    Reaper _REASONUS_LED_STATE_MIX_ALL_BTN { 20 20 20 255 255 255 } // Script: Show All Tracks
 ZoneEnd 

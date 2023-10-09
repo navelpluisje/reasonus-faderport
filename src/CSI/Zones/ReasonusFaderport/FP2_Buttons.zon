@@ -1,0 +1,20 @@
+//------------------------------------------------------------------------------
+// File:    FP2_Buttons.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 2.0.0
+//------------------------------------------------------------------------------
+
+Zone Buttons
+  // ===========================================
+  // LINK BUTTON
+  // ===========================================
+  Link                ToggleEnableFocusedFXParamMapping { 20 20 20 255 255 255 }
+  Shift+Link          Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
+
+  // ===========================================
+  // MASTER BUTTON
+  // ===========================================
+  Master              GoAssociatedZone MasterTrack
+  Shift+Link          Reaper _REASONUS_TOGGLE_FOLLOW_PLAY_CURSOR { 0 20 0 0 255 0 }
+
+ZoneEnd

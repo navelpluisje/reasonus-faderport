@@ -1,34 +1,36 @@
 //------------------------------------------------------------------------------
-// File:    FP8_NavigatorChannel.zon 
+// File:    FP8_NavigatorMaster.zon 
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
 // Version: 2.0.0
 //------------------------------------------------------------------------------
 
-Zone ChannelNavigator
+Zone MasterNavigator
 // ===========================================
 // BUTTONS AND SCROLL
 // ===========================================
-  Prev              Reaper 40286   // Track: Go to previous track
-  Next              Reaper 40285   // Track: Go to next track
-  Shift+Prev        Reaper 40286   // Track: Go to previous track
-  Shift+Next        Reaper 40285   // Track: Go to next track
+  Prev              Bank SelectedTrack -16
+  Next              Bank SelectedTrack 16
+  Shift+Prev        Bank SelectedTrack -1
+  Shift+Next        Bank SelectedTrack 1
 
 // ===========================================
 // ENCODER
 // ===========================================
-  Increase+RotaryBig        Reaper 40285 // Track: Go to next track
-  Decrease+RotaryBig        Reaper 40286 // Track: Go to previous track
-  Shift+Inrease+RotaryBig   Reaper 40287 // Track: Go to next track (leaving other tracks selected)
-  Shift+Derease+RotaryBig   Reaper 40288 // Track: Go to previous track (leaving other tracks selected)
+  RotaryBigPush         Reaper _XENAKIOS_SETMASTVOLTO0  // Xenakios/SWS: Set master volume to 0 dB
+  Shift+RotaryBigPush   Reaper _REASONUS_MASTER_PAN_CENTER  // Set master pan to center position
+  Option+RotaryBigPush  NoAction
+  Increase+RotaryBig    Reaper _XENAKIOS_NUDMASVOL1DBU // Xenakios/SWS: Nudge master volume 1 dB up
+  Decrease+RotaryBig    Reaper _XENAKIOS_NUDMASVOL1DBD // Xenakios/SWS: Nudge master volume 1 dB down
+  Shift+RotaryBig       NoAction
 
 // ===========================================
 // NAVIGATOR BUTTONS
 // ===========================================
-  Channel           LeaveSubZone
+  Channel           GoSubZone ChannelNavigator
   Zoom              GoSubZone ZoomNavigator
   Scroll            GoSubZone ScrollNavigator
   Bank              GoSubZone BankNavigator
-  Master            GoSubZone MasterNavigator
+  Master            LeaveSubZone
   Click             GoSubZone ClickNavigator
   Section           GoSubZone SectionNavigator
   Marker            GoSubZone MarkerNavigator
@@ -56,5 +58,4 @@ Zone ChannelNavigator
   Option+Click      Reaper 40459 Feedback=No   // Screenset: Load window set #06
   Option+Section    Reaper 40460 Feedback=No   // Screenset: Load window set #07
   Option+Marker     Reaper 40461 Feedback=No   // Screenset: Load window set #08
-
 ZoneEnd

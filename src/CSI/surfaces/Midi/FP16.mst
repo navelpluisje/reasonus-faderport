@@ -1,26 +1,40 @@
 //  Device in Studio One mode
 
+StepSize
+    RotaryWidgetClass   0.003
+    JogWheelWidgetClass 0.003
+StepSizeEnd
+
+AccelerationValues
+    RotaryWidgetClass   Dec 41     42    43    44    45    46    47  
+    RotaryWidgetClass   Inc 01     02    03    04    05    06    07  
+    RotaryWidgetClass   Val 0.0006 0.001 0.002 0.003 0.008 0.04  0.08 
+
+    JogWheelWidgetClass Dec 41     42    43    44    45    46    47  
+    JogWheelWidgetClass Inc 01     02    03    04    05    06    07  
+    JogWheelWidgetClass Val 0.0006 0.001 0.002 0.003 0.008 0.04  0.08 
+AccelerationValuesEnd
 
 // ===========================================
 // FADER MODE BUTTONS  
 // ===========================================
 Widget Track
-	Press 90 28 7f
+	Press 90 28 7f 90 28 00
 	FB_TwoState 90 28 7f 90 28 00
 WidgetEnd
 
 Widget Plugin
-	Press 90 2b 7f
+	Press 90 2b 7f 90 2b 00
 	FB_TwoState 90 2b 7f 90 2b 00
 WidgetEnd
 
 Widget Send
-	Press 90 29 7f
+	Press 90 29 7f 90 29 00
 	FB_TwoState 90 29 7f 90 29 00
 WidgetEnd
 
 Widget Pan
-	Press 90 2a 7f
+	Press 90 2a 7f 90 2a 00
 	FB_TwoState 90 2a 7f 90 2a 00
 WidgetEnd
 
@@ -29,28 +43,28 @@ WidgetEnd
 // MIX MANAGEMENT
 // ===========================================
 Widget AudioBtn
-	Press 90 3e 7f
-	FB_FaderportRGB7Bit 90 3e 7f
+	Press 90 3e 7f 90 3e 00
+	FB_FaderportRGB 90 3e 7f
 WidgetEnd
 
 Widget Instrument
-	Press 90 3f 7f
-	FB_FaderportRGB7Bit 90 3f 7f
+	Press 90 3f 7f 90 3f 00
+	FB_FaderportRGB 90 3f 7f
 WidgetEnd
 
 Widget BusBtn
-	Press 90 40 7f
-	FB_FaderportRGB7Bit 90 40 7f
+	Press 90 40 7f 90 40 00
+	FB_FaderportRGB 90 40 7f
 WidgetEnd
 
 Widget VCABtn
-	Press 90 41 7f
-	FB_FaderportRGB7Bit 90 41 7f
+	Press 90 41 7f 90 41 00
+	FB_FaderportRGB 90 41 7f
 WidgetEnd
 
 Widget AllBtn
-	Press 90 42 7f
-	FB_FaderportRGB7Bit 90 42 7f
+	Press 90 42 7f 90 42 00
+	FB_FaderportRGB 90 42 7f
 WidgetEnd
 
 Widget RightShft
@@ -69,40 +83,32 @@ Widget RotarySmall
 	Encoder b0 10 7f
 WidgetEnd
 
-Widget ScrollLeftSmall
-	Press b0 10 41
-WidgetEnd
-
-Widget ScrollRightSmall
-	Press b0 10 01
-WidgetEnd
-
-
 Widget Arm
 	Press 90 00 7f 90 00 00
+	FB_TwoState 90 00 7f 90 00 00
 WidgetEnd
 
 Widget SoloClear
-	Press 90 01 7f
+	Press 90 01 7f 90 01 00
 WidgetEnd
 
 Widget MuteClear
-	Press 90 02 7f
+	Press 90 02 7f 90 02 00
 WidgetEnd
 
 Widget Bypass
-	Press 90 03 7f
-	FB_FaderportRGB7Bit 90 03 7f
+	Press 90 03 7f 90 03 00
+	FB_FaderportRGB 90 03 7f
 WidgetEnd
 
 Widget Macro
-	Press 90 04 7f
-	FB_FaderportRGB7Bit 90 04 7f
+	Press 90 04 7f 90 04 00
+	FB_FaderportRGB 90 04 7f
 WidgetEnd
 
 Widget Link
-	Press 90 05 7f
-	FB_FaderportRGB7Bit 90 05 7f
+	Press 90 05 7f 90 05 00
+	FB_FaderportRGB 90 05 7f
 WidgetEnd
 
 Widget LeftShft
@@ -161,40 +167,32 @@ Widget RotaryBig
 WidgetEnd
 
 Widget Next
-	Press 90 2f 7f
-	/ FB_TwoState 90 2f 7f 90 2f 00
-WidgetEnd
-
-Widget ScrollLeft
-	Press b0 3c 41
-WidgetEnd
-
-Widget ScrollRight
-	Press b0 3c 01
+	Press 90 2f 7f 90 2f 00
+  // FB_TwoState 90 2f 7f 90 2f 00
 WidgetEnd
 
 Widget Channel
-	Press 90 36 7f
+	Press 90 36 7f 90 36 00
 	FB_TwoState 90 36 7f 90 36 00
 WidgetEnd
 
 Widget Zoom
-	Press 90 37 7f
+	Press 90 37 7f 90 37 00
 	FB_TwoState 90 37 7f 90 37 00
 WidgetEnd
 
 Widget Scroll
-	Press 90 38 7f
+	Press 90 38 7f 90 38 00
 	FB_TwoState 90 38 7f 90 38 00
 WidgetEnd
 
 Widget Bank
-	Press 90 39 7f
+	Press 90 39 7f 90 39 00
 	FB_TwoState 90 39 7f 90 39 00
 WidgetEnd
 
 Widget Master
-	Press 90 3a 7f
+	Press 90 3a 7f 90 3a 00
 	FB_TwoState 90 3a 7f 90 3a 00
 WidgetEnd
 
@@ -204,12 +202,12 @@ Widget Click
 WidgetEnd
 
 Widget Section
-	Press 90 3c 7f
+	Press 90 3c 7f 90 3c 00
 	FB_TwoState 90 3c 7f 90 3c 00
 WidgetEnd
 
 Widget Marker
-	Press 90 3d 7f
+	Press 90 3d 7f 90 3d 00
 	FB_TwoState 90 3d 7f 90 3d 00
 WidgetEnd
 
@@ -218,13 +216,13 @@ WidgetEnd
 // TRANSPORT
 // ===========================================
 Widget Loop
-	Press 90 56 7f
+	Press 90 56 7f 90 56 00
 	FB_TwoState 90 56 7f 90 56 00
 WidgetEnd
 
 Widget Rewind
 	Press 90 5b 7f 90 5b 00
-	/ FB_TwoState 90 5b 00 90 5b 7f
+	FB_TwoState 90 5b 00 90 5b 7f
 WidgetEnd
 
 Widget FastForward
@@ -233,17 +231,17 @@ Widget FastForward
 WidgetEnd
 
 Widget Stop
-	Press 90 5d 7f
+	Press 90 5d 7f 90 5d 00
 	FB_TwoState 90 5d 7f 90 5d 00
 WidgetEnd
 
 Widget Play
-	Press 90 5e 7f
+	Press 90 5e 7f 90 5e 00
 	FB_TwoState 90 5e 7f 90 5e 00
 WidgetEnd
 
 Widget Record
-	Press 90 5f 7f
+	Press 90 5f 7f 90 5f 00
 	FB_TwoState 90 5f 7f 90 5f 00
 WidgetEnd
 
@@ -256,82 +254,82 @@ WidgetEnd
 // SOLO BUTTONS
 // ===========================================
 Widget Solo1
-  Press 90 08 7f
+  Press 90 08 7f 90 08 00
   FB_TwoState 90 08 7f 90 08 00
 WidgetEnd
 
 Widget Solo2
-  Press 90 09 7f
+  Press 90 09 7f 90 09 00
   FB_TwoState 90 09 7f 90 09 00
 WidgetEnd
 
 Widget Solo3
-  Press 90 0a 7f
+  Press 90 0a 7f 90 0a 00
   FB_TwoState 90 0a 7f 90 0a 00
 WidgetEnd
 
 Widget Solo4
-  Press 90 0b 7f
+  Press 90 0b 7f 90 0b 00
   FB_TwoState 90 0b 7f 90 0b 00
 WidgetEnd
 
 Widget Solo5
-  Press 90 0c 7f
+  Press 90 0c 7f 90 0c 00
   FB_TwoState 90 0c 7f 90 0c 00
 WidgetEnd
 
 Widget Solo6
-  Press 90 0d 7f
+  Press 90 0d 7f 90 0d 00
   FB_TwoState 90 0d 7f 90 0d 00
 WidgetEnd
 
 Widget Solo7
-  Press 90 0e 7f
+  Press 90 0e 7f 90 0e 00
   FB_TwoState 90 0e 7f 90 0e 00
 WidgetEnd
 
 Widget Solo8
-  Press 90 0f 7f
+  Press 90 0f 7f 90 0f 00
   FB_TwoState 90 0f 7f 90 0f 00
 WidgetEnd
 
 Widget Solo9
-  Press 90 50 7f
+  Press 90 50 7f 90 50 00
   FB_TwoState 90 50 7f 90 50 00
 WidgetEnd
 
 Widget Solo10
-  Press 90 51 7f
+  Press 90 51 7f 90 51 00
   FB_TwoState 90 51 7f 90 51 00
 WidgetEnd
 
 Widget Solo11
-  Press 90 52 7f
+  Press 90 52 7f 90 52 00
   FB_TwoState 90 52 7f 90 52 00
 WidgetEnd
 
 Widget Solo12
-  Press 90 53 7f
+  Press 90 53 7f 90 53 00
   FB_TwoState 90 53 7f 90 53 00
 WidgetEnd
 
 Widget Solo13
-  Press 90 54 7f
+  Press 90 54 7f 90 54 00
   FB_TwoState 90 54 7f 90 54 00
 WidgetEnd
 
 Widget Solo14
-  Press 90 55 7f
+  Press 90 55 7f 90 55 00
   FB_TwoState 90 55 7f 90 55 00
 WidgetEnd
 
 Widget Solo15
-  Press 90 56 7f
+  Press 90 56 7f 90 56 00
   FB_TwoState 90 56 7f 90 56 00
 WidgetEnd
 
 Widget Solo16
-  Press 90 57 7f
+  Press 90 57 7f 90 57 00
   FB_TwoState 90 57 7f 90 57 00
 WidgetEnd
 
@@ -339,82 +337,82 @@ WidgetEnd
 // MUTE BUTTONS
 // ===========================================
 Widget Mute1
-  Press 90 10 7f
+  Press 90 10 7f 90 10 00
   FB_TwoState 90 10 7f 90 10 00
 WidgetEnd
 
 Widget Mute2
-  Press 90 11 7f
+  Press 90 11 7f 90 11 00
   FB_TwoState 90 11 7f 90 11 00
 WidgetEnd
 
 Widget Mute3
-  Press 90 12 7f
+  Press 90 12 7f 90 12 00
   FB_TwoState 90 12 7f 90 12 00
 WidgetEnd
 
 Widget Mute4
-  Press 90 13 7f
+  Press 90 13 7f 90 13 00
   FB_TwoState 90 13 7f 90 13 00
 WidgetEnd
 
 Widget Mute5
-  Press 90 14 7f
+  Press 90 14 7f 90 14 00
   FB_TwoState 90 14 7f 90 14 00
 WidgetEnd
 
 Widget Mute6
-  Press 90 15 7f
+  Press 90 15 7f 90 15 00
   FB_TwoState 90 15 7f 90 15 00
 WidgetEnd
 
 Widget Mute7
-  Press 90 16 7f
+  Press 90 16 7f 90 16 00
   FB_TwoState 90 16 7f 90 16 00
 WidgetEnd
 
 Widget Mute8
-  Press 90 17 7f
+  Press 90 17 7f 90 17 00
   FB_TwoState 90 17 7f 90 17 00
 WidgetEnd
 
 Widget Mute9
-  Press 90 78 7f
+  Press 90 78 7f 90 78 00
   FB_TwoState 90 78 7f 90 78 00
 WidgetEnd
 
 Widget Mute10
-  Press 90 79 7f
+  Press 90 79 7f 90 79 00
   FB_TwoState 90 79 7f 90 79 00
 WidgetEnd
 
 Widget Mute11
-  Press 90 7a 7f
+  Press 90 7a 7f 90 7a 00
   FB_TwoState 90 7a 7f 90 7a 00
 WidgetEnd
 
 Widget Mute12
-  Press 90 7b 7f
+  Press 90 7b 7f 90 7b 00
   FB_TwoState 90 7b 7f 90 7b 00
 WidgetEnd
 
 Widget Mute13
-  Press 90 7c 7f
+  Press 90 7c 7f 90 7c 00
   FB_TwoState 90 7c 7f 90 7c 00
 WidgetEnd
 
 Widget Mute14
-  Press 90 7d 7f
+  Press 90 7d 7f 90 7d 00
   FB_TwoState 90 7d 7f 90 7d 00
 WidgetEnd
 
 Widget Mute15
-  Press 90 7e 7f
+  Press 90 7e 7f 90 7e 00
   FB_TwoState 90 7e 7f 90 7e 00
 WidgetEnd
 
 Widget Mute16
-  Press 90 7f 7f
+  Press 90 7f 7f 90 7f 00
   FB_TwoState 90 7f 7f 90 7f 00
 WidgetEnd
 
@@ -508,149 +506,97 @@ WidgetEnd
 Widget Fader1
   Fader14Bit e0 7f 7f
   FB_Fader14Bit e0 7f 7f
+  Touch 90 68 7f 90 68 00
 WidgetEnd
 
 Widget Fader2
   Fader14Bit e1 7f 7f
   FB_Fader14Bit e1 7f 7f
+  Touch 90 69 7f 90 69 00
 WidgetEnd
 
 Widget Fader3
   Fader14Bit e2 7f 7f
   FB_Fader14Bit e2 7f 7f
+  Touch 90 6a 7f 90 6a 00
 WidgetEnd
 
 Widget Fader4
   Fader14Bit e3 7f 7f
   FB_Fader14Bit e3 7f 7f
+  Touch 90 6b 7f 90 6b 00
 WidgetEnd
 
 Widget Fader5
   Fader14Bit e4 7f 7f
   FB_Fader14Bit e4 7f 7f
+  Touch 90 6c 7f 90 6c 00
 WidgetEnd
 
 Widget Fader6
   Fader14Bit e5 7f 7f
   FB_Fader14Bit e5 7f 7f
+  Touch 90 6d 7f 90 6d 00
 WidgetEnd
 
 Widget Fader7
   Fader14Bit e6 7f 7f
   FB_Fader14Bit e6 7f 7f
+  Touch 90 6e 7f 90 6e 00
 WidgetEnd
 
 Widget Fader8
   Fader14Bit e7 7f 7f
   FB_Fader14Bit e7 7f 7f
+  Touch 90 6f 7f 90 6f 00
 WidgetEnd
 
 Widget Fader9
   Fader14Bit e8 7f 7f
   FB_Fader14Bit e8 7f 7f
+  Touch 90 70 7f 90 70 00
 WidgetEnd
 
 Widget Fader10
   Fader14Bit e9 7f 7f
   FB_Fader14Bit e9 7f 7f
+  Touch 90 71 7f 90 71 00
 WidgetEnd
 
 Widget Fader11
   Fader14Bit ea 7f 7f
   FB_Fader14Bit ea 7f 7f
+  Touch 90 72 7f 90 72 00
 WidgetEnd
 
 Widget Fader12
   Fader14Bit eb 7f 7f
   FB_Fader14Bit eb 7f 7f
+  Touch 90 73 7f 90 73 00
 WidgetEnd
 
 Widget Fader13
   Fader14Bit ec 7f 7f
   FB_Fader14Bit ec 7f 7f
+  Touch 90 74 7f 90 74 00
 WidgetEnd
 
 Widget Fader14
   Fader14Bit ed 7f 7f
   FB_Fader14Bit ed 7f 7f
+  Touch 90 75 7f 90 75 00
 WidgetEnd
 
 Widget Fader15
   Fader14Bit ee 7f 7f
   FB_Fader14Bit ee 7f 7f
+  Touch 90 76 7f 90 76 00
 WidgetEnd
 
 Widget Fader16
   Fader14Bit ef 7f 7f
   FB_Fader14Bit ef 7f 7f
-WidgetEnd
-
-
-// ===========================================
-// TOUCH
-// ===========================================
-Widget FaderTouch1
-  Press 90 68 7f 90 68 00
-WidgetEnd
-
-Widget FaderTouch2
-  Press 90 69 7f 90 69 00
-WidgetEnd
-
-Widget FaderTouch3
-  Press 90 6a 7f 90 6a 00
-WidgetEnd
-
-Widget FaderTouch4
-  Press 90 6b 7f 90 6b 00
-WidgetEnd
-
-Widget FaderTouch5
-  Press 90 6c 7f 90 6c 00
-WidgetEnd
-
-Widget FaderTouch6
-  Press 90 6d 7f 90 6d 00
-WidgetEnd
-
-Widget FaderTouch7
-  Press 90 6e 7f 90 6e 00
-WidgetEnd
-
-Widget FaderTouch8
-  Press 90 6f 7f 90 6f 00
-WidgetEnd
-
-Widget FaderTouch9
-  Press 90 70 7f 90 70 00
-WidgetEnd
-
-Widget FaderTouch10
-  Press 90 71 7f 90 71 00
-WidgetEnd
-
-Widget FaderTouch11
-  Press 90 72 7f 90 72 00
-WidgetEnd
-
-Widget FaderTouch12
-  Press 90 73 7f 90 73 00
-WidgetEnd
-
-Widget FaderTouch13
-  Press 90 74 7f 90 74 00
-WidgetEnd
-
-Widget FaderTouch14
-  Press 90 75 7f 90 75 00
-WidgetEnd
-
-Widget FaderTouch15
-  Press 90 76 7f 90 76 00
-WidgetEnd
-
-Widget FaderTouch16
-  Press 90 77 7f 90 77 00
+  Touch 90 77 7f 90 77 00
 WidgetEnd
 
 
@@ -1030,68 +976,68 @@ WidgetEnd
 // ===========================================
 // DISPLAY TYPE
 // ===========================================
-Widget DisplayType1
-	FB_FP16DisplayType 0
+Widget ScribbleStripMode1
+	FB_FP16ScribbleStripMode 0
 WidgetEnd
 
-Widget DisplayType2
-	FB_FP16DisplayType 1
+Widget ScribbleStripMode2
+	FB_FP16ScribbleStripMode 1
 WidgetEnd
 
-Widget DisplayType3
-	FB_FP16DisplayType 2
+Widget ScribbleStripMode3
+	FB_FP16ScribbleStripMode 2
 WidgetEnd
 
-Widget DisplayType4
-	FB_FP16DisplayType 3
+Widget ScribbleStripMode4
+	FB_FP16ScribbleStripMode 3
 WidgetEnd
 
-Widget DisplayType5
-	FB_FP16DisplayType 4
+Widget ScribbleStripMode5
+	FB_FP16ScribbleStripMode 4
 WidgetEnd
 
-Widget DisplayType6
-	FB_FP16DisplayType 5
+Widget ScribbleStripMode6
+	FB_FP16ScribbleStripMode 5
 WidgetEnd
 
-Widget DisplayType7
-	FB_FP16DisplayType 6
+Widget ScribbleStripMode7
+	FB_FP16ScribbleStripMode 6
 WidgetEnd
 
-Widget DisplayType8
-	FB_FP16DisplayType 7
+Widget ScribbleStripMode8
+	FB_FP16ScribbleStripMode 7
 WidgetEnd
 
-Widget DisplayType9
-	FB_FP16DisplayType 8
+Widget ScribbleStripMode9
+	FB_FP16ScribbleStripMode 8
 WidgetEnd
 
-Widget DisplayType10
-	FB_FP16DisplayType 9
+Widget ScribbleStripMode10
+	FB_FP16ScribbleStripMode 9
 WidgetEnd
 
-Widget DisplayType11
-	FB_FP16DisplayType 10
+Widget ScribbleStripMode11
+	FB_FP16ScribbleStripMode 10
 WidgetEnd
 
-Widget DisplayType12
-	FB_FP16DisplayType 11
+Widget ScribbleStripMode12
+	FB_FP16ScribbleStripMode 11
 WidgetEnd
 
-Widget DisplayType13
-	FB_FP16DisplayType 12
+Widget ScribbleStripMode13
+	FB_FP16ScribbleStripMode 12
 WidgetEnd
 
-Widget DisplayType14
-	FB_FP16DisplayType 13
+Widget ScribbleStripMode14
+	FB_FP16ScribbleStripMode 13
 WidgetEnd
 
-Widget DisplayType15
-	FB_FP16DisplayType 14
+Widget ScribbleStripMode15
+	FB_FP16ScribbleStripMode 14
 WidgetEnd
 
-Widget DisplayType16
-	FB_FP16DisplayType 15
+Widget ScribbleStripMode16
+	FB_FP16ScribbleStripMode 15
 WidgetEnd
 
 

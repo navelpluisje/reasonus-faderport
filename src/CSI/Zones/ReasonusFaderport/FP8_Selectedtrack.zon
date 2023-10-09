@@ -1,7 +1,7 @@
 //------------------------------------------------------------------------------
 // File:    FP8_SelectedTrack.zon 
 // Author:  Erwin Goossen<erwin@navelpluisje.nl>
-// Version: 1.0.0
+// Version: 2.0.0
 //------------------------------------------------------------------------------
 
 
@@ -9,33 +9,33 @@ Zone SelectedTrack
 // ===========================================
 // TRACK AUTOMATION
 // ===========================================
-  Latch           TrackAutoMode 4     { 5 0 20 53 0 255 }       // Latch
-  Off             TrackAutoMode 5 	  { 0 5 20 0 55 255 }       // Latch Preview
-  Trim            TrackAutoMode 0     { 20 20 20 255 255 255 }  // Trim
-  Touch           TrackAutoMode 2     { 20 20 0 255 255 0 }     // Touch
-  Write           TrackAutoMode 3     { 20 0 0 255 0 0 }
-  Read            TrackAutoMode 1     { 0 20 0 0 255 0 }
+  Latch             TrackAutoMode 4     { 5 0 20 53 0 255 }       // Latch
+  Off               TrackAutoMode 5 	  { 0 5 20 0 55 255 }       // Latch Preview
+  Trim              TrackAutoMode 0     { 20 20 20 255 255 255 }  // Trim
+  Touch             TrackAutoMode 2     { 20 20 0 255 255 0 }     // Touch
+  Write             TrackAutoMode 3     { 20 0 0 255 0 0 }
+  Read              TrackAutoMode 1     { 0 20 0 0 255 0 }
 
 // ===========================================
 // ACTIONS
 // ===========================================
-  Shift+Latch     SaveProject         { 0 20 0 0 20 0 }  // File: Save project
-  Shift+Trim      Redo                { 0 5 20 0 5 20 }  // Edit: Redo
-  Shift+Off       Undo                { 0 5 20 0 5 20 }  // Edit: Undo
-  Shift+Touch     NoAction
-  Shift+Write     NoAction
-  Shift+Read      NoAction
+  Shift+Latch       SaveProject         { 0 20 0 0 20 0 }  // File: Save project
+  Shift+Trim        Redo                { 0 5 20 0 5 20 }  // Edit: Redo
+  Shift+Off         Undo                { 0 5 20 0 5 20 }  // Edit: Undo
+  Shift+Touch       NoAction
+  Shift+Write       NoAction
+  Shift+Read        NoAction
 
 // ===========================================
 // GLOBAL AUTOMATION
 // ===========================================
-  Option+Latch    GlobalAutoMode 4    { 5 0 20 53 0 255 }       // Latch
-  Option+Off      GlobalAutoMode 5    { 0 5 20 0 55 255 }       // Latch Preview
-  Option+Trim     GlobalAutoMode 0    { 20 20 20 255 255 255 }  // Trim
-  Option+Touch    GlobalAutoMode 2    { 20 20 0 255 255 0 }     // Touch
-  Option+Write    GlobalAutoMode 3    { 20 0 0 255 0 0 }
-  Option+Read     GlobalAutoMode 1    { 0 20 0 0 255 0 }
-  Hold+Option+Off Reaper 40876        { 20 20 20 255 255 255 } // Global automation override: No override (set automation modes per track)
+  Option+Latch      GlobalAutoMode 4    { 5 0 20 53 0 255 }       // Latch
+  Option+Off        GlobalAutoMode 5    { 0 5 20 0 55 255 }       // Latch Preview
+  Option+Trim       GlobalAutoMode 0    { 20 20 20 255 255 255 }  // Trim
+  Option+Touch      GlobalAutoMode 2    { 20 20 0 255 255 0 }     // Touch
+  Option+Write      GlobalAutoMode 3    { 20 0 0 255 0 0 }
+  Option+Read       GlobalAutoMode 1    { 0 20 0 0 255 0 }
+  Hold+Option+Off   Reaper 40876        { 20 20 20 255 255 255 } // Global automation override: No override (set automation modes per track)
 
 // ===========================================
 // PAN CONTROL
