@@ -1,4 +1,4 @@
-Zone "NoMap"
+Zone NoMap
   ScribbleStripMode1    Mode=2
   ScribbleLine1_1       FixedTextDisplay "No Map" TextAlign=Center TextInvert=Yes
   ScribbleLine2_1       NoAction

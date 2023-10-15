@@ -16,15 +16,15 @@ Zone Track
   ScribbleLine2_|           TrackNumberDisplay
   ScribbleLine3_|           TrackPanDisplay
   ScribbleLine4_|           NoAction
-  ValueBar|                 TrackVolume BarStyle=Fill
+  ValueBar|                 TrackPan BarStyle=BiPolar
   VUMeter|                  TrackOutputMeter
 
   Shift+ScribbleStripMode|  Mode=2
   Shift+ScribbleLine1_|     TrackNameDisplay TextAlign=Center
-  Shift+ScribbleLine2_|     TrackVolumeDisplay
-  Shift+ScribbleLine3_|     TrackAutoModeDisplay
-  Shift+ScribbleLine4_|     TrackPanDisplay
-  Shift+ValueBar|           TrackPan BarStyle=BiPolar
+  Shift+ScribbleLine2_|     TrackAutoModeDisplay
+  Shift+ScribbleLine3_|     TrackPanDisplay
+  Shift+ScribbleLine4_|     TrackPanWidthDisplay
+  Shift+ValueBar|           TrackVolume BarStyle=Fill
   Shift+VUMeter|            NoAction
 
   Mute|                     TrackMute
