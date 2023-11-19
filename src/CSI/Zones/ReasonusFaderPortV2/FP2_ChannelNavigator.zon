@@ -1,0 +1,72 @@
+//------------------------------------------------------------------------------
+// File:    FP2_ChannelNavigator.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 2.0.0
+//------------------------------------------------------------------------------
+
+Zone ChannelNavigator
+// ===========================================
+// BUTTONS AND SCROLL
+// ===========================================
+  
+  Prev                  Reaper 40286   // Track: Go to previous track
+  Next                  Reaper 40285   // Track: Go to next track
+  Shift+Prev            Reaper 40029   // Edit: Undo
+  Shift+Next            Reaper 40030   // Edit: Redo
+
+  RotaryBigPush         NoAction
+  Shift+RotaryBigPush   NoAction
+  Option+RotaryBigPush  NoAction
+
+  Increase+RotaryBig        Reaper 40285 // Track: Go to next track
+  Decrease+RotaryBig        Reaper 40286 // Track: Go to previous track
+  Shift+Inrease+RotaryBig   Reaper 40287 // Track: Go to next track (leaving other tracks selected)
+  Shift+Derease+RotaryBig   Reaper 40288 // Track: Go to previous track (leaving other tracks selected)
+
+// ===========================================
+// NAVIGATOR BUTTONS
+// ===========================================
+  Pan                   FixedRGBColorDisplay { 0 0 0 }
+
+  Channel               FixedRGBColorDisplay { 0 55 255 }
+  Channel               GoHome
+  Channel               LeaveSubZone
+
+  Scroll                FixedRGBColorDisplay { 0 5 20 }
+  Scroll                GoHome
+  Scroll                GoSubZone ScrollNavigator
+
+  Shift+Scroll          FixedRGBColorDisplay { 0 5 20 }
+  Shift+Scroll          GoHome
+  Shift+Scroll          GoSubZone ZoomNavigator
+
+  Master                Reaper _REASONUS_ALWAYS_OFF
+  Master                GoHome
+  Master                GoAssociatedZone MasterTrack
+
+  Click                 Reaper _REASONUS_ALWAYS_OFF
+  Click                 GoHome
+  Click                 GoSubZone ClickNavigator
+
+  Section               Reaper _REASONUS_ALWAYS_OFF
+  Section               GoHome
+  Section               GoSubZone SectionNavigator
+
+  Marker                Reaper _REASONUS_ALWAYS_OFF
+  Marker                GoHome
+  Marker                GoSubZone MarkerNavigator
+
+// ===========================================
+// FUNCTION KEYS
+// ===========================================
+// Function-Action-1
+  Shift+Master          Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
+// Function-Action-2 
+  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
+// Function-Action-3 
+  Shift+Section         Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
+// Function-Action-4 
+  Shift+Marker          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
+  Property+Shift+Marker   NoFeedback    
+
+ZoneEnd

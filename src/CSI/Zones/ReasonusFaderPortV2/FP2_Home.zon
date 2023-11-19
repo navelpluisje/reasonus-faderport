@@ -1,0 +1,23 @@
+//------------------------------------------------------------------------------
+// File:    FP2_Home.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 2.0.0
+//------------------------------------------------------------------------------
+
+Zone Home
+  // Boolean values that can be used for giving a button an 'active' state
+  OnInitialization Reaper _REASONUS_ALWAYS_ON
+  OnInitialization Reaper _REASONUS_ALWAYS_OFF
+
+  Shift Shift
+
+  IncludedZones
+    "Buttons"
+    "SelectedTrack"
+    "Transport"
+  IncludedZonesEnd
+  AssociatedZones
+    "FocusedFXParam"
+    "MasterTrack"
+  AssociatedZonesEnd
+ZoneEnd

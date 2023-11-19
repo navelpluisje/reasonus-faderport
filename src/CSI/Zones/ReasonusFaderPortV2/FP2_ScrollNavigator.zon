@@ -1,0 +1,79 @@
+//------------------------------------------------------------------------------
+// File:    FP2_ScrollNavigator.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 2.0.0
+//------------------------------------------------------------------------------
+
+Zone ScrollNavigator
+// ===========================================
+// BUTTONS AND SCROLL
+// ===========================================
+  Prev                  Reaper 40286   // Track: Go to previous track
+  Next                  Reaper 40285   // Track: Go to next track
+  Shift+Prev            NoAction
+  Shift+Next            NoAction
+
+// ===========================================
+// ENCODER
+// ===========================================
+  RotaryBigPush             Reaper 40913                // Track: Vertical scroll selected tracks into view
+  Shift+RotaryBigPush       Reaper _SWS_HSCROLLPLAY50   // SWS: Horizontal scroll to put play cursor at 50%
+  Option+RotaryBigPush      NoAction
+  Increase+RotaryBig        Reaper 40138    // View: Scroll view down, View: Scroll view up
+  Decrease+RotaryBig        Reaper 40139    // View: Scroll view down, View: Scroll view up
+  Increase+Shift+RotaryBig  Reaper 40141    // View: Scroll view left, View: Scroll view Right
+  Decrease+Shift+RotaryBig  Reaper 40140    // View: Scroll view left, View: Scroll view Right
+  
+// ===========================================
+// NAVIGATOR BUTTONS
+// ===========================================
+  Pan                   FixedRGBColorDisplay { 0 0 0 }
+
+  Channel               FixedRGBColorDisplay { 0 5 20 }
+  Channel               GoHome
+  Channel               GoSubZone ChannelNavigator
+
+  Scroll                FixedRGBColourDisplay { 0 55 255 }
+  Scroll                GoHome
+  Scroll                LeaveSubZone
+
+  Shift+Scroll          FixedRGBColorDisplay { 0 5 20 }
+  Shift+Scroll          GoHome
+  Shift+Scroll          GoSubZone ZoomNavigator
+
+  Master                Reaper _REASONUS_ALWAYS_OFF
+  Master                GoHome
+  Master                GoAssociatedZone MasterTrack
+
+  Click                 Reaper _REASONUS_ALWAYS_OFF
+  Click                 GoHome
+  Click                 GoSubZone ClickNavigator
+
+  Section               Reaper _REASONUS_ALWAYS_OFF
+  Section               GoHome
+  Section               GoSubZone SectionNavigator
+
+  Marker                Reaper _REASONUS_ALWAYS_OFF
+  Marker                GoHome
+  Marker                GoSubZone MarkerNavigator
+// ===========================================
+// All the button States and action
+// ===========================================
+  Scroll                FixedRGBColourDisplay { 0 55 255 }
+  Scroll                GoHome
+  Scroll                LeaveSubZone
+
+// ===========================================
+// FUNCTION KEYS
+// ===========================================
+// Function-Action-1
+  Shift+Master          Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
+// Function-Action-2 
+  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
+// Function-Action-3 
+  Shift+Section         Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
+// Function-Action-4 
+  Shift+Marker          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
+  Property+Shift+Marker      NoFeedback    
+
+ZoneEnd

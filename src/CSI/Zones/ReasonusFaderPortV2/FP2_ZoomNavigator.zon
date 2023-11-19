@@ -1,0 +1,73 @@
+
+//------------------------------------------------------------------------------
+// File:    FP2_ZoomNavigator.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 2.0.0
+//------------------------------------------------------------------------------
+
+Zone ZoomNavigator
+// ===========================================
+// BUTTONS
+// ===========================================
+  Prev              Reaper 1011     // View: Zoom out horizontal
+  Next              Reaper 1012     // View: Zoom in horizontal
+  Shift+Prev        Reaper 40112    // View: Zoom out vertical
+  Shift+Next        Reaper 40111    // View: Zoom in vertical
+
+// ===========================================
+// ENCODER
+// ===========================================
+  RotaryBigPush               Reaper 40110    // View: Toggle track zoom to minimum height
+  Increase+RotaryBig          Reaper 1012     // View: Zoom in horizontal
+  Decrease+RotaryBig          Reaper 1011     // View: Zoom out horizontal
+  Shift+RotaryBigPush         Reaper 40113    // View: Toggle track zoom to maximum height
+  Shift+Increase+RotaryBig    Reaper 40111    // View: Zoom in vertical
+  Shift+Decrease+RotaryBig    Reaper 40112    // View: Zoom out vertical
+
+// ===========================================
+// NAVIGATOR BUTTONS
+// ===========================================
+  Pan                   FixedRGBColorDisplay { 0 0 0 }
+
+  Channel               FixedRGBColorDisplay { 0 5 20 }
+  Channel               GoHome
+  Channel               GoSubZone ChannelNavigator
+
+  Scroll                FixedRGBColorDisplay { 0 5 20 }
+  Scroll                GoHome
+  Scroll                GoSubZone ScrollNavigator
+
+  Shift+Scroll          FixedRGBColourDisplay { 0 55 255 }
+  Shift+Scroll          GoHome
+  Shift+Scroll          LeaveSubZone
+
+  Master                Reaper _REASONUS_ALWAYS_OFF
+  Master                GoHome
+  Master                GoAssociatedZone MasterTrack
+
+  Click                 Reaper _REASONUS_ALWAYS_OFF
+  Click                 GoHome
+  Click                 GoSubZone ClickNavigator
+
+  Section               Reaper _REASONUS_ALWAYS_OFF
+  Section               GoHome
+  Section               GoSubZone SectionNavigator
+
+  Marker                Reaper _REASONUS_ALWAYS_OFF
+  Marker                GoHome
+  Marker                GoSubZone MarkerNavigator
+
+
+// ===========================================
+// FUNCTION KEYS
+// ===========================================
+// Function-Action-1
+  Shift+Master          Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
+// Function-Action-2 
+  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
+// Function-Action-3 
+  Shift+Section         Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
+// Function-Action-4 
+  Shift+Marker          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
+  Property+Shift+Marker      NoFeedback    
+ZoneEnd

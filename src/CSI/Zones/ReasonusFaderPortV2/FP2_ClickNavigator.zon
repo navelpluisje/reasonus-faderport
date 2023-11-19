@@ -1,0 +1,83 @@
+//------------------------------------------------------------------------------
+// File:    FP2_ClickNavigator.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 2.0.0
+//------------------------------------------------------------------------------
+
+Zone ClickNavigator
+// ===========================================
+// BUTTONS
+// ===========================================
+  Prev                  Reaper 42457    // Options: Set metronome speed to 2x
+  Next                  Reaper 42458    // Options: Set metronome speed to 4x
+  Shift+Prev            NoAction
+  Shift+Next            NoAction
+
+  RotaryBigPush         Reaper 42456    // Options: Set metronome speed to 1x
+  Hold+RotaryBigPush    Reaper 40364    // Options: Toggle metronome
+  Shift+RotaryBigPush   Reaper 40363 Feedback=No  // Options: Show metronome/pre-roll settings
+  Option+RotaryBigPush  NoAction
+
+  // Every tick of the Metronome volume is really small. So triggering 6 ticks per encoder tick makes it respond a bit better
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  // SWS/S&M: Decrease metronome volume, SWS/S&M: Increase metronome volume
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  
+  Increase+RotaryBig    Reaper _S&M_METRO_VOL_UP  
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  // SWS/S&M: Decrease metronome volume, SWS/S&M: Increase metronome volume
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  
+  Decrease+RotaryBig    Reaper _S&M_METRO_VOL_DOWN  
+  Shift+RotaryBig       NoAction
+
+// ===========================================
+// NAVIGATOR BUTTONS
+// ===========================================
+  Pan                   FixedRGBColorDisplay { 0 0 0 }
+
+  Channel               FixedRGBColorDisplay { 0 5 20 }
+  Channel               GoHome
+  Channel               GoSubZone ChannelNavigator
+
+  Scroll                FixedRGBColorDisplay { 0 5 20 }
+  Scroll                GoHome
+  Scroll                GoSubZone ScrollNavigator
+
+  Shift+Scroll          FixedRGBColorDisplay { 0 5 20 }
+  Shift+Scroll          GoHome
+  Shift+Scroll          GoSubZone ZoomNavigator
+
+  Master                Reaper _REASONUS_ALWAYS_OFF
+  Master                GoHome
+  Master                GoAssociatedZone MasterTrack
+
+  Click                 LeaveSubZone
+
+  Section               Reaper _REASONUS_ALWAYS_OFF
+  Section               GoHome
+  Section               GoSubZone SectionNavigator
+
+  Marker                Reaper _REASONUS_ALWAYS_OFF
+  Marker                GoHome
+  Marker                GoSubZone MarkerNavigator
+// ===========================================
+// All the button States and action
+// ===========================================
+  Click                 LeaveSubZone
+
+// ===========================================
+// FUNCTION KEYS
+// ===========================================
+// Function-Action-1
+  Shift+Master          Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
+// Function-Action-2 
+  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
+// Function-Action-3 
+  Shift+Section         Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
+// Function-Action-4 
+  Shift+Marker          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
+  Property+Shift+Marker   NoFeedback    
+ZoneEnd

@@ -1,0 +1,19 @@
+//------------------------------------------------------------------------------
+// File:    FP2_Transport.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 2.0.0
+//------------------------------------------------------------------------------
+
+Zone Transport
+//------------------------------------------------------------------------------
+// TRANSPORT
+//------------------------------------------------------------------------------
+  Loop                  CycleTimeline
+  Rewind       Rewind
+  Hold+Rewind           Reaper "40042"  // Go to the project start
+  FastForward  FastForward
+  Hold+FastForward      Reaper "40043"  // Go to the project end
+  Play                  Play
+  Stop                  Stop
+  Record                Record
+ZoneEnd

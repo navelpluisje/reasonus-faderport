@@ -1,0 +1,71 @@
+//------------------------------------------------------------------------------
+// File:    FP2_MarkerNavigator.zon 
+// Author:  Erwin Goossen<erwin@navelpluisje.nl>
+// Version: 2.0.0
+//------------------------------------------------------------------------------
+
+Zone MarkerNavigator
+// ===========================================
+// BUTTONS
+// ===========================================
+  Prev              Reaper _SWS_SELPREVMORR   // SWS: Goto/select previous marker/region
+  Next              Reaper _SWS_SELNEXTMORR   // SWS: Goto/select next marker/region
+  Shift+Prev        NoAction
+  Shift+Next        NoAction
+                  
+// ===========================================
+// ENCODER
+// ===========================================
+  RotaryBigPush               Reaper 40157  // Markers: Insert marker at current position
+  Shift+RotaryBigPush         Reaper 40171  // Markers: Insert and/or edit marker at current position
+  Hold+RotaryBigPush        Reaper 40613  // Markers: Delete marker near cursor
+  Increase+RotaryBig          Reaper 41044  // Move edit cursor back one beat, Move edit cursor forward one beat
+  Decrease+RotaryBig          Reaper 41045  // Move edit cursor back one beat, Move edit cursor forward one beat
+  Increase+Shift+RotaryBig    Reaper 40105  // View: Move cursor left one pixel, View: Move cursor right one pixel
+  Decrease+Shift+RotaryBig    Reaper 40104  // View: Move cursor left one pixel, View: Move cursor right one pixel
+
+// ===========================================
+// NAVIGATOR BUTTONS
+// ===========================================
+  Pan                   FixedRGBColorDisplay { 0 0 0 }
+
+  Channel               FixedRGBColorDisplay { 0 5 20 }
+  Channel               GoHome
+  Channel               GoSubZone ChannelNavigator
+
+  Scroll                FixedRGBColorDisplay { 0 5 20 }
+  Scroll                GoHome
+  Scroll                GoSubZone ScrollNavigator
+
+  Shift+Scroll          FixedRGBColorDisplay { 0 5 20 }
+  Shift+Scroll          GoHome
+  Shift+Scroll          GoSubZone ZoomNavigator
+
+  Master                Reaper _REASONUS_ALWAYS_OFF
+  Master                GoHome
+  Master                GoAssociatedZone MasterTrack
+
+  Click                 Reaper _REASONUS_ALWAYS_OFF
+  Click                 GoHome
+  Click                 GoSubZone ClickNavigator
+
+  Section               Reaper _REASONUS_ALWAYS_OFF
+  Section               GoHome
+  Section               GoSubZone SectionNavigator
+
+  Marker                LeaveSubZone
+
+// ===========================================
+// FUNCTION KEYS
+// ===========================================
+// Function-Action-1
+  Shift+Master          Reaper _REASONUS_HANDLE_FUNCTION_KEY_1
+// Function-Action-2 
+  Shift+Click           Reaper _REASONUS_HANDLE_FUNCTION_KEY_2
+// Function-Action-3 
+  Shift+Section         Reaper _REASONUS_HANDLE_FUNCTION_KEY_3
+// Function-Action-4 
+  Shift+Marker          Reaper _REASONUS_HANDLE_FUNCTION_KEY_4
+  Property+Shift+Marker      NoFeedback    
+
+ZoneEnd
