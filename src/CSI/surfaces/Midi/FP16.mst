@@ -309,8 +309,8 @@ Widget Solo11
 WidgetEnd
 
 Widget Solo12
-  Press 90 53 7f 90 53 00
-  FB_TwoState 90 53 7f 90 53 00
+  Press 90 58 7f 90 58 00
+  FB_TwoState 90 58 7f 90 58 00
 WidgetEnd
 
 Widget Solo13
@@ -324,8 +324,8 @@ Widget Solo14
 WidgetEnd
 
 Widget Solo15
-  Press 90 56 7f 90 56 00
-  FB_TwoState 90 56 7f 90 56 00
+  Press 90 59 7f 90 59 00
+  FB_TwoState 90 59 7f 90 59 00
 WidgetEnd
 
 Widget Solo16
