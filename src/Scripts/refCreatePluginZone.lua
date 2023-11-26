@@ -2,6 +2,8 @@ local function createPath(path)
   return path:gsub('/', package.config:sub(1, 1));
 end
 
+-- replace ' ' with '\ '
+
 package.path = reaper.GetResourcePath() .. createPath('/Scripts/ReaSonus/?.lua')
 -- Load the packages
 local rtk = require('rtk')
@@ -229,7 +231,7 @@ end
 ---@return string
 function CreatePluginZone:createFileInfo(zoneNumber)
   local filePath = self.zoneFolder .. '/' .. sanitizeString(self.pluginDeveloper);
-  os.execute('mkdir -p ' .. filePath)
+  os.execute('mkdir -p "' .. filePath .. '"')
 
   local fileName = string.format(
     '/%s%s.%s.zon',
@@ -357,6 +359,7 @@ function CreatePluginZone:writeZoneFile(pageId, page, nbPages)
   end
 
   zoneContent = zoneContent .. 'ZoneEnd';
+
   ---@diagnostic disable-next-line: need-check-nil
   zoneFile:write(zoneContent);
   ---@diagnostic disable-next-line: need-check-nil
@@ -555,7 +558,7 @@ function CreatePluginZone:getPluginParams()
 end
 
 function CreatePluginZone:loadPlugin()
-  local retval, trackId, paramnumber, pluginId = reaper.GetFocusedFX2();
+  local retval, trackId, paramnumber, pluginId = reaper.GetFocusedFX2(0);
   if (retval == 0) then
     return false;
   end

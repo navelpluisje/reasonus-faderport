@@ -284,7 +284,6 @@ pages.createPluginZoneFile = {
     loadButton:attr('rmargin', 16)
     loadButton.onclick = pages.createPluginZoneFile.loadPlugin;
     loadButton.ondragstart = function(a, b)
-      reaper.ShowConsoleMsg('drag start')
       return true, true
     end
 
@@ -295,7 +294,7 @@ pages.createPluginZoneFile = {
 
     local saveButton = pages.createPluginZoneFile.buttonBar:add(
       uiElements.createButton(
-        'Save filter',
+        'Save Plugin Zone',
         uiElements.Icons.save
       )
     );
@@ -310,16 +309,6 @@ pages.createPluginZoneFile = {
 
     pages.createPluginZoneFile.pluginEditor = CreatePluginZone:new(nbTracks, window);
     pages.createPluginZoneFile.content:add(pages.createPluginZoneFile.pluginEditor:getZoneEditor())
-
-
-    -- local activeEffect, a, b, c = CreatePluginZone.getPluginData();
-
-    -- reaper.ShowConsoleMsg(activeEffect and 'active' or 'inactive');
-    -- if (activeEffect) then
-    --   reaper.ShowConsoleMsg(a .. ' ' .. b .. ' ' .. c .. '\n')
-    -- else
-    --   reaper.ShowConsoleMsg('No Effect selected \n');
-    -- end
 
     return pages.createPluginZoneFile.page;
   end,
@@ -339,18 +328,7 @@ pages.createPluginZoneFile = {
     pages.createPluginZoneFile.pluginEditor:saveZoneFiles();
   end,
   loadPlugin             = function()
-    -- pages.createPluginZoneFile.content.clear();
-    -- reaper.ShowConsoleMsg('Cleared')
-    -- pages.createPluginZoneFile.plugin = CreatePluginZone:new(pages.createPluginZoneFile.nbTracks);
-    -- reaper.ShowConsoleMsg('nbTracks set')
     local hasPlugin = pages.createPluginZoneFile.pluginEditor:loadPlugin()
-    -- reaper.ShowConsoleMsg('nbTracks loaded\n\n')
-    -- if (not hasPlugin) then
-    --   reaper.MB('NoPlugin', 'No plugin selected')
-    -- else
-    --   reaper.MB('Plugin', 'Plugin selected')
-
-    -- end
   end,
 }
 return pages;

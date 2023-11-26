@@ -24,7 +24,7 @@ rtk.long_press_delay = 1
 -- This is using the first faderport it catches in the ini file
 --
 --******************************************************************************
-local csiIni = assert(io.open(reaper.GetResourcePath() .. '/CSI/CSI.ini', 'r'))
+local csiIni = assert(io.open(reaper.GetResourcePath() .. '/CSI/CSI.ini', 'r'));
 local faderPortVersion = string.match(csiIni:read('*all'), 'FP(%d+).mst');
 csiIni:close()
 

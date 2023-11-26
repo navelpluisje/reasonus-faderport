@@ -363,6 +363,27 @@
       "fileName": "refUiElements.lua",
       "register": false,
       "overwrite": true
+    },
+    {
+      "actionId": "",
+      "displayName": "Create plugin zone for ref",
+      "fileName": "refCreatePluginZone.lua",
+      "register": false,
+      "overwrite": true
+    },
+    {
+      "actionId": "",
+      "displayName": "create plugin zone for ref",
+      "fileName": "refCreatePluginZoneUtils.lua",
+      "register": false,
+      "overwrite": true
+    },
+    {
+      "actionId": "",
+      "displayName": "utility functions",
+      "fileName": "utils.lua",
+      "register": false,
+      "overwrite": true
     }
   ],
   "assets": [

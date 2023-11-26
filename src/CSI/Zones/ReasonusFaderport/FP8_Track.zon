@@ -31,7 +31,7 @@ Zone Track
   Solo|                     TrackSolo
   Select|                   TrackUniqueSelect  { "Track" }
   Shift+Select|             TrackSelect        { "Track" }
-  Option+Select|            TrackSelect        { "Track" }
+  Option+Select|            TrackRangeSelect   { "Track" }
 
   // Due to not being able to make this a SubZone, it has to be done the 'hacky' way
   Alt+Mute|                 Reaper 40490        // Track: Arm all tracks for recording
