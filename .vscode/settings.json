@@ -4,5 +4,6 @@
     "gfx",
     "package",
     "require"
-  ]
+  ],
+  "liveServer.settings.port": 5501
 }

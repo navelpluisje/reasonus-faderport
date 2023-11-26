@@ -82,7 +82,7 @@ blockquote::before {
 
 blockquote.reaperblog {
   background-color: var(--reaperblog-secondary);
-  background-image: url('assets/reaper-blog.png'), linear-gradient(hsl(302, 69%, 19%), hsl(302, 69%, 29%));
+  background-image: url('assets/reaper-blog.webp'), linear-gradient(hsl(302, 69%, 19%), hsl(302, 69%, 29%));
   background-position: .5rem center, 0 0;
   background-size: 3rem, 100% 100%;
   background-repeat: no-repeat;
@@ -123,7 +123,7 @@ blockquote.reaperblog>* {
 }
 
 .faderport {
-  background-image: url('assets/Faderport8.png');
+  background-image: url('assets/Faderport8.webp');
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
