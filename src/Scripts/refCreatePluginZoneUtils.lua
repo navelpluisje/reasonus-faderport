@@ -72,9 +72,14 @@ function zoneUtils.createParamName(data)
     paramName = paramName .. '  (toggle)';
   end
 
-  if (data.nbSteps > 2) then
-    paramName = paramName .. string.format('  (%ssteps)', data.nbSteps);
+  if (data.nbSteps == math.huge) then
+    return paramName;
   end
+
+  if (data.nbSteps > 2) then
+    paramName = paramName .. string.format('  (%s steps)', data.nbSteps);
+  end
+
   return paramName;
 end
 
