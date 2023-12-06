@@ -20,8 +20,8 @@ Zone ChannelNavigator
 
   Increase+RotaryBig        Reaper 40285 // Track: Go to next track
   Decrease+RotaryBig        Reaper 40286 // Track: Go to previous track
-  Shift+Inrease+RotaryBig   Reaper 40287 // Track: Go to next track (leaving other tracks selected)
-  Shift+Derease+RotaryBig   Reaper 40288 // Track: Go to previous track (leaving other tracks selected)
+  Shift+Increase+RotaryBig   Reaper 40287 // Track: Go to next track (leaving other tracks selected)
+  Shift+Decrease+RotaryBig   Reaper 40288 // Track: Go to previous track (leaving other tracks selected)
 
 // ===========================================
 // NAVIGATOR BUTTONS

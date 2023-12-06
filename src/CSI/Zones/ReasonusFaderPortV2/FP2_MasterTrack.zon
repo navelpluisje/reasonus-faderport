@@ -20,8 +20,13 @@ Zone MasterTrack
   Shift+Bypass        Reaper 40344       // Track: Toggle FX bypass on all tracks
 
   // ===========================================
-  // ENCODER
+  // ENCODER & BUtTONS
   // ===========================================
+  Prev                  NoAction
+  Next                  NoAction
+  Shift+Prev            Reaper 40029   // Edit: Undo
+  Shift+Next            Reaper 40030   // Edit: Redo
+
   RotaryBig           TrackPan
   Shift+RotaryBig     TrackPanWidth
   RotaryBigPush       Reaper _REASONUS_MASTER_PAN_CENTER // Set master pan to center position

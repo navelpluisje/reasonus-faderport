@@ -9,9 +9,9 @@ Zone Transport
 // TRANSPORT
 //------------------------------------------------------------------------------
   Loop                  CycleTimeline
-  Rewind       Rewind
+  Rewind                Rewind
   Hold+Rewind           Reaper "40042"  // Go to the project start
-  FastForward  FastForward
+  FastForward           FastForward
   Hold+FastForward      Reaper "40043"  // Go to the project end
   Play                  Play
   Stop                  Stop

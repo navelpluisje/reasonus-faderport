@@ -20,8 +20,13 @@ Zone SelectedTrack
   Shift+Bypass        Reaper 40344       // Track: Toggle FX bypass on all tracks
 
   // ===========================================
-  // ENCODER
+  // ENCODER & BUtTONS
   // ===========================================
+  Prev                  Reaper 40286   // Track: Go to previous track
+  Next                  Reaper 40285   // Track: Go to next track
+  Shift+Prev            Reaper 40029   // Edit: Undo
+  Shift+Next            Reaper 40030   // Edit: Redo
+
   RotaryBig           TrackPan
   Shift+RotaryBig     TrackPanWidth
   RotaryBigPush       Reaper _XENAKIOS_PANTRACKSCENTER // Xenakios/SWS: Pan selected tracks to center
