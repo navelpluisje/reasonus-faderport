@@ -264,11 +264,9 @@
           </li>
           <li>
             <span class="strong">Solo:</span> Isolates the corresponding Tracks output signal in the mix.
-            Press and hold to solo for a couple of seconds.
           </li>
           <li>
-            <span class="strong">Mute:</span> Mutes the corresponding Tracks output signal. Press and
-            hold to mute for a couple of seconds.
+            <span class="strong">Mute:</span> Mutes the corresponding Tracks output signal.
           </li>
           <li>
             <span class="strong">Touch-Sensitive Fader:</span> This 100 mm motorized fader can be used to
@@ -490,10 +488,6 @@
     <!-- METRONOME -->
     <section class="doc-row">
       <h4>Metronome (Click)</h4>
-      <p>
-        Clicking the button toggles the metronome.<br />
-        Holding the button will give you access to some metronome settings
-      </p>
       <ul>
         <li>
           <span class="strong">Prev:</span> Set the metronome speed to twice the original speed
@@ -1046,14 +1040,12 @@
             <span class="strong">[Hold] + [Shift] + Arm:</span> Unarm all tracks for recording
           </li>
           <li>
-            <span class="strong">Mute:</span> Mutes the selected Track output signal. Press and
-            hold to mute for a couple of seconds.<br>
-            <span class="strong">[Shift] + Mute:</span> Unmutes all muted tracks
+            <span class="strong">Mute:</span> Mutes the selected Track output signal.<br>
+            <span class="strong">[Shift] + Mute:</span> Unmute all muted tracks
           </li>
           <li>
-            <span class="strong">Solo:</span> Isolates the corresponding Tracks output signal in the mix.
-            Press and hold to solo for a couple of seconds.<br>
-            <span class="strong">[Shift] + Solo:</span> Unsolo's all soloed tracks
+            <span class="strong">Solo:</span> Isolates the corresponding Tracks output signal in the mix.<br>
+            <span class="strong">[Shift] + Solo:</span> Unsolo all soloed tracks
           </li>
           <li>
             <span class="strong">Bypass:</span> Press the <span class="strong">Bypass</span> button to bypass every
@@ -1078,7 +1070,7 @@
       </p>
       <ol>
         <li>
-          <span class="strong">Stop: </span> Stops playback.
+          <span class="strong">Stop: </span> Stops playback, rewind and fast-forward.
         </li>
         <li>
           <span class="strong">Loop:</span> Engages / disengages Looping
@@ -1088,19 +1080,36 @@
           Press again to pause playback.
         </li>
         <li>
-          <span class="strong">Rewind:</span> Rewinds a bit every press. Hold down Rewind to go to the start of the
-          project.
+          <span class="strong">Rewind:</span>
+          <ul>
+            <li>
+              <span class="strong">Default:</span> Rewind moves the Reaper Edit/Play cursor. The Rewind action in CSI has a
+              latching behavior where a single button press starts rewinding until you press stop. A second press of Rewind
+              causes it to Rewind at a faster speed.
+            </li>
+            <li>
+              <span class="strong">Hold:</span> Holding the button longer, it will move the cursor to the start of the project
+            </li>
+          </ul>
         </li>
         <li>
-          <span class="strong">Fast Forward:</span> Fast Forwards a bit every press. Hold down Fast Forward to go to the
-          end of the project.
+          <span class="strong">Fast Forward:</span>
+          <ul>
+            <li>
+              <span class="strong">Default:</span> FastForward moves the Reaper Edit/Play cursor. The FastForward action
+              in CSI has a latching behavior where a single button press starts fast-forwarding until you press stop. A second
+              press of FastForward causes it to FastForward at a faster speed.
+            </li>
+            <li>
+              <span class="strong">Hold:</span> Holding the button longer, it will move the cursor to the end of the project
+            </li>
+          </ul>
         </li>
         <li>
           <span class="strong">Record:</span> Press to start recording at the current playback-cursor position
           for record-enabled tracks.
         </li>
-      </ol>
-    </section>
+      </ol>    </section>
 
 
     <!-- SESSION NAVIGATOR -->
@@ -1108,9 +1117,34 @@
     <section class="doc-row">
       <p>The Session Navigator provides quick navigation and session controls. Each button alters the functions of
         the push-button encoder and the Next and Prev buttons on either side.</p>
-      <p>Pressing <span class="strong">[SHIFT] + Prev</span> will Undo the last action. Pressing
-        <span class="strong">[SHIFT] + Next</span> will Redo the last action.
+
+      <p>
+        By default the buttons and encoder behave as follows:
+        <ul>
+          <li>
+            <span class="strong">Encoder:</span> Controls the panning of the selected Track.
+          </li>
+          <li>
+            <span class="strong">Encoder push:</span> Resets the panning to the center position.
+          </li>
+          <li>
+            <span class="strong">[Shift] +Encoder:</span> Controls the pan width of the selected Track.
+          </li>
+          <li>
+            <span class="strong">Prev:</span> Go to the previous Track
+          </li>
+          <li>
+            <span class="strong">Next:</span> Go to the next Track
+          </li>
+          <li>
+            <span class="strong">[Shift] + Prev:</span> Undo last action
+          </li>
+          <li>
+            <span class="strong">[Shift] + Next:</span> Redo the last undone action
+          </li>
+        </ul>
       </p>
+          
       <blockquote>
         <span class="strong">Power User Tip:</span> Press <span class="strong">[Shift]</span> with any of the bottom 4
         buttons to access the F1-F4 Functions.
@@ -1153,7 +1187,7 @@
           <span class="strong">Prev:</span> No action
         </li>
         <li>
-          <span class="strong">Encoder push:</span> Resets the panning to the center position.
+          <span class="strong">Next:</span> No action
         </li>
         <li>
           <span class="strong">[Shift] + Prev:</span> Undo last action
@@ -1169,26 +1203,7 @@
     <section class="doc-row">
       <div>
         <h4>Pan Navigator</h4>
-        <ul>
-          <li>
-            <span class="strong">Encoder:</span> Controls the panning of the selected Track.
-          </li>
-          <li>
-            <span class="strong">Encoder push:</span> Resets the panning to the center position.
-          </li>
-          <li>
-            <span class="strong">Prev:</span> Go to the previous Track
-          </li>
-          <li>
-            <span class="strong">Next:</span> Go to the next Track
-          </li>
-          <li>
-            <span class="strong">[Shift] + Prev:</span> Undo last action
-          </li>
-          <li>
-            <span class="strong">[Shift] + Next:</span> Redo the last undone action
-          </li>
-        </ul>
+        <p>This version Arm button handling has changed due to the update to CSI v3. This might change again in a coming version.</p>
       </div>
     </section>
 
@@ -1196,10 +1211,6 @@
     <!-- METRONOME -->
     <section class="doc-row">
       <h4>Metronome (Click)</h4>
-      <p>
-        Clicking the button toggles the metronome.<br />
-        Holding the button will give you access to some metronome settings
-      </p>
       <ul>
         <li>
           <span class="strong">Prev:</span> Set the metronome speed to twice the original speed
@@ -1208,16 +1219,13 @@
           <span class="strong">Next:</span> Set the metronome speed to four times the original speed
         </li>
         <li>
-          <span class="strong">[Shift] + Prev:</span> Undo last action
-        </li>
-        <li>
-          <span class="strong">[Shift] + Next:</span> Redo the last undone action
-        </li>
-        <li>
           <span class="strong">Encoder push:</span> Set the metronome speed to the original speed
         </li>
         <li>
-          <span class="strong">[Shift] + Encoder push:</span> Show the metronome settings pane
+          <span class="strong">[Hold] + Encoder push:</span> Toggle the metronome on/off
+        </li>
+        <li>
+          <span class="strong">[Left Shift] + Encoder push:</span> Show the metronome settings pane
         </li>
         <li>
           <span class="strong">Encoder:</span> Set the volume of the metronome
@@ -1745,7 +1753,7 @@
         </p>
         <p>When a plugin is selected and there is no zone file available created with this tool, It will display the plugin name in the top.</p>
         <p>When a plugin is selected and there is already a zone file created with this tool, The name is shown in the top and the mapping is reflected.</p>
-        <p>Off course will all previous created zone files work</p>
+        <p>Off course will all previous created zone files work.</p>
       </div>
     </section>
 
