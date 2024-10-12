@@ -18,10 +18,10 @@ Zone Buttons
 // ===========================================
 // BUTTONS AND SCROLL, BY DEFAULT CHANNEL
 // ===========================================
-  Prev                Reaper 40286   // Track: Go to previous track
-  Next                Reaper 40285   // Track: Go to next track
-  Shift+Prev          Reaper 40286   // Track: Go to previous track
-  Shift+Next          Reaper 40285   // Track: Go to next track
+  Prev                Bank SelectedTrack -1   // Track: Go to previous track
+  Next                Bank SelectedTrack 1   // Track: Go to next track
+  Shift+Prev          Bank SelectedTrack -1   // Track: Go to previous track
+  Shift+Next          Bank SelectedTrack 1   // Track: Go to next track
 
 
 // ===========================================
@@ -34,6 +34,7 @@ Zone Buttons
 // NAVIGATOR BUTTONS
 // ===========================================
   Pan                   FixedRGBColorDisplay { 0 0 0 }
+  Shift+Pan             Reaper _REASONUS_FADERPORT_CONTROL { 20 20 20 255 255 255 }
 
   Channel               FixedRGBColorDisplay { 0 5 20 }
   Channel               GoHome

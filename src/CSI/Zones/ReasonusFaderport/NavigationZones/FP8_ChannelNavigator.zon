@@ -8,16 +8,16 @@ Zone ChannelNavigator
 // ===========================================
 // BUTTONS AND SCROLL
 // ===========================================
-  Prev              Reaper 40286   // Track: Go to previous track
-  Next              Reaper 40285   // Track: Go to next track
+  Prev              Bank SelectedTrack -1   // Track: Go to previous track
+  Next              Bank SelectedTrack 1   // Track: Go to next track
   Shift+Prev        Reaper 40287   // Track: Go to next track (leaving other tracks selected)
   Shift+Next        Reaper 40288   // Track: Go to previous track (leaving other tracks selected)
 
 // ===========================================
 // ENCODER
 // ===========================================
-  Increase+RotaryBig        Reaper 40285 // Track: Go to next track
-  Decrease+RotaryBig        Reaper 40286 // Track: Go to previous track
+  Increase+RotaryBig        Bank SelectedTrack 1 // Track: Go to next track
+  Decrease+RotaryBig        Bank SelectedTrack -1 // Track: Go to previous track
   Shift+Inrease+RotaryBig   Reaper 40287 // Track: Go to next track (leaving other tracks selected)
   Shift+Derease+RotaryBig   Reaper 40288 // Track: Go to previous track (leaving other tracks selected)
 

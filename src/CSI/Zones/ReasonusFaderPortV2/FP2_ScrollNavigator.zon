@@ -8,8 +8,8 @@ Zone ScrollNavigator
 // ===========================================
 // BUTTONS AND SCROLL
 // ===========================================
-  Prev                  Reaper 40286   // Track: Go to previous track
-  Next                  Reaper 40285   // Track: Go to next track
+  Prev                  Bank SelectedTrack -1   // Track: Go to previous track
+  Next                  Bank SelectedTrack 1   // Track: Go to next track
   Shift+Prev            NoAction
   Shift+Next            NoAction
 

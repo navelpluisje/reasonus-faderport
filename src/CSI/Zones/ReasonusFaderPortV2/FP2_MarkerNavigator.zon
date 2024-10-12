@@ -8,8 +8,8 @@ Zone MarkerNavigator
 // ===========================================
 // BUTTONS
 // ===========================================
-  Prev              Reaper _SWS_SELPREVMORR   // SWS: Goto/select previous marker/region
-  Next              Reaper _SWS_SELNEXTMORR   // SWS: Goto/select next marker/region
+  Prev              Reaper 40172   // SWS: Goto/select previous marker/region
+  Next              Reaper 40173   // SWS: Goto/select next marker/region
   Shift+Prev        NoAction
   Shift+Next        NoAction
                   
@@ -18,7 +18,7 @@ Zone MarkerNavigator
 // ===========================================
   RotaryBigPush               Reaper 40157  // Markers: Insert marker at current position
   Shift+RotaryBigPush         Reaper 40171  // Markers: Insert and/or edit marker at current position
-  Hold+RotaryBigPush        Reaper 40613  // Markers: Delete marker near cursor
+  Hold+RotaryBigPush          Reaper 40613  // Markers: Delete marker near cursor
   Increase+RotaryBig          Reaper 41044  // Move edit cursor back one beat, Move edit cursor forward one beat
   Decrease+RotaryBig          Reaper 41045  // Move edit cursor back one beat, Move edit cursor forward one beat
   Increase+Shift+RotaryBig    Reaper 40105  // View: Move cursor left one pixel, View: Move cursor right one pixel

@@ -22,8 +22,8 @@ Zone SelectedTrack
   // ===========================================
   // ENCODER & BUtTONS
   // ===========================================
-  Prev                  Reaper 40286   // Track: Go to previous track
-  Next                  Reaper 40285   // Track: Go to next track
+  Prev                  Bank SelectedTrack -1   // Track: Go to previous track
+  Next                  Bank SelectedTrack 1   // Track: Go to next track
   Shift+Prev            Reaper 40029   // Edit: Undo
   Shift+Next            Reaper 40030   // Edit: Redo
 
