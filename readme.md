@@ -1,4 +1,4 @@
-# Developing on this repo
+# This project is deprecated. Please do not use
 
 This repo contains the zone and surface files for making a Presonus FaderPort work nicely with REAPER. There are some script in here for making working on the files a bit easier.
 
